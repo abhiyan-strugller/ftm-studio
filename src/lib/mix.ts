@@ -1,12 +1,12 @@
 /**
  * Content-mix warnings.
  *
- * The page gets repetitive fast if the same template or palette lands twice in a
- * row, so the planner shows a yellow warning (never a hard block — you can still
- * publish whatever you want).
+ * The feed gets repetitive fast if the same template or palette lands twice in
+ * a row. These are warnings, never blocks: the day still builds, the contact
+ * sheet just tells you what looks samey before you upload it.
  */
 import type { PaletteName } from "./design/palettes";
-import { TEMPLATE_LABELS, type TemplateName } from "./schema";
+import { TEMPLATE_LABELS, TEMPLATE_NAMES, type TemplateName } from "./schema";
 import { PALETTES } from "./design/palettes";
 
 export type MixItem = {
@@ -24,7 +24,18 @@ export type MixWarning = {
   ids: string[];
 };
 
-export const MAX_SAME_TEMPLATE_PER_DAY = 2;
+/**
+ * How many times one template may appear in a day before it is worth warning
+ * about.
+ *
+ * This has to scale with the day: 15 posts across 7 templates means something
+ * MUST appear three times, so a hard-coded ceiling of 2 would fire on every
+ * single day and train you to ignore it. The floor stays at 2 so a short day
+ * still gets the original, stricter behaviour.
+ */
+export function maxSameTemplatePerDay(postCount: number): number {
+  return Math.max(2, Math.ceil(postCount / TEMPLATE_NAMES.length));
+}
 
 /** Counts by template for one day's items — drives the content-mix bar. */
 export function templateCounts(items: MixItem[]): Array<{ template: TemplateName; count: number }> {
@@ -46,12 +57,13 @@ export function mixWarnings(items: MixItem[], precededBy?: MixItem | null): MixW
   const ordered = [...items].sort((a, b) => a.at - b.at);
   const warnings: MixWarning[] = [];
 
-  // Same template more than twice in one day.
+  // One template dominating the day.
+  const cap = maxSameTemplatePerDay(ordered.length);
   for (const { template, count } of templateCounts(ordered)) {
-    if (count > MAX_SAME_TEMPLATE_PER_DAY) {
+    if (count > cap) {
       warnings.push({
         kind: "template_overused",
-        message: `${TEMPLATE_LABELS[template]} appears ${count}× today (max ${MAX_SAME_TEMPLATE_PER_DAY}).`,
+        message: `${TEMPLATE_LABELS[template]} appears ${count}× today (comfortable max ${cap}).`,
         ids: ordered.filter((i) => i.template === template).map((i) => i.id),
       });
     }

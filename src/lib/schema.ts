@@ -1,11 +1,13 @@
 /**
  * Single source of truth for post shapes.
  *
- * The zod schemas here validate three different things, deliberately with the
- * same definitions so they can never drift:
- *   1. what the Anthropic model returns for a draft (`DraftOutputSchema`)
- *   2. what the planner saves when you hand-edit template fields
- *   3. what `/api/render` accepts in its base64url `data` parameter
+ * `PostDocSchema` describes one fully renderable card. It is the contract
+ * between the day file you hand-write in `input/` and the Satori templates that
+ * draw it, so a post that validates here is guaranteed to have every field the
+ * renderer reaches for.
+ *
+ * Field length caps are not arbitrary: each one is the longest string its tier
+ * ladder in `design/fit.ts` can typeset without clipping at 1080x1350.
  */
 import { z } from "zod";
 import { PALETTE_NAMES } from "./design/palettes";
@@ -158,61 +160,13 @@ export const PostDocSchema = z.discriminatedUnion("template", [
 export type PostDoc = z.infer<typeof PostDocSchema>;
 
 // ---------------------------------------------------------------------------
-// What the caption model returns
-// ---------------------------------------------------------------------------
-
-/**
- * The model does not know the issue number, so `post_number` is absent here and
- * filled in from the database row before rendering.
- */
-const DraftBase = {
-  palette: z.enum(PALETTE_NAMES),
-  tag: Trimmed.min(1).max(18),
-  headline: Trimmed.min(1).max(180),
-  accent_word: Trimmed.max(40).optional(),
-  kicker: Trimmed.max(48).optional(),
-  source_line: Trimmed.max(90).optional(),
-  caption: Trimmed.min(1).max(1400),
-  hashtags: z.array(Trimmed.min(2).max(32)).min(2).max(4),
-};
-
-export const DraftOutputSchema = z.discriminatedUnion("template", [
-  z.object({ ...DraftBase, template: z.literal("headline"), data: HeadlineDataSchema }),
-  z.object({ ...DraftBase, template: z.literal("stats"), data: StatsDataSchema }),
-  z.object({ ...DraftBase, template: z.literal("line_chart"), data: LineChartDataSchema }),
-  z.object({ ...DraftBase, template: z.literal("bar_compare"), data: BarCompareDataSchema }),
-  z.object({ ...DraftBase, template: z.literal("versus"), data: VersusDataSchema }),
-  z.object({ ...DraftBase, template: z.literal("steps"), data: StepsDataSchema }),
-  z.object({ ...DraftBase, template: z.literal("breaking"), data: BreakingDataSchema }),
-]);
-
-export type DraftOutput = z.infer<typeof DraftOutputSchema>;
-
-/** Cross-field checks the schema itself cannot express. */
-export function validateDraftShape(draft: DraftOutput): string[] {
-  const problems: string[] = [];
-  if (draft.template === "line_chart") {
-    if (draft.data.x_labels.length !== draft.data.y_values.length) {
-      problems.push(
-        `line_chart: ${draft.data.x_labels.length} x labels but ${draft.data.y_values.length} y values`,
-      );
-    }
-  }
-  if (draft.accent_word && !draft.headline.toLowerCase().includes(draft.accent_word.toLowerCase())) {
-    // Not fatal — the renderer just skips the italic treatment.
-    problems.push(`accent_word "${draft.accent_word}" does not appear in the headline`);
-  }
-  return problems;
-}
-
-// ---------------------------------------------------------------------------
 // Placeholder detection
 // ---------------------------------------------------------------------------
 
 /**
- * The caption prompt tells the model to emit `[NUMBER]`-style placeholders rather
- * than invent a figure. Anything matching gets surfaced in Telegram and in the
- * planner so a post can never go out with a hole in it.
+ * The caption spec in prompts/caption.md says to write `[NUMBER]`-style
+ * placeholders rather than invent a figure. The day builder scans every field
+ * for them so a post can never be exported with a hole still in it.
  */
 export const PLACEHOLDER_PATTERN = /\[[A-Z][A-Z0-9 _/-]{1,24}\]/g;
 
@@ -229,21 +183,4 @@ export function findPlaceholders(doc: unknown): string[] {
   };
   walk(doc);
   return [...found].sort();
-}
-
-// ---------------------------------------------------------------------------
-// base64url transport for /api/render
-// ---------------------------------------------------------------------------
-
-export function encodeDocParam(doc: PostDoc): string {
-  const json = JSON.stringify(doc);
-  const b64 = Buffer.from(json, "utf8").toString("base64");
-  return b64.replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/, "");
-}
-
-export function decodeDocParam(param: string): PostDoc {
-  const b64 = param.replace(/-/g, "+").replace(/_/g, "/");
-  const padded = b64 + "=".repeat((4 - (b64.length % 4)) % 4);
-  const json = Buffer.from(padded, "base64").toString("utf8");
-  return PostDocSchema.parse(JSON.parse(json));
 }
