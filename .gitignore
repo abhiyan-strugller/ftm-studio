@@ -1,0 +1,28 @@
+node_modules/
+.next/
+out/
+build/
+dist/
+
+# Secrets — never commit
+.env
+.env.local
+.env.*.local
+!.env.example
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*.swp
+.idea/
+.vscode/
+
+# Test & tooling output
+coverage/
+.vitest/
+*.tsbuildinfo
+next-env.d.ts
+
+# Local verification output (screenshots / lighthouse reports)
+reports/
+.lighthouseci/
