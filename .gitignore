@@ -23,6 +23,6 @@ coverage/
 *.tsbuildinfo
 next-env.d.ts
 
-# Local verification output (screenshots / lighthouse reports)
-reports/
-.lighthouseci/
+# Generated upload folders. Rebuilt any time from input/<date>.json, and the
+# PNGs are large, so they are not worth versioning.
+output/

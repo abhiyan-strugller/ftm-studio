@@ -1,0 +1,152 @@
+{
+  "date": "2026-11-09",
+  "start_number": 101,
+  "posts": [
+    {
+      "id": "01",
+      "template": "headline",
+      "palette": "night",
+      "tag": "Rates",
+      "kicker": "Federal Reserve",
+      "headline": "The Fed held rates steady again",
+      "accent_word": "steady",
+      "source": "Source: Federal Reserve statement",
+      "caption": "The Fed left rates where they are.\n\nYour savings account keeps paying what it pays.\nYour credit card keeps charging what it charges.\nNothing on your statement changes this month.\n\nMy take: the waiting is the hard part, and it is not over.\n\nHas a rate decision ever changed a plan of yours?\n\nSource: Federal Reserve statement\nEducational only — not financial advice.\n\n#Fed #InterestRates #PersonalFinance",
+      "scheduled_at": "2026-11-09T12:00:00.000Z",
+      "data": {
+        "dek": "Your savings yield stays high for now — and so does your card APR."
+      }
+    },
+    {
+      "id": "02",
+      "template": "stats",
+      "palette": "cream",
+      "tag": "Inflation",
+      "kicker": "CPI report",
+      "headline": "Where prices actually moved",
+      "accent_word": "actually",
+      "source": "Source: BLS Consumer Price Index",
+      "caption": "Inflation cooled, but not in the aisle you shop in.\n\nHeadline prices rose 2.9% over the year.\nGroceries rose faster than the month before.\nRent is still the biggest line in most budgets.\n\nMy take: an average is not a receipt, and the average is not what you pay.\n\nWhich line in your budget moved most this year?\n\nSource: BLS Consumer Price Index\n\n#Inflation #Groceries #CostOfLiving",
+      "scheduled_at": "2026-11-09T13:00:00.000Z",
+      "data": {
+        "stats": [
+          { "label": "Headline CPI", "value": "2.9%", "delta": "0.1 pt", "direction": "down" },
+          { "label": "Groceries", "value": "1.8%", "delta": "0.2 pt", "direction": "up" },
+          { "label": "Rent", "value": "4.1%", "delta": "0.3 pt", "direction": "down" }
+        ]
+      }
+    },
+    {
+      "id": "03",
+      "template": "line_chart",
+      "palette": "midnight",
+      "tag": "Housing",
+      "headline": "The 30-year mortgage rate, six months on",
+      "accent_word": "six",
+      "source": "Source: Freddie Mac weekly survey",
+      "caption": "Mortgage rates have drifted down for six months.\n\nThe 30-year average is near 6.3%.\nOn a $400,000 loan, that is roughly $180 a month less than April.\nHouse prices have not moved with it.\n\nMy take: this helps buyers at the margin, not the ones priced out.\n\nAre you watching rates, or watching prices?\n\nSource: Freddie Mac weekly survey\nEducational only — not financial advice.\n\n#Mortgage #Housing #Rates",
+      "scheduled_at": "2026-11-09T14:00:00.000Z",
+      "data": {
+        "series_label": "Average 30-year fixed rate",
+        "x_labels": ["Apr", "May", "Jun", "Jul", "Aug", "Sep"],
+        "y_values": [7.04, 6.88, 6.95, 6.72, 6.51, 6.34],
+        "value_suffix": "%"
+      }
+    },
+    {
+      "id": "04",
+      "template": "bar_compare",
+      "palette": "sand",
+      "tag": "Cost of living",
+      "kicker": "Metro comparison",
+      "headline": "What a one-bedroom costs across six metros",
+      "accent_word": "costs",
+      "source": "Source: Rental listing aggregates",
+      "caption": "The same apartment, six very different prices.\n\nNew York asks about three times what Houston asks.\nNone of these include utilities or parking.\nMoving for cheaper rent usually means moving for a different salary too.\n\nMy take: compare rent as a share of local pay, never as a raw number.\n\nWhat share of your pay goes to rent?\n\nSource: Rental listing aggregates\n\n#Rent #CostOfLiving #Housing",
+      "scheduled_at": "2026-11-09T15:00:00.000Z",
+      "data": {
+        "unit": "Median asking rent, one bedroom, USD per month",
+        "bars": [
+          { "label": "New York", "value": 4100, "display": "$4,100" },
+          { "label": "San Francisco", "value": 3250, "display": "$3,250" },
+          { "label": "Boston", "value": 2990, "display": "$2,990" },
+          { "label": "Miami", "value": 2480, "display": "$2,480" },
+          { "label": "Chicago", "value": 1960, "display": "$1,960" },
+          { "label": "Houston", "value": 1340, "display": "$1,340" }
+        ]
+      }
+    },
+    {
+      "id": "05",
+      "template": "versus",
+      "palette": "ice",
+      "tag": "Debt",
+      "headline": "Card balance or emergency fund?",
+      "accent_word": "or",
+      "source": "Source: Federal Reserve G.19, FDIC",
+      "caption": "One spare $500, two reasonable homes for it.\n\nPaying the card stops interest at about 24.6% a year.\nSaving it earns about 4.3% a year.\nThe maths favours the card; the peace of mind favours the fund.\n\nMy take: a small buffer first, then everything at the card.\n\nWhich one would you do?\n\nSource: Federal Reserve G.19, FDIC\nEducational only — not financial advice.\n\n#Debt #Savings #PersonalFinance",
+      "scheduled_at": "2026-11-09T16:00:00.000Z",
+      "data": {
+        "option_a": {
+          "label": "Pay the card first",
+          "amount": "24.6%",
+          "sub": "Average card APR you stop paying"
+        },
+        "option_b": {
+          "label": "Build the fund first",
+          "amount": "4.3%",
+          "sub": "Top savings APY you start earning"
+        },
+        "pill": "Vote in comments"
+      }
+    },
+    {
+      "id": "06",
+      "template": "steps",
+      "palette": "forest",
+      "tag": "Supply chain",
+      "headline": "How a port strike reaches your receipt",
+      "accent_word": "receipt",
+      "source": "Source: Port authority notices",
+      "caption": "A strike at the docks ends up in your grocery bill.\n\nShips wait offshore instead of unloading.\nRetailers ration whatever stock they already hold.\nScarcity turns into a higher sticker price.\n\nMy take: the lag is usually weeks, so the bill arrives after the headlines stop.\n\nHave you noticed anything missing from your shelves lately?\n\nSource: Port authority notices\n\n#SupplyChain #Groceries #Inflation",
+      "scheduled_at": "2026-11-09T17:00:00.000Z",
+      "data": {
+        "steps": [
+          {
+            "icon": "ship",
+            "label": "Containers stop moving",
+            "detail": "Ships wait offshore instead of unloading."
+          },
+          {
+            "icon": "store",
+            "label": "Shelves thin out",
+            "detail": "Retailers ration the stock they already hold."
+          },
+          {
+            "icon": "person",
+            "label": "You pay the gap",
+            "detail": "Scarcity shows up as a higher sticker price."
+          }
+        ]
+      }
+    },
+    {
+      "id": "07",
+      "template": "breaking",
+      "palette": "night",
+      "tag": "World",
+      "headline": "A major payments processor is down",
+      "accent_word": "down",
+      "source": "Source: Company status page",
+      "caption": "A payments processor outage is hitting card terminals.\n\nSome card payments are being delayed or declined.\nRetail shares slipped on the news.\nThis is developing and the cause is not confirmed.\n\nMy take: carry a little cash on days like this — not as a strategy, just as a backup.\n\nHas a card outage ever caught you out?\n\nSource: Company status page\n\n#Payments #Retail #Outage",
+      "scheduled_at": "2026-11-09T18:00:00.000Z",
+      "data": {
+        "badge": "DEVELOPING",
+        "impacts": [
+          { "sector": "Card payments", "change": "delayed", "direction": "down" },
+          { "sector": "Retail stocks", "change": "-1.2%", "direction": "down" }
+        ]
+      }
+    }
+  ]
+}
