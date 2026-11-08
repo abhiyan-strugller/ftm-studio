@@ -216,9 +216,25 @@ baked into the code. They live in `config/postplanner-columns.json`:
 Change the **values** to match Post Planner's own sample sheet. The **order of
 the keys** is the order of the columns. The four keys on the left are fixed.
 
-The media column currently holds the image **filename** (`01-headline.png`). If
-Post Planner needs a full public URL instead, that is the one thing likely to
-need changing once you have its import spec.
+> **This file renames headings only.** It does not change what goes *in* the
+> cells. Each column's value is built by the CSV writer.
+
+### If Post Planner needs a URL instead of a filename
+
+The media column currently holds the image **filename** (`01-headline.png`).
+If Post Planner's importer expects a full public URL, **that is a code change,
+not a config edit** — no heading rename will do it.
+
+The value is set in one place, `scripts/build-day.ts`:
+
+```ts
+csvRows.push({ text: post.caption, mediaUrl: file, at });
+```
+
+Change `mediaUrl` to whatever Post Planner expects — most likely
+`` `https://your-host/${day.date}/${file}` `` once the images are hosted
+somewhere it can reach. The images would also need to be uploaded somewhere
+public first; nothing in this project does that.
 
 ---
 

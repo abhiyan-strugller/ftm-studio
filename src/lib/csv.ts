@@ -3,8 +3,12 @@
  *
  * The real column headings are not known yet — Post Planner's sample sheet has
  * not been checked — so nothing here hardcodes them. The mapping lives in
- * `config/postplanner-columns.json` and is read at run time: when the real
- * format is confirmed, editing that JSON is the whole change.
+ * `config/postplanner-columns.json` and is read at run time.
+ *
+ * That config renames HEADINGS and sets column order. It does not change cell
+ * CONTENT: each value comes from `CsvRow` in `buildCsv` below. Switching the
+ * media column from a filename to a public URL is therefore a code change at
+ * the call site in `scripts/build-day.ts`, not a config edit.
  *
  * The file is written UTF-8 **with a BOM** so Excel on Windows opens it as
  * Unicode instead of mangling every curly quote and en dash in the captions.

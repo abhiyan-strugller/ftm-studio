@@ -177,7 +177,8 @@ async function main(): Promise<void> {
   if (!only) {
     console.log(
       "Note: the media column holds each PNG's filename. If Post Planner needs a\n" +
-        "public URL instead, update the mapping or prefix in config/postplanner-columns.json.",
+        "public URL instead, that is a code change in this script (the `mediaUrl`\n" +
+        "value below) — the config file only renames column headings.",
     );
   }
   console.log(`Review: output/${day.date}/index.html`);
