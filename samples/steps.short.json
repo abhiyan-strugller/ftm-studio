@@ -1,0 +1,28 @@
+{
+  "template": "steps",
+  "palette": "midnight",
+  "tag": "Supply chain",
+  "post_number": 11,
+  "headline": "How a port strike reaches your receipt",
+  "accent_word": "receipt",
+  "data": {
+    "steps": [
+      {
+        "icon": "ship",
+        "label": "Containers stop moving",
+        "detail": "Ships wait offshore instead of unloading."
+      },
+      {
+        "icon": "store",
+        "label": "Shelves thin out",
+        "detail": "Retailers ration the stock they already hold."
+      },
+      {
+        "icon": "person",
+        "label": "You pay the gap",
+        "detail": "Scarcity shows up as a higher sticker price."
+      }
+    ]
+  },
+  "source_line": "Source: Port authority notices"
+}

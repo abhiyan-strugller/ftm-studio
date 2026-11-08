@@ -1,0 +1,45 @@
+{
+  "template": "bar_compare",
+  "palette": "night",
+  "tag": "Cost of living",
+  "post_number": 8,
+  "kicker": "Metro comparison",
+  "headline": "What a one-bedroom actually costs across six big American metros, before you add utilities or parking",
+  "accent_word": "actually",
+  "data": {
+    "unit": "Median asking rent, one bedroom, USD per month",
+    "bars": [
+      {
+        "label": "New York",
+        "value": 4100,
+        "display": "$4,100"
+      },
+      {
+        "label": "San Francisco",
+        "value": 3250,
+        "display": "$3,250"
+      },
+      {
+        "label": "Boston",
+        "value": 2990,
+        "display": "$2,990"
+      },
+      {
+        "label": "Miami",
+        "value": 2480,
+        "display": "$2,480"
+      },
+      {
+        "label": "Chicago",
+        "value": 1960,
+        "display": "$1,960"
+      },
+      {
+        "label": "Houston",
+        "value": 1340,
+        "display": "$1,340"
+      }
+    ]
+  },
+  "source_line": "Source: Rental listing aggregates"
+}

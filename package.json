@@ -12,7 +12,7 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "fb:token": "tsx scripts/fb-token.ts",
-    "samples": "tsx scripts/render-samples.ts",
+    "samples": "tsx --tsconfig scripts/tsconfig.json scripts/render-samples.ts",
     "fonts": "tsx scripts/fetch-fonts.ts"
   },
   "dependencies": {

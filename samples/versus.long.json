@@ -1,0 +1,23 @@
+{
+  "template": "versus",
+  "palette": "forest",
+  "tag": "Retirement",
+  "post_number": 10,
+  "kicker": "Same dollar, two homes",
+  "headline": "Match the 401(k) or clear the student loan: the same two hundred dollars a month, pointed at two very different outcomes",
+  "accent_word": "different",
+  "data": {
+    "option_a": {
+      "label": "Capture the employer match",
+      "amount": "+100%",
+      "sub": "Instant return on the matched portion"
+    },
+    "option_b": {
+      "label": "Clear the 6.5% student loan",
+      "amount": "6.5%",
+      "sub": "Guaranteed interest you stop paying"
+    },
+    "pill": "Which would you pick?"
+  },
+  "source_line": "Source: Plan documents, federal loan rates"
+}

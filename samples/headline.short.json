@@ -1,0 +1,13 @@
+{
+  "template": "headline",
+  "palette": "night",
+  "tag": "Rates",
+  "post_number": 1,
+  "kicker": "Federal Reserve",
+  "headline": "The Fed held rates steady again",
+  "accent_word": "steady",
+  "data": {
+    "dek": "Your savings yield stays high for now — and so does your card APR."
+  },
+  "source_line": "Source: Federal Reserve statement"
+}

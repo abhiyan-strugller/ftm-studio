@@ -1,0 +1,32 @@
+{
+  "template": "stats",
+  "palette": "midnight",
+  "tag": "Inflation",
+  "post_number": 3,
+  "kicker": "CPI report",
+  "headline": "Where prices actually moved",
+  "accent_word": "actually",
+  "data": {
+    "stats": [
+      {
+        "label": "Headline CPI",
+        "value": "2.9%",
+        "delta": "0.1 pt",
+        "direction": "down"
+      },
+      {
+        "label": "Groceries",
+        "value": "1.8%",
+        "delta": "0.2 pt",
+        "direction": "up"
+      },
+      {
+        "label": "Rent",
+        "value": "4.1%",
+        "delta": "0.3 pt",
+        "direction": "down"
+      }
+    ]
+  },
+  "source_line": "Source: BLS Consumer Price Index"
+}

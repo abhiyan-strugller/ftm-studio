@@ -1,0 +1,22 @@
+{
+  "template": "versus",
+  "palette": "ice",
+  "tag": "Debt",
+  "post_number": 9,
+  "headline": "Card balance or emergency fund?",
+  "accent_word": "or",
+  "data": {
+    "option_a": {
+      "label": "Pay the card first",
+      "amount": "24.6%",
+      "sub": "Average card APR you stop paying"
+    },
+    "option_b": {
+      "label": "Build the fund first",
+      "amount": "4.3%",
+      "sub": "Top savings APY you start earning"
+    },
+    "pill": "Vote in comments"
+  },
+  "source_line": "Source: Federal Reserve G.19, FDIC"
+}

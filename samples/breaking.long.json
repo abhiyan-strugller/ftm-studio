@@ -1,0 +1,31 @@
+{
+  "template": "breaking",
+  "palette": "midnight",
+  "tag": "World",
+  "post_number": 14,
+  "kicker": "Unverified reports",
+  "headline": "Reports are circulating of a cyberattack on a regional electricity operator, and energy traders are already pricing in a disruption that has not been confirmed",
+  "accent_word": "circulating",
+  "data": {
+    "badge": "UNCONFIRMED",
+    "impacts_label": "If confirmed, what it means for your money",
+    "impacts": [
+      {
+        "sector": "Natural gas futures",
+        "change": "+3.4%",
+        "direction": "up"
+      },
+      {
+        "sector": "Utility shares",
+        "change": "-2.1%",
+        "direction": "down"
+      },
+      {
+        "sector": "Household power bills",
+        "change": "watch",
+        "direction": "flat"
+      }
+    ]
+  },
+  "source_line": "Source: Unconfirmed media reports"
+}

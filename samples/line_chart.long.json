@@ -1,0 +1,42 @@
+{
+  "template": "line_chart",
+  "palette": "ice",
+  "tag": "Markets",
+  "post_number": 6,
+  "kicker": "Twelve-month view",
+  "headline": "The S&P 500 has spent a year grinding higher, and the path matters more than the headline number for anyone adding money each month",
+  "accent_word": "path",
+  "data": {
+    "x_labels": [
+      "Oct",
+      "Nov",
+      "Dec",
+      "Jan",
+      "Feb",
+      "Mar",
+      "Apr",
+      "May",
+      "Jun",
+      "Jul",
+      "Aug",
+      "Sep"
+    ],
+    "y_values": [
+      4280,
+      4410,
+      4590,
+      4620,
+      4780,
+      4890,
+      4760,
+      5020,
+      5180,
+      5240,
+      5390,
+      5610
+    ],
+    "value_prefix": "",
+    "series_label": "S&P 500 index, monthly close"
+  },
+  "source_line": "Source: Index monthly closes"
+}

@@ -1,0 +1,24 @@
+{
+  "template": "bar_compare",
+  "palette": "cream",
+  "tag": "Groceries",
+  "post_number": 7,
+  "headline": "A full grocery cart, two countries",
+  "accent_word": "two",
+  "data": {
+    "unit": "Average monthly grocery bill, family of four, USD",
+    "bars": [
+      {
+        "label": "Canada",
+        "value": 1120,
+        "display": "$1,120"
+      },
+      {
+        "label": "United States",
+        "value": 975,
+        "display": "$975"
+      }
+    ]
+  },
+  "source_line": "Source: National statistics agencies"
+}

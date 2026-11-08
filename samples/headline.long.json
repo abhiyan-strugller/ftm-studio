@@ -1,0 +1,13 @@
+{
+  "template": "headline",
+  "palette": "cream",
+  "tag": "Housing",
+  "post_number": 2,
+  "kicker": "Mortgage market",
+  "headline": "Mortgage rates slipped for a fourth straight week, and the monthly payment on a median-priced home fell by roughly the cost of a weekly grocery run",
+  "accent_word": "slipped",
+  "data": {
+    "dek": "A quarter-point move on a $400,000 loan is about $60 a month. Over thirty years that is real money, but it is not the same as the house getting cheaper."
+  },
+  "source_line": "Source: Freddie Mac weekly survey"
+}

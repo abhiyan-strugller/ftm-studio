@@ -1,0 +1,39 @@
+{
+  "template": "steps",
+  "palette": "sand",
+  "tag": "Rates",
+  "post_number": 12,
+  "kicker": "Transmission",
+  "headline": "Five steps between a Fed decision in Washington and the number printed on your credit card statement",
+  "accent_word": "five",
+  "data": {
+    "steps": [
+      {
+        "icon": "bank",
+        "label": "The Fed sets the target",
+        "detail": "The overnight rate banks charge each other moves."
+      },
+      {
+        "icon": "chart",
+        "label": "Bond yields reprice",
+        "detail": "Markets reset what future money is worth."
+      },
+      {
+        "icon": "gate",
+        "label": "Banks adjust prime",
+        "detail": "The benchmark most consumer credit is tied to shifts."
+      },
+      {
+        "icon": "store",
+        "label": "Lenders rewrite offers",
+        "detail": "Card, auto and mortgage quotes follow."
+      },
+      {
+        "icon": "person",
+        "label": "Your statement changes",
+        "detail": "Usually within one or two billing cycles."
+      }
+    ]
+  },
+  "source_line": "Source: Federal Reserve, bank disclosures"
+}

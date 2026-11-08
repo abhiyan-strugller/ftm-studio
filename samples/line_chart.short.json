@@ -1,0 +1,29 @@
+{
+  "template": "line_chart",
+  "palette": "forest",
+  "tag": "Housing",
+  "post_number": 5,
+  "headline": "The 30-year mortgage rate, six months on",
+  "accent_word": "six",
+  "data": {
+    "x_labels": [
+      "Apr",
+      "May",
+      "Jun",
+      "Jul",
+      "Aug",
+      "Sep"
+    ],
+    "y_values": [
+      7.04,
+      6.88,
+      6.95,
+      6.72,
+      6.51,
+      6.34
+    ],
+    "value_suffix": "%",
+    "series_label": "Average 30-year fixed rate"
+  },
+  "source_line": "Source: Freddie Mac weekly survey"
+}

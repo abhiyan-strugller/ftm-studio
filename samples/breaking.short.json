@@ -1,0 +1,24 @@
+{
+  "template": "breaking",
+  "palette": "night",
+  "tag": "World",
+  "post_number": 13,
+  "headline": "A major payments processor is down",
+  "accent_word": "down",
+  "data": {
+    "badge": "DEVELOPING",
+    "impacts": [
+      {
+        "sector": "Card payments",
+        "change": "delayed",
+        "direction": "down"
+      },
+      {
+        "sector": "Retail stocks",
+        "change": "-1.2%",
+        "direction": "down"
+      }
+    ]
+  },
+  "source_line": "Source: Company status page"
+}

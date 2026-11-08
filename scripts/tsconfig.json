@@ -1,0 +1,11 @@
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "// jsx": "Next keeps `preserve` for its own compiler; the sample renderer runs under tsx, which needs a real JSX transform.",
+    "jsx": "react-jsx",
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "noEmit": true
+  },
+  "include": ["../src/**/*.ts", "../src/**/*.tsx", "./**/*.ts"]
+}
