@@ -44,10 +44,16 @@ export type Palette = {
   down: string;
 };
 
-/** Semantic direction colours, one pair per ground type. */
+/**
+ * Semantic direction colours, one pair per ground type.
+ *
+ * LIGHT_UP is darker than the Cream accent (#0F7A4A) on purpose: that value
+ * clears 4.5:1 on Cream but only reaches 4.46 on Ice and 4.35 on Sand, which
+ * are lighter grounds.
+ */
 const DARK_UP = "#2BD47D";
 const DARK_DOWN = "#FF6B6B";
-const LIGHT_UP = "#0F7A4A";
+const LIGHT_UP = "#0D6B41";
 const LIGHT_DOWN = "#B3261E";
 
 export const PALETTES: Record<PaletteName, Palette> = {

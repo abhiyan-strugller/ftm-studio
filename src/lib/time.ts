@@ -83,14 +83,33 @@ export function zonedWallTimeToUtc(
   timeZone: string = ET_ZONE,
 ): Date {
   const target = Date.UTC(year, month - 1, day, hour, minute, 0);
-  let offset = zoneOffsetMs(new Date(target), timeZone);
-  let instant = target - offset;
-  const refined = zoneOffsetMs(new Date(instant), timeZone);
-  if (refined !== offset) {
-    offset = refined;
-    instant = target - offset;
-  }
-  return new Date(instant);
+
+  // Two candidates: one from the offset at the naive instant, one from the
+  // offset at where that lands. Away from a transition they are identical.
+  const first = target - zoneOffsetMs(new Date(target), timeZone);
+  const second = target - zoneOffsetMs(new Date(first), timeZone);
+
+  const roundTrips = (instant: number): boolean => {
+    const p = getZonedParts(new Date(instant), timeZone);
+    return (
+      p.year === year &&
+      p.month === month &&
+      p.day === day &&
+      p.hour === hour &&
+      p.minute === minute
+    );
+  };
+
+  // Normal times, and the first (daylight) occurrence of an ambiguous
+  // fall-back time, round-trip exactly.
+  if (roundTrips(second)) return new Date(second);
+  if (roundTrips(first)) return new Date(first);
+
+  // Neither round-trips, so this wall time does not exist — it falls inside a
+  // spring-forward gap. Take the later candidate, which lands just past the
+  // gap: a slot at a skipped time should fire as soon as that time exists,
+  // not an hour earlier on the previous offset.
+  return new Date(Math.max(first, second));
 }
 
 /** "YYYY-MM-DD" for `instant` as seen in `timeZone`. */

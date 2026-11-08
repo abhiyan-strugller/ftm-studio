@@ -36,3 +36,33 @@ export function contrastRatio(a: string, b: string): number {
 }
 
 export const WCAG_AA_NORMAL = 4.5;
+
+/**
+ * Hue angle in degrees (0 = red, 120 = green, 240 = blue).
+ *
+ * Contrast ratio is a *luminance* measure and says nothing about whether two
+ * colours look different: a mid green and a mid red can sit within a few
+ * percent of each other on it while being unmistakable to the eye. Direction
+ * colours need to differ in hue, which is what this measures.
+ */
+export function hueDegrees(hex: string): number {
+  const [r, g, b] = hexToRgb(hex).map((c) => c / 255);
+  const max = Math.max(r, g, b);
+  const min = Math.min(r, g, b);
+  const delta = max - min;
+  if (delta === 0) return 0; // greyscale has no meaningful hue
+
+  let h: number;
+  if (max === r) h = ((g - b) / delta) % 6;
+  else if (max === g) h = (b - r) / delta + 2;
+  else h = (r - g) / delta + 4;
+
+  h *= 60;
+  return h < 0 ? h + 360 : h;
+}
+
+/** Shortest angular distance between two hues, 0..180 degrees. */
+export function hueDistance(a: string, b: string): number {
+  const diff = Math.abs(hueDegrees(a) - hueDegrees(b)) % 360;
+  return diff > 180 ? 360 - diff : diff;
+}
