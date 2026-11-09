@@ -272,7 +272,7 @@ and each post row is:
 | 4 | MEDIA | The public image URL |
 | 5 | TITLE | Blank (Pinterest/YouTube only) |
 | 6 | FIRST COMMENT | `Source: <name> — <url>`, when the post has a source |
-| 7 | FIRST COMMENT DELAY | `5` when there is a first comment |
+| 7 | FIRST COMMENT DELAY | Blank — see below |
 | 8 | TOBI BACKGROUND | Blank |
 | 9 | REEL OR STORY | Blank |
 
@@ -286,11 +286,14 @@ hard stop past **200 data rows** — their documented per-file limit.
 
 ### A note on the first-comment delay
 
-We send `5`. You may expect a smaller number, but the template's own cell G3
-says *"Allowed values are 5,10,15, 30 and 60"*, so 5 is the shortest delay the
-importer accepts. Leaving the cell blank also works and publishes the comment
-immediately — set `FIRST_COMMENT_DELAY` to `null` in `src/lib/postplanner.ts`
-if you would rather have that.
+We leave this **blank**, which the template's row 5 shows means *immediately*.
+The source link lives in that comment, so it should be there for the first
+people who see the post rather than arriving minutes later.
+
+If you ever do want a delay, set `FIRST_COMMENT_DELAY` in
+`src/lib/postplanner.ts` to one of `ALLOWED_FIRST_COMMENT_DELAYS` —
+**5, 10, 15, 30 or 60**, per their cell G3. Other values are not accepted,
+so a plausible-looking `2` would silently not work.
 
 ### Where the image URL comes from
 

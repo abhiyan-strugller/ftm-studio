@@ -47,15 +47,24 @@ export const COLUMN_COUNT = COLUMNS.length;
 export const MAX_DATA_ROWS = 200;
 
 /**
- * Minutes to delay the first comment.
- *
- * NOTE: the template's own guidance (cell G3) states "Allowed values are
- * 5,10,15, 30 and 60". 5 is the smallest permitted value, so it is the closest
- * thing to "as soon as possible" that the importer will accept. Leaving the
- * cell blank also works and publishes the comment immediately — see the
- * template's row 5 — so set this to `null` if you would rather have that.
+ * Delays the importer accepts, per the template's own guidance in cell G3:
+ * "Allowed values are 5,10,15, 30 and 60". Anything else is rejected or
+ * ignored — a delay of 2, for instance, is not a valid value.
  */
-export const FIRST_COMMENT_DELAY: number | null = 5;
+export const ALLOWED_FIRST_COMMENT_DELAYS = [5, 10, 15, 30, 60] as const;
+
+/**
+ * Minutes to delay the first comment, or `null` to leave the cell blank.
+ *
+ * Blank is the default and means *immediately*: the template's row 5 pairs a
+ * first comment with an empty delay and describes it publishing right after
+ * the post. We carry the source link in that comment, so it needs to be there
+ * for the first people who see the post — not five minutes behind them.
+ *
+ * Set this to one of `ALLOWED_FIRST_COMMENT_DELAYS` if a real delay is ever
+ * wanted. Values outside that list will not work.
+ */
+export const FIRST_COMMENT_DELAY: (typeof ALLOWED_FIRST_COMMENT_DELAYS)[number] | null = null;
 
 export type TemplatePreamble = {
   /** Row 1: the comment-row explanation and the version cell, then blanks. */
