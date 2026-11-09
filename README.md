@@ -2,14 +2,18 @@
 
 Makes the daily posts for the **Follow the Money** Facebook page.
 
-You write one JSON file a day. This turns it into a folder you upload to Post
-Planner: fifteen 1080×1350 images, a CSV with the captions and times, and a
-single web page for reviewing the lot before it goes out.
+You write one JSON file a day. This turns it into fifteen 1080×1350 images, a
+Post Planner bulk-upload CSV, and a single web page for reviewing the lot
+before it goes out. It also publishes the images so Post Planner can fetch
+them.
 
-**It runs entirely on your machine.** It does not connect to Facebook, does not
-connect to Post Planner, does not call any AI service, and has no API keys,
-passwords or `.env` file. Nothing it does is reversible by accident, because
-nothing it does leaves your computer.
+**It never touches Facebook or Post Planner**, calls no AI service, and has no
+API keys, passwords or `.env` file. Writing and building a day happens entirely
+offline on your machine.
+
+The one command that reaches the network is `publish-media`, which pushes the
+finished images to a public GitHub repo so Post Planner's servers can fetch
+them. It uses your existing `gh` login; there is still no secret to store.
 
 ---
 
@@ -73,6 +77,7 @@ Open `input/2026-11-09.json` in any editor. Each post looks like this:
 | `headline` | The big serif line on the image. |
 | `accent_word` | One word from the headline to set in italic colour. Skipped silently if it is not in the headline. |
 | `source` | Printed at the bottom of the image. Write the whole thing: `"Source: BLS"`. |
+| `source_url` | Optional link to the story. **Never on the image** — it becomes the post's first comment, which is where a link belongs on Facebook. |
 | `caption` | The Facebook caption. Goes in the CSV, never on the image. |
 | `scheduled_at` | When it posts. Pre-filled from the slot; change it to move a post. |
 | `data` | The fields specific to that template. |
@@ -99,19 +104,20 @@ Writes `output/2026-11-09/`:
 01-headline.png      ← one image per post, 1080×1350
 02-stats.png
 ...
-postplanner.csv      ← captions, image names, dates and times
+postplanner.csv      ← Post Planner bulk-upload sheet
 index.html           ← review page
 ```
 
-While you are still writing, rebuild just one or two cards:
+While you are still writing, rebuild a subset:
 
 ```powershell
-npm run build-day -- --input input/2026-11-09.json --only 01,03
+npm run build-day -- --input input/2026-11-09.json --only 01,02,03
 ```
 
-`--only` deliberately does **not** rewrite `postplanner.csv`. A CSV with two of
-fifteen rows looks exactly like a finished one, and uploading it would quietly
-publish a near-empty day.
+`--only` narrows everything — images, CSV rows and review page — so you can
+produce a three-row sheet for a first trial upload before committing a full
+day. The review page says it is a partial build so a subset is never mistaken
+for a finished one.
 
 ### 4. Review
 
@@ -124,10 +130,40 @@ Invoke-Item .\output\2026-11-09\index.html
 Every card appears next to its caption, slot time, source, word count, and any
 warning. Scroll once and you have seen the whole day.
 
-### 5. Upload
+### 5. Publish the images
 
-In Post Planner, bulk-upload the PNGs from `output/<date>/` and import
-`postplanner.csv`.
+```powershell
+npm run publish-media -- --date 2026-11-09
+```
+
+Post Planner's servers fetch each image by URL when the post publishes, so the
+files have to be public. This pushes the day's PNGs to a **separate public
+repo**, `ftm-media`, served by GitHub Pages, then checks every URL really
+returns an image before telling you it worked.
+
+```
+  repo      abhiyan-strugller/ftm-media (exists)
+  push      8 file(s) to abhiyan-strugller/ftm-media@main
+  pages     already enabled
+  verify    200  image/png  https://abhiyan-strugller.github.io/ftm-media/2026-11-09/01-headline.png
+  ...
+All 7 image(s) are live
+```
+
+If any URL does not come back as an image, the command **fails** and names it.
+A dead URL is a failed post — do not upload the CSV until they all pass.
+
+> **Why a second repo:** `ftm-studio` is private and stays private. Only the
+> finished images are public, because Post Planner cannot authenticate to fetch
+> them. Day files, captions, drafts and sources never leave the private repo.
+>
+> The images must stay online until the post publishes, so don't delete old
+> folders from `ftm-media` until the day has gone out.
+
+### 6. Upload
+
+In Post Planner, import `output/<date>/postplanner.csv`. The images are already
+hosted, so the sheet is the only thing to upload.
 
 ---
 
@@ -199,42 +235,75 @@ npm run samples
 
 ---
 
-## Changing the CSV columns
+## The CSV format
 
-The real Post Planner column headings are **not confirmed yet**, so they are not
-baked into the code. They live in `config/postplanner-columns.json`:
+Built from Post Planner's real bulk-upload template, committed at
+`reference/sample_bulk_posts_import.xlsx`. That file is the source of truth and
+overrides their public docs wherever the two disagree.
+
+Three things about it decide how the writer works:
+
+1. **Any row whose first cell starts with `##` is ignored on import** — and
+   their own header row is one of those (cell A2 is literally
+   `## POSTING TIME`).
+2. So **the importer never reads column names. Parsing is positional**: nine
+   columns, fixed order, always present. There used to be a
+   `config/postplanner-columns.json` here for renaming headings; it was
+   meaningless once the real file showed names are never read, so it is gone.
+3. **POSTING TIME is text, not a date.** `MM/DD/YYYY`, two spaces, then `H:MM`
+   on a 24-hour clock with the hour *not* zero-padded — exactly matching their
+   own examples, `01/01/2030  8:15` and `07/04/2030  14:30`.
+
+The generated file is:
+
+| Row | Contents |
+| --- | --- |
+| 1 | Their comment-row explanation and version cell, read out of the template |
+| 2 | Their header comment row, also read out of the template |
+| 3+ | One row per post |
+
+and each post row is:
+
+| # | Column | What we put in it |
+| --- | --- | --- |
+| 1 | POSTING TIME | The slot, Eastern. **Never blank** — a blank cell silently turns a scheduled post into a queued one. |
+| 2 | CAPTION | The caption, line breaks intact |
+| 3 | LINK | Blank — their note warns a LINK must not end in a media file type |
+| 4 | MEDIA | The public image URL |
+| 5 | TITLE | Blank (Pinterest/YouTube only) |
+| 6 | FIRST COMMENT | `Source: <name> — <url>`, when the post has a source |
+| 7 | FIRST COMMENT DELAY | `5` when there is a first comment |
+| 8 | TOBI BACKGROUND | Blank |
+| 9 | REEL OR STORY | Blank |
+
+Rows 1 and 2 are **read from the spreadsheet at build time**, not hardcoded, so
+if Post Planner bumps the version it carries through. The nine column names and
+the `##` markers *are* checked, and the build stops if they move: positional
+parsing means a reordered column would quietly file your captions under LINK.
+
+UTF-8 with BOM (row 1 contains an em dash), CRLF rows, RFC 4180 quoting, and a
+hard stop past **200 data rows** — their documented per-file limit.
+
+### A note on the first-comment delay
+
+We send `5`. You may expect a smaller number, but the template's own cell G3
+says *"Allowed values are 5,10,15, 30 and 60"*, so 5 is the shortest delay the
+importer accepts. Leaving the cell blank also works and publishes the comment
+immediately — set `FIRST_COMMENT_DELAY` to `null` in `src/lib/postplanner.ts`
+if you would rather have that.
+
+### Where the image URL comes from
+
+`config/media.json` holds the base:
 
 ```json
-{
-  "text": "Content",
-  "mediaUrl": "Image URL",
-  "date": "Date",
-  "time": "Time"
-}
+{ "baseUrl": "https://abhiyan-strugller.github.io/ftm-media" }
 ```
 
-Change the **values** to match Post Planner's own sample sheet. The **order of
-the keys** is the order of the columns. The four keys on the left are fixed.
-
-> **This file renames headings only.** It does not change what goes *in* the
-> cells. Each column's value is built by the CSV writer.
-
-### If Post Planner needs a URL instead of a filename
-
-The media column currently holds the image **filename** (`01-headline.png`).
-If Post Planner's importer expects a full public URL, **that is a code change,
-not a config edit** — no heading rename will do it.
-
-The value is set in one place, `scripts/build-day.ts`:
-
-```ts
-csvRows.push({ text: post.caption, mediaUrl: file, at });
-```
-
-Change `mediaUrl` to whatever Post Planner expects — most likely
-`` `https://your-host/${day.date}/${file}` `` once the images are hosted
-somewhere it can reach. The images would also need to be uploaded somewhere
-public first; nothing in this project does that.
+Both `build-day` and `publish-media` build URLs through the same
+`mediaUrlFor()` helper in `src/lib/media.ts`, so the address written into the
+CSV is always exactly the one that gets verified. Change the base here if the
+images ever move hosts.
 
 ---
 
@@ -260,7 +329,8 @@ the length of that list.
 | Command | What it does |
 | --- | --- |
 | `npm run new-day -- --date YYYY-MM-DD` | Start a day. `--start N` for issue numbers, `--force` to overwrite. |
-| `npm run build-day -- --input input/<date>.json` | Build the upload folder. `--only 01,03` for a subset. |
+| `npm run build-day -- --input input/<date>.json` | Build the upload folder. `--only 01,02,03` for a subset. |
+| `npm run publish-media -- --date YYYY-MM-DD` | Push that day's images to the public `ftm-media` repo and verify every URL. |
 | `npm run samples` | Re-render the 14 template samples into `samples/`. |
 | `npm run test` | Unit tests. |
 | `npm run build` | Type-checks the whole project. |
@@ -277,7 +347,14 @@ npm install
 npm run build-day -- --input input/example.json
 ```
 
-Needs Node 20 or newer. No configuration, no accounts, no keys.
+Needs Node 20 or newer. No configuration and no keys.
+
+To publish images you also need the GitHub CLI, logged in once:
+
+```powershell
+winget install GitHub.cli
+gh auth login
+```
 
 ---
 
@@ -286,14 +363,22 @@ Needs Node 20 or newer. No configuration, no accounts, no keys.
 ```
 input/<date>.json
         │
-        │  validate        src/lib/day.ts        — errors name the post id
+        │  validate        src/lib/day.ts         — errors name the post id
         │  check fit       src/lib/design/overflow.ts
         ▼
-   render               src/lib/design/   — Satori draws the PNG from JSX
+   render               src/lib/design/        — Satori draws the PNG from JSX
         │
-        ├── <id>-<template>.png
-        ├── postplanner.csv   src/lib/csv.ts            — columns from config/
+        ├── <id>-<template>.png ──────────────┐
+        ├── postplanner.csv   src/lib/csv.ts   │  shape from the real template
+        │                     src/lib/postplanner.ts + src/lib/xlsx.ts
         └── index.html        src/lib/contact-sheet.ts
+                                               │
+                              publish-media ───┘
+                                   │  push to the public ftm-media repo
+                                   ▼
+            https://<user>.github.io/ftm-media/<date>/<file>.png
+                   (the same URL the CSV's MEDIA column holds —
+                    both built by mediaUrlFor() in src/lib/media.ts)
 ```
 
 The fonts in `public/fonts/` are committed on purpose: Satori needs them as
