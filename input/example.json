@@ -15,7 +15,8 @@
       "scheduled_at": "2026-11-09T12:00:00.000Z",
       "data": {
         "dek": "Your savings yield stays high for now — and so does your card APR."
-      }
+      },
+      "source_url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20261109a.htm"
     },
     {
       "id": "02",
@@ -30,11 +31,27 @@
       "scheduled_at": "2026-11-09T13:00:00.000Z",
       "data": {
         "stats": [
-          { "label": "Headline CPI", "value": "2.9%", "delta": "0.1 pt", "direction": "down" },
-          { "label": "Groceries", "value": "1.8%", "delta": "0.2 pt", "direction": "up" },
-          { "label": "Rent", "value": "4.1%", "delta": "0.3 pt", "direction": "down" }
+          {
+            "label": "Headline CPI",
+            "value": "2.9%",
+            "delta": "0.1 pt",
+            "direction": "down"
+          },
+          {
+            "label": "Groceries",
+            "value": "1.8%",
+            "delta": "0.2 pt",
+            "direction": "up"
+          },
+          {
+            "label": "Rent",
+            "value": "4.1%",
+            "delta": "0.3 pt",
+            "direction": "down"
+          }
         ]
-      }
+      },
+      "source_url": "https://www.bls.gov/news.release/cpi.nr0.htm"
     },
     {
       "id": "03",
@@ -48,10 +65,25 @@
       "scheduled_at": "2026-11-09T14:00:00.000Z",
       "data": {
         "series_label": "Average 30-year fixed rate",
-        "x_labels": ["Apr", "May", "Jun", "Jul", "Aug", "Sep"],
-        "y_values": [7.04, 6.88, 6.95, 6.72, 6.51, 6.34],
+        "x_labels": [
+          "Apr",
+          "May",
+          "Jun",
+          "Jul",
+          "Aug",
+          "Sep"
+        ],
+        "y_values": [
+          7.04,
+          6.88,
+          6.95,
+          6.72,
+          6.51,
+          6.34
+        ],
         "value_suffix": "%"
-      }
+      },
+      "source_url": "https://www.freddiemac.com/pmms"
     },
     {
       "id": "04",
@@ -67,12 +99,36 @@
       "data": {
         "unit": "Median asking rent, one bedroom, USD per month",
         "bars": [
-          { "label": "New York", "value": 4100, "display": "$4,100" },
-          { "label": "San Francisco", "value": 3250, "display": "$3,250" },
-          { "label": "Boston", "value": 2990, "display": "$2,990" },
-          { "label": "Miami", "value": 2480, "display": "$2,480" },
-          { "label": "Chicago", "value": 1960, "display": "$1,960" },
-          { "label": "Houston", "value": 1340, "display": "$1,340" }
+          {
+            "label": "New York",
+            "value": 4100,
+            "display": "$4,100"
+          },
+          {
+            "label": "San Francisco",
+            "value": 3250,
+            "display": "$3,250"
+          },
+          {
+            "label": "Boston",
+            "value": 2990,
+            "display": "$2,990"
+          },
+          {
+            "label": "Miami",
+            "value": 2480,
+            "display": "$2,480"
+          },
+          {
+            "label": "Chicago",
+            "value": 1960,
+            "display": "$1,960"
+          },
+          {
+            "label": "Houston",
+            "value": 1340,
+            "display": "$1,340"
+          }
         ]
       }
     },
@@ -98,7 +154,8 @@
           "sub": "Top savings APY you start earning"
         },
         "pill": "Vote in comments"
-      }
+      },
+      "source_url": "https://www.federalreserve.gov/releases/g19/current/"
     },
     {
       "id": "06",
@@ -143,8 +200,16 @@
       "data": {
         "badge": "DEVELOPING",
         "impacts": [
-          { "sector": "Card payments", "change": "delayed", "direction": "down" },
-          { "sector": "Retail stocks", "change": "-1.2%", "direction": "down" }
+          {
+            "sector": "Card payments",
+            "change": "delayed",
+            "direction": "down"
+          },
+          {
+            "sector": "Retail stocks",
+            "change": "-1.2%",
+            "direction": "down"
+          }
         ]
       }
     }

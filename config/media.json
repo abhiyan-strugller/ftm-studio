@@ -1,0 +1,4 @@
+{
+  "_comment": "Base URL for published post images. Post Planner's servers fetch the MEDIA url themselves, so it must be publicly reachable. `npm run publish-media` uploads the PNGs to the ftm-media repo and GitHub Pages serves them from here.",
+  "baseUrl": "https://abhiyan-strugller.github.io/ftm-media"
+}

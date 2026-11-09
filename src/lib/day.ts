@@ -38,6 +38,11 @@ const DayPostBase = {
   kicker: Trimmed.max(48).optional(),
   /** Printed on the card. Include the "Source:" prefix yourself. */
   source: Trimmed.max(90).optional(),
+  /**
+   * Link to the story. Never drawn on the card — it goes in the Post Planner
+   * FIRST COMMENT, which is where a link belongs on Facebook.
+   */
+  source_url: Trimmed.url().max(300).optional(),
   /** The Facebook caption. Goes in the CSV, never on the image. */
   caption: Trimmed.min(1).max(2200),
   /** ISO 8601 instant for the slot this post occupies. */

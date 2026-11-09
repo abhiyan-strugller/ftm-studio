@@ -1,117 +1,36 @@
 /**
- * Post Planner CSV export.
+ * Post Planner bulk-upload CSV.
  *
- * The real column headings are not known yet — Post Planner's sample sheet has
- * not been checked — so nothing here hardcodes them. The mapping lives in
- * `config/postplanner-columns.json` and is read at run time.
+ * Nine positional columns — see `postplanner.ts` for why the column *names*
+ * are irrelevant to the importer and the *order* is the entire contract.
  *
- * That config renames HEADINGS and sets column order. It does not change cell
- * CONTENT: each value comes from `CsvRow` in `buildCsv` below. Switching the
- * media column from a filename to a public URL is therefore a code change at
- * the call site in `scripts/build-day.ts`, not a config edit.
+ * Output shape:
+ *   row 1   the template's comment-row explanation + version cell, then blanks
+ *   row 2   the template's header comment row (A2 starts "##", so it is ignored)
+ *   row 3+  one row per post
  *
- * The file is written UTF-8 **with a BOM** so Excel on Windows opens it as
- * Unicode instead of mangling every curly quote and en dash in the captions.
+ * Written UTF-8 **with a BOM** — row 1 carries an em dash, and without the BOM
+ * Excel on Windows mangles it. CRLF rows, RFC 4180 quoting.
  */
-import { readFile } from "node:fs/promises";
-import path from "node:path";
 import { ET_ZONE } from "./types";
+import {
+  COLUMN_COUNT,
+  FIRST_COMMENT_DELAY,
+  MAX_DATA_ROWS,
+  formatPostingTime,
+  type TemplatePreamble,
+} from "./postplanner";
 
-/** The four fields we know how to emit. Keys are fixed; headings are yours. */
-export const COLUMN_KEYS = ["text", "mediaUrl", "date", "time"] as const;
-export type ColumnKey = (typeof COLUMN_KEYS)[number];
-
-/** Heading per field, in the order the columns should appear. */
-export type ColumnMap = {
-  keys: ColumnKey[];
-  headings: Record<ColumnKey, string>;
-};
-
-export const DEFAULT_COLUMN_MAP: ColumnMap = {
-  keys: ["text", "mediaUrl", "date", "time"],
-  headings: { text: "Content", mediaUrl: "Image URL", date: "Date", time: "Time" },
-};
-
-export const COLUMN_CONFIG_PATH = path.join("config", "postplanner-columns.json");
-
-/**
- * Load the column mapping. Key order in the JSON file becomes column order,
- * which is why this reads the raw object rather than destructuring it.
- */
-export async function loadColumnMap(
-  configPath: string = COLUMN_CONFIG_PATH,
-): Promise<ColumnMap> {
-  let parsed: unknown;
-  try {
-    parsed = JSON.parse(await readFile(configPath, "utf8"));
-  } catch (err) {
-    throw new Error(
-      `Could not read the column mapping at ${configPath}: ` +
-        `${err instanceof Error ? err.message : String(err)}`,
-    );
-  }
-
-  if (!parsed || typeof parsed !== "object" || Array.isArray(parsed)) {
-    throw new Error(`${configPath} must contain a JSON object.`);
-  }
-
-  const entries = Object.entries(parsed as Record<string, unknown>)
-    // `_comment` and any other underscore key is documentation, not a column.
-    .filter(([key]) => !key.startsWith("_"));
-
-  const keys: ColumnKey[] = [];
-  const headings = {} as Record<ColumnKey, string>;
-
-  for (const [key, value] of entries) {
-    if (!(COLUMN_KEYS as readonly string[]).includes(key)) {
-      throw new Error(
-        `${configPath}: unknown field "${key}". Valid fields are ${COLUMN_KEYS.join(", ")}.`,
-      );
-    }
-    if (typeof value !== "string" || value.trim() === "") {
-      throw new Error(`${configPath}: "${key}" must map to a non-empty column heading.`);
-    }
-    keys.push(key as ColumnKey);
-    headings[key as ColumnKey] = value;
-  }
-
-  const missing = COLUMN_KEYS.filter((k) => !keys.includes(k));
-  if (missing.length > 0) {
-    throw new Error(`${configPath} is missing: ${missing.join(", ")}.`);
-  }
-  return { keys, headings };
-}
-
+/** One post, already resolved to the values that go in the sheet. */
 export type CsvRow = {
-  text: string;
-  mediaUrl: string;
-  /** UTC instant of the slot; formatted into ET date and time columns. */
+  /** Slot instant. Rendered as POSTING TIME in Eastern; never blank. */
   at: Date;
+  caption: string;
+  /** Full public URL ending in an image extension. */
+  mediaUrl: string;
+  /** Already composed, e.g. "Source: Freddie Mac — https://…". Blank if none. */
+  firstComment: string;
 };
-
-/** US-style date, in Eastern time: 11/9/2026. */
-export function formatCsvDate(at: Date, timeZone: string = ET_ZONE): string {
-  return new Intl.DateTimeFormat("en-US", {
-    timeZone,
-    month: "numeric",
-    day: "numeric",
-    year: "numeric",
-  }).format(at);
-}
-
-/** US-style time, in Eastern time: 7:00 AM. */
-export function formatCsvTime(at: Date, timeZone: string = ET_ZONE): string {
-  return new Intl.DateTimeFormat("en-US", {
-    timeZone,
-    hour: "numeric",
-    minute: "2-digit",
-    hour12: true,
-  })
-    .format(at)
-    // Intl emits a narrow no-break space before AM/PM in recent ICU versions;
-    // spreadsheets display that as a stray glyph, so normalise it.
-    .replace(/ /g, " ");
-}
 
 /** RFC 4180 escaping: quote when the value contains a delimiter or quote. */
 export function escapeCsvValue(value: string): string {
@@ -121,26 +40,59 @@ export function escapeCsvValue(value: string): string {
   return value;
 }
 
-/** Build the CSV body (no BOM — `writeCsv` adds that). */
-export function buildCsv(
-  rows: CsvRow[],
-  map: ColumnMap = DEFAULT_COLUMN_MAP,
-  timeZone: string = ET_ZONE,
-): string {
-  const lines: string[] = [];
-  lines.push(map.keys.map((k) => escapeCsvValue(map.headings[k])).join(","));
+function toLine(fields: string[]): string {
+  if (fields.length !== COLUMN_COUNT) {
+    throw new Error(`Expected ${COLUMN_COUNT} fields, got ${fields.length}`);
+  }
+  return fields.map(escapeCsvValue).join(",");
+}
 
-  for (const row of rows) {
-    const values: Record<ColumnKey, string> = {
-      text: row.text,
-      mediaUrl: row.mediaUrl,
-      date: formatCsvDate(row.at, timeZone),
-      time: formatCsvTime(row.at, timeZone),
-    };
-    lines.push(map.keys.map((k) => escapeCsvValue(values[k])).join(","));
+/**
+ * The nine fields for one post, in importer order.
+ *
+ * LINK stays blank on purpose: the template warns that a LINK url must not end
+ * in a media file type, and our posts are images with the source carried in the
+ * first comment instead.
+ */
+export function postRowFields(row: CsvRow, timeZone: string = ET_ZONE): string[] {
+  const postingTime = formatPostingTime(row.at, timeZone);
+  if (!postingTime.trim()) {
+    // A blank POSTING TIME silently turns a scheduled post into a queued one.
+    throw new Error("POSTING TIME came out blank, which would queue the post instead of scheduling it");
   }
 
-  // CRLF line endings: the format spreadsheets and Windows tooling expect.
+  const hasComment = row.firstComment.trim() !== "";
+  const delay = hasComment && FIRST_COMMENT_DELAY !== null ? String(FIRST_COMMENT_DELAY) : "";
+
+  return [
+    postingTime, // 1 POSTING TIME
+    row.caption, // 2 CAPTION
+    "", // 3 LINK
+    row.mediaUrl, // 4 MEDIA
+    "", // 5 TITLE
+    hasComment ? row.firstComment : "", // 6 FIRST COMMENT
+    delay, // 7 FIRST COMMENT DELAY
+    "", // 8 TOBI BACKGROUND
+    "", // 9 REEL OR STORY
+  ];
+}
+
+export function buildCsv(
+  rows: CsvRow[],
+  preamble: TemplatePreamble,
+  timeZone: string = ET_ZONE,
+): string {
+  if (rows.length > MAX_DATA_ROWS) {
+    throw new Error(
+      `${rows.length} posts exceeds Post Planner's documented limit of ${MAX_DATA_ROWS} per ` +
+        `bulk upload file. Split the day across more than one file.`,
+    );
+  }
+
+  const lines = [toLine(preamble.row1), toLine(preamble.row2)];
+  for (const row of rows) lines.push(toLine(postRowFields(row, timeZone)));
+
+  // CRLF: the row separator spreadsheets and Windows tooling expect.
   return lines.join("\r\n") + "\r\n";
 }
 
@@ -149,4 +101,18 @@ export const UTF8_BOM = "﻿";
 
 export function csvWithBom(csv: string): Buffer {
   return Buffer.from(UTF8_BOM + csv, "utf8");
+}
+
+/**
+ * Compose the FIRST COMMENT from a post's source.
+ *
+ * `source` is written on the card with its own "Source:" prefix, so that is
+ * stripped before recomposing — otherwise the comment reads "Source: Source: …".
+ */
+export function composeFirstComment(source?: string, sourceUrl?: string): string {
+  const name = (source ?? "").replace(/^\s*source\s*:\s*/i, "").trim();
+  const url = (sourceUrl ?? "").trim();
+  if (!name && !url) return "";
+  if (!name) return `Source: ${url}`;
+  return url ? `Source: ${name} — ${url}` : `Source: ${name}`;
 }

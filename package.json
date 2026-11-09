@@ -14,7 +14,8 @@
     "samples": "tsx --tsconfig scripts/tsconfig.json scripts/render-samples.ts",
     "fonts": "tsx scripts/fetch-fonts.ts",
     "new-day": "tsx --tsconfig scripts/tsconfig.json scripts/new-day.ts",
-    "build-day": "tsx --tsconfig scripts/tsconfig.json scripts/build-day.ts"
+    "build-day": "tsx --tsconfig scripts/tsconfig.json scripts/build-day.ts",
+    "publish-media": "tsx --tsconfig scripts/tsconfig.json scripts/publish-media.ts"
   },
   "dependencies": {
     "next": "^15.5.0",

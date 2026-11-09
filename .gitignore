@@ -26,3 +26,7 @@ next-env.d.ts
 # Generated upload folders. Rebuilt any time from input/<date>.json, and the
 # PNGs are large, so they are not worth versioning.
 output/
+
+# Local working clone of the public ftm-media repo. A cache, not a workspace:
+# publish-media resets it to origin on every run, so it is safe to delete.
+.media-repo/

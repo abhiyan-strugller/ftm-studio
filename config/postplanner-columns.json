@@ -1,7 +1,0 @@
-{
-  "_comment": "Maps our fields to Post Planner's CSV column headings. Change the VALUES to match the headings in Post Planner's own sample sheet; the key order here is the column order in the exported file. Keys are fixed: text, mediaUrl, date, time.",
-  "text": "Content",
-  "mediaUrl": "Image URL",
-  "date": "Date",
-  "time": "Time"
-}
