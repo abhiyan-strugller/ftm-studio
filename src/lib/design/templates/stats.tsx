@@ -5,6 +5,7 @@ import { CONTENT_W, Kicker, MONO_LABEL, SourceLine } from "../frame";
 import { Headline } from "../headline";
 import type { Palette } from "../palettes";
 import type { Direction, PostDoc } from "../../schema";
+import { deltaStyle } from "../delta";
 
 type Doc = Extract<PostDoc, { template: "stats" }>;
 
@@ -28,12 +29,6 @@ function DeltaArrow({ direction, color, size }: { direction: Direction; color: s
   );
 }
 
-function deltaColor(direction: Direction | undefined, palette: Palette): string {
-  // Semantic direction colours, not the accent — see Palette.up/down.
-  if (direction === "up") return palette.up;
-  if (direction === "down") return palette.down;
-  return palette.muted;
-}
 
 export function StatsTemplate({ doc, palette }: { doc: Doc; palette: Palette }) {
   return (
@@ -56,7 +51,10 @@ export function StatsTemplate({ doc, palette }: { doc: Doc; palette: Palette }) 
           columnGap: TILE_GAP,
         }}
       >
-        {doc.data.stats.map((stat, i) => (
+        {doc.data.stats.map((stat, i) => {
+          // Arrow = what the number did; colour = whether that helps the reader.
+          const delta = deltaStyle(stat, palette);
+          return (
           <div
             key={i}
             style={{
@@ -110,11 +108,7 @@ export function StatsTemplate({ doc, palette }: { doc: Doc; palette: Palette }) 
                     columnGap: 8,
                   }}
                 >
-                  <DeltaArrow
-                    direction={stat.direction ?? "flat"}
-                    color={deltaColor(stat.direction, palette)}
-                    size={16}
-                  />
+                  <DeltaArrow direction={delta.arrow} color={delta.color} size={16} />
                   <div
                     style={{
                       display: "flex",
@@ -122,7 +116,7 @@ export function StatsTemplate({ doc, palette }: { doc: Doc; palette: Palette }) 
                       fontWeight: 600,
                       fontSize: 24,
                       letterSpacing: "-0.01em",
-                      color: deltaColor(stat.direction, palette),
+                      color: delta.color,
                     }}
                   >
                     {stat.delta}
@@ -131,7 +125,8 @@ export function StatsTemplate({ doc, palette }: { doc: Doc; palette: Palette }) 
               ) : null}
             </div>
           </div>
-        ))}
+          );
+        })}
       </div>
 
       {doc.data.footnote ? (

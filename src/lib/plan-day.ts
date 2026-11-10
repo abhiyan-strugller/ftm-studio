@@ -140,9 +140,9 @@ export function blankData(template: TemplateName): Record<string, unknown> {
     case "stats":
       return {
         stats: [
-          { label: "", value: "", delta: "", direction: "flat" },
-          { label: "", value: "", delta: "", direction: "flat" },
-          { label: "", value: "", delta: "", direction: "flat" },
+          { label: "", value: "", delta: "", direction: "flat", polarity: "higher_is_good" },
+          { label: "", value: "", delta: "", direction: "flat", polarity: "higher_is_good" },
+          { label: "", value: "", delta: "", direction: "flat", polarity: "higher_is_good" },
         ],
       };
     case "line_chart":

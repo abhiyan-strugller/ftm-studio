@@ -52,9 +52,9 @@ export const SAMPLES: Record<SampleKey, PostDoc> = {
     accent_word: "actually",
     data: {
       stats: [
-        { label: "Headline CPI", value: "2.9%", delta: "0.1 pt", direction: "down" },
-        { label: "Groceries", value: "1.8%", delta: "0.2 pt", direction: "up" },
-        { label: "Rent", value: "4.1%", delta: "0.3 pt", direction: "down" },
+        { label: "Headline CPI", value: "2.9%", delta: "0.1 pt", direction: "down", polarity: "lower_is_good" },
+        { label: "Groceries", value: "1.8%", delta: "0.2 pt", direction: "up", polarity: "lower_is_good" },
+        { label: "Rent", value: "4.1%", delta: "0.3 pt", direction: "down", polarity: "lower_is_good" },
       ],
     },
     source_line: "Source: BLS Consumer Price Index",
@@ -70,9 +70,9 @@ export const SAMPLES: Record<SampleKey, PostDoc> = {
     accent_word: "quietly",
     data: {
       stats: [
-        { label: "Top online savings APY", value: "4.35%", delta: "0.10 pt", direction: "down" },
-        { label: "Big-bank average APY", value: "0.42%", delta: "unchanged", direction: "flat" },
-        { label: "Inflation, 12-month", value: "2.9%", delta: "0.1 pt", direction: "down" },
+        { label: "Top online savings APY", value: "4.35%", delta: "0.10 pt", direction: "down", polarity: "higher_is_good" },
+        { label: "Big-bank average APY", value: "0.42%", delta: "unchanged", direction: "flat", polarity: "higher_is_good" },
+        { label: "Inflation, 12-month", value: "2.9%", delta: "0.1 pt", direction: "down", polarity: "lower_is_good" },
       ],
       footnote:
         "A $10,000 balance earns about $435 a year at the top rate and about $42 at the big-bank average.",

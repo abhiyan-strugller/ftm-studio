@@ -81,6 +81,37 @@ In order:
 
 ---
 
+## Stat deltas: direction and polarity
+
+On a `stats` card, each tile's delta has two separate fields:
+
+- **`direction`** — `up`, `down` or `flat`. What the number actually did. It
+  sets the **arrow**, and the arrow always points the real way.
+- **`polarity`** — whether a rise is good news *for the reader*. It sets the
+  **colour** only.
+  - `higher_is_good` (the default): up is green, down is red. Wages, savings
+    yields, employment, home equity.
+  - `lower_is_good`: up is red, down is green. **Inflation, prices, rent,
+    fees, interest you pay, unemployment.** A falling CPI is good news, so it
+    must not render red.
+
+Set `polarity` explicitly on every tile where falling helps the wallet — the
+build never guesses it from the label. On a CPI card, all three tiles are
+`lower_is_good`:
+
+```json
+{ "label": "Groceries", "value": "1.8%", "delta": "0.2 pt",
+  "direction": "up", "polarity": "lower_is_good" }
+```
+
+renders an **up** arrow in the **negative** colour. Values are snake_case
+exactly as shown; anything else fails validation.
+
+If you cannot say whether higher is better for the reader, the stat probably
+needs a clearer label before it needs a colour.
+
+---
+
 ## Worked example
 
 > Mortgage rates fell for a fourth straight week.

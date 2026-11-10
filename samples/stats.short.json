@@ -12,19 +12,22 @@
         "label": "Headline CPI",
         "value": "2.9%",
         "delta": "0.1 pt",
-        "direction": "down"
+        "direction": "down",
+        "polarity": "lower_is_good"
       },
       {
         "label": "Groceries",
         "value": "1.8%",
         "delta": "0.2 pt",
-        "direction": "up"
+        "direction": "up",
+        "polarity": "lower_is_good"
       },
       {
         "label": "Rent",
         "value": "4.1%",
         "delta": "0.3 pt",
-        "direction": "down"
+        "direction": "down",
+        "polarity": "lower_is_good"
       }
     ]
   },

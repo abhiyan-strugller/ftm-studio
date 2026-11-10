@@ -49,6 +49,15 @@ export type StepIcon = (typeof STEP_ICONS)[number];
 export const DIRECTIONS = ["up", "down", "flat"] as const;
 export type Direction = (typeof DIRECTIONS)[number];
 
+/**
+ * Whether a rise is good news for the reader. Decides a stat delta's COLOUR
+ * only — the arrow always shows the real direction. `lower_is_good` is for
+ * inflation, prices, rent, fees: anything where falling helps the wallet.
+ * Always explicit; never inferred from the label.
+ */
+export const POLARITIES = ["higher_is_good", "lower_is_good"] as const;
+export type Polarity = (typeof POLARITIES)[number];
+
 export const BADGES = ["CONFIRMED", "DEVELOPING", "UNCONFIRMED"] as const;
 export type Badge = (typeof BADGES)[number];
 
@@ -67,6 +76,8 @@ export const StatTileSchema = z.object({
   value: Trimmed.min(1).max(12),
   delta: Trimmed.max(12).optional(),
   direction: z.enum(DIRECTIONS).optional(),
+  /** Default "higher_is_good". See POLARITIES. */
+  polarity: z.enum(POLARITIES).optional(),
 });
 
 export const StatsDataSchema = z.object({
