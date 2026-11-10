@@ -1,0 +1,264 @@
+{
+  "date": "2026-11-10",
+  "start_number": 111001,
+  "posts": [
+    {
+      "id": "01",
+      "template": "headline",
+      "palette": "night",
+      "tag": "Rates",
+      "headline": "The Fed raised rates and nobody noticed",
+      "accent_word": "raised",
+      "source": "Source: Federal Reserve, Sept 17 2026",
+      "caption": "Everyone is waiting for rate cuts. In September the Fed went the other way.\n\nThe target range is 3.75% to 4.00%.\nThat was a quarter-point increase, not a cut.\nIt has not moved since.\n\nMy take: the story people repeat and the number on the page stopped matching months ago.\n\nDid you think rates were coming down this year?\n\nSource: Federal Reserve, Sept 17 2026\nEducational only \u2014 not financial advice.\n\n#Fed #InterestRates #PersonalFinance",
+      "scheduled_at": "2026-11-10T14:00:00.000Z",
+      "data": {
+        "dek": "Target range 3.75%\u20134.00%, a quarter-point higher since September."
+      },
+      "kicker": "Federal Reserve",
+      "source_url": "https://www.federalreserve.gov/monetarypolicy/openmarket.htm"
+    },
+    {
+      "id": "02",
+      "template": "stats",
+      "palette": "cream",
+      "tag": "Housing",
+      "headline": "What a mortgage costs this week",
+      "accent_word": "costs",
+      "source": "Source: Forbes Advisor, Nov 9 2026",
+      "caption": "Mortgage rates as they stand today.\n\n30-year fixed: 7.03%.\n15-year fixed: 6.22%.\nBoth eased slightly from last week.\n\nMy take: the 15-year looks cheaper per year and costs far more per month. That trade-off is the whole decision.\n\nAre you watching rates, or waiting on prices?\n\nSource: Forbes Advisor, Nov 9 2026\nEducational only \u2014 not financial advice.\n\n#Mortgage #Housing #Rates",
+      "scheduled_at": "2026-11-10T15:00:00.000Z",
+      "data": {
+        "stats": [
+          {
+            "label": "30-year fixed",
+            "value": "7.03%"
+          },
+          {
+            "label": "15-year fixed",
+            "value": "6.22%"
+          },
+          {
+            "label": "Week before",
+            "value": "7.11%"
+          }
+        ]
+      },
+      "kicker": "Mortgage rates today",
+      "source_url": "https://www.forbes.com/advisor/mortgages/mortgage-rates-11-09-26/"
+    },
+    {
+      "id": "03",
+      "template": "steps",
+      "palette": "midnight",
+      "tag": "Housing",
+      "headline": "What one point on a mortgage really costs",
+      "accent_word": "really",
+      "source": "Source: Forbes Advisor, Nov 9 2026",
+      "caption": "One percentage point sounds small. Run it on a real loan.\n\n$400,000 at 7.03% is about $2,669 a month.\nThe same loan at 6.03% is about $2,406.\nThat gap is $263 a month.\n\nOver thirty years it is roughly $94,800 \u2014 a second deposit, paid to the bank instead.\n\nMy take: people shop the house for months and the rate for an afternoon.\n\nWould one point change what you could buy?\n\nSource: Forbes Advisor, Nov 9 2026\nEducational only \u2014 not financial advice.\n\n#Mortgage #Housing #Money",
+      "scheduled_at": "2026-11-10T16:00:00.000Z",
+      "data": {
+        "steps": [
+          {
+            "icon": "person",
+            "label": "$400,000 borrowed",
+            "detail": "A normal loan, not a mansion."
+          },
+          {
+            "icon": "store",
+            "label": "$263 more each month",
+            "detail": "7.03% against 6.03%, same loan."
+          },
+          {
+            "icon": "gate",
+            "label": "$94,800 over the term",
+            "detail": "Paid in interest, not equity."
+          }
+        ]
+      }
+    },
+    {
+      "id": "04",
+      "template": "versus",
+      "palette": "forest",
+      "tag": "Debt",
+      "headline": "Same debt, two speeds",
+      "accent_word": "speeds",
+      "source": "Source: calculated at 22% APR",
+      "caption": "A $5,000 card balance at 22%. The only difference is what you pay each month.\n\n$150 a month clears it in 4 years 4 months, and costs $2,798 in interest.\n$300 a month clears it in 1 year 9 months, and costs $1,022.\n\nSame debt. Same rate. $1,776 difference.\n\nMy take: the card company sets the minimum. Everything above it is yours to decide.\n\nWhich number is closer to what you pay now?\n\nSource: calculated at 22% APR\nEducational only \u2014 not financial advice.\n\n#CreditCards #Debt #PersonalFinance",
+      "scheduled_at": "2026-11-10T17:00:00.000Z",
+      "data": {
+        "option_a": {
+          "label": "Pay $150 a month",
+          "amount": "$2,798",
+          "sub": "Interest paid over 4 yrs 4 mo"
+        },
+        "option_b": {
+          "label": "Pay $300 a month",
+          "amount": "$1,022",
+          "sub": "Interest paid over 1 yr 9 mo"
+        },
+        "pill": "Which one are you?"
+      }
+    },
+    {
+      "id": "05",
+      "template": "bar_compare",
+      "palette": "sand",
+      "tag": "Investing",
+      "headline": "The same $200 a month, started later",
+      "accent_word": "later",
+      "source": "Source: calculated at 7% a year",
+      "caption": "$200 a month until 65. The only thing that changes is when you start.\n\nStart at 25: about $525,000.\nStart at 35: about $244,000.\nStart at 45: about $104,000.\n\nTen years of delay costs more than the next twenty years of saving.\n\nMy take: the money you put in barely changes. Time does all the work.\n\nWhat would you tell yourself ten years ago?\n\nSource: calculated at 7% a year\nEducational only \u2014 not financial advice.\n\n#Investing #Retirement #Compounding",
+      "scheduled_at": "2026-11-10T18:00:00.000Z",
+      "data": {
+        "unit": "Value at 65, saving $200 a month at 7%",
+        "bars": [
+          {
+            "label": "Start at 25",
+            "value": 524963,
+            "display": "$525k"
+          },
+          {
+            "label": "Start at 35",
+            "value": 243994,
+            "display": "$244k"
+          },
+          {
+            "label": "Start at 45",
+            "value": 104185,
+            "display": "$104k"
+          }
+        ]
+      }
+    },
+    {
+      "id": "06",
+      "template": "headline",
+      "palette": "ice",
+      "tag": "Banking",
+      "headline": "APR and APY are not the same word",
+      "accent_word": "not",
+      "source": "Source: Truth in Savings Act definitions",
+      "caption": "Two letters apart. They sit on opposite sides of your money.\n\nAPR is what you are charged when you borrow.\nAPY is what you are paid when you save.\nAPY includes compounding. APR usually does not.\n\nA bank will quote you whichever one looks better.\n\nMy take: read which letter is on the page before you read the number.\n\nDo you know the APY on your own savings account?\n\nSource: Truth in Savings Act definitions\nEducational only \u2014 not financial advice.\n\n#Banking #Savings #PersonalFinance",
+      "scheduled_at": "2026-11-10T19:00:00.000Z",
+      "data": {
+        "dek": "One is what you pay. One is what you earn. Banks quote whichever flatters them."
+      }
+    },
+    {
+      "id": "07",
+      "template": "stats",
+      "palette": "night",
+      "tag": "Investing",
+      "headline": "What a one percent fee takes",
+      "accent_word": "takes",
+      "source": "Source: calculated on $100,000 over 30 years",
+      "caption": "A 1% fee does not sound like a lot. Give it thirty years.\n\n$100,000 growing at 7% becomes about $761,000.\nThe same money at 6% becomes about $574,000.\nThe one point difference is roughly $187,000.\n\nMy take: nobody sends you a bill for this. It just quietly isn't there at the end.\n\nDo you know what your retirement account charges you?\n\nSource: calculated on $100,000 over 30 years\nEducational only \u2014 not financial advice.\n\n#Investing #Fees #Retirement",
+      "scheduled_at": "2026-11-10T20:00:00.000Z",
+      "data": {
+        "stats": [
+          {
+            "label": "At 7% a year",
+            "value": "$761k"
+          },
+          {
+            "label": "At 6% a year",
+            "value": "$574k"
+          },
+          {
+            "label": "The 1% fee",
+            "value": "$187k"
+          }
+        ]
+      }
+    },
+    {
+      "id": "08",
+      "template": "steps",
+      "palette": "cream",
+      "tag": "Credit",
+      "headline": "How one late payment keeps costing you",
+      "accent_word": "keeps",
+      "source": "Source: FICO scoring factors",
+      "caption": "The late fee is the cheapest part.\n\nA payment lands 30 days late.\nIt goes on your credit file and can sit there seven years.\nA lower score raises the rate on the next loan you take.\n\nThe fee was $35. The score is what costs you.\n\nMy take: autopay the minimum on everything, then pay properly on top. The minimum is insurance, not a plan.\n\nIs every card you own on autopay right now?\n\nSource: FICO scoring factors\nEducational only \u2014 not financial advice.\n\n#Credit #CreditScore #PersonalFinance",
+      "scheduled_at": "2026-11-10T21:00:00.000Z",
+      "data": {
+        "steps": [
+          {
+            "icon": "person",
+            "label": "One payment misses 30 days",
+            "detail": "A $35 fee, and a mark on file."
+          },
+          {
+            "icon": "gate",
+            "label": "The score drops",
+            "detail": "It can stay on the report for seven years."
+          },
+          {
+            "icon": "store",
+            "label": "The next loan costs more",
+            "detail": "Car, mortgage, insurance in some states."
+          }
+        ]
+      }
+    },
+    {
+      "id": "09",
+      "template": "versus",
+      "palette": "midnight",
+      "tag": "Money",
+      "headline": "Clear the debt or build the cushion",
+      "accent_word": "or",
+      "source": "Source: calculated, 22% APR against 4% APY",
+      "caption": "You have $1,000 spare. Two honest answers.\n\nPaying down a 22% card is a guaranteed 22% return.\nNo savings account pays close to that.\nBut a card you have paid off is also a card you can run up again when the car breaks.\n\nMy take: a small cushion first, then attack the card. The cushion is what stops the card coming back.\n\nWhich would you do with $1,000 today?\n\nSource: calculated, 22% APR against 4% APY\nEducational only \u2014 not financial advice.\n\n#Debt #Savings #PersonalFinance",
+      "scheduled_at": "2026-11-10T22:00:00.000Z",
+      "data": {
+        "option_a": {
+          "label": "Kill the 22% card",
+          "amount": "22%",
+          "sub": "Guaranteed return, no risk"
+        },
+        "option_b": {
+          "label": "Build the cushion",
+          "amount": "4%",
+          "sub": "Earns less, stops the relapse"
+        },
+        "pill": "Tell me which"
+      }
+    },
+    {
+      "id": "10",
+      "template": "line_chart",
+      "palette": "forest",
+      "tag": "Investing",
+      "headline": "What $10,000 does if you leave it alone",
+      "accent_word": "alone",
+      "source": "Source: calculated at 7% a year",
+      "caption": "$10,000. No more added. Thirty years.\n\nYear 10: about $19,700.\nYear 20: about $38,700.\nYear 30: about $76,100.\n\nThe first double takes ten years. The last double takes ten years and adds $38,000.\n\nMy take: the boring middle is where it happens, and it is also where most people sell.\n\nWhat is the longest you have left money untouched?\n\nSource: calculated at 7% a year\nEducational only \u2014 not financial advice.\n\n#Investing #Compounding #Patience",
+      "scheduled_at": "2026-11-10T23:00:00.000Z",
+      "data": {
+        "series_label": "$10,000 growing at 7% a year",
+        "x_labels": [
+          "Now",
+          "5y",
+          "10y",
+          "15y",
+          "20y",
+          "25y",
+          "30y"
+        ],
+        "y_values": [
+          10000,
+          14026,
+          19672,
+          27590,
+          38697,
+          54274,
+          76123
+        ],
+        "value_prefix": "$"
+      }
+    }
+  ]
+}
