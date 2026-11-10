@@ -19,7 +19,18 @@ export const MEDIA_CONFIG_PATH = path.join("config", "media.json");
 export type MediaConfig = {
   /** No trailing slash; `<baseUrl>/<date>/<file>.png`. */
   baseUrl: string;
+  /**
+   * GitHub account that owns the `ftm-media` repo. Read from config rather than
+   * asked of the GitHub API: a scheduled cloud session cannot call user-level
+   * endpoints such as `/user`, so the owner has to be known up front.
+   * `undefined` when absent — `build-day` does not need it, `publish-media`
+   * insists on it via `requireMediaOwner`.
+   */
+  owner?: string;
 };
+
+/** GitHub's login rules: 1–39 chars, alphanumerics and single inner hyphens. */
+const GITHUB_LOGIN = /^[A-Za-z0-9](?:[A-Za-z0-9]|-(?=[A-Za-z0-9])){0,38}$/;
 
 export function loadMediaConfig(configPath: string = MEDIA_CONFIG_PATH): MediaConfig {
   let parsed: unknown;
@@ -48,7 +59,32 @@ export function loadMediaConfig(configPath: string = MEDIA_CONFIG_PATH): MediaCo
         `an http:// or relative URL. Got ${JSON.stringify(baseUrl)}.`,
     );
   }
-  return { baseUrl };
+
+  const rawOwner = (parsed as Record<string, unknown>).owner;
+  let owner: string | undefined;
+  if (rawOwner !== undefined) {
+    if (typeof rawOwner !== "string" || !GITHUB_LOGIN.test(rawOwner.trim())) {
+      throw new Error(
+        `${configPath}: "owner" must be a GitHub username, e.g. "abhiyan-strugller". ` +
+          `Got ${JSON.stringify(rawOwner)}.`,
+      );
+    }
+    owner = rawOwner.trim();
+  }
+
+  return owner === undefined ? { baseUrl } : { baseUrl, owner };
+}
+
+/** The media repo owner, or a clear error saying where to put it. */
+export function requireMediaOwner(config: MediaConfig, configPath: string = MEDIA_CONFIG_PATH): string {
+  if (!config.owner) {
+    throw new Error(
+      `${configPath} has no "owner". Add the GitHub account that owns the ftm-media repo ` +
+        `beside "baseUrl", e.g.
+  "owner": "abhiyan-strugller"`,
+    );
+  }
+  return config.owner;
 }
 
 /**

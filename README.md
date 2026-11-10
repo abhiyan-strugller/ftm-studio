@@ -13,7 +13,8 @@ offline on your machine.
 
 The one command that reaches the network is `publish-media`, which pushes the
 finished images to a public GitHub repo so Post Planner's servers can fetch
-them. It uses your existing `gh` login; there is still no secret to store.
+them. It uses plain git with whatever credentials git already has; there is
+still no secret to store.
 
 ---
 
@@ -141,10 +142,17 @@ files have to be public. This pushes the day's PNGs to a **separate public
 repo**, `ftm-media`, served by GitHub Pages, then checks every URL really
 returns an image before telling you it worked.
 
+It uses **plain git only** — `ls-remote`, `clone`/`fetch`, `commit`, `push` —
+and never the `gh` CLI or the GitHub API, so it runs the same on your laptop
+and in a scheduled cloud session (which is refused user-level API calls). Every
+git command is printed as it runs; add `--dry-run` to see them without running
+any.
+
 ```
-  repo      abhiyan-strugller/ftm-media (exists)
+  $ git ls-remote --heads https://github.com/abhiyan-strugller/ftm-media.git
+  repo      abhiyan-strugller/ftm-media (reachable)
+  ...
   push      8 file(s) to abhiyan-strugller/ftm-media@main
-  pages     already enabled
   verify    200  image/png  https://abhiyan-strugller.github.io/ftm-media/2026-11-09/01-headline.png
   ...
 All 7 image(s) are live
@@ -297,11 +305,19 @@ so a plausible-looking `2` would silently not work.
 
 ### Where the image URL comes from
 
-`config/media.json` holds the base:
+`config/media.json` holds the base, and the GitHub account that owns
+`ftm-media`:
 
 ```json
-{ "baseUrl": "https://abhiyan-strugller.github.io/ftm-media" }
+{
+  "baseUrl": "https://abhiyan-strugller.github.io/ftm-media",
+  "owner": "abhiyan-strugller"
+}
 ```
+
+`owner` lives here because `publish-media` must not ask the GitHub API who you
+are — that call is blocked in cloud sessions. `build-day` ignores it;
+`publish-media` stops with a clear message if it is missing.
 
 Both `build-day` and `publish-media` build URLs through the same
 `mediaUrlFor()` helper in `src/lib/media.ts`, so the address written into the
@@ -352,12 +368,17 @@ npm run build-day -- --input input/example.json
 
 Needs Node 20 or newer. No configuration and no keys.
 
-To publish images you also need the GitHub CLI, logged in once:
+To publish images, git needs push access to `ftm-media`, and the repo has to
+exist. **`publish-media` never creates it** — that is a one-time step by hand:
 
-```powershell
-winget install GitHub.cli
-gh auth login
-```
+1. On github.com, create a **public** repo named `ftm-media` under the account
+   in `config/media.json` → `owner`.
+2. In that repo: **Settings → Pages → Deploy from a branch → `main`, `/ (root)`**.
+3. For scheduled cloud runs, add `<owner>/ftm-media` to the environment's
+   repositories, so the session's git credentials can push to it.
+
+If the repo is missing or unreachable, `publish-media` fails on its first
+command (`git ls-remote`) and prints these steps.
 
 ---
 

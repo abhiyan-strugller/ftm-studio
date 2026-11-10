@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { mkdtempSync, writeFileSync } from "node:fs";
+import { mkdtempSync, readFileSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import path from "node:path";
 import {
@@ -7,6 +7,7 @@ import {
   loadMediaConfig,
   mediaUrlFor,
   MEDIA_CONFIG_PATH,
+  requireMediaOwner,
 } from "@/lib/media";
 
 function writeConfig(contents: unknown): string {
@@ -102,5 +103,51 @@ describe("loadMediaConfig", () => {
 
   it("explains the expected shape when the file is missing", () => {
     expect(() => loadMediaConfig("config/not-here.json")).toThrow(/baseUrl/);
+  });
+});
+
+describe("media repo owner", () => {
+  it("is set in the committed config", () => {
+    expect(requireMediaOwner(loadMediaConfig(MEDIA_CONFIG_PATH))).toBe("abhiyan-strugller");
+  });
+
+  it("reads owner beside baseUrl", () => {
+    const config = loadMediaConfig(writeConfig({ baseUrl: "https://x.io/m", owner: " someone " }));
+    expect(config.owner).toBe("someone");
+  });
+
+  it("leaves owner undefined when absent, so build-day still works", () => {
+    expect(loadMediaConfig(writeConfig({ baseUrl: "https://x.io/m" })).owner).toBeUndefined();
+  });
+
+  it("fails clearly when publish-media needs an owner that is not there", () => {
+    const config = loadMediaConfig(writeConfig({ baseUrl: "https://x.io/m" }));
+    expect(() => requireMediaOwner(config)).toThrow(/no "owner"/);
+  });
+
+  it.each(["", "has space", "-leading", "trailing-", "a/b", 42])("rejects owner %j", (owner) => {
+    expect(() => loadMediaConfig(writeConfig({ baseUrl: "https://x.io/m", owner }))).toThrow(
+      /must be a GitHub username/,
+    );
+  });
+});
+
+describe("publish-media runs plain git only", () => {
+  // Cloud sessions get HTTP 403 on user-level GitHub API paths. Any `gh` call
+  // here would break scheduled runs, so the script may only ever spawn git.
+  const source = readFileSync(path.join("scripts", "publish-media.ts"), "utf8");
+  const code = source.replace(/\/\*[\s\S]*?\*\//g, "").replace(/^\s*\/\/.*$/gm, "");
+
+  it("spawns nothing but git", () => {
+    const spawned = [...code.matchAll(/execFileSync\(\s*("[^"]*"|\w+)/g)].map((m) => m[1]);
+    expect(spawned.length).toBeGreaterThan(0);
+    expect(new Set(spawned)).toEqual(new Set(['"git"']));
+    expect(code).not.toMatch(/\b(exec|execSync|spawn|spawnSync)\(/);
+  });
+
+  it("never calls gh, the user API, or repo creation/view", () => {
+    expect(code).not.toMatch(/["'`]gh["'`]|gh\.exe|api\s+user|repo\s*create|repo\s*view/i);
+    expect(code).not.toMatch(/["']repo["'],\s*["'](create|view)["']/);
+    expect(code).not.toMatch(/api\.github\.com/);
   });
 });
