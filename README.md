@@ -274,7 +274,7 @@ and each post row is:
 
 | # | Column | What we put in it |
 | --- | --- | --- |
-| 1 | POSTING TIME | The slot, Eastern. **Never blank** — a blank cell silently turns a scheduled post into a queued one. |
+| 1 | POSTING TIME | The slot, written on **Post Planner's clock — Mountain** (see below). **Never blank** — a blank cell silently turns a scheduled post into a queued one. |
 | 2 | CAPTION | The caption, line breaks intact |
 | 3 | LINK | Blank — their note warns a LINK must not end in a media file type |
 | 4 | MEDIA | The public image URL |
@@ -340,6 +340,24 @@ They are US Eastern wall-clock times and follow daylight saving automatically:
 08:00 ET is 12:00 UTC in winter and 13:00 UTC in summer, and you never have to
 think about it. Add or remove entries and the daily target follows — it is just
 the length of that list.
+
+### Post Planner reads times in Mountain, not Eastern
+
+The Post Planner account schedules in **`America/Edmonton`** (its scheduler
+field says so), and it reads a bare `8:15` in the CSV as 8:15 *in that zone*.
+So the slot instant stays Eastern, but POSTING TIME is written in Mountain:
+the 07:00 ET slot appears in the CSV as `5:00`, 21:00 ET as `19:00`. The
+contact sheet still shows Eastern.
+
+The zone lives in `config/postplanner.json`:
+
+```json
+{ "timeZone": "America/Edmonton" }
+```
+
+If the account's zone ever changes, change it here — it must match what Post
+Planner shows, or every post shifts. A missing file or key means
+`America/Edmonton`; an unknown zone name stops the build.
 
 ---
 

@@ -12,9 +12,9 @@
  * Written UTF-8 **with a BOM** — row 1 carries an em dash, and without the BOM
  * Excel on Windows mangles it. CRLF rows, RFC 4180 quoting.
  */
-import { ET_ZONE } from "./types";
 import {
   COLUMN_COUNT,
+  DEFAULT_POSTPLANNER_ZONE,
   FIRST_COMMENT_DELAY,
   MAX_DATA_ROWS,
   formatPostingTime,
@@ -23,7 +23,7 @@ import {
 
 /** One post, already resolved to the values that go in the sheet. */
 export type CsvRow = {
-  /** Slot instant. Rendered as POSTING TIME in Eastern; never blank. */
+  /** Slot instant. Written as POSTING TIME in the Post Planner account zone (Mountain); never blank. */
   at: Date;
   caption: string;
   /** Full public URL ending in an image extension. */
@@ -54,7 +54,7 @@ function toLine(fields: string[]): string {
  * in a media file type, and our posts are images with the source carried in the
  * first comment instead.
  */
-export function postRowFields(row: CsvRow, timeZone: string = ET_ZONE): string[] {
+export function postRowFields(row: CsvRow, timeZone: string = DEFAULT_POSTPLANNER_ZONE): string[] {
   const postingTime = formatPostingTime(row.at, timeZone);
   if (!postingTime.trim()) {
     // A blank POSTING TIME silently turns a scheduled post into a queued one.
@@ -80,7 +80,7 @@ export function postRowFields(row: CsvRow, timeZone: string = ET_ZONE): string[]
 export function buildCsv(
   rows: CsvRow[],
   preamble: TemplatePreamble,
-  timeZone: string = ET_ZONE,
+  timeZone: string = DEFAULT_POSTPLANNER_ZONE,
 ): string {
   if (rows.length > MAX_DATA_ROWS) {
     throw new Error(

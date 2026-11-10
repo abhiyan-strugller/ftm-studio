@@ -1,0 +1,4 @@
+{
+  "_comment": "The time zone Post Planner's scheduler reads POSTING TIME in. Must match the account setting (the scheduler's own field reads America/Edmonton). Slots are still authored in US Eastern; only how the time is written into the CSV follows this zone. Defaults to America/Edmonton if this key or file is missing.",
+  "timeZone": "America/Edmonton"
+}

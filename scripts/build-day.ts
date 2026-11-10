@@ -24,6 +24,7 @@ import { mixWarnings, type MixItem } from "../src/lib/mix";
 import { buildCsv, composeFirstComment, csvWithBom, type CsvRow } from "../src/lib/csv";
 import {
   MAX_DATA_ROWS,
+  loadPostPlannerZone,
   readTemplatePreamble,
   TemplateShapeError,
 } from "../src/lib/postplanner";
@@ -73,6 +74,7 @@ async function main(): Promise<void> {
   // base URL would otherwise only show up as a silently unusable sheet.
   const preamble = readTemplatePreamble();
   const media = loadMediaConfig();
+  const plannerZone = loadPostPlannerZone();
 
   // Resolve --only against real ids so a typo fails instead of building nothing.
   let indices = day.posts.map((_, i) => i);
@@ -178,10 +180,12 @@ async function main(): Promise<void> {
   }
 
   // --- CSV ------------------------------------------------------------------
-  await writeFile(path.join(outDir, "postplanner.csv"), csvWithBom(buildCsv(csvRows, preamble)));
+  await writeFile(path.join(outDir, "postplanner.csv"), csvWithBom(buildCsv(csvRows, preamble, plannerZone)));
   console.log(
     `\n  postplanner.csv  ${csvRows.length} data row${csvRows.length === 1 ? "" : "s"}` +
-      `${only ? " (subset)" : ""}, under "${preamble.version}"`,
+      `${only ? " (subset)" : ""}, under "${preamble.version}"` +
+      `
+                   POSTING TIME written in ${plannerZone} (Post Planner's zone)`,
   );
 
   // --- Contact sheet --------------------------------------------------------

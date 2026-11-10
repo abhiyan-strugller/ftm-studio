@@ -14,12 +14,20 @@ import {
   FIRST_COMMENT_DELAY,
   MAX_DATA_ROWS,
   formatPostingTime,
+  DEFAULT_POSTPLANNER_ZONE,
+  loadPostPlannerZone,
+  POSTPLANNER_CONFIG_PATH,
   readTemplatePreamble,
   TemplateShapeError,
   TEMPLATE_PATH,
 } from "@/lib/postplanner";
 import { ET_ZONE } from "@/lib/types";
 import { slotInstant } from "@/lib/time";
+import { mkdtempSync, writeFileSync } from "node:fs";
+import { tmpdir } from "node:os";
+import path from "node:path";
+
+const MT = "America/Edmonton";
 
 /**
  * A stubbed preamble, so most of these tests do not depend on the real
@@ -92,6 +100,80 @@ describe("POSTING TIME matches the template's own examples", () => {
   });
 });
 
+describe("POSTING TIME is written in Post Planner's zone, Mountain", () => {
+  it("defaults to America/Edmonton, the zone the scheduler shows", () => {
+    expect(DEFAULT_POSTPLANNER_ZONE).toBe("America/Edmonton");
+    expect(loadPostPlannerZone(POSTPLANNER_CONFIG_PATH)).toBe("America/Edmonton");
+  });
+
+  it("is what buildCsv and postRowFields use when no zone is passed", () => {
+    // 07:00 ET on 9 Nov — 12:00 UTC — is 05:00 MST.
+    expect(postRowFields(row())[0]).toBe("11/09/2026  5:00");
+    expect(dataLines(buildCsv([row()], PREAMBLE))[0].startsWith("11/09/2026  5:00,")).toBe(true);
+  });
+
+  it("writes a single-digit hour with no leading zero", () => {
+    const formatted = formatPostingTime(slotInstant("2026-11-09", "09:00"), MT);
+    expect(formatted).toBe("11/09/2026  7:00");
+    expect(formatted).not.toMatch(/ {2}0\d:/);
+    expect(/^\d{2}\/\d{2}\/\d{4} {2}[1-9]?\d:\d{2}$/.test(formatted)).toBe(true);
+  });
+
+  it("keeps the 24-hour clock in the afternoon", () => {
+    expect(formatPostingTime(slotInstant("2026-11-09", "21:00"), MT)).toBe("11/09/2026  19:00");
+  });
+
+  it("follows Mountain DST across the spring change (8 Mar 2026)", () => {
+    // Same UTC instant either side: MST (-7) then MDT (-6), so the wall hour moves.
+    expect(formatPostingTime(new Date("2026-03-07T15:00:00Z"), MT)).toBe("03/07/2026  8:00");
+    expect(formatPostingTime(new Date("2026-03-09T15:00:00Z"), MT)).toBe("03/09/2026  9:00");
+    // And an 08:00 ET slot stays two hours behind, at 6:00 MT, on both days.
+    expect(formatPostingTime(slotInstant("2026-03-07", "08:00"), MT)).toBe("03/07/2026  6:00");
+    expect(formatPostingTime(slotInstant("2026-03-09", "08:00"), MT)).toBe("03/09/2026  6:00");
+  });
+
+  it("follows Mountain DST across the autumn change (1 Nov 2026)", () => {
+    expect(formatPostingTime(new Date("2026-10-31T15:00:00Z"), MT)).toBe("10/31/2026  9:00");
+    expect(formatPostingTime(new Date("2026-11-02T15:00:00Z"), MT)).toBe("11/02/2026  8:00");
+    expect(formatPostingTime(slotInstant("2026-10-31", "20:00"), MT)).toBe("10/31/2026  18:00");
+    expect(formatPostingTime(slotInstant("2026-11-02", "20:00"), MT)).toBe("11/02/2026  18:00");
+  });
+
+  it("is exactly two hours behind every Eastern slot, never the Eastern hour", () => {
+    for (const date of ["2026-01-15", "2026-07-15"]) {
+      expect(postRowFields(row({ at: slotInstant(date, "13:00") }))[0].endsWith("  11:00")).toBe(true);
+    }
+  });
+
+  it("uses the Mountain calendar day near midnight", () => {
+    // 05:30 UTC on the 10th is 22:30 on the 9th in Mountain time.
+    expect(formatPostingTime(new Date("2026-11-10T05:30:00Z"), MT)).toBe("11/09/2026  22:30");
+  });
+
+  describe("config/postplanner.json", () => {
+    const write = (contents: unknown): string => {
+      const file = path.join(mkdtempSync(path.join(tmpdir(), "ftm-pp-")), "postplanner.json");
+      writeFileSync(file, typeof contents === "string" ? contents : JSON.stringify(contents), "utf8");
+      return file;
+    };
+
+    it("falls back to the default when the file or key is missing", () => {
+      expect(loadPostPlannerZone("config/not-here.json")).toBe(MT);
+      expect(loadPostPlannerZone(write({}))).toBe(MT);
+    });
+
+    it("honours an explicit zone", () => {
+      expect(loadPostPlannerZone(write({ timeZone: "America/Denver" }))).toBe("America/Denver");
+    });
+
+    it("rejects a zone Intl does not know, rather than shifting every post", () => {
+      expect(() => loadPostPlannerZone(write({ timeZone: "Mountain/Nowhere" }))).toThrow(/not a recognised/);
+      expect(() => loadPostPlannerZone(write({ timeZone: "" }))).toThrow(/IANA/);
+      expect(() => loadPostPlannerZone(write("{ nope"))).toThrow(/Could not read/);
+    });
+  });
+});
+
 describe("the nine positional fields", () => {
   it("emits exactly nine, in importer order", () => {
     const fields = postRowFields(row());
@@ -101,7 +183,8 @@ describe("the nine positional fields", () => {
 
   it("puts posting time, caption and media in slots 1, 2 and 4", () => {
     const fields = postRowFields(row());
-    expect(fields[0]).toBe("11/09/2026  7:00");
+    // 07:00 ET slot, written on Post Planner's Mountain clock.
+    expect(fields[0]).toBe("11/09/2026  5:00");
     expect(fields[1]).toBe("Rates held steady.");
     expect(fields[3]).toBe("https://example.github.io/ftm-media/2026-11-09/01-headline.png");
   });

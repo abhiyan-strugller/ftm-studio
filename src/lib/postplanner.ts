@@ -20,8 +20,57 @@
  * validated hard: if the columns move, the build stops rather than quietly
  * emitting a file that imports into the wrong fields.
  */
+import { existsSync, readFileSync } from "node:fs";
 import path from "node:path";
 import { cell, readXlsxSheet, type SheetGrid } from "./xlsx";
+
+// ---------------------------------------------------------------------------
+// Scheduler time zone
+// ---------------------------------------------------------------------------
+
+export const POSTPLANNER_CONFIG_PATH = path.join("config", "postplanner.json");
+
+/**
+ * The zone Post Planner reads POSTING TIME in. It is a property of the Post
+ * Planner account, not of our slots: the scheduler's own field reads
+ * "America/Edmonton", so a bare "8:15" in the sheet means 8:15 Mountain.
+ *
+ * Our slots are still authored in US Eastern. The instant is unchanged; only
+ * how it is written into the CSV follows this zone — 07:00 ET is written "5:00".
+ */
+export const DEFAULT_POSTPLANNER_ZONE = "America/Edmonton";
+
+/**
+ * Read `timeZone` from `config/postplanner.json`. A missing file or key falls
+ * back to `DEFAULT_POSTPLANNER_ZONE`; a zone `Intl` does not recognise fails,
+ * because a typo would otherwise shift every post.
+ */
+export function loadPostPlannerZone(configPath: string = POSTPLANNER_CONFIG_PATH): string {
+  if (!existsSync(configPath)) return DEFAULT_POSTPLANNER_ZONE;
+
+  let parsed: unknown;
+  try {
+    parsed = JSON.parse(readFileSync(configPath, "utf8"));
+  } catch (err) {
+    throw new Error(`Could not read ${configPath}: ${err instanceof Error ? err.message : String(err)}`);
+  }
+  if (!parsed || typeof parsed !== "object" || Array.isArray(parsed)) {
+    throw new Error(`${configPath} must contain a JSON object.`);
+  }
+
+  const raw = (parsed as Record<string, unknown>).timeZone;
+  if (raw === undefined) return DEFAULT_POSTPLANNER_ZONE;
+  if (typeof raw !== "string" || raw.trim() === "") {
+    throw new Error(`${configPath}: "timeZone" must be an IANA zone name such as "America/Edmonton".`);
+  }
+  const zone = raw.trim();
+  try {
+    new Intl.DateTimeFormat("en-US", { timeZone: zone });
+  } catch {
+    throw new Error(`${configPath}: "timeZone" ${JSON.stringify(zone)} is not a recognised IANA zone.`);
+  }
+  return zone;
+}
 
 export const TEMPLATE_PATH = path.join("reference", "sample_bulk_posts_import.xlsx");
 
@@ -157,8 +206,10 @@ export function readTemplatePreamble(templatePath: string = TEMPLATE_PATH): Temp
 /**
  * Format an instant as Post Planner's POSTING TIME text.
  *
- * MM/DD/YYYY, two spaces, H:MM on a 24-hour clock, hour not zero-padded, in
- * US Eastern. Matches the template's own examples exactly:
+ * MM/DD/YYYY, two spaces, H:MM on a 24-hour clock, hour not zero-padded, as
+ * seen in `timeZone` — which must be the zone the Post Planner account
+ * schedules in (`loadPostPlannerZone`), not the zone our slots are authored
+ * in. DST is handled by `Intl`. Matches the template's own examples exactly:
  * "01/01/2030  8:15" and "07/04/2030  14:30".
  */
 export function formatPostingTime(at: Date, timeZone: string): string {
