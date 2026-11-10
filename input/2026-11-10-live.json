@@ -1,0 +1,272 @@
+{
+  "date": "2026-11-10",
+  "start_number": 111001,
+  "posts": [
+    {
+      "id": "01",
+      "template": "headline",
+      "palette": "night",
+      "tag": "Inflation",
+      "headline": "Nobody knows what a year of inflation cost you",
+      "accent_word": "Nobody",
+      "source": "Source: BLS, October 2026 CPI",
+      "caption": "The October inflation report came out this morning. It is missing the number everyone quotes.\n\nThere is no 12-month inflation rate.\nNot for food. Not for rent. Not for the overall index.\nBLS could not publish one.\n\nLast October, during the funding lapse, nobody went out and collected the prices. You cannot compare this year to a year that was never measured.\n\nMy take: the number is gone for a reason that had nothing to do with the economy.\n\nDid you know this year's inflation figure does not exist?\n\nSource: BLS, October 2026 CPI\nEducational only \u2014 not financial advice.\n\n#Inflation #CPI #Economy",
+      "scheduled_at": "2026-11-10T17:00:00.000Z",
+      "data": {
+        "dek": "October 2026 CPI published with no headline annual rate \u2014 last October was never surveyed."
+      },
+      "source_url": "https://www.bls.gov/news.release/archives/cpi_11102026.htm"
+    },
+    {
+      "id": "02",
+      "template": "stats",
+      "palette": "cream",
+      "tag": "Inflation",
+      "headline": "What October actually did to prices",
+      "accent_word": "actually",
+      "source": "Source: BLS, October 2026 CPI",
+      "caption": "The monthly numbers still exist. Here they are.\n\nOverall prices rose 0.4% in October.\nCore, stripping out food and fuel, rose 0.3%.\nShelter rose 0.3%.\n\nSeptember was worse at 0.6%, so the pace eased. Eased is not the same as cheap.\n\nMy take: a slower rate of increase still means a higher bill than last month.\n\nHas your weekly shop actually got cheaper?\n\nSource: BLS, October 2026 CPI\nEducational only \u2014 not financial advice.\n\n#Inflation #CPI #CostOfLiving",
+      "scheduled_at": "2026-11-10T18:15:00.000Z",
+      "data": {
+        "stats": [
+          {
+            "label": "All items, October",
+            "value": "+0.4%",
+            "delta": "from +0.6%",
+            "polarity": "lower_is_good"
+          },
+          {
+            "label": "Core",
+            "value": "+0.3%",
+            "polarity": "lower_is_good"
+          },
+          {
+            "label": "Shelter",
+            "value": "+0.3%",
+            "polarity": "lower_is_good"
+          }
+        ]
+      },
+      "source_url": "https://www.bls.gov/news.release/archives/cpi_11102026.htm"
+    },
+    {
+      "id": "03",
+      "template": "stats",
+      "palette": "midnight",
+      "tag": "Inflation",
+      "headline": "The only three yearly numbers that survived",
+      "accent_word": "three",
+      "source": "Source: BLS, October 2026 CPI",
+      "caption": "Almost every annual figure is missing this month. Three made it through.\n\nGasoline: up 37.4% over twelve months.\nNew vehicles: up 0.7%.\nUsed cars and trucks: down 3.3%.\n\nThat is the entire published picture of your year.\n\nMy take: fuel is the one place the damage is on the record, and it is the number people feel every week.\n\nWhat has your fuel bill done this year?\n\nSource: BLS, October 2026 CPI\nEducational only \u2014 not financial advice.\n\n#Gas #Inflation #CostOfLiving",
+      "scheduled_at": "2026-11-10T20:45:00.000Z",
+      "data": {
+        "stats": [
+          {
+            "label": "Gasoline, up over 12 months",
+            "value": "37.4%",
+            "polarity": "lower_is_good"
+          },
+          {
+            "label": "New vehicles, up",
+            "value": "0.7%",
+            "polarity": "lower_is_good"
+          },
+          {
+            "label": "Used cars, down",
+            "value": "3.3%",
+            "polarity": "higher_is_good"
+          }
+        ]
+      },
+      "source_url": "https://www.bls.gov/news.release/archives/cpi_11102026.htm"
+    },
+    {
+      "id": "04",
+      "template": "steps",
+      "palette": "forest",
+      "tag": "Groceries",
+      "headline": "Where the food money went in October",
+      "accent_word": "went",
+      "source": "Source: BLS, October 2026 CPI",
+      "caption": "Food rose faster than everything else last month.\n\nFood overall: up 0.5%.\nGroceries: up 0.4%.\nEating out: up 0.5%.\n\nThere was nowhere cheaper to move to. Cooking at home rose almost as fast as the restaurant.\n\nMy take: when both go up together, the usual advice to just cook more stops working.\n\nWhich has gone up more for you \u2014 the shop or the takeaway?\n\nSource: BLS, October 2026 CPI\nEducational only \u2014 not financial advice.\n\n#Groceries #Inflation #FoodPrices",
+      "scheduled_at": "2026-11-10T19:30:00.000Z",
+      "data": {
+        "steps": [
+          {
+            "icon": "store",
+            "label": "Food overall +0.5%",
+            "detail": "Faster than the headline rate."
+          },
+          {
+            "icon": "person",
+            "label": "Groceries +0.4%",
+            "detail": "What you carry home."
+          },
+          {
+            "icon": "gate",
+            "label": "Eating out +0.5%",
+            "detail": "No cheaper option to switch to."
+          }
+        ]
+      },
+      "source_url": "https://www.bls.gov/news.release/archives/cpi_11102026.htm"
+    },
+    {
+      "id": "05",
+      "template": "versus",
+      "palette": "ice",
+      "tag": "Energy",
+      "headline": "Your two energy bills went opposite ways",
+      "accent_word": "opposite",
+      "source": "Source: BLS, October 2026 CPI",
+      "caption": "October split the energy bill in two.\n\nElectricity rose 0.9%.\nNatural gas fell 0.8%.\n\nWhich one you feel depends entirely on how your home is heated \u2014 a decision most people never made, they just moved in.\n\nMy take: the same month can be a rise or a cut depending on what is in your basement.\n\nWhich way did your bill go?\n\nSource: BLS, October 2026 CPI\nEducational only \u2014 not financial advice.\n\n#Energy #Bills #Inflation",
+      "scheduled_at": "2026-11-10T22:00:00.000Z",
+      "data": {
+        "option_a": {
+          "label": "Electricity",
+          "amount": "+0.9%",
+          "sub": "Up in October"
+        },
+        "option_b": {
+          "label": "Natural gas",
+          "amount": "-0.8%",
+          "sub": "Down in October"
+        },
+        "pill": "Which heats your home?"
+      },
+      "source_url": "https://www.bls.gov/news.release/archives/cpi_11102026.htm"
+    },
+    {
+      "id": "06",
+      "template": "stats",
+      "palette": "sand",
+      "tag": "Health",
+      "headline": "The bill that quietly keeps climbing",
+      "accent_word": "quietly",
+      "source": "Source: BLS, October 2026 CPI",
+      "caption": "Medical care rose 0.3% in October, after barely moving in September.\n\nHospital services rose 0.8%.\nPhysicians' services rose 0.4%.\n\nHospitals rose nearly three times as fast as the overall index.\n\nMy take: this is the line nobody checks until they get the letter.\n\nWhen did you last look at what your plan actually covers?\n\nSource: BLS, October 2026 CPI\nEducational only \u2014 not financial advice.\n\n#Healthcare #Inflation #Costs",
+      "scheduled_at": "2026-11-10T23:15:00.000Z",
+      "data": {
+        "stats": [
+          {
+            "label": "Hospital services",
+            "value": "+0.8%",
+            "polarity": "lower_is_good"
+          },
+          {
+            "label": "Physicians",
+            "value": "+0.4%",
+            "polarity": "lower_is_good"
+          },
+          {
+            "label": "All medical care",
+            "value": "+0.3%",
+            "polarity": "lower_is_good"
+          }
+        ]
+      },
+      "source_url": "https://www.bls.gov/news.release/archives/cpi_11102026.htm"
+    },
+    {
+      "id": "07",
+      "template": "headline",
+      "palette": "night",
+      "tag": "Money",
+      "headline": "Inflation does not steal your money. It steals your raise",
+      "accent_word": "raise",
+      "source": "Source: calculated",
+      "caption": "If prices rise 3% and your pay rises 2%, you took a pay cut.\n\nIt just does not look like one on the payslip. The number went up. The number it has to beat went up more.\n\nThis is why \"I got a raise\" and \"I am better off\" are two different sentences.\n\nMy take: compare your raise to prices, never to last year's salary. That is the only comparison that tells the truth.\n\nDid your last raise beat inflation, or just look like it did?\n\nSource: calculated\nEducational only \u2014 not financial advice.\n\n#Inflation #Pay #PersonalFinance",
+      "scheduled_at": "2026-11-11T00:30:00.000Z",
+      "data": {
+        "dek": "A raise below the rate of inflation is a pay cut with better handwriting."
+      }
+    },
+    {
+      "id": "08",
+      "template": "steps",
+      "palette": "cream",
+      "tag": "Credit",
+      "headline": "How one late payment keeps costing you",
+      "accent_word": "keeps",
+      "source": "Source: FICO scoring factors",
+      "caption": "The late fee is the cheapest part.\n\nA payment lands 30 days late.\nIt goes on your credit file and can sit there seven years.\nA lower score raises the rate on the next loan you take.\n\nThe fee was $35. The score is what costs you.\n\nMy take: autopay the minimum on everything, then pay properly on top. The minimum is insurance, not a plan.\n\nIs every card you own on autopay right now?\n\nSource: FICO scoring factors\nEducational only \u2014 not financial advice.\n\n#Credit #CreditScore #PersonalFinance",
+      "scheduled_at": "2026-11-11T01:45:00.000Z",
+      "data": {
+        "steps": [
+          {
+            "icon": "person",
+            "label": "One payment misses 30 days",
+            "detail": "A $35 fee, and a mark on file."
+          },
+          {
+            "icon": "gate",
+            "label": "The score drops",
+            "detail": "It can stay on the report seven years."
+          },
+          {
+            "icon": "store",
+            "label": "The next loan costs more",
+            "detail": "Car, mortgage, insurance in some states."
+          }
+        ]
+      }
+    },
+    {
+      "id": "09",
+      "template": "versus",
+      "palette": "forest",
+      "tag": "Debt",
+      "headline": "Same debt, two speeds",
+      "accent_word": "speeds",
+      "source": "Source: calculated at 22% APR",
+      "caption": "A $5,000 card balance at 22%. The only difference is what you pay each month.\n\n$150 a month clears it in 4 years 4 months and costs $2,798 in interest.\n$300 a month clears it in 1 year 9 months and costs $1,022.\n\nSame debt. Same rate. $1,776 difference.\n\nMy take: the card company sets the minimum. Everything above it is yours to decide.\n\nWhich number is closer to what you pay now?\n\nSource: calculated at 22% APR\nEducational only \u2014 not financial advice.\n\n#CreditCards #Debt #PersonalFinance",
+      "scheduled_at": "2026-11-11T03:00:00.000Z",
+      "data": {
+        "option_a": {
+          "label": "Pay $150 a month",
+          "amount": "$2,798",
+          "sub": "Interest, over 4 yrs 4 mo"
+        },
+        "option_b": {
+          "label": "Pay $300 a month",
+          "amount": "$1,022",
+          "sub": "Interest, over 1 yr 9 mo"
+        },
+        "pill": "Which one are you?"
+      }
+    },
+    {
+      "id": "10",
+      "template": "line_chart",
+      "palette": "midnight",
+      "tag": "Investing",
+      "headline": "What $10,000 does if you leave it alone",
+      "accent_word": "alone",
+      "source": "Source: calculated at 7% a year",
+      "caption": "$10,000. Nothing added. Thirty years.\n\nYear 10: about $19,700.\nYear 20: about $38,700.\nYear 30: about $76,100.\n\nThe first double takes ten years. The last double takes ten years and adds $38,000.\n\nMy take: the boring middle is where it happens, and it is also where most people sell.\n\nWhat is the longest you have left money untouched?\n\nSource: calculated at 7% a year\nEducational only \u2014 not financial advice.\n\n#Investing #Compounding #Patience",
+      "scheduled_at": "2026-11-11T04:00:00.000Z",
+      "data": {
+        "series_label": "$10,000 growing at 7% a year",
+        "x_labels": [
+          "Now",
+          "5y",
+          "10y",
+          "15y",
+          "20y",
+          "25y",
+          "30y"
+        ],
+        "y_values": [
+          10000,
+          14026,
+          19672,
+          27590,
+          38697,
+          54274,
+          76123
+        ],
+        "value_prefix": "$"
+      }
+    }
+  ]
+}
