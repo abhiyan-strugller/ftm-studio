@@ -255,9 +255,8 @@ Three things about it decide how the writer works:
    their own header row is one of those (cell A2 is literally
    `## POSTING TIME`).
 2. So **the importer never reads column names. Parsing is positional**: nine
-   columns, fixed order, always present. There used to be a
-   `config/postplanner-columns.json` here for renaming headings; it was
-   meaningless once the real file showed names are never read, so it is gone.
+   columns, fixed order, always present. Renaming a heading changes nothing,
+   so there is no setting for it.
 3. **POSTING TIME is text, not a date.** `MM/DD/YYYY`, two spaces, then `H:MM`
    on a 24-hour clock with the hour *not* zero-padded — exactly matching their
    own examples, `01/01/2030  8:15` and `07/04/2030  14:30`.
