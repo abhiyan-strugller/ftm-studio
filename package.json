@@ -15,7 +15,8 @@
     "fonts": "tsx scripts/fetch-fonts.ts",
     "new-day": "tsx --tsconfig scripts/tsconfig.json scripts/new-day.ts",
     "build-day": "tsx --tsconfig scripts/tsconfig.json scripts/build-day.ts",
-    "publish-media": "tsx --tsconfig scripts/tsconfig.json scripts/publish-media.ts"
+    "publish-media": "tsx --tsconfig scripts/tsconfig.json scripts/publish-media.ts",
+    "publish-sheet": "tsx --tsconfig scripts/tsconfig.json scripts/publish-sheet.ts"
   },
   "dependencies": {
     "next": "^15.5.0",
