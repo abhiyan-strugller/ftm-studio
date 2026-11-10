@@ -11,12 +11,14 @@
       {
         "sector": "Card payments",
         "change": "delayed",
-        "direction": "down"
+        "direction": "down",
+        "polarity": "higher_is_good"
       },
       {
         "sector": "Retail stocks",
         "change": "-1.2%",
-        "direction": "down"
+        "direction": "down",
+        "polarity": "higher_is_good"
       }
     ]
   },

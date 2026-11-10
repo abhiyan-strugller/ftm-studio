@@ -179,8 +179,8 @@ export function blankData(template: TemplateName): Record<string, unknown> {
       return {
         badge: "DEVELOPING",
         impacts: [
-          { sector: "", change: "", direction: "flat" },
-          { sector: "", change: "", direction: "flat" },
+          { sector: "", change: "", direction: "flat", polarity: "higher_is_good" },
+          { sector: "", change: "", direction: "flat", polarity: "higher_is_good" },
         ],
       };
   }

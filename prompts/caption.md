@@ -81,9 +81,10 @@ In order:
 
 ---
 
-## Stat deltas: direction and polarity
+## Deltas and impacts: direction and polarity
 
-On a `stats` card, each tile's delta has two separate fields:
+On a `stats` card each tile's delta, and on a `breaking` card each impact
+line, has two separate fields:
 
 - **`direction`** — `up`, `down` or `flat`. What the number actually did. It
   sets the **arrow**, and the arrow always points the real way.
@@ -106,6 +107,16 @@ build never guesses it from the label. On a CPI card, all three tiles are
 
 renders an **up** arrow in the **negative** colour. Values are snake_case
 exactly as shown; anything else fails validation.
+
+The same applies to `breaking` impacts. On an energy story, "Natural gas
+futures +3.4%" is bad for a household, so it is `lower_is_good` and renders
+red; "Utility shares -2.1%" is a stock, so it keeps the default and also
+renders red:
+
+```json
+{ "sector": "Natural gas futures", "change": "+3.4%",
+  "direction": "up", "polarity": "lower_is_good" }
+```
 
 If you cannot say whether higher is better for the reader, the stat probably
 needs a clearer label before it needs a colour.

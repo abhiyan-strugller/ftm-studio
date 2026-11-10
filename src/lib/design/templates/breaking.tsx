@@ -11,6 +11,7 @@ import { CONTENT_W, Kicker, MONO_LABEL, rgba, SourceLine } from "../frame";
 import { Headline } from "../headline";
 import type { Palette } from "../palettes";
 import type { Badge, Direction, PostDoc } from "../../schema";
+import { deltaStyle } from "../delta";
 
 type Doc = Extract<PostDoc, { template: "breaking" }>;
 
@@ -24,13 +25,6 @@ function badgeColors(badge: Badge, palette: Palette): { fg: string; bg: string; 
   }
   // UNCONFIRMED — outline only, nothing solid.
   return { fg: warn, bg: "transparent", border: warn };
-}
-
-function impactColor(direction: Direction, palette: Palette): string {
-  // Semantic direction colours, not the accent — see Palette.up/down.
-  if (direction === "up") return palette.up;
-  if (direction === "down") return palette.down;
-  return palette.muted;
 }
 
 function ImpactArrow({ direction, color }: { direction: Direction; color: string }) {
@@ -111,7 +105,9 @@ export function BreakingTemplate({ doc, palette }: { doc: Doc; palette: Palette 
         }}
       >
         {impacts.map((impact, i) => {
-          const color = impactColor(impact.direction, palette);
+          // Arrow = what moved; colour = whether that helps the reader. Same
+          // rule as the stats tiles, via the same helper.
+          const { arrow, color } = deltaStyle(impact, palette);
           return (
             <div
               key={i}
@@ -152,7 +148,7 @@ export function BreakingTemplate({ doc, palette }: { doc: Doc; palette: Palette 
                   columnGap: 10,
                 }}
               >
-                <ImpactArrow direction={impact.direction} color={color} />
+                <ImpactArrow direction={arrow} color={color} />
                 <div
                   style={{
                     display: "flex",

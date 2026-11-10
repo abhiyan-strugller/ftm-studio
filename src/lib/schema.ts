@@ -50,8 +50,8 @@ export const DIRECTIONS = ["up", "down", "flat"] as const;
 export type Direction = (typeof DIRECTIONS)[number];
 
 /**
- * Whether a rise is good news for the reader. Decides a stat delta's COLOUR
- * only — the arrow always shows the real direction. `lower_is_good` is for
+ * Whether a rise is good news for the reader. Decides the COLOUR of a stat
+ * delta or a breaking-card impact line only — the arrow always shows the real direction. `lower_is_good` is for
  * inflation, prices, rent, fees: anything where falling helps the wallet.
  * Always explicit; never inferred from the label.
  */
@@ -131,6 +131,8 @@ export const ImpactSchema = z.object({
   sector: Trimmed.min(1).max(30),
   change: Trimmed.min(1).max(16),
   direction: z.enum(DIRECTIONS),
+  /** Default "higher_is_good". Same rule as a stat tile — see POLARITIES. */
+  polarity: z.enum(POLARITIES).optional(),
 });
 
 export const BreakingDataSchema = z.object({

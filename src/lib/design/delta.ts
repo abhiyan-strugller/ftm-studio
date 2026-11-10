@@ -1,5 +1,7 @@
 /**
- * How a stat delta is drawn: which way the arrow points, and what colour it is.
+ * How a change is drawn — a stats-tile delta or a breaking-card impact line:
+ * which way the arrow points, and what colour it is. Both templates use
+ * `deltaStyle`, so the rule cannot drift between them.
  *
  * Two separate questions, deliberately kept apart:
  *   - the ARROW shows what the number did. It always follows `direction`.
@@ -30,7 +32,7 @@ export function deltaArrow(direction: Direction | undefined, _polarity?: Polarit
 }
 
 /**
- * Everything the stats tile needs to draw one delta.
+ * Everything a stats tile or impact line needs to draw one change.
  *
  * `palette.up` is the positive colour and `palette.down` the negative one; the
  * names predate polarity and describe the default `higher_is_good` case.

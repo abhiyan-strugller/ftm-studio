@@ -258,8 +258,8 @@ export const SAMPLES: Record<SampleKey, PostDoc> = {
     data: {
       badge: "DEVELOPING",
       impacts: [
-        { sector: "Card payments", change: "delayed", direction: "down" },
-        { sector: "Retail stocks", change: "-1.2%", direction: "down" },
+        { sector: "Card payments", change: "delayed", direction: "down", polarity: "higher_is_good" },
+        { sector: "Retail stocks", change: "-1.2%", direction: "down", polarity: "higher_is_good" },
       ],
     },
     source_line: "Source: Company status page",
@@ -277,9 +277,9 @@ export const SAMPLES: Record<SampleKey, PostDoc> = {
       badge: "UNCONFIRMED",
       impacts_label: "If confirmed, what it means for your money",
       impacts: [
-        { sector: "Natural gas futures", change: "+3.4%", direction: "up" },
-        { sector: "Utility shares", change: "-2.1%", direction: "down" },
-        { sector: "Household power bills", change: "watch", direction: "flat" },
+        { sector: "Natural gas futures", change: "+3.4%", direction: "up", polarity: "lower_is_good" },
+        { sector: "Utility shares", change: "-2.1%", direction: "down", polarity: "higher_is_good" },
+        { sector: "Household power bills", change: "watch", direction: "flat", polarity: "lower_is_good" },
       ],
     },
     source_line: "Source: Unconfirmed media reports",
