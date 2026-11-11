@@ -1,0 +1,286 @@
+{
+  "date": "2026-11-11",
+  "start_number": 111101,
+  "posts": [
+    {
+      "id": "01",
+      "template": "breaking",
+      "palette": "night",
+      "tag": "Rates",
+      "kicker": "December 9",
+      "headline": "The Fed is now expected to raise rates, not cut them",
+      "accent_word": "raise",
+      "source": "Source: CME FedWatch, Nov 10 2026",
+      "source_url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+      "scheduled_at": "2026-11-11T17:00:00.000Z",
+      "caption": "For most of this year the question was when the Fed would cut. That question is gone.\n\nAfter yesterday's inflation report, futures markets put the odds of a rate increase at the December 9 meeting at about 89%. A week ago it was roughly 72%. Markets are no longer pricing in any chance of the Fed simply holding.\n\nThe target range today is 3.75% to 4.00%.\n\nMy take: a cut helps borrowers and an increase helps savers. For the first time in a while, the people with cash are the ones being paid to wait.\n\nWhich side of that are you on right now?\n\nSource: CME FedWatch, Nov 10 2026\nEducational only — not financial advice.\n\n#FederalReserve #InterestRates #Economy",
+      "data": {
+        "badge": "DEVELOPING",
+        "impacts_label": "What the market is pricing",
+        "impacts": [
+          {
+            "sector": "Chance of a hike",
+            "change": "about 89%",
+            "direction": "up"
+          },
+          {
+            "sector": "A week earlier",
+            "change": "about 72%",
+            "direction": "flat"
+          },
+          {
+            "sector": "Chance of a hold",
+            "change": "priced out",
+            "direction": "down"
+          }
+        ]
+      }
+    },
+    {
+      "id": "02",
+      "template": "steps",
+      "palette": "sand",
+      "tag": "Banking",
+      "headline": "Banks are closed today. Your money still moves, mostly",
+      "accent_word": "closed",
+      "source": "Source: US federal holiday schedule",
+      "scheduled_at": "2026-11-11T18:15:00.000Z",
+      "caption": "Today is Veterans Day, a federal holiday. Here is what that actually changes.\n\nBank branches are shut and there is no mail. The bond market is closed. The stock market is open and trading normally.\n\nThe part that catches people: a transfer or a bill payment you start today will not settle today. It picks up tomorrow. If something is due today, it may land late through no fault of yours.\n\nMy take: check anything dated today before you go to bed, not after the late fee.\n\nAnything due today you should go and look at?\n\nSource: US federal holiday schedule\nEducational only — not financial advice.\n\n#Banking #VeteransDay #PersonalFinance",
+      "data": {
+        "steps": [
+          {
+            "icon": "bank",
+            "label": "Branches closed",
+            "detail": "No mail either. ATMs and cards work as normal."
+          },
+          {
+            "icon": "chart",
+            "label": "Stock market open",
+            "detail": "Bond market is closed for the day."
+          },
+          {
+            "icon": "gate",
+            "label": "Transfers wait",
+            "detail": "Anything sent today settles tomorrow."
+          }
+        ]
+      }
+    },
+    {
+      "id": "03",
+      "template": "stats",
+      "palette": "cream",
+      "tag": "Rates",
+      "headline": "The December meeting in three numbers",
+      "accent_word": "three",
+      "source": "Source: Federal Reserve, Oct 28 2026 statement",
+      "source_url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20261028a.htm",
+      "scheduled_at": "2026-11-11T19:30:00.000Z",
+      "caption": "Three numbers worth carrying into December.\n\nThe federal funds target range sits at 3.75% to 4.00% today. The committee meets on December 8 and 9. Futures markets put the chance of an increase at that meeting near 89%.\n\nNothing is decided. The Fed sees another jobs report before it votes.\n\nMy take: 89% is not certainty, but it is the market telling you which way to lean.\n\nAre you planning around a higher rate or a lower one?\n\nSource: Federal Reserve, Oct 28 2026 statement · CME FedWatch\nEducational only — not financial advice.\n\n#FederalReserve #InterestRates #Markets",
+      "data": {
+        "stats": [
+          {
+            "label": "Target range now",
+            "value": "3.75-4%"
+          },
+          {
+            "label": "Next decision",
+            "value": "Dec 9"
+          },
+          {
+            "label": "Odds of a rise",
+            "value": "89%",
+            "direction": "up"
+          }
+        ],
+        "footnote": "Target range per the Fed's Oct 28 statement. Odds per futures markets, Nov 10."
+      }
+    },
+    {
+      "id": "04",
+      "template": "headline",
+      "palette": "midnight",
+      "tag": "Rates",
+      "kicker": "October 28",
+      "headline": "Two people inside the Fed already voted to raise rates",
+      "accent_word": "already",
+      "source": "Source: Federal Reserve, Oct 28 2026 statement",
+      "source_url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20261028a.htm",
+      "scheduled_at": "2026-11-11T20:45:00.000Z",
+      "caption": "The Fed held rates steady on October 28. The vote was not unanimous.\n\nTwo governors, Lisa Cook and Beth Hammack, dissented. Both wanted a quarter-point increase that day. That was before the inflation figures that landed this week.\n\nDissents are rare and they are public on purpose. They are the clearest signal you get about where the next decision is heading.\n\nMy take: when two of them wanted to move early and the data since has been hotter, December starts to look less like a question.\n\nDid you know the Fed publishes who disagreed?\n\nSource: Federal Reserve, Oct 28 2026 statement\nEducational only — not financial advice.\n\n#FederalReserve #InterestRates #Policy",
+      "data": {
+        "dek": "Cook and Hammack dissented in favour of a quarter-point increase, before the latest inflation data."
+      }
+    },
+    {
+      "id": "05",
+      "template": "versus",
+      "palette": "ice",
+      "tag": "Mortgages",
+      "headline": "Mortgage rates are falling. They are also far above last year",
+      "accent_word": "falling",
+      "source": "Source: Freddie Mac PMMS, Nov 5 2026",
+      "source_url": "https://www.freddiemac.com/pmms",
+      "scheduled_at": "2026-11-11T22:00:00.000Z",
+      "caption": "Both of these are true at the same time, and only one of them makes the headline.\n\nThe 30-year fixed averaged 7.18% in the week to November 5. That is down from 7.24% the week before, a third straight weekly fall.\n\nA year ago the same average was 6.22%.\n\nSo rates are falling, and a buyer today still borrows at nearly a full point more than a buyer last November.\n\nMy take: direction and level are different questions. Headlines report direction. You pay the level.\n\nWhich number would change your plans?\n\nSource: Freddie Mac PMMS, Nov 5 2026\nEducational only — not financial advice.\n\n#Mortgages #HousingMarket #InterestRates",
+      "data": {
+        "option_a": {
+          "label": "A year ago",
+          "amount": "6.22%",
+          "sub": "30-year fixed, Nov 2025"
+        },
+        "option_b": {
+          "label": "Now",
+          "amount": "7.18%",
+          "sub": "30-year fixed, week to Nov 5"
+        },
+        "pill": "Same loan, different year"
+      }
+    },
+    {
+      "id": "06",
+      "template": "steps",
+      "palette": "forest",
+      "tag": "Rates",
+      "headline": "What a rate rise actually reaches in your life",
+      "accent_word": "actually",
+      "source": "Source: how Fed policy transmits to consumer rates",
+      "scheduled_at": "2026-11-11T23:15:00.000Z",
+      "caption": "The Fed does not set your credit card rate. It sets the rate banks lend to each other overnight, and almost everything else drifts after it.\n\nCard APRs move fastest. Most are variable and tied to the prime rate, so a Fed increase usually shows up on your statement within a billing cycle or two.\n\nSavings rates move next, but only if your bank feels like competing for your deposit. Many do not.\n\nMortgages follow the bond market rather than the Fed directly, so they can move early, late, or the other way entirely.\n\nMy take: a hike lands on your debt quickly and on your savings slowly. That gap is where banks make money.\n\nWhich of yours would move first?\n\nSource: how Fed policy transmits to consumer rates\nEducational only — not financial advice.\n\n#InterestRates #PersonalFinance #Banking",
+      "data": {
+        "steps": [
+          {
+            "icon": "person",
+            "label": "Card rate: within weeks",
+            "detail": "Variable APRs track prime almost immediately."
+          },
+          {
+            "icon": "bank",
+            "label": "Savings: when they choose",
+            "detail": "Banks raise deposit rates slowly, if at all."
+          },
+          {
+            "icon": "globe",
+            "label": "Mortgage: bond market",
+            "detail": "Follows yields, not the Fed decision itself."
+          }
+        ]
+      }
+    },
+    {
+      "id": "07",
+      "template": "stats",
+      "palette": "night",
+      "tag": "Credit",
+      "headline": "What a card charges when you carry a balance",
+      "accent_word": "carry",
+      "source": "Source: Federal Reserve G.19, August 2026",
+      "source_url": "https://www.federalreserve.gov/releases/g19/current/",
+      "scheduled_at": "2026-11-12T00:30:00.000Z",
+      "caption": "The Federal Reserve tracks what Americans actually pay on cards, not what the advert says.\n\nFor accounts carrying interest, the average rate was 22.36% in August 2026.\n\nCarry $3,000 at that rate and the interest alone is about $56 in the first month. Pay $100 and roughly half of it never touches what you owe.\n\nThat is the part people miss. The minimum payment is mostly rent on the balance.\n\nMy take: anything above about 20% is an emergency, not a bill.\n\nDo you know the rate on the card in your pocket?\n\nSource: Federal Reserve G.19, August 2026\nEducational only — not financial advice.\n\n#CreditCards #Debt #PersonalFinance",
+      "data": {
+        "stats": [
+          {
+            "label": "Average rate carried",
+            "value": "22.4%",
+            "polarity": "lower_is_good"
+          },
+          {
+            "label": "On $3,000, a month",
+            "value": "$56",
+            "polarity": "lower_is_good"
+          },
+          {
+            "label": "Of a $100 payment",
+            "value": "~half",
+            "polarity": "lower_is_good"
+          }
+        ],
+        "footnote": "22.36% exactly. Monthly figure calculated on a $3,000 balance."
+      }
+    },
+    {
+      "id": "08",
+      "template": "bar_compare",
+      "palette": "cream",
+      "tag": "Investing",
+      "headline": "The same $10,000. Four different rates",
+      "accent_word": "same",
+      "source": "Source: calculated over 20 years",
+      "scheduled_at": "2026-11-12T01:45:00.000Z",
+      "caption": "Same money in, same twenty years, nothing added. Only the rate changes.\n\nAt 2% a year, $10,000 becomes about $14,900.\nAt 4%, about $21,900.\nAt 7%, about $38,700.\nAt 10%, about $67,300.\n\nThere is a shortcut for thinking about this. Divide 72 by the rate and you get roughly the years it takes to double. At 2% that is 36 years. At 10% it is about 7.\n\nMy take: the gap between the top and bottom bar is not the rate. It is time multiplied by the rate, and that is why starting early beats picking well.\n\nWhat rate is your money sitting at right now?\n\nSource: calculated over 20 years\nEducational only — not financial advice.\n\n#Investing #Compounding #MoneyBasics",
+      "data": {
+        "unit": "$10,000 after 20 years, by annual rate",
+        "bars": [
+          {
+            "label": "2% a year",
+            "value": 14859.0,
+            "display": "$14.9k"
+          },
+          {
+            "label": "4% a year",
+            "value": 21911.0,
+            "display": "$21.9k"
+          },
+          {
+            "label": "7% a year",
+            "value": 38697.0,
+            "display": "$38.7k"
+          },
+          {
+            "label": "10% a year",
+            "value": 67275.0,
+            "display": "$67.3k"
+          }
+        ]
+      }
+    },
+    {
+      "id": "09",
+      "template": "headline",
+      "palette": "ice",
+      "tag": "Savings",
+      "headline": "An emergency fund covers your bills, not your salary",
+      "accent_word": "bills",
+      "source": "Source: standard emergency fund guidance",
+      "scheduled_at": "2026-11-12T03:00:00.000Z",
+      "caption": "People hear six months of savings and quietly give up. Usually because they are doing the wrong sum.\n\nIt is six months of expenses, not six months of income. If you earn $5,000 a month and live on $3,200, the target is built on the $3,200.\n\nAnd expenses in an emergency are not normal expenses. No holidays, no subscriptions you would cancel, no dinners out. The real number is often smaller again.\n\nMy take: work out what one bad month actually costs before you decide the goal is impossible.\n\nDo you know what one month of your essentials costs?\n\nSource: standard emergency fund guidance\nEducational only — not financial advice.\n\n#Savings #EmergencyFund #PersonalFinance",
+      "data": {
+        "dek": "Six months of essential spending, not six months of pay — and a lean month is smaller than a normal one."
+      }
+    },
+    {
+      "id": "10",
+      "template": "line_chart",
+      "palette": "midnight",
+      "tag": "Savings",
+      "headline": "What $300 a month looks like after a year",
+      "accent_word": "$300",
+      "source": "Source: calculated at 4% APY",
+      "scheduled_at": "2026-11-12T04:00:00.000Z",
+      "caption": "Nothing dramatic. That is rather the point.\n\nPut aside $300 a month in an account paying 4%, add nothing else, and after twelve months you have about $3,670. After seventeen months you cross $5,000.\n\nThe interest in that first year is around $70. Almost all of it is simply the money you put in.\n\nMy take: at this stage the rate barely matters. Showing up every month is doing all the work. The rate starts to matter later, once there is something for it to work on.\n\nWhat would one bad month cost you right now?\n\nSource: calculated at 4% APY\nEducational only — not financial advice.\n\n#Savings #EmergencyFund #Compounding",
+      "data": {
+        "series_label": "$300 a month at 4% APY",
+        "value_prefix": "$",
+        "x_labels": [
+          "Start",
+          "3 mo",
+          "6 mo",
+          "9 mo",
+          "12 mo",
+          "15 mo",
+          "17 mo"
+        ],
+        "y_values": [
+          0,
+          903,
+          1815,
+          2736,
+          3667,
+          4607,
+          5238
+        ]
+      }
+    }
+  ]
+}
