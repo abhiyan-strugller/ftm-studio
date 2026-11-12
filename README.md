@@ -344,9 +344,32 @@ the length of that list.
 
 The Post Planner account schedules in **`America/Edmonton`** (its scheduler
 field says so), and it reads a bare `8:15` in the CSV as 8:15 *in that zone*.
-So the slot instant stays Eastern, but POSTING TIME is written in Mountain:
-the 07:00 ET slot appears in the CSV as `5:00`, 21:00 ET as `19:00`. The
-contact sheet still shows Eastern.
+So the slot instant stays Eastern, but POSTING TIME is written in Edmonton
+local time. The contact sheet still shows Eastern.
+
+**The offset is one hour, not two, and the code is correct. Do not "fix" it.**
+
+`America/Edmonton` resolves to **UTC-6** here, while US Eastern is UTC-5 in
+winter, so the gap is a single hour:
+
+| ET slot | UTC   | written to CSV |
+| ------- | ----- | -------------- |
+| 07:00   | 12:00 | `6:00`         |
+| 11:00   | 16:00 | `10:00`        |
+| 21:00   | 02:00 | `20:00`        |
+
+Verified end to end against live posts on 2026-11-11: the CSV said `11:00`,
+Post Planner's queue displayed 11:00 AM, and Facebook published at 11:00 AM.
+Ten posts ran that day on schedule.
+
+An earlier version of this section claimed 07:00 ET writes as `5:00`, assuming
+Edmonton sat at UTC-7. That was wrong, and it cost real time: three separate
+runs flagged correct output as a bug because it disagreed with this file.
+Shifting the column to match it would move **every post an hour earlier**.
+
+If you believe the times are wrong, do not edit the CSV or this table. Check a
+published post's timestamp on the page against its row in `postplanner.csv`.
+That comparison is the only thing that settles it.
 
 The zone lives in `config/postplanner.json`:
 
