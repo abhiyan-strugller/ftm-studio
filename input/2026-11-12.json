@@ -1,0 +1,299 @@
+{
+  "date": "2026-11-12",
+  "start_number": 111201,
+  "posts": [
+    {
+      "id": "01",
+      "template": "headline",
+      "palette": "night",
+      "tag": "Debt",
+      "kicker": "July to September 2026",
+      "headline": "American households now owe $19.1 trillion",
+      "accent_word": "trillion",
+      "source": "Source: New York Fed, Q3 2026 Household Debt and Credit Report",
+      "source_url": "https://www.newyorkfed.org/newsevents/news/research/2026/20261110",
+      "caption": "Household debt grew by $334 billion in just three months.\n\nThat is the New York Fed's count for July to September 2026, released this week. Total debt is now $19.1 trillion, up 1.8% in the quarter.\n\nMost of the rise was mortgages and home equity lines. The share of all debt in some stage of delinquency rose to 5.0%, from 4.7% the quarter before.\n\nMy take: the total grabs the headline, but the late-payment share is the number that tells you how households are coping.\n\nHas your own debt gone up or down this year?\n\nSource: New York Fed, Q3 2026 Household Debt and Credit Report (Nov 10 2026)\nEducational only — not financial advice.\n\n#HouseholdDebt #PersonalFinance #Economy",
+      "data": {
+        "dek": "Up $334 billion in one quarter, July to September. 5.0% of it is now behind on payments, up from 4.7%."
+      },
+      "scheduled_at": "2026-11-12T17:00:00.000Z"
+    },
+    {
+      "id": "02",
+      "template": "versus",
+      "palette": "cream",
+      "tag": "Gas",
+      "kicker": "EIA weekly average",
+      "headline": "Gas fell 16 cents a gallon in one week",
+      "accent_word": "fell",
+      "source": "Source: US Energy Information Administration, week of Nov 9 2026",
+      "source_url": "https://www.eia.gov/petroleum/gasdiesel/",
+      "caption": "A full tank just got about $2.37 cheaper.\n\nThe national average for regular gas was $3.995 a gallon in the week of November 9, per the EIA. The week before it was $4.153. That is a 15.8-cent drop.\n\nOn a 15-gallon fill-up, the difference is about $2.37.\n\nIt is still well above where prices were a year ago.\n\nMy take: one good week does not undo a year of higher prices, but it is real money for anyone who drives to work.\n\nHave you noticed it at your pump yet?\n\nSource: US Energy Information Administration, weekly retail gasoline prices, week of Nov 9 2026\nEducational only — not financial advice.\n\n#GasPrices #CostOfLiving #Energy",
+      "data": {
+        "option_a": {
+          "label": "Week of Nov 9",
+          "amount": "$3.995",
+          "sub": "About $2.37 less per 15-gallon tank"
+        },
+        "option_b": {
+          "label": "Week of Nov 2",
+          "amount": "$4.153",
+          "sub": "Regular, US average per gallon"
+        },
+        "pill": "Down 15.8 cents"
+      },
+      "scheduled_at": "2026-11-12T18:15:00.000Z"
+    },
+    {
+      "id": "03",
+      "template": "stats",
+      "palette": "forest",
+      "tag": "Shopping",
+      "kicker": "October 2026",
+      "headline": "Shoppers kept spending in October, but only just",
+      "accent_word": "only",
+      "source": "Source: CNBC/NRF Retail Monitor, October 2026 (Nov 11 2026)",
+      "source_url": "https://www.cnbc.com/2026/11/11/october-retail-sales-cnbc-nrf-2026.html",
+      "caption": "Retail spending grew at its slowest monthly pace in nearly a year.\n\nShoppers spent $561.7 billion in October, seasonally adjusted, per the CNBC/NRF Retail Monitor. That is up just 0.2% from September, the smallest monthly gain since November 2025. Against October 2025 it is up 3.6%.\n\nThe NRF says Halloween and early holiday deals kept it from slowing more.\n\nMy take: people are still buying, but they are waiting for the sale first. That is what a stretched budget looks like.\n\nAre you holding off on anything until a deal shows up?\n\nSource: CNBC/NRF Retail Monitor, October 2026\nEducational only — not financial advice.\n\n#RetailSales #HolidayShopping #Economy",
+      "data": {
+        "stats": [
+          {
+            "label": "Spent in October ($561.7B)",
+            "value": "$562B"
+          },
+          {
+            "label": "vs September",
+            "value": "+0.2%",
+            "direction": "up"
+          },
+          {
+            "label": "vs Oct 2025",
+            "value": "+3.6%",
+            "direction": "up"
+          }
+        ],
+        "footnote": "Seasonally adjusted, October 2026. Smallest monthly gain since November 2025. Released Nov 11 2026."
+      },
+      "scheduled_at": "2026-11-12T19:30:00.000Z"
+    },
+    {
+      "id": "04",
+      "template": "steps",
+      "palette": "sand",
+      "tag": "Credit",
+      "kicker": "Holiday shopping",
+      "headline": "How buy now, pay later really works",
+      "accent_word": "later",
+      "source": "Source: Follow the Money explainer",
+      "caption": "Pay in four sounds simple. Here is the part the checkout page skips.\n\nMost plans split the price into four payments. The first is due at checkout, the rest every two weeks.\n\nPay on time and many plans charge no interest. Miss one and a late fee can apply, and some providers may report it to the credit bureaus.\n\nThe real risk is stacking: three small plans can mean three payments in one week.\n\nMy take: it is a payment schedule, not extra money. Treat it like a bill the day you click.\n\nHow many plans could you have running by New Year?\n\nSource: Follow the Money explainer — terms vary by provider\nEducational only — not financial advice.\n\n#BuyNowPayLater #HolidayShopping #PersonalFinance",
+      "data": {
+        "steps": [
+          {
+            "icon": "store",
+            "label": "Pay 25% today",
+            "detail": "The first payment comes out at checkout."
+          },
+          {
+            "icon": "bank",
+            "label": "Three more payments",
+            "detail": "Usually every two weeks, often interest-free."
+          },
+          {
+            "icon": "gate",
+            "label": "Miss one, pay a fee",
+            "detail": "Some providers may report late payments."
+          },
+          {
+            "icon": "person",
+            "label": "Watch the stack",
+            "detail": "Several plans can land in the same week."
+          }
+        ]
+      },
+      "scheduled_at": "2026-11-12T20:45:00.000Z"
+    },
+    {
+      "id": "05",
+      "template": "stats",
+      "palette": "midnight",
+      "tag": "Credit",
+      "kicker": "July to September 2026",
+      "headline": "Credit card debt just hit a record",
+      "accent_word": "record",
+      "source": "Source: New York Fed, Q3 2026 Household Debt and Credit Report",
+      "source_url": "https://www.newyorkfed.org/newsevents/news/research/2026/20261110",
+      "caption": "Americans now carry $1.29 trillion on credit cards, the highest on record.\n\nBalances rose $22 billion from July to September 2026, per the New York Fed. They are up 4.2% from a year earlier.\n\nOne bright spot: new card delinquencies improved slightly. Student loans went the other way, with 10.9% of balances now 90+ days late.\n\nMy take: a record balance is not a crisis on its own. A record balance at today's card rates is expensive for whoever carries it.\n\nIs your card balance higher or lower than this time last year?\n\nSource: New York Fed, Q3 2026 Household Debt and Credit Report (Nov 10 2026)\nEducational only — not financial advice.\n\n#CreditCards #Debt #PersonalFinance",
+      "data": {
+        "stats": [
+          {
+            "label": "Card balances ($1.29T)",
+            "value": "$1.3T",
+            "delta": "+$22B",
+            "direction": "up",
+            "polarity": "lower_is_good"
+          },
+          {
+            "label": "vs a year ago",
+            "value": "+4.2%",
+            "direction": "up",
+            "polarity": "lower_is_good"
+          },
+          {
+            "label": "Student loans 90+ days late",
+            "value": "10.9%",
+            "delta": "from 10.6%",
+            "direction": "up",
+            "polarity": "lower_is_good"
+          }
+        ],
+        "footnote": "Balances as of end of September 2026 (Q3). Student loan figure is the share of balances seriously delinquent."
+      },
+      "scheduled_at": "2026-11-12T22:00:00.000Z"
+    },
+    {
+      "id": "06",
+      "template": "versus",
+      "palette": "ice",
+      "tag": "Mortgages",
+      "kicker": "Same $300,000 loan at 6%",
+      "headline": "15 years or 30 years: the interest gap is huge",
+      "accent_word": "gap",
+      "source": "Source: standard amortization math, 6% fixed",
+      "caption": "Same house, same rate. One loan costs almost $192,000 more in interest.\n\nBorrow $300,000 at 6% fixed. Over 30 years the payment is about $1,799 a month, and you pay about $347,500 in interest.\n\nOver 15 years the payment is about $2,532, but total interest is about $155,700.\n\nThat is about $733 more a month, in exchange for roughly $191,800 less interest.\n\nMy take: the right term depends on the monthly payment you can carry, not just the total. But it helps to know the total.\n\nWhich would you choose, and why?\n\nSource: standard amortization math, $300,000 at 6% fixed, principal and interest only\nEducational only — not financial advice.\n\n#Mortgages #HomeBuying #MoneyMath",
+      "data": {
+        "option_a": {
+          "label": "15-year",
+          "amount": "$155.7k",
+          "sub": "Total interest · $2,532 a month"
+        },
+        "option_b": {
+          "label": "30-year",
+          "amount": "$347.5k",
+          "sub": "Total interest · $1,799 a month"
+        },
+        "pill": "$300,000 at 6%"
+      },
+      "scheduled_at": "2026-11-12T23:15:00.000Z"
+    },
+    {
+      "id": "07",
+      "template": "headline",
+      "palette": "cream",
+      "tag": "Credit",
+      "kicker": "Myth vs fact",
+      "headline": "Myth: carrying a card balance builds your credit",
+      "accent_word": "Myth:",
+      "source": "Source: Follow the Money explainer",
+      "caption": "This one costs people real interest every month.\n\nFact: you do not need to carry a balance to build credit. Using the card and paying the statement in full on time builds your payment history just the same.\n\nWhat a balance does do is charge you interest. And a high balance compared with your limit can actually weigh on your score.\n\nMy take: the bank is happy for this myth to live forever. It is one of the most profitable misunderstandings in personal finance.\n\nWho told you this one first?\n\nSource: Follow the Money explainer\nEducational only — not financial advice.\n\n#CreditScore #CreditCards #MoneyMyths",
+      "data": {
+        "dek": "Fact: paying the full statement on time builds credit just the same, with zero interest."
+      },
+      "scheduled_at": "2026-11-13T00:30:00.000Z"
+    },
+    {
+      "id": "08",
+      "template": "bar_compare",
+      "palette": "night",
+      "tag": "Money",
+      "kicker": "Would you rather",
+      "headline": "$1 million today, or a penny doubled for 30 days?",
+      "accent_word": "penny",
+      "source": "Source: calculated, $0.01 doubled each day",
+      "caption": "Most people take the million. Most people would be wrong.\n\nStart with one cent and double it every day. On day 20 you have about $5,243. On day 25, about $167,772. Still looks like a bad deal.\n\nThen day 29: $2.68 million. Day 30: $5.37 million.\n\nNearly all of the growth happens at the very end. That is how compounding works, and why it is so easy to give up on early.\n\nMy take: real money does not double daily, but the shape of the curve is exactly the same.\n\nWhich would you have picked?\n\nSource: calculated, $0.01 doubled each day for 30 days\nEducational only — not financial advice.\n\n#Compounding #MoneyMath #WouldYouRather",
+      "data": {
+        "unit": "Penny doubled daily vs a $1 million lump sum",
+        "bars": [
+          {
+            "label": "Penny, day 20",
+            "value": 5242.88,
+            "display": "$5.2k"
+          },
+          {
+            "label": "Penny, day 25",
+            "value": 167772.16,
+            "display": "$168k"
+          },
+          {
+            "label": "$1 million today",
+            "value": 1000000,
+            "display": "$1M"
+          },
+          {
+            "label": "Penny, day 29",
+            "value": 2684354.56,
+            "display": "$2.7M"
+          },
+          {
+            "label": "Penny, day 30",
+            "value": 5368709.12,
+            "display": "$5.4M"
+          }
+        ]
+      },
+      "scheduled_at": "2026-11-13T01:45:00.000Z"
+    },
+    {
+      "id": "09",
+      "template": "stats",
+      "palette": "forest",
+      "tag": "Investing",
+      "kicker": "$100,000 over 30 years",
+      "headline": "What a fund fee quietly takes from you",
+      "accent_word": "fee",
+      "source": "Source: calculated, 6% a year before fees",
+      "caption": "A 1% fee sounds small. Over 30 years it is not.\n\nPut $100,000 in an investment earning 6% a year before fees and leave it for 30 years.\n\nWith a 0.1% yearly fee you end up with about $558,000. With 0.5%, about $498,000. With 1%, about $432,000.\n\nThat is roughly $126,000 lost to the gap between the cheapest and the most expensive.\n\nMy take: you cannot control returns. You can see the fee, and it is charged every single year.\n\nDo you know what your 401(k) or IRA funds charge?\n\nSource: calculated, $100,000 at 6% a year before fees, 30 years\nEducational only — not financial advice.\n\n#Investing #RetirementSavings #Fees",
+      "data": {
+        "stats": [
+          {
+            "label": "0.1% yearly fee",
+            "value": "$558k"
+          },
+          {
+            "label": "0.5% yearly fee",
+            "value": "$498k"
+          },
+          {
+            "label": "1% yearly fee",
+            "value": "$432k"
+          }
+        ],
+        "footnote": "$100,000 growing at 6% a year before fees for 30 years, nothing added. Illustration, not a forecast."
+      },
+      "scheduled_at": "2026-11-13T03:00:00.000Z"
+    },
+    {
+      "id": "10",
+      "template": "line_chart",
+      "palette": "midnight",
+      "tag": "Paycheck",
+      "kicker": "Same job, steady raises",
+      "headline": "What a 3% raise every year adds up to",
+      "accent_word": "3%",
+      "source": "Source: calculated, $50,000 salary",
+      "caption": "A 3% raise feels like nothing in the year you get it.\n\nStart at $50,000 and get 3% every year. After 10 years you earn about $67,200. After 20, about $90,300. After 30, about $121,400.\n\nEach raise is built on top of the last one. That is why your first salary negotiation matters for decades.\n\nThese are before inflation. If prices rise 3% a year too, your buying power stays about where it started.\n\nMy take: a raise only counts if it beats prices. Check yours against inflation, not against zero.\n\nDid your last raise keep up?\n\nSource: calculated, $50,000 salary with 3% yearly raises, before inflation\nEducational only — not financial advice.\n\n#Salary #Paycheck #MoneyMath",
+      "data": {
+        "series_label": "$50k salary, 3% a year, before inflation",
+        "value_prefix": "$",
+        "x_labels": [
+          "Start",
+          "Yr 5",
+          "Yr 10",
+          "Yr 15",
+          "Yr 20",
+          "Yr 25",
+          "Yr 30"
+        ],
+        "y_values": [
+          50000,
+          57964,
+          67196,
+          77898,
+          90306,
+          104689,
+          121363
+        ]
+      },
+      "scheduled_at": "2026-11-13T04:00:00.000Z"
+    }
+  ]
+}
