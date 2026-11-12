@@ -1,0 +1,280 @@
+{
+  "date": "2026-11-13",
+  "start_number": 111301,
+  "posts": [
+    {
+      "id": "01",
+      "template": "steps",
+      "palette": "night",
+      "tag": "Markets",
+      "kicker": "Wednesday, November 11, 2026",
+      "headline": "Why one CEO's troubles reach your 401(k)",
+      "accent_word": "401(k)",
+      "source": "Source: Bloomberg, CNBC and AP, Nov 11 2026",
+      "source_url": "https://www.bloomberg.com/news/articles/2026-11-11/nvidia-tumbles-as-investors-consider-future-without-ceo-huang",
+      "caption": "If you own an S&P 500 index fund, you own a slice of Nvidia.\n\nOn Wednesday night, November 11, Nvidia shares fell about 9% in after-hours trading as its board met on CEO Jensen Huang's future, Bloomberg reported. No decision had been announced that night.\n\nIndex funds hold companies by size, and Nvidia is one of the biggest. Rivals AMD and Broadcom rose more than 3% after hours.\n\nMy take: this is what concentration feels like. One company's boardroom can move millions of retirement accounts in one evening.\n\nDo you know your fund's biggest holdings?\n\nSource: Bloomberg, CNBC, AP (Nov 11 2026)\nEducational only — not financial advice.\n\n#Nvidia #401k #IndexFunds",
+      "data": {
+        "steps": [
+          {
+            "icon": "chart",
+            "label": "A giant in the index",
+            "detail": "Nvidia is one of the largest S&P 500 companies."
+          },
+          {
+            "icon": "bank",
+            "label": "Funds buy by size",
+            "detail": "Bigger company, bigger slice of your fund."
+          },
+          {
+            "icon": "gate",
+            "label": "Down about 9% Wednesday",
+            "detail": "After hours, as the board met on its CEO."
+          },
+          {
+            "icon": "shield",
+            "label": "Rivals rose",
+            "detail": "AMD and Broadcom gained 3%+ after hours."
+          }
+        ]
+      },
+      "scheduled_at": "2026-11-13T17:00:00.000Z"
+    },
+    {
+      "id": "02",
+      "template": "headline",
+      "palette": "cream",
+      "tag": "Jobs",
+      "kicker": "Proposed rule, Nov 9 2026",
+      "headline": "Out of work? A new rule would require five job searches a week",
+      "accent_word": "five",
+      "source": "Source: US Department of Labor proposed rule, Nov 9 2026",
+      "source_url": "https://www.dol.gov/newsroom/releases/eta/eta20261109",
+      "caption": "Collecting unemployment could soon mean logging five job-search activities every week.\n\nThe Labor Department proposed a national minimum on November 9, 2026. Claimants would report at least five qualifying activities a week before a payment is issued.\n\nMost states ask for fewer today.\n\nIt is a proposal, not law yet. Public comments are open for 60 days after its Nov 10 Federal Register publication.\n\nMy take: if you are between jobs, start keeping a written log of every search now.\n\nHow many applications a week felt realistic the last time you looked for work?\n\nSource: US Department of Labor; Federal Register (Nov 10 2026)\n\n#Unemployment #Jobs #PersonalFinance",
+      "data": {
+        "dek": "Proposed by the Labor Department on Nov 9 2026. Most states ask for fewer today. Not final: comments are open for 60 days."
+      },
+      "scheduled_at": "2026-11-13T18:15:00.000Z"
+    },
+    {
+      "id": "03",
+      "template": "stats",
+      "palette": "forest",
+      "tag": "Jobs",
+      "kicker": "October 2026",
+      "headline": "More job seekers are stuck past six months",
+      "accent_word": "six",
+      "source": "Source: BLS Employment Situation, October 2026 (Nov 6 2026)",
+      "source_url": "https://www.bls.gov/news.release/archives/empsit_11062026.htm",
+      "caption": "More than one in four unemployed Americans has been looking for 27 weeks or longer.\n\nIn October 2026, 2.0 million people were long-term unemployed, per the Bureau of Labor Statistics. That is 27.6% of everyone out of work, the highest share since late 2021, CNBC noted.\n\nThe overall unemployment rate actually dipped to 4.1% from 4.2%.\n\nMy take: a steady headline rate can hide a harder search for the people already out. The longer it runs, the deeper savings get drawn down.\n\nHow long did your last job search take?\n\nSource: BLS Employment Situation, October 2026 (released Nov 6 2026); CNBC\n\n#Jobs #Unemployment #Economy",
+      "data": {
+        "stats": [
+          {
+            "label": "Jobless 27+ weeks",
+            "value": "2.0M",
+            "polarity": "lower_is_good"
+          },
+          {
+            "label": "Share of all unemployed",
+            "value": "27.6%",
+            "polarity": "lower_is_good"
+          },
+          {
+            "label": "Unemployment rate",
+            "value": "4.1%",
+            "delta": "from 4.2%",
+            "direction": "down",
+            "polarity": "lower_is_good"
+          }
+        ],
+        "footnote": "October 2026, released Nov 6 2026. 27.6% is the highest long-term share since late 2021."
+      },
+      "scheduled_at": "2026-11-13T19:30:00.000Z"
+    },
+    {
+      "id": "04",
+      "template": "versus",
+      "palette": "sand",
+      "tag": "Paycheck",
+      "kicker": "Would you rather",
+      "headline": "A $1,000 bonus, or a $50 a month raise?",
+      "accent_word": "raise",
+      "source": "Source: Follow the Money calculation, before tax",
+      "caption": "One pays more today. The other pays more for as long as you stay.\n\nA $1,000 bonus arrives once. A $50 a month raise is $600 in year one, so the bonus wins at first.\n\nBy the end of year two the raise has paid $1,200, and it keeps going. Future raises are often a percentage of your base pay, so a higher base can grow too.\n\nMy take: if you need the cash now, the bonus is real help. If not, the raise is the quieter win.\n\nWhich would you pick, and why?\n\nSource: Follow the Money calculation, before tax\n\n#Paycheck #Salary #PersonalFinance",
+      "data": {
+        "option_a": {
+          "label": "$50 a month raise",
+          "amount": "$1,200",
+          "sub": "Paid over two years, and still coming"
+        },
+        "option_b": {
+          "label": "$1,000 bonus",
+          "amount": "$1,000",
+          "sub": "Paid once, then it is done"
+        },
+        "pill": "Two-year total"
+      },
+      "scheduled_at": "2026-11-13T20:45:00.000Z"
+    },
+    {
+      "id": "05",
+      "template": "steps",
+      "palette": "ice",
+      "tag": "Banking",
+      "kicker": "FDIC basics",
+      "headline": "What happens to your money if your bank fails",
+      "accent_word": "fails",
+      "source": "Source: FDIC",
+      "source_url": "https://www.fdic.gov/bank-failures/payment-depositors",
+      "caption": "If an FDIC-insured bank fails, your insured deposits are protected up to $250,000.\n\nThat limit is per depositor, per insured bank, per ownership category, so a joint account counts separately from a single one.\n\nUsually a healthy bank takes over the deposits and you keep banking. If not, the FDIC aims to pay insured deposits within two business days.\n\nMoney above the limit may come back only partly, and slowly. Stocks, bonds and crypto are not deposits, so FDIC insurance does not cover them.\n\nMy take: check that your bank is insured. It takes one minute.\n\nDo you keep more than $250,000 at a single bank?\n\nSource: FDIC\n\n#Banking #FDIC #Savings",
+      "data": {
+        "steps": [
+          {
+            "icon": "bank",
+            "label": "The bank closes",
+            "detail": "Often a healthy bank takes over deposits."
+          },
+          {
+            "icon": "shield",
+            "label": "Insured to $250,000",
+            "detail": "Per depositor, per bank, per ownership type."
+          },
+          {
+            "icon": "person",
+            "label": "You get access",
+            "detail": "The FDIC aims to pay within two business days."
+          },
+          {
+            "icon": "gate",
+            "label": "Above the limit",
+            "detail": "May be repaid only partly, over time."
+          }
+        ]
+      },
+      "scheduled_at": "2026-11-13T22:00:00.000Z"
+    },
+    {
+      "id": "06",
+      "template": "headline",
+      "palette": "midnight",
+      "tag": "Taxes",
+      "kicker": "Myth vs fact",
+      "headline": "Myth: a raise can push you into a bracket that shrinks your pay",
+      "accent_word": "Myth",
+      "source": "Source: IRS federal income tax brackets",
+      "source_url": "https://www.irs.gov/filing/federal-income-tax-rates-and-brackets",
+      "caption": "A raise cannot lower your take-home pay through federal tax brackets.\n\nUS income tax is marginal. Only the dollars above each bracket line are taxed at the higher rate. Everything below stays taxed exactly as before.\n\nSo crossing into a new bracket means your next dollars are taxed more, not all of them.\n\nThe real exceptions are benefit cutoffs, where some income-based help can stop at a set income. That is a different rule, not a tax bracket.\n\nMy take: never turn down a raise because of a bracket.\n\nHave you heard this myth at work?\n\nSource: IRS, federal income tax rates and brackets\n\n#Taxes #Paycheck #MoneyMyths",
+      "data": {
+        "dek": "Fact: only the dollars above each bracket line are taxed at the higher rate. Everything below is taxed as before."
+      },
+      "scheduled_at": "2026-11-13T23:15:00.000Z"
+    },
+    {
+      "id": "07",
+      "template": "bar_compare",
+      "palette": "cream",
+      "tag": "Retirement",
+      "kicker": "401(k) match",
+      "headline": "Same 6% saved. The match decides the total",
+      "accent_word": "match",
+      "source": "Source: Follow the Money calculation, $60,000 salary",
+      "caption": "Two workers save the same $3,600 a year. One ends the year with twice as much.\n\nOn a $60,000 salary, putting in 6% is $3,600. A 50% match on that 6% adds $1,800. A 100% match adds $3,600.\n\nThat is money added before any investment growth.\n\nMatch rules vary. Some vest over several years, so check your plan before you count on it.\n\nMy take: if your employer offers a match, knowing exactly how it works is worth ten minutes.\n\nDo you know what your employer matches?\n\nSource: Follow the Money calculation, $60,000 salary, one year\nEducational only — not financial advice.\n\n#401k #Retirement #EmployerMatch",
+      "data": {
+        "unit": "One year on a $60,000 salary, before growth",
+        "bars": [
+          {
+            "label": "Your 6% alone",
+            "value": 3600,
+            "display": "$3,600"
+          },
+          {
+            "label": "With a 50% match",
+            "value": 5400,
+            "display": "$5,400"
+          },
+          {
+            "label": "With a 100% match",
+            "value": 7200,
+            "display": "$7,200"
+          }
+        ]
+      },
+      "scheduled_at": "2026-11-14T00:30:00.000Z"
+    },
+    {
+      "id": "08",
+      "template": "stats",
+      "palette": "night",
+      "tag": "Retirement",
+      "kicker": "2026 limits",
+      "headline": "How much you can save tax-advantaged in 2026",
+      "accent_word": "2026",
+      "source": "Source: IRS, 2026 contribution limits",
+      "caption": "There are about seven weeks left to use this year's limits.\n\nFor 2026 the IRS lets you put up to $24,500 into a 401(k), $7,500 into an IRA, and $4,400 into a self-only HSA.\n\nSavers 50 and older can add catch-up contributions on top. Family HSA coverage allows $8,750.\n\nIRA contributions for 2026 can generally be made until the tax filing deadline in April 2027. 401(k) contributions have to come out of 2026 paychecks.\n\nMy take: few people hit these caps. Knowing them still shows how much room you have.\n\nWhich of these accounts do you use?\n\nSource: IRS, 2026 contribution limits\nEducational only — not financial advice.\n\n#Retirement #401k #HSA",
+      "data": {
+        "stats": [
+          {
+            "label": "401(k), 403(b)",
+            "value": "$24.5k"
+          },
+          {
+            "label": "IRA",
+            "value": "$7.5k"
+          },
+          {
+            "label": "HSA, self-only",
+            "value": "$4.4k"
+          }
+        ],
+        "footnote": "Tax year 2026, under age 50: $24,500, $7,500 and $4,400. Catch-up limits are higher. Family HSA: $8,750."
+      },
+      "scheduled_at": "2026-11-14T01:45:00.000Z"
+    },
+    {
+      "id": "09",
+      "template": "line_chart",
+      "palette": "forest",
+      "tag": "Inflation",
+      "kicker": "At 3% inflation a year",
+      "headline": "What $100 buys after years of 3% inflation",
+      "accent_word": "$100",
+      "source": "Source: Follow the Money calculation, 3% a year",
+      "caption": "At 3% inflation a year, $100 buys about half as much in 25 years.\n\nThe bill in your wallet stays $100. What it buys shrinks: about $86 worth after 5 years, $74 after 10, $55 after 20 and $48 after 25.\n\nThat is why cash sitting at 0% quietly loses ground, and why a raise below inflation is a pay cut in disguise.\n\nMy take: you cannot control inflation, but you can check whether your savings rate and your pay are keeping up with it.\n\nIs your paycheck keeping up with prices?\n\nSource: Follow the Money calculation, constant 3% a year\n\n#Inflation #Savings #PersonalFinance",
+      "data": {
+        "series_label": "Buying power of $100 at 3% a year",
+        "value_prefix": "$",
+        "x_labels": [
+          "Today",
+          "Yr 5",
+          "Yr 10",
+          "Yr 15",
+          "Yr 20",
+          "Yr 25"
+        ],
+        "y_values": [
+          100,
+          86.26,
+          74.41,
+          64.19,
+          55.37,
+          47.76
+        ]
+      },
+      "scheduled_at": "2026-11-14T03:00:00.000Z"
+    },
+    {
+      "id": "10",
+      "template": "headline",
+      "palette": "sand",
+      "tag": "Taxes",
+      "kicker": "Tax refunds",
+      "headline": "A big tax refund is your own money, returned late",
+      "accent_word": "late",
+      "source": "Source: Follow the Money explainer",
+      "caption": "A tax refund feels like a bonus. It is your own pay coming back.\n\nA refund means more tax was withheld from your paychecks than you owed. The IRS returns the difference, with no interest for the months it held it.\n\nIf you get a large refund every year, adjusting your W-4 can put that money in each paycheck instead.\n\nUnderpaying can bring a penalty, so aim for close to even.\n\nMy take: some people like the forced saving. Just know that is what it is.\n\nDo you prefer a refund or a bigger paycheck?\n\nSource: Follow the Money explainer — see IRS Form W-4\n\n#Taxes #TaxRefund #Paycheck",
+      "data": {
+        "dek": "A refund means too much was withheld from your paychecks. The IRS pays no interest on it. A W-4 update can change that."
+      },
+      "scheduled_at": "2026-11-14T04:00:00.000Z"
+    }
+  ]
+}
