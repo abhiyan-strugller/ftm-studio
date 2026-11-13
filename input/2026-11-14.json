@@ -1,0 +1,303 @@
+{
+  "date": "2026-11-14",
+  "start_number": 111401,
+  "posts": [
+    {
+      "id": "01",
+      "template": "stats",
+      "palette": "night",
+      "tag": "Inflation",
+      "kicker": "October 2026, one month",
+      "headline": "Prices rose faster than expected in October",
+      "accent_word": "faster",
+      "source": "Source: BLS Consumer Price Index, October 2026 (Nov 10 2026)",
+      "caption": "Groceries, power bills and beef all cost more in October.\n\nConsumer prices rose 0.4% in one month, more than economists expected, the Bureau of Labor Statistics reported Nov 10. Groceries rose 0.4%. Electricity rose 0.9%. Beef rose 0.9%.\n\nOne odd detail: BLS published no official 12-month rate this time, because last year's government shutdown stopped it collecting October 2025 data.\n\nMy take: one month is not a trend, but a 0.9% jump in a monthly bill is something a household budget feels.\n\nWhich bill has gone up most for you this year?\n\nSource: BLS CPI, October 2026 (released Nov 10 2026); CNBC\n\n#Inflation #Groceries #CostOfLiving",
+      "data": {
+        "stats": [
+          {
+            "label": "All items",
+            "value": "+0.4%",
+            "direction": "up",
+            "polarity": "lower_is_good"
+          },
+          {
+            "label": "Groceries",
+            "value": "+0.4%",
+            "direction": "up",
+            "polarity": "lower_is_good"
+          },
+          {
+            "label": "Electricity",
+            "value": "+0.9%",
+            "direction": "up",
+            "polarity": "lower_is_good"
+          }
+        ],
+        "footnote": "October 2026 vs September, seasonally adjusted. Released Nov 10 2026. No official 12-month rate."
+      },
+      "scheduled_at": "2026-11-14T17:00:00.000Z"
+    },
+    {
+      "id": "02",
+      "template": "headline",
+      "palette": "cream",
+      "tag": "Credit",
+      "kicker": "Myth vs fact",
+      "headline": "Myth: checking your own credit score lowers it",
+      "accent_word": "Myth:",
+      "source": "Source: Consumer Financial Protection Bureau",
+      "caption": "Looking at your own credit score does not cost you a single point.\n\nWhen you check your own score or report, it counts as a soft inquiry. Soft inquiries do not affect your score.\n\nA hard inquiry happens when a lender pulls your credit because you applied for a loan or a card. That can lower a score a little for a while.\n\nYou can get free credit reports from each of the three bureaus at AnnualCreditReport.com.\n\nMy take: the people who check most often tend to catch errors earliest.\n\nWhen did you last look at your credit report?\n\nSource: Consumer Financial Protection Bureau\n\n#CreditScore #Credit #MoneyMyths",
+      "data": {
+        "dek": "Checking your own score is a soft inquiry, and soft inquiries do not count. Only a lender's pull for an application is a hard inquiry."
+      },
+      "scheduled_at": "2026-11-14T18:15:00.000Z"
+    },
+    {
+      "id": "03",
+      "template": "breaking",
+      "palette": "forest",
+      "tag": "World",
+      "kicker": "Energy",
+      "headline": "Oil jumped 3% after attacks on Saudi energy sites",
+      "accent_word": "Oil",
+      "source": "Source: Reuters, oil settlement prices, Nov 12 2026",
+      "caption": "Oil prices rose sharply on Thursday after attacks on energy sites in Saudi Arabia.\n\nHouthi forces claimed strikes on a pipeline pumping station, an oil facility in Yanbu and an Aramco building in Riyadh, Reuters reported. Brent crude settled up 3.3% at $95.82 a barrel. US crude rose 2.6% to $88.74.\n\nCrude is the biggest single cost in a gallon of gasoline, so moves like this can reach the pump if they last.\n\nMy take: one day's jump is not a price at the pump yet. It is worth watching, not panicking over.\n\nHave you noticed gas prices moving where you live?\n\nSource: Reuters, Nov 12 2026\n\n#Oil #GasPrices #Energy",
+      "data": {
+        "badge": "CONFIRMED",
+        "impacts": [
+          {
+            "sector": "Brent crude, Nov 12",
+            "change": "+3.3%",
+            "direction": "up",
+            "polarity": "lower_is_good"
+          },
+          {
+            "sector": "US crude, Nov 12",
+            "change": "+2.6%",
+            "direction": "up",
+            "polarity": "lower_is_good"
+          },
+          {
+            "sector": "Brent settle, per barrel",
+            "change": "$95.82",
+            "direction": "up",
+            "polarity": "lower_is_good"
+          }
+        ]
+      },
+      "scheduled_at": "2026-11-14T19:30:00.000Z"
+    },
+    {
+      "id": "04",
+      "template": "bar_compare",
+      "palette": "sand",
+      "tag": "Savings",
+      "kicker": "Where your cash sits",
+      "headline": "Same $10,000. Very different interest",
+      "accent_word": "interest",
+      "source": "Source: Follow the Money calculation, simple interest, one year",
+      "caption": "Where you park your emergency fund can be worth hundreds of dollars a year.\n\nAt 0.01% APY, $10,000 earns about $1 in a year. At 1% it earns $100. At 4% it earns $400.\n\nThese are example rates, not quotes. Savings rates vary by bank and change over time, so check what yours pays today.\n\nMy take: an emergency fund should be safe and easy to reach. It does not have to earn almost nothing.\n\nDo you know the rate on your savings account?\n\nSource: Follow the Money calculation, example rates, one year, before tax\n\n#Savings #EmergencyFund #PersonalFinance",
+      "data": {
+        "unit": "Interest on $10,000 in one year, example rates",
+        "bars": [
+          {
+            "label": "At 0.01% APY",
+            "value": 1,
+            "display": "$1"
+          },
+          {
+            "label": "At 1% APY",
+            "value": 100,
+            "display": "$100"
+          },
+          {
+            "label": "At 4% APY",
+            "value": 400,
+            "display": "$400"
+          }
+        ]
+      },
+      "scheduled_at": "2026-11-14T20:45:00.000Z"
+    },
+    {
+      "id": "05",
+      "template": "steps",
+      "palette": "ice",
+      "tag": "Rates",
+      "kicker": "Federal Reserve",
+      "headline": "How a Fed rate hike would reach your card bill",
+      "accent_word": "hike",
+      "source": "Source: CNBC, Nov 10 2026; Federal Reserve",
+      "caption": "Fed officials are openly discussing raising rates at their December meeting.\n\nAfter October's hotter than expected inflation report, Fed Governor Christopher Waller said a half-point hike should be considered at the Dec 8-9 meeting, CNBC reported. Nothing has been decided.\n\nIf the Fed does raise rates, most credit cards follow. Card rates are usually tied to the prime rate, which moves with the Fed.\n\nMy take: a card balance is the debt most exposed to a hike.\n\nDo you know whether your card rate is fixed or variable?\n\nSource: CNBC, Nov 10 2026; Federal Reserve\n\n#InterestRates #CreditCards #FederalReserve",
+      "data": {
+        "steps": [
+          {
+            "icon": "bank",
+            "label": "The Fed raises its target rate",
+            "detail": "Its next meeting is Dec 8-9. Officials have said a hike is on the table."
+          },
+          {
+            "icon": "chart",
+            "label": "Banks raise the prime rate",
+            "detail": "Prime usually moves by the same amount within days."
+          },
+          {
+            "icon": "person",
+            "label": "Your card APR follows prime",
+            "detail": "Variable card rates are prime plus a margin, so they rise too."
+          },
+          {
+            "icon": "shield",
+            "label": "Savings rates may rise too",
+            "detail": "Banks can pay more on savings, but they do not have to."
+          }
+        ]
+      },
+      "scheduled_at": "2026-11-14T22:00:00.000Z"
+    },
+    {
+      "id": "06",
+      "template": "stats",
+      "palette": "midnight",
+      "tag": "Mortgages",
+      "kicker": "Week of Nov 12 2026",
+      "headline": "Mortgage rates fell for a fourth straight week",
+      "accent_word": "fourth",
+      "source": "Source: Freddie Mac Primary Mortgage Market Survey, Nov 12 2026",
+      "caption": "Mortgage rates eased again, but they are still well above a year ago.\n\nThe average 30-year fixed rate was 7.11% this week, down from 7.18% the week before, Freddie Mac said Nov 12. It was the fourth straight weekly drop. A year ago the average was 6.24%.\n\nThe 15-year fixed averaged 6.45%.\n\nMy take: small weekly drops add up for buyers, but the gap from last year is what most budgets still feel.\n\nIs a rate change shaping your housing plans?\n\nSource: Freddie Mac PMMS, week of Nov 12 2026\n\n#Mortgage #Housing #InterestRates",
+      "data": {
+        "stats": [
+          {
+            "label": "30-year fixed",
+            "value": "7.11%",
+            "delta": "from 7.18%",
+            "direction": "down",
+            "polarity": "lower_is_good"
+          },
+          {
+            "label": "15-year fixed",
+            "value": "6.45%",
+            "polarity": "lower_is_good"
+          },
+          {
+            "label": "30-year, a year ago",
+            "value": "6.24%",
+            "polarity": "lower_is_good"
+          }
+        ],
+        "footnote": "Weekly averages, Freddie Mac survey released Nov 12 2026."
+      },
+      "scheduled_at": "2026-11-14T23:15:00.000Z"
+    },
+    {
+      "id": "07",
+      "template": "versus",
+      "palette": "cream",
+      "tag": "Credit",
+      "kicker": "Same $2,000 card balance",
+      "headline": "Pay $100 a month, or $50 a month?",
+      "accent_word": "$100",
+      "source": "Source: Follow the Money calculation, 21% APR, no new charges",
+      "caption": "Doubling a card payment can cut the interest by about two thirds.\n\nOn a $2,000 balance at 21% APR with no new charges, paying $50 a month takes 70 months and about $1,470 in interest. Paying $100 a month takes 25 months and about $483.\n\nThat is close to $1,000 kept, and the debt is gone almost four years sooner.\n\nMy take: an extra $50 a month on a card is one of the surest returns there is.\n\nHave you ever worked out what a card balance really costs you?\n\nSource: Follow the Money calculation, 21% APR, interest monthly\n\n#CreditCards #Debt #PersonalFinance",
+      "data": {
+        "option_a": {
+          "label": "$100 a month",
+          "amount": "$483",
+          "sub": "Interest paid. Debt-free in 25 months"
+        },
+        "option_b": {
+          "label": "$50 a month",
+          "amount": "$1,470",
+          "sub": "Interest paid. Debt-free in 70 months"
+        },
+        "pill": "Total interest"
+      },
+      "scheduled_at": "2026-11-15T00:30:00.000Z"
+    },
+    {
+      "id": "08",
+      "template": "bar_compare",
+      "palette": "night",
+      "tag": "Credit",
+      "kicker": "What your score is made of",
+      "headline": "Paying on time matters most to your score",
+      "accent_word": "on time",
+      "source": "Source: myFICO, what's in your FICO score",
+      "caption": "More than a third of a FICO score comes down to one habit: paying on time.\n\nFICO says payment history makes up 35% of a typical score. Amounts owed is 30%. Length of credit history is 15%. New credit and credit mix are 10% each.\n\nThat is why a single late payment can hurt more than opening a new card.\n\nMy take: autopay for at least the minimum is the cheapest insurance your score can get.\n\nWhich part of your score surprised you most?\n\nSource: myFICO\n\n#CreditScore #FICO #Credit",
+      "data": {
+        "unit": "Share of a typical FICO score",
+        "bars": [
+          {
+            "label": "Payment history",
+            "value": 35,
+            "display": "35%"
+          },
+          {
+            "label": "Amounts owed",
+            "value": 30,
+            "display": "30%"
+          },
+          {
+            "label": "Length of history",
+            "value": 15,
+            "display": "15%"
+          },
+          {
+            "label": "New credit",
+            "value": 10,
+            "display": "10%"
+          },
+          {
+            "label": "Credit mix",
+            "value": 10,
+            "display": "10%"
+          }
+        ]
+      },
+      "scheduled_at": "2026-11-15T01:45:00.000Z"
+    },
+    {
+      "id": "09",
+      "template": "line_chart",
+      "palette": "forest",
+      "tag": "Investing",
+      "kicker": "$200 a month",
+      "headline": "What $200 a month can grow to",
+      "accent_word": "grow",
+      "source": "Source: Follow the Money calculation, 6% a year, monthly",
+      "caption": "Time does most of the work when you invest a steady amount.\n\nPut away $200 a month and assume 6% a year. After 10 years you have put in $24,000 and it has grown to about $32,800. After 30 years, $72,000 in grows to about $200,900. After 40 years, $96,000 in grows to about $398,300.\n\nReal returns go up and down. 6% is an example, not a promise.\n\nMy take: the earliest dollars do the heaviest lifting.\n\nWhen did you start saving for the long term?\n\nSource: Follow the Money calculation, 6% a year, compounded monthly\nEducational only — not financial advice.\n\n#Investing #CompoundInterest #Retirement",
+      "data": {
+        "x_labels": [
+          "Year 10",
+          "Year 20",
+          "Year 30",
+          "Year 40"
+        ],
+        "y_values": [
+          32776,
+          92408,
+          200903,
+          398298
+        ],
+        "value_prefix": "$",
+        "series_label": "$200 a month at 6% a year"
+      },
+      "scheduled_at": "2026-11-15T03:00:00.000Z"
+    },
+    {
+      "id": "10",
+      "template": "headline",
+      "palette": "sand",
+      "tag": "Banking",
+      "kicker": "Myth vs fact",
+      "headline": "Myth: a debit card protects you like a credit card",
+      "accent_word": "debit",
+      "source": "Source: Federal Trade Commission",
+      "caption": "If your card is stolen, the law treats debit and credit very differently.\n\nWith a credit card, your liability for unauthorized charges is capped at $50, the FTC says. With a debit card, it depends on how fast you report: up to $50 within two business days, up to $500 after that, and possibly everything after 60 days from your statement.\n\nAnd with debit, it is your own cash that is missing while it gets sorted out.\n\nMy take: speed of reporting is the whole game with a debit card.\n\nDo you use debit or credit for online shopping?\n\nSource: Federal Trade Commission\n\n#DebitCard #Fraud #Banking",
+      "data": {
+        "dek": "Credit card fraud liability is capped at $50. Debit card liability can reach $500 or more if you report it late."
+      },
+      "scheduled_at": "2026-11-15T04:00:00.000Z"
+    }
+  ]
+}
