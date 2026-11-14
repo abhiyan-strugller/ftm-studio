@@ -161,6 +161,84 @@ only thing that settles it.
 
 ---
 
+## The niche, and what earns a post
+
+**Money first, always.** Stocks, crypto, cash and savings, banks and rates. Big
+world events — wars, cyberattacks, outages, lockdowns — are covered only through
+what they do to money: who gains, who pays. Politics is the angle, never the
+subject. A post about a political decision is really a post about someone's
+rent or paycheck.
+
+The test for a news story: **would a working American stop scrolling because
+this touches their own money?**
+
+Earns a post:
+
+- It lands on a paycheck, rent, groceries, a card rate, savings or a job
+- Somebody wins and somebody pays, and you can name both
+- A true number that genuinely surprises
+- Something hidden becoming visible
+
+Rejected however big:
+
+- "Markets closed mixed" — a move with no human consequence
+- Process stories with nobody in them
+- Anything where you cannot finish the sentence *"this means YOU will pay/get…"*
+
+**Gripping is not clickbait, and the difference protects monetization.** Lead
+with a real number and a real consequence. No all-caps, no manufactured
+urgency, no predictions, no buy/sell advice, no doom-mongering, no engagement
+bait. Respectful on wars and tragedies.
+
+Caption shape that works: the fact, then the number, then *"My take:"* with an
+actual opinion, then a question. The question matters — comments are weighted
+far more heavily than reactions.
+
+---
+
+## What Good Financial Cents actually does
+
+Studied 2026-11-14. 890K followers. Jeff Rose, CFP. This is the reference
+Abhiyan picked, and the findings are not what either of us expected.
+
+**His posts are not designed at all.** Every one is a screenshot of a short
+text post — black ground, white text, or the reverse. Plain sans. No colour, no
+charts, no icons, no borders, no logo. The only "design" is the original
+author's avatar and handle at the top, which makes it read as a genuine
+screenshot of a real person.
+
+Measured engagement on live posts:
+
+| Post | Reactions | Comments | Shares |
+| --- | --- | --- | --- |
+| `@BillWIIdin` — "The salary nobody warns you about. $160,000 a year…" | 662 | 45 | 61 |
+| `klyssamoore` — "$1,262.50 is all that stands between me and a paid off car" | 1.4K | 95 | 3 |
+| Widow forced to sell over property taxes | 282 | 100 | 28 |
+
+Comment counts are enormous relative to reactions. That is the signal Facebook
+rewards, and it comes from his captions, which are always first-person and
+always take a side: *"I'm sorry, but if you're earning $160,000 a year and
+calling yourself poor…"*, *"I have a serious problem with a 74-year-old widow…"*
+
+**The conflict to keep in view.** His engine is reposting other people's words
+as screenshots. Superb for reach, and in direct tension with monetization —
+Facebook penalises unoriginal and reused content. He can afford it because he
+is not paid by Facebook; he funnels 890K followers to his own business.
+Abhiyan is building toward Facebook payouts.
+
+So: **take the format, not the sourcing.** Plain text, large type, solid
+ground, a blank line between sentences, nothing decorative — that is free, and
+it is the opposite of the current cards. The opinionated caption voice is free
+too. The reposting is what would cost the thing he is building toward.
+
+**Distribution, honestly.** The page has 3 followers. An A/B test of card
+formats cannot produce a usable signal at that scale, and card design is
+probably not the binding constraint — getting posts in front of people who do
+not follow the page is. Worth deciding which problem is actually being solved
+before optimising the other.
+
+---
+
 ## Parked, in order
 
 1. **Card redesign.** Abhiyan says the current cards read as Claude-made — the
