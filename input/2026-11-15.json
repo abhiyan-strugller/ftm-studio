@@ -1,0 +1,295 @@
+{
+  "date": "2026-11-15",
+  "start_number": 111501,
+  "posts": [
+    {
+      "id": "01",
+      "template": "stats",
+      "palette": "night",
+      "tag": "Inflation",
+      "kicker": "October 2026, producer prices",
+      "headline": "Wholesale prices are up 6.5% in a year",
+      "accent_word": "6.5%",
+      "source": "Source: BLS Producer Price Index, October 2026 (Nov 13 2026)",
+      "caption": "What businesses pay for goods and services is rising at the fastest yearly pace in almost four years.\n\nProducer prices rose 0.3% in October and 6.5% over the past 12 months, the Bureau of Labor Statistics reported Nov 13. That is the biggest 12-month rise since November 2022. Food at the wholesale level jumped 1.3% in one month.\n\nThese are the prices businesses pay before anything reaches a store shelf.\n\nMy take: wholesale costs are where a lot of what you pay later starts.\n\nWhere have you noticed prices creeping up lately?\n\nSource: BLS PPI, October 2026 (released Nov 13 2026)\n\n#Inflation #Prices #CostOfLiving",
+      "data": {
+        "stats": [
+          {
+            "label": "1 month",
+            "value": "+0.3%",
+            "direction": "up",
+            "polarity": "lower_is_good"
+          },
+          {
+            "label": "12 months",
+            "value": "+6.5%",
+            "direction": "up",
+            "polarity": "lower_is_good"
+          },
+          {
+            "label": "Food, 1 month",
+            "value": "+1.3%",
+            "direction": "up",
+            "polarity": "lower_is_good"
+          }
+        ],
+        "footnote": "Final demand prices, October 2026. Monthly figures seasonally adjusted. Released Nov 13 2026."
+      },
+      "scheduled_at": "2026-11-15T17:00:00.000Z"
+    },
+    {
+      "id": "02",
+      "template": "headline",
+      "palette": "cream",
+      "tag": "Credit",
+      "kicker": "Myth vs fact",
+      "headline": "Myth: a 0% balance transfer is free",
+      "accent_word": "free",
+      "source": "Source: Consumer Financial Protection Bureau",
+      "caption": "A 0% balance transfer can save real money, but it is rarely free.\n\nMost cards charge a balance transfer fee, often 3% to 5% of the amount moved, the CFPB says. On a $5,000 balance, that is $150 to $250 up front.\n\nThe 0% rate also ends. Whatever is left after the promo period starts charging the card's regular rate.\n\nMy take: a transfer works best with a payoff plan that beats the deadline.\n\nHave you ever used a balance transfer? Did it work out?\n\nSource: Consumer Financial Protection Bureau\n\n#CreditCards #Debt #MoneyMyths",
+      "data": {
+        "dek": "Most cards charge a fee of 3% to 5% of the amount moved, and the 0% rate ends after the promo period."
+      },
+      "scheduled_at": "2026-11-15T18:15:00.000Z"
+    },
+    {
+      "id": "03",
+      "template": "steps",
+      "palette": "sand",
+      "tag": "Groceries",
+      "kicker": "Wholesale food, October 2026",
+      "headline": "How wholesale food prices reach your cart",
+      "accent_word": "cart",
+      "source": "Source: BLS Producer Price Index, October 2026 (Nov 13 2026)",
+      "caption": "Food got more expensive for businesses in October, before it ever reached a shelf.\n\nWholesale food prices rose 1.3% in one month, the Bureau of Labor Statistics reported Nov 13. That is what producers charge the businesses that sell to you.\n\nStores do not have to pass that on, and not all of it always shows up. But it is part of what ends up on your receipt.\n\nMy take: the grocery bill is where inflation feels most personal.\n\nWhich grocery item has gone up most for you?\n\nSource: BLS PPI, October 2026 (released Nov 13 2026)\n\n#Groceries #Inflation #FoodPrices",
+      "data": {
+        "steps": [
+          {
+            "icon": "ship",
+            "label": "Producers charge more",
+            "detail": "Wholesale food prices rose 1.3% in October 2026."
+          },
+          {
+            "icon": "gate",
+            "label": "Distributors pay more",
+            "detail": "Wholesalers and processors buy at the new prices."
+          },
+          {
+            "icon": "store",
+            "label": "Stores decide what to pass on",
+            "detail": "Some costs reach the shelf price, some do not."
+          },
+          {
+            "icon": "person",
+            "label": "Your receipt shows the rest",
+            "detail": "Food is a bill every household pays every week."
+          }
+        ]
+      },
+      "scheduled_at": "2026-11-15T19:30:00.000Z"
+    },
+    {
+      "id": "04",
+      "template": "stats",
+      "palette": "ice",
+      "tag": "Gas",
+      "kicker": "AAA national average, Nov 12 2026",
+      "headline": "Gas fell below $4 for the first time since July",
+      "accent_word": "$4",
+      "source": "Source: AAA national average, regular gasoline, Nov 12 2026",
+      "caption": "Filling up got cheaper this month.\n\nThe national average for regular gas was $3.90 a gallon on Nov 12, AAA said, the first time below $4 since July. It was $4.10 a week earlier and $4.36 a month earlier.\n\nAAA pointed to lower crude oil prices, cheaper winter-blend fuel and lighter fall demand. It is still well above a year ago.\n\nMy take: 46 cents a gallon in a month is real relief for anyone with a long commute.\n\nWhat are you paying for gas where you live?\n\nSource: AAA, Nov 12 2026\n\n#GasPrices #Gas #CostOfLiving",
+      "data": {
+        "stats": [
+          {
+            "label": "Nov 12",
+            "value": "$3.90",
+            "delta": "per gallon",
+            "direction": "down",
+            "polarity": "lower_is_good"
+          },
+          {
+            "label": "A week earlier",
+            "value": "$4.10",
+            "polarity": "lower_is_good",
+            "direction": "flat"
+          },
+          {
+            "label": "A month earlier",
+            "value": "$4.36",
+            "polarity": "lower_is_good",
+            "direction": "flat"
+          }
+        ],
+        "footnote": "AAA national average, regular unleaded, as of Nov 12 2026."
+      },
+      "scheduled_at": "2026-11-15T20:45:00.000Z"
+    },
+    {
+      "id": "05",
+      "template": "versus",
+      "palette": "forest",
+      "tag": "Gas",
+      "kicker": "One 15-gallon fill-up",
+      "headline": "The same tank costs $6.90 less than a month ago",
+      "accent_word": "$6.90",
+      "source": "Source: Follow the Money calculation from AAA averages",
+      "caption": "Here is what cheaper gas means for one fill-up.\n\nAt AAA's national average of $3.90 a gallon on Nov 12, a 15-gallon tank costs $58.50. A month earlier, at $4.36, the same tank cost $65.40.\n\nThat is $6.90 back per fill-up. Fill up once a week and it adds up to about $30 a month.\n\nYour local price may be higher or lower than the national average.\n\nMy take: small per-gallon drops matter most to people who drive the most.\n\nHow often do you fill up?\n\nSource: Follow the Money calculation, AAA national averages\n\n#GasPrices #Budget #CostOfLiving",
+      "data": {
+        "option_a": {
+          "label": "At $3.90 a gallon",
+          "amount": "$58.50",
+          "sub": "AAA average, Nov 12"
+        },
+        "option_b": {
+          "label": "At $4.36 a gallon",
+          "amount": "$65.40",
+          "sub": "A month earlier"
+        },
+        "pill": "15-gallon tank"
+      },
+      "scheduled_at": "2026-11-15T22:00:00.000Z"
+    },
+    {
+      "id": "06",
+      "template": "bar_compare",
+      "palette": "night",
+      "tag": "Savings",
+      "kicker": "$5 a day, set aside",
+      "headline": "What $5 a day becomes if you keep it",
+      "accent_word": "keep",
+      "source": "Source: Follow the Money calculation, no interest",
+      "caption": "Five dollars a day does not feel like much. Over time, it is.\n\nSet aside $5 a day and you have about $150 after a month, $1,825 after a year, $9,125 after five years and $18,250 after ten. That is before any interest.\n\nThis is not about giving up coffee. It is about seeing what a small daily amount really adds up to.\n\nMy take: knowing the number makes the choice yours, either way.\n\nWhat small daily spend would you redirect, if any?\n\nSource: Follow the Money calculation, $5 a day, no interest\n\n#Savings #Budget #PersonalFinance",
+      "data": {
+        "unit": "$5 a day, no interest. Exact: $9,125 and $18,250",
+        "bars": [
+          {
+            "label": "1 month",
+            "value": 150,
+            "display": "$150"
+          },
+          {
+            "label": "1 year",
+            "value": 1825,
+            "display": "$1,825"
+          },
+          {
+            "label": "5 years",
+            "value": 9125,
+            "display": "$9.1K"
+          },
+          {
+            "label": "10 years",
+            "value": 18250,
+            "display": "$18.3K"
+          }
+        ]
+      },
+      "scheduled_at": "2026-11-15T23:15:00.000Z"
+    },
+    {
+      "id": "07",
+      "template": "headline",
+      "palette": "midnight",
+      "tag": "Retirement",
+      "kicker": "Myth vs fact",
+      "headline": "Myth: Social Security counts only your last few years of pay",
+      "accent_word": "Myth:",
+      "source": "Source: Social Security Administration",
+      "caption": "Your Social Security check is based on most of your working life, not the end of it.\n\nThe Social Security Administration uses your 35 highest-earning years, adjusted for wage growth over time. If you worked fewer than 35 years, the missing years count as zero.\n\nThat is why a few extra working years can raise a benefit for someone with gaps.\n\nMy take: it is worth checking your earnings record at ssa.gov. Mistakes happen.\n\nHave you ever looked at your Social Security statement?\n\nSource: Social Security Administration\n\n#SocialSecurity #Retirement #MoneyMyths",
+      "data": {
+        "dek": "Benefits are based on your 35 highest-earning years, adjusted for wage growth. Missing years count as zero."
+      },
+      "scheduled_at": "2026-11-16T00:30:00.000Z"
+    },
+    {
+      "id": "08",
+      "template": "line_chart",
+      "palette": "cream",
+      "tag": "Savings",
+      "kicker": "$100 a month at 4%",
+      "headline": "What $100 a month in savings grows to",
+      "accent_word": "grows",
+      "source": "Source: Follow the Money calculation, 4% a year, monthly",
+      "caption": "A small monthly deposit builds a real cushion faster than most people expect.\n\nPut $100 a month into savings earning 4% a year. After one year you have about $1,222. After three years, about $3,818. After five years, about $6,630, of which $6,000 is your own deposits.\n\n4% is an example rate, not a quote. Rates vary by bank and change over time.\n\nMy take: an automatic transfer on payday does most of the work for you.\n\nDo you have a savings transfer set up?\n\nSource: Follow the Money calculation, 4% a year, compounded monthly\n\n#Savings #EmergencyFund #PersonalFinance",
+      "data": {
+        "x_labels": [
+          "Year 1",
+          "Year 2",
+          "Year 3",
+          "Year 4",
+          "Year 5"
+        ],
+        "y_values": [
+          1222,
+          2494,
+          3818,
+          5196,
+          6630
+        ],
+        "value_prefix": "$",
+        "series_label": "$100 a month at 4% a year"
+      },
+      "scheduled_at": "2026-11-16T01:45:00.000Z"
+    },
+    {
+      "id": "09",
+      "template": "versus",
+      "palette": "sand",
+      "tag": "Auto loans",
+      "kicker": "Same $25,000 car loan at 7% APR",
+      "headline": "48 months, or 72 months?",
+      "accent_word": "72",
+      "source": "Source: Follow the Money calculation, 7% APR, fixed payments",
+      "caption": "A longer car loan lowers the payment and raises the total.\n\nOn a $25,000 loan at 7% APR, 48 months costs about $599 a month and about $3,735 in interest. Stretch it to 72 months and the payment drops to about $426, but interest rises to about $5,688.\n\nThat is close to $2,000 more for the same car, and two extra years of payments.\n\nMy take: the monthly payment is the number dealers lead with. The total is the one that counts.\n\nWhich would you pick, and why?\n\nSource: Follow the Money calculation, 7% APR, fixed monthly payments\n\n#CarLoans #Debt #PersonalFinance",
+      "data": {
+        "option_a": {
+          "label": "48 months",
+          "amount": "$3,735",
+          "sub": "Interest. About $599 a month"
+        },
+        "option_b": {
+          "label": "72 months",
+          "amount": "$5,688",
+          "sub": "Interest. About $426 a month"
+        },
+        "pill": "Total interest"
+      },
+      "scheduled_at": "2026-11-16T03:00:00.000Z"
+    },
+    {
+      "id": "10",
+      "template": "stats",
+      "palette": "forest",
+      "tag": "Paycheck",
+      "kicker": "Taxes on every paycheck",
+      "headline": "The payroll taxes on every paycheck",
+      "accent_word": "payroll",
+      "source": "Source: IRS and Social Security Administration, 2026",
+      "caption": "Before income tax, two taxes come out of almost every paycheck.\n\nYou pay 6.2% for Social Security and 1.45% for Medicare, 7.65% in all. Your employer pays the same again on your behalf.\n\nIn 2026 the Social Security part stops after $184,500 of wages. Medicare has no cap, and high earners pay an extra 0.9% above $200,000.\n\nMy take: these are the taxes that fund the benefits most people will one day collect.\n\nHave you ever looked closely at the lines on your pay stub?\n\nSource: IRS; Social Security Administration\n\n#Taxes #Paycheck #SocialSecurity",
+      "data": {
+        "stats": [
+          {
+            "label": "Social Security",
+            "value": "6.2%",
+            "direction": "flat",
+            "polarity": "lower_is_good"
+          },
+          {
+            "label": "Medicare",
+            "value": "1.45%",
+            "direction": "flat",
+            "polarity": "lower_is_good"
+          },
+          {
+            "label": "Your total",
+            "value": "7.65%",
+            "direction": "flat",
+            "polarity": "lower_is_good"
+          }
+        ],
+        "footnote": "Employee share. Employers pay the same. Social Security applies up to $184,500 of 2026 wages."
+      },
+      "scheduled_at": "2026-11-16T04:00:00.000Z"
+    }
+  ]
+}
