@@ -5,24 +5,25 @@
  *
  * Output: output/reels/<slug>/<slug>.mp4 plus the slide PNGs and bed.wav.
  *
- * Design: the moving version of the `plain` card. Each slide is big sans text
- * on a solid near-black or white ground with the page header on top. Slides
- * alternate dark/light, cut through a 0.12s dip-to-black, drift with
- * alternating punch-in/push-in zooms, and a thin accent progress bar runs
- * along the top. A bass hit + noise riser lands on every cut (the audio bed
- * is ORIGINAL and procedurally generated — nothing to strike, ever).
+ * v3 features (each reel picks its own mix — no two reels move the same):
+ *  - COUNT-UP HOOK: `"countup": true` on the hook animates its big number
+ *    from 0 to the real value in the first beat. The climb is the motion.
+ *  - LINE REVEALS: body slides with 2+ lines land their lines as separate
+ *    beats inside the slide (hard cuts, like thought-beats).
+ *  - STYLE OVERRIDES: `"style": {"accent": "gold"|"green", "first":
+ *    "light"|"dark"}` forces a look; otherwise the slug fingerprint decides.
+ *  - VOICE: `"voice": "<file>.wav"` (relative to the input JSON) mixes a
+ *    narration over a ducked bed — the CapCut Voice Studio hand-off point.
+ *  - Everything from v2: dip-to-black cuts with bass hits + risers synced to
+ *    them, punch/push zooms, accent underline, progress bar, fingerprint
+ *    variety in tempo/root/palette order/timing.
  *
- * VARIETY IS A REQUIREMENT (Abhiyan, Nov 14): every reel must look and sound
- * different. A deterministic "fingerprint" derived from the slug varies the
- * palette order, the accent colour (brand green or gold), the tempo, the bass
- * root note, the zoom pattern and the slide timing — so two reels never move
- * or sound the same, while any single reel rebuilds identically.
- *
- * No faces, ever — not Abhiyan's, not AI-generated people, no stock footage
- * of people. Everything on screen is our own typography and our own mark.
+ * The audio bed is ORIGINAL and procedurally generated — nothing to strike.
+ * No faces, ever. No licensed media, ever. See prompts/reels.md.
  */
 import { execFileSync } from "node:child_process";
 import { createHash } from "node:crypto";
+import { existsSync } from "node:fs";
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { ImageResponse } from "next/og";
@@ -36,16 +37,19 @@ const PAD = 96;
 const CONTENT_W = REEL_W - PAD * 2;
 const FPS = 30;
 const XFADE = 0.12; // dip-to-black between slides, seconds
+const COUNT_STEPS = 14; // frames in a count-up
+const COUNT_PORTION = 0.45; // share of the hook spent counting
 
 type SlideKind = "hook" | "body" | "take" | "end";
 export type ReelSlide = {
   kind: SlideKind;
-  /** Hero figure/word, huge type. Hook slides usually have one. */
   big?: string;
-  /** Body lines; each renders as its own paragraph. */
   lines?: string[];
-  /** Seconds on screen. Defaults by kind (then fingerprint-jittered). */
   seconds?: number;
+  /** Animate the first number in `big` from 0 to its value. */
+  countup?: boolean;
+  /** Reveal `lines` one beat at a time (default true for 2+ line bodies). */
+  reveal?: boolean;
 };
 export type ReelDoc = {
   slug: string;
@@ -53,8 +57,10 @@ export type ReelDoc = {
   slides: ReelSlide[];
   source_line: string;
   caption: string;
-  /** Optional override; the fingerprint supplies one otherwise. */
   audio_seed?: number;
+  style?: { accent?: "green" | "gold"; first?: "dark" | "light" };
+  /** Narration WAV relative to the input JSON's directory. */
+  voice?: string;
 };
 
 const DEFAULT_SECONDS: Record<SlideKind, number> = {
@@ -64,31 +70,33 @@ const DEFAULT_SECONDS: Record<SlideKind, number> = {
   end: 3.2,
 };
 
-/** Deterministic per-reel variety, derived from the slug. */
 type Fingerprint = {
   darkFirst: boolean;
-  accent: string; // brand green or gold
-  accentDarkText: string; // accent usable on light grounds
+  accent: string;
+  accentDarkText: string;
   bpm: number;
   rootHz: number;
   audioSeed: number;
-  zoomFlip: boolean; // which slides punch vs push
-  timeJitter: number; // multiply default durations 0.92–1.08
+  zoomFlip: boolean;
+  timeJitter: number;
 };
 
-function fingerprint(slug: string): Fingerprint {
+function fingerprint(slug: string, style?: ReelDoc["style"]): Fingerprint {
   const h = createHash("sha256").update(slug).digest();
   const roots = [55.0, 65.41, 73.42, 49.0]; // A1, C2, D2, G1
-  const gold = h[2] % 3 === 0; // gold roughly every third reel
+  let gold = h[2] % 3 === 0;
+  if (style?.accent) gold = style.accent === "gold";
+  let darkFirst = h[0] % 2 === 0;
+  if (style?.first) darkFirst = style.first === "dark";
   return {
-    darkFirst: h[0] % 2 === 0,
+    darkFirst,
     accent: gold ? BRAND_GOLD : BRAND_GREEN,
     accentDarkText: gold ? "#8A6A12" : "#0E6B3C",
-    bpm: 84 + (h[1] % 17), // 84–100
+    bpm: 84 + (h[1] % 17),
     rootHz: roots[h[3] % roots.length],
     audioSeed: h[4] * 256 + h[5],
     zoomFlip: h[6] % 2 === 0,
-    timeJitter: 0.92 + (h[7] % 17) * 0.01, // 0.92–1.08
+    timeJitter: 0.92 + (h[7] % 17) * 0.01,
   };
 }
 
@@ -104,6 +112,26 @@ function lineSize(total: number): number {
   if (total <= 160) return 64;
   if (total <= 260) return 56;
   return 48;
+}
+
+/** "$26 billion" at progress 0.5 -> "$13 billion"; keeps format/commas. */
+function countupText(big: string, p: number): string {
+  const m = big.match(/([\d][\d,]*(?:\.\d+)?)/);
+  if (!m) return big;
+  const raw = m[1];
+  const value = parseFloat(raw.replace(/,/g, ""));
+  const decimals = raw.includes(".") ? raw.split(".")[1].length : 0;
+  // ease-out so the last ticks slow down like a real counter
+  const eased = 1 - Math.pow(1 - p, 2.2);
+  let v = value * eased;
+  if (p >= 1) v = value;
+  const hasCommas = raw.includes(",");
+  let s = v.toFixed(decimals);
+  if (hasCommas) s = Number(s).toLocaleString("en-US", {
+    minimumFractionDigits: decimals,
+    maximumFractionDigits: decimals,
+  });
+  return big.slice(0, m.index) + s + big.slice((m.index ?? 0) + raw.length);
 }
 
 function Header({ dark }: { dark: boolean }) {
@@ -143,18 +171,26 @@ function Slide({
   dark,
   source,
   fp,
+  bigOverride,
+  visibleLines,
 }: {
   slide: ReelSlide;
   dark: boolean;
   source: string;
   fp: Fingerprint;
+  /** Count-up frame text for `big`. */
+  bigOverride?: string;
+  /** How many of `lines` are shown (reveal); undefined = all. */
+  visibleLines?: number;
 }) {
   const c = plainColors(dark);
   const accent = dark ? fp.accent : fp.accentDarkText;
   const lines = slide.lines ?? [];
+  const shown = visibleLines ?? lines.length;
   const totalLen = lines.join(" ").length;
   const size = lineSize(totalLen);
   const gap = Math.round(size * 0.8);
+  const big = bigOverride ?? slide.big;
   return (
     <div
       style={{
@@ -163,8 +199,8 @@ function Slide({
         width: REEL_W,
         height: REEL_H,
         padding: PAD,
-        paddingTop: 170, // keep clear of the Reels top UI
-        paddingBottom: 260, // keep clear of caption/actions overlay
+        paddingTop: 170,
+        paddingBottom: 260,
         backgroundColor: c.bg,
         color: c.text,
         fontFamily: FONT_SANS,
@@ -181,7 +217,7 @@ function Slide({
           paddingTop: 36,
         }}
       >
-        {slide.big ? (
+        {big ? (
           <div
             style={{
               display: "flex",
@@ -193,16 +229,15 @@ function Slide({
             <div
               style={{
                 display: "flex",
-                fontSize: bigSize(slide.big),
+                fontSize: bigSize(slide.big ?? big),
                 fontWeight: 800,
                 lineHeight: 1.02,
                 letterSpacing: "-0.02em",
                 color: c.text,
               }}
             >
-              {slide.big}
+              {big}
             </div>
-            {/* accent underline bar — the one decorative element, earned by the hook */}
             <div
               style={{
                 display: "flex",
@@ -224,7 +259,14 @@ function Slide({
               fontWeight: slide.kind === "take" && i === 0 ? 800 : 600,
               lineHeight: 1.3,
               letterSpacing: "-0.01em",
-              color: slide.kind === "take" && i === 0 ? accent : c.text,
+              // reveal: upcoming lines occupy their space invisibly so the
+              // layout never jumps, they just "arrive"
+              color:
+                i >= shown
+                  ? c.bg
+                  : slide.kind === "take" && i === 0
+                    ? accent
+                    : c.text,
               marginBottom: i === lines.length - 1 ? 0 : gap,
             }}
           >
@@ -258,6 +300,9 @@ function arg(name: string): string | undefined {
   return i >= 0 ? process.argv[i + 1] : undefined;
 }
 
+/** One rendered still with its on-screen duration. */
+type Step = { png: string; seconds: number };
+
 async function main() {
   const inputPath = arg("input");
   if (!inputPath) throw new Error("--input input/reels/<file>.json is required");
@@ -267,44 +312,92 @@ async function main() {
   if (doc.slides.length < 4 || doc.slides.length > 9)
     throw new Error(`4-9 slides, got ${doc.slides.length}`);
 
-  const fp = fingerprint(doc.slug);
+  const fp = fingerprint(doc.slug, doc.style);
   const outDir = path.join("output", "reels", doc.slug);
   await mkdir(outDir, { recursive: true });
-
   const fonts = await loadFonts();
-  const durations: number[] = [];
-  const pngs: string[] = [];
+
+  // Build each slide as one or more steps (count-up frames / line reveals).
+  const slideSteps: Step[][] = [];
+  const slideDur: number[] = [];
+  let stillIdx = 0;
+
+  async function renderStill(
+    slide: ReelSlide,
+    dark: boolean,
+    opts: { bigOverride?: string; visibleLines?: number },
+  ): Promise<string> {
+    const res = new ImageResponse(
+      <Slide
+        slide={slide}
+        dark={dark}
+        source={doc.source_line}
+        fp={fp}
+        bigOverride={opts.bigOverride}
+        visibleLines={opts.visibleLines}
+      />,
+      { width: REEL_W, height: REEL_H, fonts },
+    );
+    stillIdx += 1;
+    const png = path.join(outDir, `still-${String(stillIdx).padStart(3, "0")}.png`);
+    await writeFile(png, Buffer.from(await res.arrayBuffer()));
+    return png;
+  }
 
   for (let i = 0; i < doc.slides.length; i++) {
     const slide = doc.slides[i];
     const dark = fp.darkFirst ? i % 2 === 0 : i % 2 === 1;
-    const res = new ImageResponse(
-      <Slide slide={slide} dark={dark} source={doc.source_line} fp={fp} />,
-      { width: REEL_W, height: REEL_H, fonts },
-    );
-    const png = path.join(outDir, `slide-${String(i + 1).padStart(2, "0")}.png`);
-    await writeFile(png, Buffer.from(await res.arrayBuffer()));
-    pngs.push(png);
     const base = slide.seconds ?? DEFAULT_SECONDS[slide.kind];
-    durations.push(Math.round(base * fp.timeJitter * 100) / 100);
+    const dur = Math.round(base * fp.timeJitter * 100) / 100;
+    const steps: Step[] = [];
+
+    const lines = slide.lines ?? [];
+    const doReveal =
+      slide.reveal ?? (slide.kind === "body" && lines.length >= 2 && !slide.countup);
+
+    if (slide.countup && slide.big) {
+      const countDur = dur * COUNT_PORTION;
+      const per = countDur / COUNT_STEPS;
+      for (let k = 1; k <= COUNT_STEPS; k++) {
+        const png = await renderStill(slide, dark, {
+          bigOverride: countupText(slide.big, k / COUNT_STEPS),
+          visibleLines: 0,
+        });
+        steps.push({ png, seconds: per });
+      }
+      const hold = await renderStill(slide, dark, {});
+      steps.push({ png: hold, seconds: dur - countDur });
+    } else if (doReveal) {
+      const beats = lines.length;
+      const first = dur * 0.42;
+      const rest = (dur - first) / (beats - 1);
+      for (let k = 1; k <= beats; k++) {
+        const png = await renderStill(slide, dark, { visibleLines: k });
+        steps.push({ png, seconds: k === 1 ? first : rest });
+      }
+    } else {
+      const png = await renderStill(slide, dark, {});
+      steps.push({ png, seconds: dur });
+    }
+
+    slideSteps.push(steps);
+    slideDur.push(dur);
     console.log(
-      `slide ${i + 1}/${doc.slides.length}  ${slide.kind}  ${durations[i]}s  ${dark ? "dark" : "light"}`,
+      `slide ${i + 1}/${doc.slides.length}  ${slide.kind}  ${dur}s  ${dark ? "dark" : "light"}  ${steps.length} step(s)`,
     );
   }
 
-  const n = pngs.length;
-  const total =
-    durations.reduce((a, b) => a + b, 0) - XFADE * (n - 1);
+  const n = slideSteps.length;
+  const total = slideDur.reduce((a, b) => a + b, 0) - XFADE * (n - 1);
 
-  // Cut times (midpoint of each dip) for the audio hits.
   const cuts: number[] = [];
   let acc = 0;
   for (let i = 0; i < n - 1; i++) {
-    acc += durations[i];
+    acc += slideDur[i];
     cuts.push(acc - XFADE * (i + 1) + XFADE / 2);
   }
 
-  // Original audio bed with hits synced to the cuts.
+  // Audio: original bed with hits on the cuts; optional narration on top.
   const bed = path.join(outDir, "bed.wav");
   execFileSync(
     "python3",
@@ -319,29 +412,55 @@ async function main() {
     ],
     { stdio: "inherit" },
   );
+  const voicePath = doc.voice
+    ? path.resolve(path.dirname(inputPath), doc.voice)
+    : undefined;
+  if (doc.voice && !existsSync(voicePath!))
+    throw new Error(`voice file not found: ${voicePath}`);
 
-  // Motion: hook punches in (starts big, settles), then slides alternate
-  // push-in / punch-in; dip-to-black xfade between every pair.
+  // Video graph: per slide, concat its steps (each gently zoomed), then
+  // dip-to-black xfade between slides, then the progress bar.
   const inputs: string[] = [];
   const filters: string[] = [];
+  let inIdx = 0;
   for (let i = 0; i < n; i++) {
-    inputs.push("-loop", "1", "-t", durations[i].toFixed(2), "-i", pngs[i]);
-    const frames = Math.round(durations[i] * FPS);
+    const steps = slideSteps[i];
     const punch = i === 0 ? true : fp.zoomFlip ? i % 2 === 0 : i % 2 === 1;
-    const zexpr = punch
-      ? `max(1.0,1.055-0.0011*on)` // punch-in: settle from 1.055 toward 1.0
-      : `min(1.06,1+0.00045*on)`; // push-in: creep from 1.0 toward 1.06
-    filters.push(
-      `[${i}:v]fps=${FPS},scale=${REEL_W * 2}:${REEL_H * 2},` +
-        `zoompan=z='${zexpr}':x='(iw-iw/zoom)/2':y='(ih-ih/zoom)/2':d=${frames}:s=${REEL_W}x${REEL_H}:fps=${FPS},` +
-        `setsar=1,format=yuv420p[v${i}]`,
-    );
+    const parts: string[] = [];
+    for (let k = 0; k < steps.length; k++) {
+      const st = steps[k];
+      inputs.push("-loop", "1", "-t", st.seconds.toFixed(3), "-i", st.png);
+      const frames = Math.max(1, Math.round(st.seconds * FPS));
+      const multi = steps.length > 1;
+      // multi-step slides keep a steady slow push so the beat cuts stay
+      // crisp; single-step slides get the full punch/push move
+      const zexpr = multi
+        ? `min(1.05,1+0.00035*on)`
+        : punch
+          ? `max(1.0,1.055-0.0011*on)`
+          : `min(1.06,1+0.00045*on)`;
+      filters.push(
+        `[${inIdx}:v]fps=${FPS},scale=${REEL_W * 2}:${REEL_H * 2},` +
+          `zoompan=z='${zexpr}':x='(iw-iw/zoom)/2':y='(ih-ih/zoom)/2':d=${frames}:s=${REEL_W}x${REEL_H}:fps=${FPS},` +
+          `setsar=1,format=yuv420p[s${i}_${k}]`,
+      );
+      parts.push(`[s${i}_${k}]`);
+      inIdx += 1;
+    }
+    // settb: concat and zoompan emit different timebases; xfade demands they
+    // match, so normalize every slide stream to AVTB.
+    if (parts.length > 1) {
+      filters.push(
+        `${parts.join("")}concat=n=${parts.length}:v=1:a=0,settb=AVTB,fps=${FPS}[v${i}]`,
+      );
+    } else {
+      filters.push(`${parts[0]}settb=AVTB,fps=${FPS}[v${i}]`);
+    }
   }
-  // xfade chain with fadeblack dips.
   let prev = `v0`;
   let offAcc = 0;
   for (let i = 1; i < n; i++) {
-    offAcc += durations[i - 1] - XFADE;
+    offAcc += slideDur[i - 1] - XFADE;
     const out = i === n - 1 ? "vall" : `x${i}`;
     filters.push(
       `[${prev}][v${i}]xfade=transition=fadeblack:duration=${XFADE}:offset=${offAcc.toFixed(2)}[${out}]`,
@@ -352,16 +471,29 @@ async function main() {
     `[vall]drawbox=x=0:y=0:w='iw*min(t/${total.toFixed(2)},1)':h=14:color=${fp.accent}@0.9:t=fill[vout]`,
   );
 
+  // Audio chain: bed alone, or bed ducked under the narration.
+  const bedIn = inIdx;
+  inputs.push("-i", bed);
+  let audioMap = `${bedIn}:a`;
+  if (voicePath) {
+    inputs.push("-i", voicePath);
+    filters.push(
+      `[${bedIn}:a]volume=0.35[bduck];` +
+        `[${bedIn + 1}:a]aformat=sample_rates=44100:channel_layouts=mono,volume=1.0[vo];` +
+        `[bduck][vo]amix=inputs=2:duration=first:normalize=0[aout]`,
+    );
+    audioMap = "[aout]";
+  }
+
   const mp4 = path.join(outDir, `${doc.slug}.mp4`);
   execFileSync(
     "ffmpeg",
     [
       "-y",
       ...inputs,
-      "-i", bed,
       "-filter_complex", filters.join(";"),
       "-map", "[vout]",
-      "-map", `${n}:a`,
+      "-map", audioMap,
       "-c:v", "libx264", "-preset", "medium", "-crf", "21",
       "-pix_fmt", "yuv420p",
       "-c:a", "aac", "-b:a", "128k",
@@ -378,7 +510,8 @@ async function main() {
   );
   console.log(
     `\nreel: ${mp4}  (${total.toFixed(1)}s, ${n} slides, ` +
-      `${fp.darkFirst ? "dark" : "light"}-first, accent ${fp.accent}, ${fp.bpm.toFixed(0)}bpm)`,
+      `${fp.darkFirst ? "dark" : "light"}-first, accent ${fp.accent}, ${fp.bpm.toFixed(0)}bpm` +
+      `${voicePath ? ", with narration" : ""})`,
   );
 }
 
