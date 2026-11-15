@@ -7,5 +7,10 @@
     "moduleResolution": "bundler",
     "noEmit": true
   },
-  "include": ["../src/**/*.ts", "../src/**/*.tsx", "./**/*.ts"]
+  "include": [
+    "../src/**/*.ts",
+    "../src/**/*.tsx",
+    "./**/*.ts",
+    "./**/*.tsx"
+  ]
 }

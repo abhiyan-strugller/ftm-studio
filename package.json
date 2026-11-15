@@ -16,7 +16,8 @@
     "new-day": "tsx --tsconfig scripts/tsconfig.json scripts/new-day.ts",
     "build-day": "tsx --tsconfig scripts/tsconfig.json scripts/build-day.ts",
     "publish-media": "tsx --tsconfig scripts/tsconfig.json scripts/publish-media.ts",
-    "publish-sheet": "tsx --tsconfig scripts/tsconfig.json scripts/publish-sheet.ts"
+    "publish-sheet": "tsx --tsconfig scripts/tsconfig.json scripts/publish-sheet.ts",
+    "render-reel": "tsx --tsconfig scripts/tsconfig.json scripts/render-reel.tsx"
   },
   "dependencies": {
     "next": "^15.5.0",

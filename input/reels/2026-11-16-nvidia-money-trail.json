@@ -1,0 +1,53 @@
+{
+  "slug": "2026-11-16-nvidia-money-trail",
+  "title": "The Nvidia money trail",
+  "audio_seed": 11,
+  "slides": [
+    {
+      "kind": "hook",
+      "big": "$1 trillion",
+      "lines": ["erased from the biggest stock in most 401(k)s."]
+    },
+    {
+      "kind": "body",
+      "lines": [
+        "Nvidia's CEO admitted an affair with a suspected Chinese spy.",
+        "He resigned Thursday, after 33 years."
+      ]
+    },
+    {
+      "kind": "body",
+      "lines": [
+        "Before the story broke, the US official who approves chip sales to China was sent a classified warning about her.",
+        "That's per Axios."
+      ]
+    },
+    {
+      "kind": "body",
+      "lines": [
+        "His agency still cleared about 10 Chinese companies to buy Nvidia's advanced chips.",
+        "The Senate now wants both men to testify."
+      ]
+    },
+    {
+      "kind": "body",
+      "lines": [
+        "Own an S&P 500 fund? Then you own Nvidia.",
+        "This story is about your money."
+      ]
+    },
+    {
+      "kind": "take",
+      "lines": [
+        "My take:",
+        "The scandal isn't the affair. It's who was warned, and what got approved anyway."
+      ]
+    },
+    {
+      "kind": "end",
+      "lines": ["Who gains? Who pays?"]
+    }
+  ],
+  "source_line": "Sources: Axios (Nov 10, 2026), Reuters, company statements",
+  "caption": "The most important stock in most retirement accounts lost about $1 trillion in market value in a week, per Axios — and its CEO of 33 years is gone.\n\nThe part getting less attention: Axios reports the Commerce Secretary was sent a classified warning about the CEO's relationship with a suspected Chinese spy BEFORE his department cleared roughly 10 Chinese companies to buy Nvidia's advanced chips. The Senate now wants both men to testify.\n\nMy take: the affair is the headline, but the money story is who was warned, when, and what got approved anyway.\n\nIf you hold an S&P 500 fund, Nvidia is in it. Should chip-export approvals get an independent review? 👇\n\n#Nvidia #401k #StockMarket #FollowTheMoney"
+}
