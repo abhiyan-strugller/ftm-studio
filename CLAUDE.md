@@ -13,12 +13,22 @@ US audience, politics only ever as the angle.
 
 ## The daily flow
 
-Two scheduled tasks, every morning, Edmonton time.
+Two scheduled tasks, Edmonton time. Since 2026-11-14, Task A runs **the
+evening before** the day it builds, so the posts carry that day's news
+instead of running a day behind — that lag was the thing Abhiyan most wanted
+fixed. Task B gets three attempts because the laptop is not always reachable
+at 5:42 (it was auto-suspended with `device_absent` on 2026-11-12); its
+prompt refuses to upload twice, so the extra attempts are harmless.
 
 | | Task | Runs | Can it push? | Has a browser? |
 | --- | --- | --- | --- | --- |
-| **A** | `FTM Build & Publish (Task A)` | **4:51 AM** | **Yes** | No |
-| **B** | `FTM Daily Post Build` (really Task B) | **5:42 AM** | No | **Yes** |
+| **A** | `FTM Build & Publish (Task A)` | **8:47 PM**, builds tomorrow | **Yes** | No |
+| **B** | `FTM Daily Post Build` (really Task B) | **5:42 / 7:42 / 9:42 AM** | No | **Yes** |
+
+Task A is idempotent: if the target day's run-log already carries a verified
+sheet, it reports "already built" and stops. Research follows
+`prompts/research.md` (the deep-sweep spec); captions follow
+`prompts/caption.md`; cards are the `plain` template (see below).
 
 - `trig_01UQhvZvCzVKCfzGJi4xyh6M` — Task A, cloud, both repos attached
 - `trig_01Qq197Tj3ngcTwUQcG2AUap` — Task B, bound to `LAPTOP-DGLF08U0`
@@ -137,6 +147,14 @@ only thing that settles it.
   publish time, not upload time.
 - **Read the queue back after uploading.** Skipping that check is exactly how
   ten wrong posts went live.
+- **A republished sheet does not fix Post Planner.** Task B runs 51 minutes
+  after the old Task A slot ran — on 2026-11-14 it had already uploaded the
+  morning sheet before the evening rebuild replaced it. Publishing a
+  superseding sheet changes nothing in the queue: the queued posts must be
+  deleted in Post Planner (bulk-select the day in List view → Bulk action →
+  Delete) and the new sheet injected, then the queue read back. Done by hand
+  with Abhiyan's approval that night; remember it any time a sheet is
+  replaced after Task B has run.
 - Trending but unconfirmed stories are not posted. Flag them labelled
   UNCONFIRMED, say where they are circulating, and let him decide.
 
@@ -239,21 +257,34 @@ before optimising the other.
 
 ---
 
-## Parked, in order
+## Done since, and what remains parked
 
-1. **Card redesign.** Abhiyan says the current cards read as Claude-made — the
-   serif/sans pairing, dark ground with one accent, centred balance, the
-   italicised accent word, the small-caps kicker. That combination is the tell.
-2. **Sharing other people's top finance posts**, the way Good Financial Cents
-   does. Note the conflict: his engine is screenshots of other people's posts,
-   which is strong for reach and risky for monetization, since Facebook
-   penalises unoriginal content. Taking the *format* is free; taking the
-   *sourcing method* is not.
-3. **Moving the build to the evening.** Task A at 4:51 AM builds tomorrow from
-   *yesterday's* news — an entire US trading day is missed. An evening build
-   would be fresher and would also run when the laptop is reliably awake.
-4. **Reels.** No faces at all: not his, not AI-generated. Video that presents
+Done 2026-11-14 (same-day, interactive sessions with Abhiyan):
+
+- **Card redesign** — the `plain` template (Good Financial Cents style) is the
+  default for all posts. No serif, no kicker, no accent italic, no chrome.
+- **Evening build** — Task A moved to 8:47 PM building tomorrow; Task B given
+  three morning attempts. See "The daily flow".
+- **Research upgrade** — `prompts/research.md`: ~100-candidate sweep across
+  wire news, rates, a named CEO watchlist (Musk, Nvidia, Zuckerberg, Altman,
+  Amodei, Bezos, Buffett, Dimon), cyber→money, investigations, and the
+  viral/social layer; one-outlet rule; UNCONFIRMED protocol. First sweep:
+  `research/2026-11-14-deep-sweep.md` — includes the Monday Nov 16 shortlist
+  and the running Nvidia money-trail thread.
+
+Parked, in order:
+
+1. **Sharing other people's top finance posts**, the way Good Financial Cents
+   does. The conflict stands: strong for reach, risky for monetization, since
+   Facebook penalises unoriginal content. Post Planner's Content → streams is
+   the tool when Abhiyan starts this (big pages surveyed in the Nov 14 sweep).
+   Taking the *format* is free; taking the *sourcing method* is not.
+2. **Reels.** No faces at all: not his, not AI-generated. Video that presents
    the fact itself, built from the most viral story of the day's research.
+   Abhiyan named this the next project after tonight's research upgrade.
+
+Awareness: a different Facebook page named "Follow the Money" (562K fans)
+already exists — matters for search, verification and any paid growth later.
 
 Reference for the look: facebook.com/GoodFinancialCents. Its posts are plain
 text on a solid background with the author's avatar and handle — barely designed
