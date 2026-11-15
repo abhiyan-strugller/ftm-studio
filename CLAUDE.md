@@ -279,9 +279,14 @@ Parked, in order:
    Facebook penalises unoriginal content. Post Planner's Content → streams is
    the tool when Abhiyan starts this (big pages surveyed in the Nov 14 sweep).
    Taking the *format* is free; taking the *sourcing method* is not.
-2. **Reels.** No faces at all: not his, not AI-generated. Video that presents
-   the fact itself, built from the most viral story of the day's research.
-   Abhiyan named this the next project after tonight's research upgrade.
+2. **Reels — IN PROGRESS (started 2026-11-14).** `prompts/reels.md` is the
+   spec; `npm run render-reel` builds one from `input/reels/<slug>.json`.
+   No faces at all: not his, not AI-generated. 4 reels/day on 4 days/week
+   (16/week). Audio is procedurally generated in-repo — never licensed music.
+   Ships through the normal sheet with REEL OR STORY = `reel`. First demo:
+   the Nvidia money trail. Remaining: Abhiyan's sign-off on the look, then
+   fold the 4-reel render + sheet rows into Task A; optional CapCut Voice
+   Studio voiceover layer (his account is signed in on his Chrome).
 
 Awareness: a different Facebook page named "Follow the Money" (562K fans)
 already exists — matters for search, verification and any paid growth later.

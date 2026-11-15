@@ -49,17 +49,32 @@ villain/victim pair.
 
 ## Cadence and shipping
 
-- **4 reels a week** (default days: Mon, Wed, Fri, Sat — Abhiyan can change).
+- **4 reels a day on 4 days a week — 16 a week** (Abhiyan's spec, Nov 14).
+  Default reel days: Mon, Wed, Fri, Sat; he can change them.
+- On a reel day, the 4 reels come from the day's 4 strongest sweep stories
+  (they can share a story with a card — different format, different slot) and
+  spread across the day between card slots: roughly 9:30 AM, 1:30 PM,
+  6:00 PM, 8:30 PM ET.
 - Scheduling rides the EXISTING pipeline: Post Planner's bulk sheet supports
   video, and the REEL OR STORY column set to `reel` publishes it as a Reel
   (confirmed from reference/sample_bulk_posts_import.xlsx, which shows a
   queued .mov with `reel`). So: host the MP4 publicly (ftm-media, like the
   card PNGs), add a sheet row with the video URL + posting time + `reel`,
   and Task B's upload puts it in the queue like any post.
-- Best slot: evening ET (reel rows replace or add to a day's 10 at ~7–9 PM
-  ET), one reel per day maximum.
 - The reel's caption ends with a question; the source link goes in FIRST
   COMMENT, same as cards.
+- Size watch: ~2.5MB per reel ≈ 40MB/week in ftm-media. Fine for months;
+  when the repo nears ~1GB, move reel hosting to a second public repo
+  (ftm-media-reels) — same Pages setup, never delete anything unpublished.
+
+## CapCut integration (logged in, verified Nov 14)
+
+Abhiyan's CapCut web account is signed in on his Chrome (1TB space, credits
+active). Its Voice Studio TTS is the sanctioned way to add a voiceover layer:
+generate the narration from the reel's slide text, export the audio, drop it
+beside the reel JSON as voice.wav for the renderer to mix. UI-driven, so it
+stays an enhancement pass — the code renderer must always produce a complete,
+shippable reel without it.
 
 ## Review
 
