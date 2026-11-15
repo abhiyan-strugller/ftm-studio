@@ -55,12 +55,17 @@ villain/victim pair.
   (they can share a story with a card — different format, different slot) and
   spread across the day between card slots: roughly 9:30 AM, 1:30 PM,
   6:00 PM, 8:30 PM ET.
-- Scheduling rides the EXISTING pipeline: Post Planner's bulk sheet supports
-  video, and the REEL OR STORY column set to `reel` publishes it as a Reel
-  (confirmed from reference/sample_bulk_posts_import.xlsx, which shows a
-  queued .mov with `reel`). So: host the MP4 publicly (ftm-media, like the
-  card PNGs), add a sheet row with the video URL + posting time + `reel`,
-  and Task B's upload puts it in the queue like any post.
+- Scheduling rides the EXISTING pipeline, wired end to end since 2026-11-15:
+  the day file takes a top-level `reels: [{ "slug", "scheduled_at" }]` block;
+  `build-day` copies each rendered MP4 from output/reels/<slug>/ into
+  output/<date>/, adds a sheet row with the video's Pages URL, the caption
+  and source from input/reels/<slug>.json, and `reel` in the REEL OR STORY
+  column; `publish-media` ships MP4s with the PNGs. Nothing else to do —
+  Task B uploads the sheet as usual.
+- Reel slots, planner zone (Mountain): **10:15, 12:45, 16:45, 20:30** —
+  between card slots, and never earlier than 10:15, because Task B's last
+  retry runs at 9:42 and the past-row guard would refuse a sheet whose
+  earliest row had already passed.
 - The reel's caption ends with a question; the source link goes in FIRST
   COMMENT, same as cards.
 - Size watch: ~2.5MB per reel ≈ 40MB/week in ftm-media. Fine for months;

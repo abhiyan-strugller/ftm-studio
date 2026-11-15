@@ -26,10 +26,12 @@ export type CsvRow = {
   /** Slot instant. Written as POSTING TIME in the Post Planner account zone (Mountain); never blank. */
   at: Date;
   caption: string;
-  /** Full public URL ending in an image extension. */
+  /** Full public URL ending in an image or video extension. */
   mediaUrl: string;
   /** Already composed, e.g. "Source: Freddie Mac — https://…". Blank if none. */
   firstComment: string;
+  /** "reel" publishes a video row as a Facebook Reel (template column 9). */
+  reelOrStory?: "reel" | "story";
 };
 
 /** RFC 4180 escaping: quote when the value contains a delimiter or quote. */
@@ -73,7 +75,7 @@ export function postRowFields(row: CsvRow, timeZone: string = DEFAULT_POSTPLANNE
     hasComment ? row.firstComment : "", // 6 FIRST COMMENT
     delay, // 7 FIRST COMMENT DELAY
     "", // 8 TOBI BACKGROUND
-    "", // 9 REEL OR STORY
+    row.reelOrStory ?? "", // 9 REEL OR STORY — "reel" turns a video row into a Reel
   ];
 }
 

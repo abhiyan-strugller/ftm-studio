@@ -112,11 +112,15 @@ async function main(): Promise<void> {
   if (!existsSync(srcDir)) {
     throw new Error(`No output/${date}/ — run \`npm run build-day -- --input input/${date}.json\` first.`);
   }
-  const pngs = (await readdir(srcDir)).filter((f) => f.toLowerCase().endsWith(".png")).sort();
-  if (pngs.length === 0) throw new Error(`output/${date}/ contains no PNGs.`);
+  // Cards are PNGs; reels are MP4s copied in by build-day. Both are fetched
+  // by Post Planner at publish time, so both ship.
+  const pngs = (await readdir(srcDir))
+    .filter((f) => f.toLowerCase().endsWith(".png") || f.toLowerCase().endsWith(".mp4"))
+    .sort();
+  if (pngs.length === 0) throw new Error(`output/${date}/ contains no PNGs or MP4s.`);
 
   console.log(
-    `Publishing ${pngs.length} image(s) from output/${date}/ to ${slug}${dryRun ? "  [dry run — nothing is executed]" : ""}\n`,
+    `Publishing ${pngs.length} media file(s) from output/${date}/ to ${slug}${dryRun ? "  [dry run — nothing is executed]" : ""}\n`,
   );
 
   // --- The repo must already exist -----------------------------------------
@@ -182,7 +186,7 @@ async function main(): Promise<void> {
       "utf8",
     );
   }
-  console.log(`  copy      ${pngs.length} PNG(s) → ${WORK_DIR}/${date}/${dryRun ? " (skipped in dry run)" : ""}`);
+  console.log(`  copy      ${pngs.length} media file(s) → ${WORK_DIR}/${date}/${dryRun ? " (skipped in dry run)" : ""}`);
 
   git(["add", "-A"], work);
   const staged = tryGit(["diff", "--cached", "--name-only"], work).out;

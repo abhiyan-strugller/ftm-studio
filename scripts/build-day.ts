@@ -15,7 +15,7 @@
  * `--only` narrows the whole output — PNGs, CSV rows and contact sheet — so a
  * three-row sheet can be produced for a trial upload before committing a day.
  */
-import { mkdir, readFile, writeFile } from "node:fs/promises";
+import { copyFile, mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { parseDayFile, toPostDoc, issueNumberFor, DayFileError } from "../src/lib/day";
 import { findOverflow } from "../src/lib/design/overflow";
@@ -178,6 +178,52 @@ async function main(): Promise<void> {
       `  ${post.id}  ${post.template.padEnd(12)} ${(png.length / 1024).toFixed(0).padStart(4)} KB${flag}`,
     );
   }
+
+  // --- Reels ----------------------------------------------------------------
+  // Optional top-level `reels: [{ slug, scheduled_at }]` in the day file.
+  // Each slug must already be rendered (npm run render-reel); its MP4 is
+  // copied into output/<date>/ so publish-media ships it with the day, and it
+  // becomes a sheet row with "reel" in the REEL OR STORY column. Captions and
+  // sources come from the reel doc in input/reels/<slug>.json.
+  const reels = Array.isArray((raw as { reels?: unknown }).reels)
+    ? ((raw as { reels: { slug?: unknown; scheduled_at?: unknown }[] }).reels)
+    : [];
+  for (const r of reels) {
+    if (typeof r.slug !== "string" || typeof r.scheduled_at !== "string") {
+      throw new Error(`reels[] entries need string slug and scheduled_at`);
+    }
+    const at = new Date(r.scheduled_at);
+    if (Number.isNaN(at.getTime())) throw new Error(`reels[${r.slug}]: bad scheduled_at`);
+    const reelDocPath = path.join("input", "reels", `${r.slug}.json`);
+    const reelDoc = JSON.parse(await readFile(reelDocPath, "utf8")) as {
+      caption?: string;
+      source_line?: string;
+    };
+    if (!reelDoc.caption) throw new Error(`${reelDocPath} has no caption`);
+    const mp4Src = path.join("output", "reels", r.slug, `${r.slug}.mp4`);
+    const mp4File = `${r.slug}.mp4`;
+    try {
+      await copyFile(mp4Src, path.join(outDir, mp4File));
+    } catch {
+      throw new Error(
+        `Reel video missing: ${mp4Src}. Run \`npm run render-reel -- --input ${reelDocPath}\` first.`,
+      );
+    }
+    const url = mediaUrlFor(media.baseUrl, day.date, mp4File);
+    assertUsableMediaUrl(url);
+    csvRows.push({
+      at,
+      caption: reelDoc.caption,
+      mediaUrl: url,
+      firstComment: composeFirstComment(reelDoc.source_line),
+      reelOrStory: "reel",
+    });
+    console.log(`  reel ${r.slug}  ${formatTimeInZone(at, ET_ZONE)} ET`);
+  }
+  if (reels.length > 0 && csvRows.length > MAX_DATA_ROWS) {
+    throw new Error(`${csvRows.length} rows exceeds Post Planner's limit of ${MAX_DATA_ROWS}.`);
+  }
+  csvRows.sort((a, b) => a.at.getTime() - b.at.getTime());
 
   // --- CSV ------------------------------------------------------------------
   await writeFile(path.join(outDir, "postplanner.csv"), csvWithBom(buildCsv(csvRows, preamble, plannerZone)));

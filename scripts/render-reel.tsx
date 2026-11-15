@@ -388,13 +388,15 @@ async function main() {
   }
 
   const n = slideSteps.length;
-  const total = slideDur.reduce((a, b) => a + b, 0) - XFADE * (n - 1);
+  const slideDurOf = (i: number) => slideDur[i];
+  // no overlap: fades live inside each slide, so total is the plain sum
+  const total = slideDur.reduce((a, b) => a + b, 0);
 
   const cuts: number[] = [];
   let acc = 0;
   for (let i = 0; i < n - 1; i++) {
     acc += slideDur[i];
-    cuts.push(acc - XFADE * (i + 1) + XFADE / 2);
+    cuts.push(acc);
   }
 
   // Audio: original bed with hits on the cuts; optional narration on top.
@@ -429,7 +431,11 @@ async function main() {
     const parts: string[] = [];
     for (let k = 0; k < steps.length; k++) {
       const st = steps[k];
-      inputs.push("-loop", "1", "-t", st.seconds.toFixed(3), "-i", st.png);
+      // ONE frame in, `d` frames out. Do NOT use -loop/-t here: zoompan
+      // emits d frames per INPUT frame, so a looped input multiplies the
+      // length (a 22s reel rendered as a 449s video, masked until now by
+      // -shortest cutting it back to the bed length).
+      inputs.push("-i", st.png);
       const frames = Math.max(1, Math.round(st.seconds * FPS));
       const multi = steps.length > 1;
       // multi-step slides keep a steady slow push so the beat cuts stay
@@ -440,33 +446,30 @@ async function main() {
           ? `max(1.0,1.055-0.0011*on)`
           : `min(1.06,1+0.00045*on)`;
       filters.push(
-        `[${inIdx}:v]fps=${FPS},scale=${REEL_W * 2}:${REEL_H * 2},` +
+        `[${inIdx}:v]scale=${REEL_W * 2}:${REEL_H * 2},` +
           `zoompan=z='${zexpr}':x='(iw-iw/zoom)/2':y='(ih-ih/zoom)/2':d=${frames}:s=${REEL_W}x${REEL_H}:fps=${FPS},` +
           `setsar=1,format=yuv420p[s${i}_${k}]`,
       );
       parts.push(`[s${i}_${k}]`);
       inIdx += 1;
     }
-    // settb: concat and zoompan emit different timebases; xfade demands they
-    // match, so normalize every slide stream to AVTB.
-    if (parts.length > 1) {
-      filters.push(
-        `${parts.join("")}concat=n=${parts.length}:v=1:a=0,settb=AVTB,fps=${FPS}[v${i}]`,
-      );
-    } else {
-      filters.push(`${parts[0]}settb=AVTB,fps=${FPS}[v${i}]`);
-    }
-  }
-  let prev = `v0`;
-  let offAcc = 0;
-  for (let i = 1; i < n; i++) {
-    offAcc += slideDur[i - 1] - XFADE;
-    const out = i === n - 1 ? "vall" : `x${i}`;
+    // Join this slide's steps, then dip to black at both ends. We do NOT use
+    // xfade: it demands matching timebases, and settb REINTERPRETS pts rather
+    // than rescaling them, which silently compressed multi-step slides to a
+    // fraction of their length. Fades + plain concat are exact.
+    const slideFrames = Math.max(1, Math.round(slideDurOf(i) * FPS));
+    const fadeF = Math.max(2, Math.round(XFADE * FPS));
+    const joined = parts.length > 1
+      ? `${parts.join("")}concat=n=${parts.length}:v=1:a=0,`
+      : `${parts[0]}`;
     filters.push(
-      `[${prev}][v${i}]xfade=transition=fadeblack:duration=${XFADE}:offset=${offAcc.toFixed(2)}[${out}]`,
+      `${joined}fade=t=in:st=0:d=${XFADE.toFixed(2)},` +
+        `fade=t=out:st=${Math.max(0, (slideFrames - fadeF) / FPS).toFixed(2)}:d=${XFADE.toFixed(2)}[v${i}]`,
     );
-    prev = out;
   }
+  filters.push(
+    `${slideDur.map((_, i) => `[v${i}]`).join("")}concat=n=${n}:v=1:a=0[vall]`,
+  );
   filters.push(
     `[vall]drawbox=x=0:y=0:w='iw*min(t/${total.toFixed(2)},1)':h=14:color=${fp.accent}@0.9:t=fill[vout]`,
   );
@@ -497,7 +500,9 @@ async function main() {
       "-c:v", "libx264", "-preset", "medium", "-crf", "21",
       "-pix_fmt", "yuv420p",
       "-c:a", "aac", "-b:a", "128k",
-      "-shortest",
+      // hard cap: the graph should already end here, and -shortest must
+      // never be the only thing deciding the length again
+      "-t", total.toFixed(2),
       "-movflags", "+faststart",
       mp4,
     ],

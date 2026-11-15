@@ -23,12 +23,20 @@ prompt refuses to upload twice, so the extra attempts are harmless.
 | | Task | Runs | Can it push? | Has a browser? |
 | --- | --- | --- | --- | --- |
 | **A** | `FTM Build & Publish (Task A)` | **8:47 PM**, builds tomorrow | **Yes** | No |
-| **B** | `FTM Daily Post Build` (really Task B) | **5:42 / 7:42 / 9:42 AM** | No | **Yes** |
+| **B** | `FTM Daily Post Build` (really Task B) | **5:42 / 7:42 / 9:42 AM**, uploads **TODAY** | No | **Yes** |
+
+**Day semantics — get this right.** Task A on the evening of day X−1 builds
+and publishes day X. Task B on the morning of day X uploads day X — the day
+it RUNS, not tomorrow. (Task B's original prompt said "tomorrow", which was
+correct when Task A ran at 4:51 AM, and became a hole the moment the build
+moved to the evening: nothing would ever have uploaded. Fixed 2026-11-15.)
 
 Task A is idempotent: if the target day's run-log already carries a verified
 sheet, it reports "already built" and stops. Research follows
 `prompts/research.md` (the deep-sweep spec); captions follow
-`prompts/caption.md`; cards are the `plain` template (see below).
+`prompts/caption.md`; cards are the `plain` template (see below); on reel
+days (Mon/Wed/Fri/Sat) `prompts/reels.md` governs the 4 reels that join the
+sheet via the day file's `reels` block.
 
 - `trig_01UQhvZvCzVKCfzGJi4xyh6M` — Task A, cloud, both repos attached
 - `trig_01Qq197Tj3ngcTwUQcG2AUap` — Task B, bound to `LAPTOP-DGLF08U0`
