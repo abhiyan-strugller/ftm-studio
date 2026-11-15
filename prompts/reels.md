@@ -66,8 +66,14 @@ villain/victim pair.
   between card slots, and never earlier than 10:15, because Task B's last
   retry runs at 9:42 and the past-row guard would refuse a sheet whose
   earliest row had already passed.
-- The reel's caption ends with a question; the source link goes in FIRST
-  COMMENT, same as cards.
+- The reel's caption ends with a question, THEN a hashtag block on its own
+  line. Reels carry more hashtags than cards — aim for 10-13: a mix of
+  broad-reach tags (#StockMarket #Investing #PersonalFinance #MoneyTok
+  #WallStreet), 3-5 specific to the story (#Nvidia #FederalReserve
+  #AnthropicIPO…), and always #FollowTheMoney last. Keep them real and
+  topical — this is reach, not spam; no #fyp-style filler, nothing unrelated
+  to the money angle. The source link still goes in FIRST COMMENT, same as
+  cards.
 - Size watch: ~2.5MB per reel ≈ 40MB/week in ftm-media. Fine for months;
   when the repo nears ~1GB, move reel hosting to a second public repo
   (ftm-media-reels) — same Pages setup, never delete anything unpublished.
