@@ -284,6 +284,40 @@ export const SAMPLES: Record<SampleKey, PostDoc> = {
     },
     source_line: "Source: Unconfirmed media reports",
   },
+
+  // ----------------------------------------------------------------- plain
+  "plain.short": {
+    template: "plain",
+    palette: "night",
+    tag: "Money",
+    post_number: 15,
+    headline: "A quarter-point rate move on a $400,000 mortgage is about $60 a month.",
+    data: {
+      paragraphs: [
+        "Over thirty years, that is real money.",
+        "It is not the same as houses getting cheaper. Prices have not moved.",
+      ],
+    },
+    source_line: "Source: Freddie Mac weekly survey",
+  },
+  "plain.long": {
+    template: "plain",
+    palette: "cream",
+    tag: "Money",
+    post_number: 16,
+    headline:
+      "The salary nobody warns you about: at $160,000 a year, a household can still end every month with nothing left after the mortgage, the cars, childcare and groceries.",
+    data: {
+      paragraphs: [
+        "That is not a budgeting failure on its own. Housing, childcare and insurance have grown faster than wages for most of a decade, and the gap lands on the same handful of line items every month.",
+        "The households that feel rich on paper and broke in practice are usually carrying three fixed costs that were priced in a different economy.",
+        "The first honest step is naming which of the three it is: the house, the cars, or the care.",
+        "None of those can be fixed in a weekend, which is exactly why the feeling lasts.",
+        "But a written month of real numbers beats a vague sense of drowning every single time.",
+      ],
+    },
+    source_line: "Source: Illustrative example",
+  },
 };
 
 export const SAMPLE_KEYS = Object.keys(SAMPLES) as SampleKey[];

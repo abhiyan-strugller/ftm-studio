@@ -19,20 +19,20 @@ import { DAILY_SLOTS } from "./slots";
  * are occasional change-ups.
  */
 const TEMPLATE_CYCLE: TemplateName[] = [
-  "headline",
+  "plain",
   "stats",
-  "line_chart",
+  "plain",
   "breaking",
-  "bar_compare",
   "headline",
-  "stats",
+  "plain",
+  "line_chart",
+  "plain",
   "versus",
-  "line_chart",
   "steps",
-  "headline",
+  "plain",
   "stats",
   "bar_compare",
-  "breaking",
+  "plain",
   "line_chart",
 ];
 
@@ -183,5 +183,7 @@ export function blankData(template: TemplateName): Record<string, unknown> {
           { sector: "", change: "", direction: "flat", polarity: "higher_is_good" },
         ],
       };
+    case "plain":
+      return { paragraphs: ["", ""] };
   }
 }

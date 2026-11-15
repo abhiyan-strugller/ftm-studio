@@ -1,0 +1,14 @@
+{
+  "template": "plain",
+  "palette": "night",
+  "tag": "Money",
+  "post_number": 15,
+  "headline": "A quarter-point rate move on a $400,000 mortgage is about $60 a month.",
+  "data": {
+    "paragraphs": [
+      "Over thirty years, that is real money.",
+      "It is not the same as houses getting cheaper. Prices have not moved."
+    ]
+  },
+  "source_line": "Source: Freddie Mac weekly survey"
+}

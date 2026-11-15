@@ -52,6 +52,23 @@ export const HEADLINE_BREAKING_TIERS: SizeTier[] = [
   [180, 46],
 ];
 
+/**
+ * Body sizes for the `plain` template, fitted on the TOTAL character count of
+ * headline + paragraphs. The card is nothing but this text, so it can take the
+ * whole column; the floor keeps the longest schema-legal post (~1,380 chars)
+ * readable without clipping.
+ */
+export const PLAIN_BODY_TIERS: SizeTier[] = [
+  [120, 66],
+  [200, 58],
+  [300, 52],
+  [420, 46],
+  [560, 41],
+  [720, 37],
+  [920, 33],
+  [1400, 29],
+];
+
 export const DEK_TIERS: SizeTier[] = [
   [80, 38],
   [140, 34],

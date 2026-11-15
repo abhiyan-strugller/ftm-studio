@@ -20,6 +20,7 @@ export const TEMPLATE_NAMES = [
   "versus",
   "steps",
   "breaking",
+  "plain",
 ] as const;
 
 export type TemplateName = (typeof TEMPLATE_NAMES)[number];
@@ -32,6 +33,7 @@ export const TEMPLATE_LABELS: Record<TemplateName, string> = {
   versus: "Versus",
   steps: "Steps",
   breaking: "Breaking",
+  plain: "Plain text",
 };
 
 export const STEP_ICONS = [
@@ -135,6 +137,17 @@ export const ImpactSchema = z.object({
   polarity: z.enum(POLARITIES).optional(),
 });
 
+/**
+ * The "plain" template: a text post on a solid ground, in the style of the
+ * screenshot-of-a-text-post cards that dominate large finance pages. The
+ * `headline` field is the opening line; `paragraphs` follow it, each separated
+ * by a blank line. No kicker, no accent word, no decoration — that absence is
+ * the design.
+ */
+export const PlainDataSchema = z.object({
+  paragraphs: z.array(Trimmed.min(1).max(240)).min(1).max(5),
+});
+
 export const BreakingDataSchema = z.object({
   badge: z.enum(BADGES),
   impacts: z.array(ImpactSchema).min(2).max(3),
@@ -168,6 +181,7 @@ export const PostDocSchema = z.discriminatedUnion("template", [
   z.object({ ...DocBase, template: z.literal("versus"), data: VersusDataSchema }),
   z.object({ ...DocBase, template: z.literal("steps"), data: StepsDataSchema }),
   z.object({ ...DocBase, template: z.literal("breaking"), data: BreakingDataSchema }),
+  z.object({ ...DocBase, template: z.literal("plain"), data: PlainDataSchema }),
 ]);
 
 export type PostDoc = z.infer<typeof PostDocSchema>;

@@ -21,9 +21,9 @@ describe("the repeat threshold scales with day length", () => {
   });
 
   it("allows what the arithmetic forces on a 15-post day", () => {
-    // 15 posts over 7 templates means something must appear 3 times.
-    expect(maxSameTemplatePerDay(15)).toBe(3);
-    expect(maxSameTemplatePerDay(15)).toBe(Math.ceil(15 / TEMPLATE_NAMES.length));
+    // 15 posts over 8 templates means something must appear twice; the floor
+    // of 2 and the ceiling arithmetic meet at the same value.
+    expect(maxSameTemplatePerDay(15)).toBe(Math.max(2, Math.ceil(15 / TEMPLATE_NAMES.length)));
   });
 });
 

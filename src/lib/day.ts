@@ -16,6 +16,7 @@ import {
   BarCompareDataSchema,
   BreakingDataSchema,
   HeadlineDataSchema,
+  PlainDataSchema,
   LineChartDataSchema,
   StatsDataSchema,
   StepsDataSchema,
@@ -62,6 +63,7 @@ export const DayPostSchema = z.discriminatedUnion("template", [
   z.object({ ...DayPostBase, template: z.literal("versus"), data: VersusDataSchema }),
   z.object({ ...DayPostBase, template: z.literal("steps"), data: StepsDataSchema }),
   z.object({ ...DayPostBase, template: z.literal("breaking"), data: BreakingDataSchema }),
+  z.object({ ...DayPostBase, template: z.literal("plain"), data: PlainDataSchema }),
 ]);
 
 export type DayPost = z.infer<typeof DayPostSchema>;
@@ -207,5 +209,7 @@ export function toPostDoc(day: DayFile, index: number): PostDoc {
       return { ...shared, template: "steps", data: post.data };
     case "breaking":
       return { ...shared, template: "breaking", data: post.data };
+    case "plain":
+      return { ...shared, template: "plain", data: post.data };
   }
 }

@@ -32,6 +32,7 @@ import {
 } from "./fit";
 import { CONTENT_W } from "./frame";
 import { advanceEm } from "./metrics";
+import { plainBodySize, PLAIN_CONTENT_W } from "./templates/plain";
 import type { Family } from "./overflow-types";
 import type { PostDoc } from "../schema";
 
@@ -159,6 +160,57 @@ const IMPACT_CHANGE_W = 230 - 32;
 export function findOverflow(doc: PostDoc): OverflowProblem[] {
   const checks: Check[] = [];
   const extra: OverflowProblem[] = [];
+
+  // The plain template draws nothing but its own text, so none of the framed
+  // checks below apply. It gets its own gate: every word must fit the column,
+  // and the stacked paragraphs (plus their blank-line gaps) must fit the body.
+  if (doc.template === "plain") {
+    const size = plainBodySize(doc);
+    const paras = [doc.headline, ...doc.data.paragraphs];
+    const fields = ["headline", ...doc.data.paragraphs.map((_, i) => `data.paragraphs[${i}]`)];
+
+    let totalHeight = 0;
+    paras.forEach((para, i) => {
+      checks.push({
+        field: fields[i],
+        text: para,
+        fontSize: size,
+        family: "sans",
+        maxWidth: PLAIN_CONTENT_W,
+        bold: true,
+      });
+      const lines = estimateLines(para, size, "sans", PLAIN_CONTENT_W, true);
+      totalHeight += lines * size * 1.36;
+      if (i < paras.length - 1) totalHeight += size * 0.85;
+    });
+
+    // 1350 canvas - padding - header - body padding - source line, minus slack.
+    const BODY_MAX_H = 950;
+    if (totalHeight > BODY_MAX_H) {
+      const over = totalHeight / BODY_MAX_H;
+      extra.push({
+        field: "data.paragraphs",
+        message:
+          `the stacked text needs about ${Math.round(totalHeight)}px at ${size}px ` +
+          `but the body is ${BODY_MAX_H}px. Trim roughly ${Math.round(
+            (1 - 1 / over) * paras.join(" ").length,
+          )} characters.`,
+      });
+    }
+
+    if (doc.source_line) {
+      checks.push({
+        field: "source",
+        text: doc.source_line,
+        fontSize: 21,
+        family: "sans",
+        maxWidth: PLAIN_CONTENT_W,
+        maxLines: 1,
+      });
+    }
+
+    return [...runChecks(checks), ...extra];
+  }
 
   const headlineTiers =
     doc.template === "headline"
