@@ -112,7 +112,7 @@ export function csvWithBom(csv: string): Buffer {
  * stripped before recomposing — otherwise the comment reads "Source: Source: …".
  */
 export function composeFirstComment(source?: string, sourceUrl?: string): string {
-  const name = (source ?? "").replace(/^\s*source\s*:\s*/i, "").trim();
+  const name = (source ?? "").replace(/^\s*sources?\s*:\s*/i, "").trim();
   const url = (sourceUrl ?? "").trim();
   if (!name && !url) return "";
   if (!name) return `Source: ${url}`;

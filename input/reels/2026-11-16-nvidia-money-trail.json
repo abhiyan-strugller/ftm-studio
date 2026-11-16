@@ -5,16 +5,16 @@
   "slides": [
     {
       "kind": "hook",
-      "big": "$1 trillion",
+      "big": "$1.7 trillion",
+      "countup": true,
       "lines": [
-        "erased from the biggest stock in most 401(k)s."
+        "wiped off Nvidia's market value since early October, per CNBC."
       ]
     },
     {
       "kind": "body",
       "lines": [
-        "Nvidia's CEO admitted an affair with a suspected Chinese spy.",
-        "He resigned Thursday, after 33 years."
+        "Its CEO of 33 years resigned Thursday, after reports of an affair with a suspected Chinese spy."
       ]
     },
     {
@@ -28,14 +28,14 @@
       "kind": "body",
       "lines": [
         "His agency still cleared about 10 Chinese companies to buy Nvidia's advanced chips.",
-        "The Senate now wants both men to testify."
+        "Now he has agreed to testify. So has Huang, behind closed doors."
       ]
     },
     {
       "kind": "body",
       "lines": [
         "Own an S&P 500 fund? Then you own Nvidia.",
-        "This story is about your money."
+        "Its earnings land Tuesday."
       ]
     },
     {
@@ -52,6 +52,6 @@
       ]
     }
   ],
-  "source_line": "Sources: Axios (Nov 10, 2026), Reuters, company statements",
-  "caption": "The most important stock in most retirement accounts lost about $1 trillion in market value in a week, per Axios \u2014 and its CEO of 33 years is gone.\n\nThe part getting less attention: Axios reports the Commerce Secretary was sent a classified warning about the CEO's relationship with a suspected Chinese spy BEFORE his department cleared roughly 10 Chinese companies to buy Nvidia's advanced chips. The Senate now wants both men to testify.\n\nMy take: the affair is the headline, but the money story is who was warned, when, and what got approved anyway.\n\nIf you hold an S&P 500 fund, Nvidia is in it. Should chip-export approvals get an independent review? \ud83d\udc47\n\n#Nvidia #Jensen #401k #StockMarket #Investing #StocksToWatch #AI #ChipWar #WallStreet #Retirement #PersonalFinance #MoneyTok #FollowTheMoney"
+  "source_line": "Sources: CNBC (Nov 13), Axios (Nov 10), CBS News (Nov 15), 2026",
+  "caption": "Nvidia has lost about $1.7 trillion in market value since early October, CNBC reports \u2014 six straight weekly drops, its longest losing streak since 2012. Its CEO of 33 years resigned Thursday.\n\nThe part getting less attention: Axios reports the Commerce Secretary was sent a classified warning about the CEO's relationship with a suspected Chinese spy BEFORE his department cleared roughly 10 Chinese companies to buy Nvidia's advanced chips. He has now agreed to testify to the Senate, and Huang has agreed to a closed-door session in the House.\n\nMy take: the affair is the headline, but the money story is who was warned, when, and what got approved anyway.\n\nIf you hold an S&P 500 fund, Nvidia is in it. Earnings land Tuesday. Should chip-export approvals get an independent review? \ud83d\udc47\n\n#Nvidia #JensenHuang #401k #StockMarket #Investing #StocksToWatch #AI #ChipWar #WallStreet #Retirement #PersonalFinance #MoneyTok #FollowTheMoney"
 }

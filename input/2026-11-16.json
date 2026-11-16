@@ -1,0 +1,201 @@
+{
+ "date": "2026-11-16",
+ "start_number": 111601,
+ "posts": [
+  {
+   "id": "01",
+   "template": "plain",
+   "palette": "night",
+   "tag": "Markets",
+   "headline": "Nvidia has lost about $1.7 trillion in market value since early October. Tuesday, it reports earnings without Jensen Huang.",
+   "source": "Source: CNBC; Nvidia, Oct 2 to Nov 13, 2026",
+   "source_url": "https://www.cnbc.com/2026/11/13/nvidia-stock-jensen-affair-ai.html",
+   "caption": "The stock at the center of most retirement accounts has fallen six weeks in a row.\n\nNvidia lost about $1.7 trillion in market value from early October through Friday, CNBC reports — its longest weekly losing streak since 2012. Shares fell 13% last week alone and closed at $162.85. Tuesday it reports earnings, the first under interim CEO Colette Kress.\n\nIf you own an S&P 500 index fund, you own Nvidia.\n\nMy take: Tuesday isn't really about the numbers. It's about whether the company can tell its story without the man who told it for 33 years.\n\nDo you check what your index fund actually holds?\n\nSource: CNBC, Nov 13, 2026\n\nEducational only — not financial advice.\n\n#Nvidia #Investing #401k",
+   "data": {
+    "paragraphs": [
+     "The stock fell 13% last week, its sixth straight weekly drop — the longest losing streak since 2012. It closed Friday at $162.85.",
+     "Tuesday's report is the first under interim CEO Colette Kress. Huang resigned Nov. 12 amid an espionage scandal.",
+     "If you own an S&P 500 index fund, Nvidia is one of its largest holdings."
+    ]
+   },
+   "scheduled_at": "2026-11-16T17:00:00.000Z"
+  },
+  {
+   "id": "02",
+   "template": "plain",
+   "palette": "cream",
+   "tag": "Travel",
+   "headline": "12,462 flights were canceled on Friday, Nov. 13. If an airline cancels yours, it owes you cash — not a voucher.",
+   "source": "Source: FAA, Nov 13, 2026; U.S. DOT refund rule (2024)",
+   "source_url": "https://www.transportation.gov/airconsumer/refunds",
+   "caption": "Friday's ground stop is a reminder of a rule most travelers never hear about.\n\nA telecom failure stopped departures at every U.S. airport for hours on Nov. 13, and the FAA says operators canceled about 12,462 flights that day.\n\nUnder a Department of Transportation rule in force since 2024, if the airline cancels your flight and you decline the rebooking, it owes you a cash refund — fare, taxes and fees. Card refunds are due within 7 business days. A voucher is optional.\n\nMy take: a voucher is the airline keeping your money. Know the rule before Thanksgiving week.\n\nHave you ever taken a voucher you didn't want?\n\nSource: FAA; U.S. DOT\n\n#Travel #Thanksgiving #ConsumerRights",
+   "data": {
+    "paragraphs": [
+     "A telecom failure stopped departures at every U.S. airport for hours. The FAA notes not every cancellation that day was caused by the outage.",
+     "Under a federal rule in force since 2024, if the airline cancels and you turn down the rebooking, you get a full cash refund: fare, taxes and fees.",
+     "Paid by card? It's due within 7 business days. Thanksgiving travel starts next week."
+    ]
+   },
+   "scheduled_at": "2026-11-16T18:15:00.000Z"
+  },
+  {
+   "id": "03",
+   "template": "plain",
+   "palette": "night",
+   "tag": "Business",
+   "headline": "Workers at a military robot startup weren't paid on Oct. 30. Its CEO had borrowed $4.6 million from the company to buy a house, CNBC reports.",
+   "source": "Source: CNBC, Nov 14, 2026",
+   "source_url": "https://www.cnbc.com/2026/11/14/foundation-payroll-ceo-loan.html",
+   "caption": "Somebody got a house. Somebody else didn't get a paycheck.\n\nFoundation Future Industries, a military robot startup, missed its Oct. 30 payroll and staff were still unpaid as of Nov. 14, CNBC reports. In 2025 its CEO, Sankaet Pathak, borrowed $4.6 million from the company — and an LLC he controls bought a $4.6 million home in Sausalito. He is the only board member and told staff he's working to secure the wages.\n\nEric Trump is an investor and adviser; his spokesperson told the Financial Times he has no role in management.\n\nMy take: a one-person board is how a loan like that gets approved.\n\nWould you keep working two weeks without pay?\n\nSource: CNBC, Nov 14, 2026\n\n#Startups #Paycheck #FollowTheMoney",
+   "data": {
+    "paragraphs": [
+     "Foundation Future Industries, which counts Eric Trump as an investor and adviser, missed its Oct. 30 payroll. Staff were still unpaid as of Nov. 14, per CNBC.",
+     "In 2025, CEO Sankaet Pathak took a $4.6 million company loan. An LLC he controls bought a $4.6 million home in Sausalito, Calif.",
+     "He is the company's only board member. He told staff he is working to secure the missed wages."
+    ]
+   },
+   "scheduled_at": "2026-11-16T19:30:00.000Z"
+  },
+  {
+   "id": "04",
+   "template": "plain",
+   "palette": "cream",
+   "tag": "Savings",
+   "headline": "Divide 72 by your interest rate. That's roughly how many years it takes money to double — yours, or your debt.",
+   "source": "Source: The Rule of 72 (compound-interest math)",
+   "caption": "The most useful money shortcut fits on a sticky note.\n\nDivide 72 by the interest rate and you get roughly how many years it takes for an amount to double.\n\nAt 4% in savings: about 18 years.\nAt 24% on a credit card, with nothing paid: about 3 years.\n\nIt's the same compound interest. The only difference is which side of it you're on.\n\nMy take: the rule should be taught before anyone gets their first credit card, not after.\n\nWhat rate are you earning, and what rate are you paying?\n\nSource: Rule of 72 (standard compound-interest math)\n\n#PersonalFinance #CreditCards #Savings",
+   "data": {
+    "paragraphs": [
+     "At 4% in a savings account, money doubles in about 18 years.",
+     "At 24% on a credit card, an unpaid balance doubles in about 3 years — if you pay nothing and charge nothing.",
+     "Same math. One side works for you. The other works against you."
+    ]
+   },
+   "scheduled_at": "2026-11-16T20:45:00.000Z"
+  },
+  {
+   "id": "05",
+   "template": "plain",
+   "palette": "night",
+   "tag": "Follow the money",
+   "headline": "Bill Gates has collected $2.6 billion in dividends from one of America's biggest trash haulers, ProPublica found.",
+   "source": "Source: ProPublica, Nov 2026",
+   "source_url": "https://www.cnn.com/2026/11/14/climate/bill-gates-landfills-propublica",
+   "caption": "Your trash bill is somebody's dividend.\n\nBill Gates has received about $2.6 billion in dividends from Republic Services since November 1999, a ProPublica analysis of securities filings found. His stake is now worth about $29 billion. Republic runs roughly 200 landfills, and ProPublica reports EPA inspectors have found methane leaking above federal limits at some of them.\n\nRepublic says it employs hundreds of environmental managers and engineers. Gates did not respond to ProPublica.\n\nMy take: garbage is one of the most reliable businesses in America, because nobody gets to stop paying for it.\n\nDo you know who picks up your trash?\n\nSource: ProPublica, Nov 2026\n\n#FollowTheMoney #BillGates #Investigation",
+   "data": {
+    "paragraphs": [
+     "The payouts from Republic Services date back to November 1999, per ProPublica's review of securities filings. His stake is now worth about $29 billion.",
+     "Republic runs roughly 200 landfills. ProPublica reports EPA inspectors have found methane escaping above federal limits at some of them.",
+     "Republic says it employs hundreds of environmental staff. Gates did not respond to ProPublica's questions."
+    ]
+   },
+   "scheduled_at": "2026-11-16T22:00:00.000Z"
+  },
+  {
+   "id": "06",
+   "template": "plain",
+   "palette": "cream",
+   "tag": "Markets",
+   "headline": "Anthropic's IPO prices Wednesday. Up to 20% of the shares may go to everyday investors — far above the usual 5% to 10%.",
+   "source": "Source: Anthropic amended S-1; CNBC, Nov 10, 2026",
+   "source_url": "https://www.cnbc.com/2026/11/10/anthropic-ipo-shares-invest.html",
+   "caption": "The IPO price is usually for big funds. This week more of it is for regular accounts.\n\nAnthropic, the AI company behind Claude, prices Wednesday and trades Thursday as ANT: 825 million shares at $70 to $78, raising up to $64.4 billion — second only to SpaceX's June IPO. Its filing says up to 20% may go to retail investors through brokers like Robinhood, SoFi, Schwab and Fidelity. The usual share is 5% to 10%.\n\nMy take: getting the IPO price is a perk. It also means owning the first-day swing, in either direction.\n\nWould you put in a request?\n\nSource: Anthropic amended S-1; CNBC, Nov 10, 2026\n\nEducational only — not financial advice.\n\n#IPO #StockMarket #Investing",
+   "data": {
+    "paragraphs": [
+     "825 million shares at $70 to $78: up to $64.4 billion, second only to SpaceX's IPO in June. It trades Thursday as ANT.",
+     "Brokers named in the filing include Robinhood, SoFi, Schwab and Fidelity. Each warns it may not fill every request.",
+     "Separately, seven chip and cloud companies are buying $26 billion of non-voting shares at the IPO price."
+    ]
+   },
+   "scheduled_at": "2026-11-16T23:15:00.000Z"
+  },
+  {
+   "id": "07",
+   "template": "plain",
+   "palette": "night",
+   "tag": "Markets",
+   "headline": "The official who licenses chip sales to China has agreed to testify. So has Nvidia's former CEO.",
+   "source": "Source: CNBC; NBC News; CBS News, Nov 13 to 15, 2026",
+   "source_url": "https://www.cnbc.com/2026/11/13/nvidia-scandal-lutnick-chip-sales.html",
+   "caption": "The Nvidia money trail now runs through Congress.\n\nCommerce Secretary Howard Lutnick, whose department licenses chip exports, has agreed to testify before the Senate Banking Committee, CNBC and NBC News report — the requested date is Dec. 10. On Sunday, Rep. John Moolenaar said Jensen Huang and other Nvidia executives agreed to a closed-door House session.\n\nNvidia has lost about $1.7 trillion in market value since early October, per CNBC. That loss sits in millions of index funds.\n\nMy take: testimony behind closed doors protects the people answering, not the people who paid for it.\n\nShould this hearing be public?\n\nSource: CNBC; NBC News; CBS Face the Nation, Nov 13–15, 2026\n\n#Nvidia #ChipWar #FollowTheMoney",
+   "data": {
+    "paragraphs": [
+     "Commerce Secretary Howard Lutnick agreed to appear before the Senate Banking Committee, CNBC and NBC report. The date requested: Dec. 10.",
+     "Rep. John Moolenaar said Sunday that Jensen Huang and other Nvidia executives will testify in a closed-door House session. No date is set.",
+     "The question for shareholders: what Commerce knew before it cleared Chinese buyers for Nvidia's chips."
+    ]
+   },
+   "scheduled_at": "2026-11-17T00:30:00.000Z"
+  },
+  {
+   "id": "08",
+   "template": "plain",
+   "palette": "cream",
+   "tag": "Security",
+   "headline": "The simplest way to stop someone opening a credit card in your name costs $0.",
+   "source": "Source: FTC; Economic Growth Act of 2018",
+   "caption": "After a big breach, most people get offered paid monitoring. The free tool works better.\n\nSince September 2018, federal law has made a credit freeze free at all three bureaus — Equifax, Experian and TransUnion. A freeze stops new lenders from pulling your file, so a thief can't open a card in your name. It doesn't touch your score or your existing cards. Lifting it online must happen within an hour.\n\nMy take: monitoring tells you after the damage. A freeze stops it before.\n\nIs your credit frozen right now?\n\nSource: FTC; Economic Growth, Regulatory Relief, and Consumer Protection Act (2018)\n\n#IdentityTheft #CreditScore #PersonalFinance",
+   "data": {
+    "paragraphs": [
+     "A credit freeze has been free at Equifax, Experian and TransUnion since September 2018, by federal law.",
+     "It blocks new lenders from pulling your report. It does not hurt your score or close your cards.",
+     "You need all three. When you apply for a loan, an online lift must take effect within an hour."
+    ]
+   },
+   "scheduled_at": "2026-11-17T01:45:00.000Z"
+  },
+  {
+   "id": "09",
+   "template": "plain",
+   "palette": "night",
+   "tag": "Energy",
+   "headline": "Electricity prices rose 0.9% in October alone. Whether AI data centers are to blame depends on where you live.",
+   "source": "Source: BLS CPI (Oct 2026; 12 months to Sept 2026); Forbes, Nov 2, 2026",
+   "source_url": "https://www.bls.gov/news.release/cpi.nr0.htm",
+   "caption": "Your power bill is climbing, and the AI boom is getting the blame.\n\nThe consumer price index for electricity rose 0.9% in October and 4.4% in the 12 months through September, the Bureau of Labor Statistics says.\n\nAre data centers the cause? National studies, including one from Harvard Business School, find only a small effect on household rates. But in parts of Ohio, Pennsylvania and Michigan, grid capacity prices driven partly by data center demand have added up to $18 a month, Forbes reports.\n\nMy take: the companies that need the power should pay for the power plants.\n\nHow much has your electric bill changed this year?\n\nSource: BLS CPI, October 2026; Forbes, Nov 2, 2026\n\n#ElectricBill #CostOfLiving #AI",
+   "data": {
+    "paragraphs": [
+     "The government's electricity price index rose 0.9% in October and 4.4% in the 12 months through September.",
+     "Nationally, studies from Harvard Business School and others find data centers explain only a small part of the rise in household rates.",
+     "But in parts of Ohio, Pennsylvania and Michigan, spiking grid capacity prices have added up to $18 a month to bills, Forbes reports."
+    ]
+   },
+   "scheduled_at": "2026-11-17T03:00:00.000Z"
+  },
+  {
+   "id": "10",
+   "template": "plain",
+   "palette": "cream",
+   "tag": "Banking",
+   "headline": "Your bank can't charge an overdraft fee on a debit card swipe or ATM withdrawal unless you agreed to it.",
+   "source": "Source: CFPB; Federal Reserve Regulation E (2010)",
+   "caption": "A lot of people pay overdraft fees they could have switched off.\n\nSince 2010, federal rules have required banks to get your permission — an opt-in — before charging overdraft fees on one-time debit card purchases and ATM withdrawals. Without it, a swipe that would overdraw you is usually declined, with no fee.\n\nChecks and automatic payments follow different rules and can still overdraw you.\n\nMy take: a declined coffee is a better deal than a $30 fee on a $5 coffee.\n\nDo you know whether you opted in?\n\nSource: CFPB; Federal Reserve Regulation E\n\n#Banking #OverdraftFees #MoneyTips",
+   "data": {
+    "paragraphs": [
+     "Since 2010, federal rules require you to opt in before a bank can charge overdraft fees on everyday debit card purchases and ATM withdrawals.",
+     "If you never opted in, a swipe that would overdraw you is usually just declined. No fee.",
+     "Checks and automatic bill payments are different. Those can still trigger a fee."
+    ]
+   },
+   "scheduled_at": "2026-11-17T04:00:00.000Z"
+  }
+ ],
+ "reels": [
+  {
+   "slug": "2026-11-16-fed-decides-blind",
+   "scheduled_at": "2026-11-16T16:15:00.000Z"
+  },
+  {
+   "slug": "2026-11-16-nvidia-money-trail",
+   "scheduled_at": "2026-11-16T18:45:00.000Z"
+  },
+  {
+   "slug": "2026-11-16-flight-refund",
+   "scheduled_at": "2026-11-16T22:45:00.000Z"
+  },
+  {
+   "slug": "2026-11-16-anthropic-ipo",
+   "scheduled_at": "2026-11-17T02:30:00.000Z"
+  }
+ ]
+}
