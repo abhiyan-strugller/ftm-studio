@@ -32,10 +32,11 @@ reason as always (push needs the cloud, browser needs the laptop):
 
 | | Task | Fires (Edmonton) | Can it push? | Has a browser? |
 | --- | --- | --- | --- | --- |
-| **A** | `FTM Build & Publish (Task A)` — the BUILD cycle | **:40 at 10, 13, 16, 19, 22** | **Yes** | No |
-| **B** | `FTM Daily Post Build` — the UPLOAD cycle | **:55 at 10, 13, 16, 19, 22** | No | **Yes** |
+| **A** | `FTM Build & Publish (Task A)` — the BUILD cycle | **:40 at 7, 10, 13, 16, 19** | **Yes** | No |
+| **B** | `FTM Daily Post Build` — the UPLOAD cycle | **:55 at 7, 10, 13, 16, 19** | No | **Yes** |
 
-Slots are 11:00 / 14:00 / 17:00 / 20:00 / 23:00. Build fires at :40 and
+Slots are 8:00 / 11:00 / 14:00 / 17:00 / 20:00 Edmonton — 9 AM to 9 PM New
+York, so the East-coast morning is covered. Build fires at :40 and
 schedules the top of the next hour; upload fires at :55, 5 min before the slot.
 The slot must be FUTURE when the uploader runs — the past-row guard aborts a
 passed row (see the 2026-11-10 incident). That is why the build always targets

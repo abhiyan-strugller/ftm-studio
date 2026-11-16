@@ -63,15 +63,18 @@ monetizable and strike-free while chasing breaking news.
 A build cycle runs at :40 and schedules its post for the top of the next hour,
 in America/Edmonton; the upload cycle runs at :55 and puts it in Post Planner:
 
-| Build fires (A) | Upload fires (B) | Posts at (slot) |
-| --- | --- | --- |
-| 10:40 | 10:55 | 11:00 |
-| 13:40 | 13:55 | 14:00 |
-| 16:40 | 16:55 | 17:00 |
-| 19:40 | 19:55 | 20:00 |
-| 22:40 | 22:55 | 23:00 |
+| Build fires (A) | Upload fires (B) | Posts at (Edmonton) | = New York |
+| --- | --- | --- | --- |
+| 7:40 | 7:55 | 8:00 | 9:00 AM |
+| 10:40 | 10:55 | 11:00 | 12:00 PM |
+| 13:40 | 13:55 | 14:00 | 3:00 PM |
+| 16:40 | 16:55 | 17:00 | 6:00 PM |
+| 19:40 | 19:55 | 20:00 | 9:00 PM |
 
-Five cycles → ~5 cards + 5 reels a day, 11:00 to 23:00 ("until night"). The
+Five cycles → ~5 cards + 5 reels a day, covering the US/Canada East-coast
+morning through evening (the grid was shifted 3h earlier on Abhiyan's call:
+starting at 11:00 Edmonton would have meant noon in New York, losing the
+whole morning). The
 slot must always be in the FUTURE when the uploader runs (the past-row guard
 aborts otherwise), which is why the build leads the slot by 20 min and the
 uploader runs 5 min before the slot. Never schedule a slot that has already
