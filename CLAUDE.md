@@ -5,50 +5,67 @@ covers the build tool itself (templates, schema, commands). This file covers
 the system around it, and the handful of constraints that are not obvious and
 that cost several days to find.
 
-Abhiyan's role is review. The pipeline is expected to run unattended and put
-ten posts a day on a Facebook page called **Follow the Money** — money first,
-US audience, politics only ever as the angle.
+Abhiyan's role is review. The pipeline runs unattended and posts to a Facebook
+page called **Follow the Money** — money first, **US + Canada** audience,
+politics only ever as the angle.
 
 ---
 
-## The daily flow
+## The model — INTRADAY, fresh every ~3 hours (since 2026-11-17)
 
-Two scheduled tasks, Edmonton time. Since 2026-11-14, Task A runs **the
-evening before** the day it builds, so the posts carry that day's news
-instead of running a day behind — that lag was the thing Abhiyan most wanted
-fixed. Task B gets three attempts because the laptop is not always reachable
-at 5:42 (it was auto-suspended with `device_absent` on 2026-11-12); its
-prompt refuses to upload twice, so the extra attempts are harmless.
+This is the current model. It replaced the old once-a-day batch (which built
+the whole next day the evening before). Abhiyan wanted the page to carry
+**today's** most-viewed money news, not yesterday's — so instead of one big
+build, a fresh post is researched and published roughly every 3 hours, minutes
+before it goes out. `prompts/intraday.md` is the full spec; read it first.
 
-| | Task | Runs | Can it push? | Has a browser? |
+**Per day:** ~5 cards + ~5 reels, one of each per cycle, five cycles.
+**Each cycle** researches the freshest, most-viewed money story RIGHT NOW
+(US + Canada — markets falling/spiking, a cyberattack or outage with a dollar
+cost, a rate/inflation/jobs print, a CEO money story, anything viral touching a
+paycheck, rent, groceries, savings, a card rate or a job), builds 1 `plain`
+card + 1 reel from it, publishes them, and the uploader puts them into Post
+Planner for a slot ~20 min out.
+
+Two scheduled tasks, both fire every ~3 hours, Edmonton time — same split, same
+reason as always (push needs the cloud, browser needs the laptop):
+
+| | Task | Fires (Edmonton) | Can it push? | Has a browser? |
 | --- | --- | --- | --- | --- |
-| **A** | `FTM Build & Publish (Task A)` | **8:47 PM**, builds tomorrow | **Yes** | No |
-| **B** | `FTM Daily Post Build` (really Task B) | **5:42 / 7:42 / 9:42 AM**, uploads **TODAY** | No | **Yes** |
+| **A** | `FTM Build & Publish (Task A)` — the BUILD cycle | **:40 at 10, 13, 16, 19, 22** | **Yes** | No |
+| **B** | `FTM Daily Post Build` — the UPLOAD cycle | **:55 at 10, 13, 16, 19, 22** | No | **Yes** |
 
-**Day semantics — get this right.** Task A on the evening of day X−1 builds
-and publishes day X. Task B on the morning of day X uploads day X — the day
-it RUNS, not tomorrow. (Task B's original prompt said "tomorrow", which was
-correct when Task A ran at 4:51 AM, and became a hole the moment the build
-moved to the evening: nothing would ever have uploaded. Fixed 2026-11-15.)
+Slots are 11:00 / 14:00 / 17:00 / 20:00 / 23:00. Build fires at :40 and
+schedules the top of the next hour; upload fires at :55, 5 min before the slot.
+The slot must be FUTURE when the uploader runs — the past-row guard aborts a
+passed row (see the 2026-11-10 incident). That is why the build always targets
+the top of the hour after it fires (:40 → next :00), never a time in the past.
 
-Task A is idempotent: if the target day's run-log already carries a verified
-sheet, it reports "already built" and stops. Research follows
-`prompts/research.md` (the deep-sweep spec); captions follow
-`prompts/caption.md`; cards are the `plain` template (see below); on reel
-days (Mon/Wed/Fri/Sat) `prompts/reels.md` governs the 4 reels that join the
-sheet via the day file's `reels` block.
+**Build cycle (A)** researches now, writes `input/<date>.json` with ONE post
+(id = the slot in HHMM, e.g. `"1400"`, so its card is `1400-plain.png` and
+never collides with another cycle) plus a `reels` block of one reel at the same
+slot, renders, pushes media to `ftm-media`, publishes a content-addressed sheet
+(`sheets/<date>-<hash>.csv`), and APPENDS a `CYCLE <slot> SHEET_URL …` line to
+`<date>/run-log.txt` (never overwrites — the file accumulates the day's
+cycles).
 
-- `trig_01UQhvZvCzVKCfzGJi4xyh6M` — Task A, cloud, both repos attached
-- `trig_01Qq197Tj3ngcTwUQcG2AUap` — Task B, bound to `LAPTOP-DGLF08U0`
+**Upload cycle (B)** reads the LAST `CYCLE …` line in today's run-log, checks
+the queue first (never double-uploads), injects that sheet into Post Planner,
+and reads the queue back.
 
-**Task A** researches the day, writes ten posts, renders the cards, pushes the
-images to `ftm-media`, publishes a verified sheet, and writes the sheet URL
-into `<date>/run-log.txt`.
+- `trig_01UQhvZvCzVKCfzGJi4xyh6M` — Task A (build), cloud, both repos attached
+- `trig_01Qq197Tj3ngcTwUQcG2AUap` — Task B (upload), bound to `LAPTOP-DGLF08U0`
 
-**Task B** reads that run-log, finds the sheet, drives Chrome to upload it into
-Post Planner, and reads the queue back to confirm.
+**Collision rule (critical):** a day has many cycles sharing one
+`ftm-media/<date>/` folder. Card id = slot HHMM and reel slug = `<date>-<topic>`
+keep every cycle's media uniquely named; `publish-media` only ever adds files,
+so each already-published post keeps pointing at its own bytes. Never reuse a
+slot id or a reel slug within a day.
 
-Posts then go out 11:00 AM – 10:00 PM, roughly every 75 minutes.
+**History:** the old model (evening build at 8:47 PM building tomorrow; morning
+upload 5:42/7:42/9:42) ran 2026-11-14 → 2026-11-16. Before that, a 4:51 AM
+build that posted a day late. The intraday switch (2026-11-17) is what finally
+made the news same-day.
 
 ### Why two tasks and not one
 
@@ -176,14 +193,18 @@ only thing that settles it.
 - **Task A often cannot WebFetch primary sources** (bls.gov, cnbc.com and
   others are blocked at its proxy) and confirms figures from search results
   instead. Worth spot-checking the headline number of the lead post.
-- **Task B depends on the laptop being reachable at 5:42 AM.** On 2026-11-12 it
-  was not, and the task was auto-suspended with `device_absent`; it recovered
-  only when the laptop came back. Giving Task B extra attempts (5:42, 7:42,
-  9:42) would make this survivable — the prompt already refuses to upload twice,
-  so repeat runs are harmless.
-- **Reel audio needs numpy** — declared in `requirements.txt`; `render-reel`
-  checks for it and installs it before rendering (fixed 2026-11-15 after a
-  scheduled run had to improvise the install). `npm run setup:py` by hand.
+- **Task B depends on the laptop being awake when a cycle fires** (:55 at 10,
+  13, 16, 19, 22). If it is asleep/offline at a slot, that slot is simply
+  missed — the next cycle is independent, so one miss doesn't cascade. A missed
+  slot never double-posts (the uploader checks the queue first). On the old
+  morning-only model a single 5:42 AM absence (2026-11-12, `device_absent`)
+  cost the whole day; the intraday spread makes a miss cost one post, not the
+  day. Keep Chrome + the Claude desktop app open through the posting window.
+- **Reel audio is numpy-free** — `scripts/gen-reel-bed.py` is pure Python
+  standard library, so a render can never fail on a missing dependency. (It
+  needed numpy until 2026-11-16, when a scheduled run only survived by
+  improvising a pip install; the dependency was then removed entirely. The
+  old `requirements.txt` / `setup:py` are vestigial.)
 - **`bar_compare` has no polarity field** and the longest bar takes the accent
   colour. Never chart a quantity where smaller is better; invert it into one
   where bigger genuinely is better.
@@ -198,8 +219,11 @@ what they do to money: who gains, who pays. Politics is the angle, never the
 subject. A post about a political decision is really a post about someone's
 rent or paycheck.
 
-The test for a news story: **would a working American stop scrolling because
-this touches their own money?**
+The test for a news story: **would a working American or Canadian stop
+scrolling because this touches their own money?** Cover both countries — the
+Fed and the Bank of Canada, US and Canadian banks, groceries and housing on
+both sides of the border; name CAD vs USD when it matters, and don't let a
+day run all-US.
 
 Earns a post:
 
