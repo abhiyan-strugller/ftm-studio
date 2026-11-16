@@ -54,7 +54,7 @@ cycles).
 the queue first (never double-uploads), injects that sheet into Post Planner,
 and reads the queue back.
 
-- `trig_01UQhvZvCzVKCfzGJi4xyh6M` — Task A (build), cloud, both repos attached
+- `trig_01SKkiF6MPbkmQZrnZHqfJDf` — Task A (build cycle), cloud, clones both repos, pushes via web-setup credential. (Replaced the old http_api task `trig_01UQhvZvCzVKCfzGJi4xyh6M` on 2026-11-16 — that one must be disabled in the UI; an agent cannot edit an http_api task.)
 - `trig_01Qq197Tj3ngcTwUQcG2AUap` — Task B (upload), bound to `LAPTOP-DGLF08U0`
 
 **Collision rule (critical):** a day has many cycles sharing one
