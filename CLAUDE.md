@@ -181,6 +181,9 @@ only thing that settles it.
   only when the laptop came back. Giving Task B extra attempts (5:42, 7:42,
   9:42) would make this survivable — the prompt already refuses to upload twice,
   so repeat runs are harmless.
+- **Reel audio needs numpy** — declared in `requirements.txt`; `render-reel`
+  checks for it and installs it before rendering (fixed 2026-11-15 after a
+  scheduled run had to improvise the install). `npm run setup:py` by hand.
 - **`bar_compare` has no polarity field** and the longest bar takes the accent
   colour. Never chart a quantity where smaller is better; invert it into one
   where bigger genuinely is better.

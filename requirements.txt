@@ -1,0 +1,4 @@
+# Python deps for the reel audio bed (scripts/gen-reel-bed.py).
+# Installed automatically by render-reel before the first render; also
+# runnable by hand: npm run setup:py
+numpy>=2.0,<3

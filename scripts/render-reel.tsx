@@ -31,6 +31,39 @@ import { loadFonts, FONT_SANS } from "../src/lib/design/fonts";
 import { Logo, BRAND_GREEN, BRAND_GOLD } from "../src/lib/design/logo";
 import { plainColors } from "../src/lib/design/templates/plain";
 
+// The audio bed needs numpy. Fresh cloud sessions don't always have it, and
+// on 2026-11-16 a scheduled run only survived because it improvised a pip
+// install mid-render. Declared in requirements.txt and provisioned here,
+// BEFORE any frame is rendered, so a run never depends on improvisation.
+function ensurePythonDeps(): void {
+  const ok = () => {
+    try {
+      execFileSync("python3", ["-c", "import numpy"], { stdio: "ignore" });
+      return true;
+    } catch {
+      return false;
+    }
+  };
+  if (ok()) return;
+  console.log("python deps missing — installing from requirements.txt");
+  for (const extra of [["--break-system-packages"], []]) {
+    try {
+      execFileSync(
+        "python3",
+        ["-m", "pip", "install", "-q", "-r", "requirements.txt", ...extra],
+        { stdio: "inherit" },
+      );
+    } catch {
+      /* try the next form */
+    }
+    if (ok()) return;
+  }
+  throw new Error(
+    "REEL AUDIO BLOCKED: numpy unavailable and `pip install -r requirements.txt` failed. " +
+      "Run `npm run setup:py` and re-render.",
+  );
+}
+
 export const REEL_W = 1080;
 export const REEL_H = 1920;
 const PAD = 96;
@@ -401,6 +434,7 @@ async function main() {
 
   // Audio: original bed with hits on the cuts; optional narration on top.
   const bed = path.join(outDir, "bed.wav");
+  ensurePythonDeps();
   execFileSync(
     "python3",
     [
