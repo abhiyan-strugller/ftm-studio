@@ -1,27 +1,27 @@
 {
   "date": "2026-11-17",
-  "start_number": 111702,
+  "start_number": 111703,
   "posts": [
     {
-      "id": "1100",
+      "id": "1400",
       "template": "plain",
       "palette": "night",
-      "tag": "Investing",
-      "headline": "Wall Street is holding its breath for one company's earnings tonight — and it's the biggest stock in your 401(k).",
-      "source": "Source: Nvidia investor calendar; S&P 500 index weightings, Nov. 2026",
-      "source_url": "https://www.marketbeat.com/earnings/reports/2026-11-17-nvidia-co-stock/",
-      "caption": "Wall Street is holding a watch party tonight — and your 401(k) is on the guest list.\n\nNvidia reports earnings after today's close. It's the most valuable company in the world and the single biggest stock in the S&P 500 — about 8% of the whole index. If you own an index fund or a target-date 401(k), it's quietly your largest bet.\n\nInvestors will read the report as a verdict on the AI boom. The stock has slipped from its $5 trillion peak going in.\n\nMy take: you don't have to watch the ticker. But one company now moves the fund millions of people retire on.\n\nDo you know how much of your portfolio is Nvidia?\n\nSource: Nvidia investor calendar; S&P 500 weightings, Nov. 2026\nEducational only — not financial advice.\n\n#Nvidia #Stocks #401k #Investing",
+      "tag": "Crypto",
+      "headline": "Bitcoin is trading near $64,000 — about half its record high of $126,000.",
+      "source": "Source: CoinDesk & The Block, Nov. 17, 2026",
+      "source_url": "https://www.coindesk.com/business/2026/11/17/live-updates-bitcoin-holds-near-usd64-000-as-tech-slides-ahead-of-nvidia-earnings",
+      "caption": "Bitcoin just lost about a quarter of its value in three weeks — and this time it's not only traders feeling it.\n\nIt's near $64,000, roughly half its record high of $126,000. In November alone it's down about 23%.\n\nThe quiet part: about $3.5 billion has left U.S. spot bitcoin ETFs this month — the biggest monthly outflow since February. Those funds are how everyday people now hold crypto, inside a brokerage or retirement account. Many who bought in this year are underwater.\n\nMy take: the ETF made bitcoin feel safe and ordinary. The price didn't get the memo.\n\nHow much of your money, if any, sits in crypto?\n\nSource: CoinDesk & The Block, Nov. 2026\nEducational only — not financial advice.\n\n#Bitcoin #Crypto #Investing #ETFs",
       "data": {
         "paragraphs": [
-          "Nvidia reports after today's close. It's the most valuable company in the world and the single largest weight in the S&P 500 — about 8% of the whole index.",
-          "If you own an index fund or a target-date retirement fund, Nvidia is quietly your biggest single bet, whether you picked it or not.",
-          "The stock has slipped from its $5 trillion peak going in. Tonight's numbers will be read as a verdict on the AI boom — they aren't out yet."
+          "It's down roughly 23% this month, one of its worst stretches in years.",
+          "The quiet part: about $3.5 billion was pulled from U.S. spot bitcoin ETFs in November, the biggest monthly outflow since February.",
+          "Those ETFs are how everyday people now hold bitcoin — inside a brokerage or a 401(k). Many who bought this year are underwater."
         ]
       },
-      "scheduled_at": "2026-11-17T17:00:00.000Z"
+      "scheduled_at": "2026-11-17T20:00:00.000Z"
     }
   ],
   "reels": [
-    { "slug": "2026-11-17-nvidia-earnings-1100", "scheduled_at": "2026-11-17T17:00:00.000Z" }
+    { "slug": "2026-11-17-bitcoin-etf-1400", "scheduled_at": "2026-11-17T20:00:00.000Z" }
   ]
 }
