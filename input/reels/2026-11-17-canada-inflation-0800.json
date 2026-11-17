@@ -1,0 +1,54 @@
+{
+  "slug": "2026-11-17-canada-inflation-0800",
+  "title": "Canada's inflation is stuck at 3.1%",
+  "slides": [
+    {
+      "kind": "hook",
+      "big": "3.1%",
+      "lines": [
+        "is where Canada's inflation is stuck."
+      ],
+      "countup": true
+    },
+    {
+      "kind": "body",
+      "lines": [
+        "October matched September, Statistics Canada said Monday.",
+        "Still above the Bank of Canada's 2% target."
+      ]
+    },
+    {
+      "kind": "body",
+      "lines": [
+        "The part that hits the till: groceries sped up to 2.0% from a year ago,",
+        "up from 1.7% in September."
+      ]
+    },
+    {
+      "kind": "body",
+      "lines": [
+        "Gas looks scary at 30.9% year over year,",
+        "but StatCan calls it mostly a base-year effect — pump prices fell 2.5% in October."
+      ]
+    },
+    {
+      "kind": "take",
+      "lines": [
+        "My take:",
+        "A flat headline hides the part that matters. Food is climbing again; the relief is in rent."
+      ]
+    },
+    {
+      "kind": "end",
+      "lines": [
+        "Which grocery item has jumped most for you this fall?"
+      ]
+    }
+  ],
+  "source_line": "Source: Statistics Canada, Consumer Price Index, October 2026 (Nov. 16)",
+  "caption": "Canada's cost of living isn't cooling.\n\nInflation held at 3.1% year over year in October — the same as September, still above the Bank of Canada's 2% target, Statistics Canada reported Monday. Groceries actually sped up: 2.0% higher than a year ago, versus 1.7% in September. Slower rent growth kept the headline from rising.\n\nGas looks alarming at 30.9% year over year, but StatCan says that's mostly a base-year effect — pump prices fell 2.5% from September.\n\nMy take: a flat number hides the part that hits the till. Food is re-accelerating while the relief is in rent.\n\nWhich grocery item has jumped most for you this fall?\n\n#Canada #Inflation #Groceries #CostOfLiving #BankOfCanada #PersonalFinance #Loonie #Economy #MoneyTok #CanadaNews #FollowTheMoney",
+  "style": {
+    "accent": "green",
+    "first": "dark"
+  }
+}

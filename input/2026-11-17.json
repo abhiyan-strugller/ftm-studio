@@ -1,0 +1,27 @@
+{
+  "date": "2026-11-17",
+  "start_number": 111701,
+  "posts": [
+    {
+      "id": "0800",
+      "template": "plain",
+      "palette": "night",
+      "tag": "Cost of living",
+      "headline": "Canada's inflation held at 3.1% in October. Groceries got more expensive, not less — up 2.0% from a year ago.",
+      "source": "Source: Statistics Canada, Oct. 2026 CPI (Nov. 16)",
+      "source_url": "https://www150.statcan.gc.ca/n1/daily-quotidien/261116/dq261116a-eng.htm",
+      "caption": "Canada's cost of living isn't cooling.\n\nInflation held at 3.1% year over year in October — the same as September, and still above the Bank of Canada's 2% target, Statistics Canada reported Monday. Groceries actually sped up: 2.0% higher than a year ago, versus 1.7% in September. Slower rent growth is what kept the headline from rising.\n\nGas looks alarming at 30.9% year over year, but StatCan says that's mostly a base-year effect — pump prices fell 2.5% from September.\n\nMy take: a flat headline hides the part that hits the till. Food is re-accelerating while the relief is in rent.\n\nWhich grocery item has jumped most for you this fall?\n\nSource: Statistics Canada, Oct. 2026 CPI\n\n#Canada #Inflation #Groceries",
+      "data": {
+        "paragraphs": [
+          "Prices rose 3.1% from a year earlier in October, matching September and holding above the Bank of Canada's 2% target.",
+          "Grocery prices picked up to 2.0% year over year, from 1.7% in September. Slower rent growth offset the pressure.",
+          "Gasoline is up 30.9% from a year ago, but StatCan says that's largely a base-year effect; pump prices fell 2.5% in October."
+        ]
+      },
+      "scheduled_at": "2026-11-17T14:00:00.000Z"
+    }
+  ],
+  "reels": [
+    { "slug": "2026-11-17-canada-inflation-0800", "scheduled_at": "2026-11-17T14:00:00.000Z" }
+  ]
+}
