@@ -1,27 +1,27 @@
 {
   "date": "2026-11-17",
-  "start_number": 111704,
+  "start_number": 111720,
   "posts": [
     {
-      "id": "1700",
+      "id": "2000",
       "template": "plain",
-      "palette": "night",
-      "tag": "Cost of Living",
-      "headline": "Gas just fell below $4 a gallon for the first time since July — yet it still costs about 23% more than it did last Thanksgiving.",
-      "source": "Source: AAA, Nov 17, 2026",
-      "source_url": "https://gasprices.aaa.com/",
-      "caption": "Gas just dropped below $4 for the first time since July — and it still costs more than last Thanksgiving.\n\nThe national average hit $3.78 a gallon today, down from $4.31 a month ago (AAA). A year ago it was $3.07 — so you're paying about 23% more to fill up than last November.\n\nAirfare's worse: AAA members pay about $800 round-trip now, up 17% from a year ago.\n\nFor the first time since 2008, AAA expects fewer Thanksgiving travelers: 81.5 million, just under last year.\n\nMy take: a sub-$4 pump price makes a great headline, but the bill against last year still went up.\n\nDriving, flying, or staying home this year?\n\nSource: AAA, Nov 17, 2026\n\n#GasPrices #Thanksgiving #CostOfLiving",
+      "palette": "midnight",
+      "tag": "Your Money",
+      "headline": "Nvidia's revenue doubled last quarter to $115.8 billion — and it's the single biggest stock in most Americans' 401(k).",
+      "source": "Source: NVIDIA Q3 FY2027 release (SEC), Nov. 17, 2026",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/0001045810/000104581026000088/q3fy27pr.htm",
+      "caption": "Nvidia just doubled its revenue in three months — and it's probably the biggest bet in your 401(k).\n\nThe chipmaker reported $115.8 billion in revenue for the quarter ended Oct. 25, up 103% from a year ago (NVIDIA's SEC filing). Net income: $65.3 billion. Data-center sales jumped 110%.\n\nWhy it matters even if you never bought the stock: Nvidia is the world's most valuable company and about 8% of the S&P 500 — the largest single holding in most index funds and 401(k)s.\n\nIt's also the first report since founder Jensen Huang stepped down; former CFO Colette Kress is interim CEO. Shares rose after hours.\n\nMy take: one company now moves the fund millions retire on — a lot of eggs in one basket, however good the quarter.\n\nIs Nvidia your biggest holding without you choosing it?\n\n#Nvidia #Stocks #401k #Investing\n\nSource: NVIDIA Q3 FY2027 release (SEC), Nov. 17, 2026\nEducational only — not financial advice.",
       "data": {
         "paragraphs": [
-          "The national average is $3.78 today, down from $4.31 a month ago. A year ago it was $3.07 — so filling up costs roughly 23% more than last November. (AAA)",
-          "Flying is pricier too: AAA members are paying about $800 round-trip, up 17% from a year ago.",
-          "For the first time since 2008 — outside the pandemic — AAA expects fewer Thanksgiving travelers: 81.5 million, just under last year's 81.6 million."
+          "Nvidia reported $115.8 billion in revenue for the quarter ended Oct. 25 — up 103% from a year ago. Net income hit $65.3 billion, and AI data-center sales jumped 110%. (NVIDIA SEC filing)",
+          "Why it's your money: Nvidia is the world's most valuable company and about 8% of the S&P 500 — the largest single holding in most index funds and target-date 401(k)s, whether you picked it or not.",
+          "It was the first report since founder Jensen Huang stepped down; former CFO Colette Kress is now interim CEO. The company guided to about $130 billion in revenue next quarter, and shares rose after hours."
         ]
       },
-      "scheduled_at": "2026-11-17T23:00:00.000Z"
+      "scheduled_at": "2026-11-18T02:00:00.000Z"
     }
   ],
   "reels": [
-    { "slug": "2026-11-17-thanksgiving-gas-1700", "scheduled_at": "2026-11-17T23:00:00.000Z" }
+    { "slug": "2026-11-17-nvidia-doubles-2000", "scheduled_at": "2026-11-18T02:00:00.000Z" }
   ]
 }
