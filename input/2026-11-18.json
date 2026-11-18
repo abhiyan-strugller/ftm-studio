@@ -1,27 +1,8 @@
 {
   "date": "2026-11-18",
-  "start_number": 111808,
-  "posts": [
-    {
-      "id": "0800",
-      "template": "plain",
-      "palette": "night",
-      "tag": "Crypto",
-      "headline": "Bitcoin has slipped to a four-month low — and the people who bought it this fall are now about 20% underwater.",
-      "source": "Source: CoinDesk market coverage, Nov. 18, 2026",
-      "source_url": "https://www.coindesk.com/business/2026/11/18/live-updates-bitcoin-stuck-near-usd65-000-as-popular-basis-trade-returns-dry-up",
-      "caption": "Bitcoin just hit its lowest level since the summer — and recent buyers are feeling it most.\n\nIt traded around $64,000 Wednesday morning, after dipping near $61,000 on Nov. 15, a four-month low (CoinDesk). That's about 20% below what people who bought in the last one to three months paid for it.\n\nWhy it's your money, not just a trader's: crypto has crept into everyday savings — spot Bitcoin ETFs and some retirement menus, in the US and Canada alike. A 20% drop there is real money.\n\nMy take: if crypto sits in your long-term savings, size it so a slide like this is survivable — the people hurting most bought recently and bought big.\n\nHow much of your savings, if any, is in crypto?\n\n#Bitcoin #Crypto #Investing #Retirement\n\nSource: CoinDesk market coverage, Nov. 18, 2026\nEducational only — not financial advice.",
-      "data": {
-        "paragraphs": [
-          "It traded around $64,000 on Wednesday morning, after dipping near $61,000 on Nov. 15 — its lowest in about four months. (CoinDesk)",
-          "That's roughly 20% below the average price paid by people who bought in the last one to three months. The newest buyers are underwater the most.",
-          "Crypto has crept into everyday savings — spot Bitcoin ETFs and some retirement menus, in the US and Canada alike — so a drop like this is real money, not a trader's scoreboard."
-        ]
-      },
-      "scheduled_at": "2026-11-18T14:00:00.000Z"
-    }
-  ],
+  "start_number": 111811,
+  "posts": [],
   "reels": [
-    { "slug": "2026-11-18-bitcoin-underwater-0800", "scheduled_at": "2026-11-18T14:00:00.000Z" }
+    { "slug": "2026-11-18-nvidia-beat-1100", "scheduled_at": "2026-11-18T17:00:00.000Z" }
   ]
 }
