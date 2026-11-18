@@ -48,30 +48,48 @@ figure still names its period and a reliable named source (one-outlet rule from
 research.md applies). Paraphrase, never copy. This is how the page stays
 monetizable and strike-free while chasing breaking news.
 
-## What a cycle produces
+## What a cycle produces — depends on the slot
 
-**One card + one reel**, both from the same fresh story:
+To stay under Post Planner's **12-posts-per-24-hours PER-PROFILE cap** (hit on
+2026-11-17, when 5 cards + 5 reels overlapped the old model's posts in the
+rolling window and the day's later posts failed), Follow the Money posts
+**7 items a day: 3 cards + 4 reels**, split across the 5 slots by this FIXED
+map. Build exactly what your slot calls for — never more, never less:
+
+| Slot (Edmonton) | Builds |
+| --- | --- |
+| 08:00 | card + reel |
+| 11:00 | reel only |
+| 14:00 | card only |
+| 17:00 | reel only |
+| 20:00 | card + reel |
+
+Cards at 08:00, 14:00, 20:00 (3) + reels at 08:00, 11:00, 17:00, 20:00 (4) = 7.
+
 - Card: the `plain` template, caption in the house shape (fact → number →
   "My take:" → question), per `caption.md`.
 - Reel: per `reels.md` — hook (count-up number), 3-4 beats, "My take:", end
   question, 10-13 hashtags, varied style. Skip `voice` in automated cycles.
-- Both scheduled for the SAME near-future slot (see below). They can share a
-  story — different format, same moment.
+- On a **card+reel** slot both share the same fresh story — different format,
+  same moment. A **reel-only** slot writes `input/<date>.json` with an EMPTY
+  `posts` list (just the `reels` block). A **card-only** slot writes the one
+  post and omits the `reels` block. build-day accepts all three; only a day
+  file with neither a card nor a reel is rejected.
 
 ## Timing — near-future, never past
 
 A build cycle runs at :40 and schedules its post for the top of the next hour,
 in America/Edmonton; the upload cycle runs at :55 and puts it in Post Planner:
 
-| Build fires (A) | Upload fires (B) | Posts at (Edmonton) | = New York |
-| --- | --- | --- | --- |
-| 7:40 | 7:55 | 8:00 | 9:00 AM |
-| 10:40 | 10:55 | 11:00 | 12:00 PM |
-| 13:40 | 13:55 | 14:00 | 3:00 PM |
-| 16:40 | 16:55 | 17:00 | 6:00 PM |
-| 19:40 | 19:55 | 20:00 | 9:00 PM |
+| Build fires (A) | Upload fires (B) | Posts at (Edmonton) | = New York | Builds |
+| --- | --- | --- | --- | --- |
+| 7:40 | 7:55 | 8:00 | 9:00 AM | card + reel |
+| 10:40 | 10:55 | 11:00 | 12:00 PM | reel only |
+| 13:40 | 13:55 | 14:00 | 3:00 PM | card only |
+| 16:40 | 16:55 | 17:00 | 6:00 PM | reel only |
+| 19:40 | 19:55 | 20:00 | 9:00 PM | card + reel |
 
-Five cycles → ~5 cards + 5 reels a day, covering the US/Canada East-coast
+Five cycles → 3 cards + 4 reels a day (7 total), covering the US/Canada East-coast
 morning through evening (the grid was shifted 3h earlier on Abhiyan's call:
 starting at 11:00 Edmonton would have meant noon in New York, losing the
 whole morning). The
@@ -97,14 +115,18 @@ accumulates and every already-published post keeps pointing at its own bytes.
 
 ## Per-cycle sheet and hand-off
 
-Each cycle is a mini-build: write `input/<date>.json` with just this cycle's 1
-post (id = slot HHMM) + a `reels` block of 1 reel (both at the slot time), then
-`build-day` → `publish-media` → `publish-sheet` exactly as before. The sheet is
-content-addressed (`sheets/<date>-<hash>.csv`), so several sheets per day
-coexist. Append the cycle's sheet URL, sha256 and slot time as a new line to
+Each cycle is a mini-build: write `input/<date>.json` with just this slot's
+content per the map — a card (id = slot HHMM), a `reels` block of 1 reel, or
+both — then `build-day` → `publish-media` → `publish-sheet` exactly as before.
+publish-media runs in the cloud where GitHub Pages (github.io) is blocked by
+the egress proxy, so run it `--no-verify` and confirm the raw blobs instead.
+The sheet is content-addressed (`sheets/<date>-<hash>.csv`), so several sheets
+per day coexist and hold 1 or 2 rows depending on the slot. Append the cycle's
+sheet URL, sha256, slot time and composition as a new line to
 `<date>/run-log.txt` (never overwrite — the file accumulates the day's cycles),
-tagged with the slot, e.g. `CYCLE 14:00 SHEET_URL …`. The uploader reads the
-LAST cycle line and uploads that sheet.
+e.g. `CYCLE 11:00 SHEET_URL …  SHA256 …  1reel` (composition is `1card`,
+`1reel`, or `1card+1reel`). The uploader reads the LAST cycle line and uploads
+that sheet's rows.
 
 ## Build each cycle fresh
 

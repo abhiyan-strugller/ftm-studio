@@ -19,20 +19,26 @@ the whole next day the evening before). Abhiyan wanted the page to carry
 build, a fresh post is researched and published roughly every 3 hours, minutes
 before it goes out. `prompts/intraday.md` is the full spec; read it first.
 
-**Per day:** ~5 cards + ~5 reels, one of each per cycle, five cycles.
+**Per day:** 3 cards + 4 reels (7 total), by a FIXED per-slot map — *not* one of
+each per cycle. This keeps the page under Post Planner's **12-posts-per-24-hours
+PER-PROFILE cap** (hit on 2026-11-17, when 5 cards + 5 reels overlapped the old
+model's posts in the rolling window and the day's later posts failed; changed to
+7/day the same evening, and today's remaining posts paused to let the cap reset).
+The map: **08:00 card+reel, 11:00 reel-only, 14:00 card-only, 17:00 reel-only,
+20:00 card+reel** (cards at 08/14/20, reels at 08/11/17/20).
 **Each cycle** researches the freshest, most-viewed money story RIGHT NOW
 (US + Canada — markets falling/spiking, a cyberattack or outage with a dollar
 cost, a rate/inflation/jobs print, a CEO money story, anything viral touching a
-paycheck, rent, groceries, savings, a card rate or a job), builds 1 `plain`
-card + 1 reel from it, publishes them, and the uploader puts them into Post
-Planner for a slot ~20 min out.
+paycheck, rent, groceries, savings, a card rate or a job), builds what its slot
+calls for (a card, a reel, or both), publishes it, and the uploader puts it into
+Post Planner for a slot ~20 min out.
 
 Two scheduled tasks, both fire every ~3 hours, Edmonton time — same split, same
 reason as always (push needs the cloud, browser needs the laptop):
 
 | | Task | Fires (Edmonton) | Can it push? | Has a browser? |
 | --- | --- | --- | --- | --- |
-| **A** | `FTM Build & Publish (Task A)` — the BUILD cycle | **:40 at 7, 10, 13, 16, 19** | **Yes** | No |
+| **A** | `FTM Build Cycle (Task A)` — the BUILD cycle | **:40 at 7, 10, 13, 16, 19** | **Yes** | No |
 | **B** | `FTM Daily Post Build` — the UPLOAD cycle | **:55 at 7, 10, 13, 16, 19** | No | **Yes** |
 
 Slots are 8:00 / 11:00 / 14:00 / 17:00 / 20:00 Edmonton — 9 AM to 9 PM New
@@ -42,13 +48,17 @@ The slot must be FUTURE when the uploader runs — the past-row guard aborts a
 passed row (see the 2026-11-10 incident). That is why the build always targets
 the top of the hour after it fires (:40 → next :00), never a time in the past.
 
-**Build cycle (A)** researches now, writes `input/<date>.json` with ONE post
-(id = the slot in HHMM, e.g. `"1400"`, so its card is `1400-plain.png` and
-never collides with another cycle) plus a `reels` block of one reel at the same
-slot, renders, pushes media to `ftm-media`, publishes a content-addressed sheet
-(`sheets/<date>-<hash>.csv`), and APPENDS a `CYCLE <slot> SHEET_URL …` line to
-`<date>/run-log.txt` (never overwrites — the file accumulates the day's
-cycles).
+**Build cycle (A)** researches now and writes `input/<date>.json` with just this
+slot's content per the map — a card (id = the slot in HHMM, e.g. `"1400"`, so its
+card is `1400-plain.png` and never collides with another cycle), a `reels` block
+of one reel, or both. A reel-only slot leaves `posts` empty; a card-only slot
+omits `reels`; build-day accepts all three and rejects only a day file with
+neither. It renders, pushes media to `ftm-media` (`publish-media --no-verify` —
+the cloud proxy blocks github.io, so it confirms the raw blobs instead),
+publishes a content-addressed sheet (`sheets/<date>-<hash>.csv`), and APPENDS a
+`CYCLE <slot> SHEET_URL …  <composition>` line (composition = `1card`, `1reel`,
+or `1card+1reel`) to `<date>/run-log.txt` (never overwrites — the file
+accumulates the day's cycles).
 
 **Upload cycle (B)** reads the LAST `CYCLE …` line in today's run-log, checks
 the queue first (never double-uploads), injects that sheet into Post Planner,

@@ -223,6 +223,11 @@ async function main(): Promise<void> {
   if (reels.length > 0 && csvRows.length > MAX_DATA_ROWS) {
     throw new Error(`${csvRows.length} rows exceeds Post Planner's limit of ${MAX_DATA_ROWS}.`);
   }
+  // A slot must carry at least one thing. posts may be empty (a reel-only slot)
+  // and reels may be empty (a card-only slot), but not both.
+  if (docs.length === 0 && reels.length === 0) {
+    throw new Error("Day file has neither a card nor a reel — nothing to build.");
+  }
   csvRows.sort((a, b) => a.at.getTime() - b.at.getTime());
 
   // --- CSV ------------------------------------------------------------------

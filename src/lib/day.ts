@@ -73,7 +73,9 @@ export const DayFileSchema = z.object({
   date: Trimmed.regex(/^\d{4}-\d{2}-\d{2}$/, "expected YYYY-MM-DD"),
   /** First issue number of the day; each post takes the next one in order. */
   start_number: z.number().int().positive().max(99_999).default(1),
-  posts: z.array(DayPostSchema).min(1),
+  // May be empty: a reel-only slot carries no card. build-day still refuses a
+  // day file that has neither a card nor a reel.
+  posts: z.array(DayPostSchema),
 });
 
 export type DayFile = z.infer<typeof DayFileSchema>;
@@ -154,9 +156,8 @@ export function parseDayFile(raw: unknown): DayFile {
   if (!/^\d{4}-\d{2}-\d{2}$/.test(date)) {
     problems.push(`date: expected YYYY-MM-DD, got "${date}"`);
   }
-  if (posts.length === 0 && problems.length === 0) {
-    problems.push("posts: the day file has no posts");
-  }
+  // An empty posts array is allowed here: a reel-only slot has no card. The
+  // "neither card nor reel" case is caught in build-day, which can see reels.
   if (problems.length > 0) throw new DayFileError(problems);
 
   return {
