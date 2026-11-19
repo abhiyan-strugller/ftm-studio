@@ -1,7 +1,23 @@
 {
   "date": "2026-11-19",
-  "posts": [],
-  "reels": [
-    { "slug": "2026-11-19-fed-rate-hikes-1100", "scheduled_at": "2026-11-19T17:00:00.000Z" }
+  "posts": [
+    {
+      "id": "1400",
+      "template": "plain",
+      "palette": "midnight",
+      "tag": "Your Money",
+      "headline": "The biggest IPO ever couldn't lift the market: Anthropic soared about 27% on day one, yet the S&P 500 fell for a sixth straight session as the Dow dropped around 800 points.",
+      "source": "Source: CNBC & Yahoo Finance markets, Nov. 19, 2026",
+      "source_url": "https://www.cnbc.com/2026/11/19/anthropic-ipo-ant-live-updates.html",
+      "caption": "The largest IPO in history just landed — and the market fell anyway.\n\nAnthropic opened at $111.50 a share Thursday and jumped about 27%, topping a $2 trillion value after an $81 billion offering — the biggest IPO ever (CNBC, Nov. 19).\n\nBut one hot debut couldn't carry Wall Street: the Dow was down around 800 points in afternoon trading and the S&P 500 headed for a sixth straight losing day (Yahoo Finance, Nov. 19).\n\nWhy it's your money: the S&P 500 anchors most 401(k)s and target-date funds, so a six-day slide quietly trims retirement balances — and Canadian funds hold these same US tech names too.\n\nMy take: when the year's biggest success story can't stop the bleeding, the worry isn't one stock — it's how much of the market now rides on the AI trade.\n\nHas this stretch of red changed how you're investing?\n\n#Stocks #AI #401k #Investing\n\nSource: CNBC & Yahoo Finance markets, Nov. 19, 2026\nEducational only — not financial advice.",
+      "data": {
+        "paragraphs": [
+          "Anthropic opened at $111.50 a share and climbed about 27%, topping a $2 trillion market value after an $81 billion deal — the largest IPO on record. (CNBC, Nov. 19)",
+          "Even so, the rally didn't spread: the Dow was down roughly 800 points in Thursday afternoon trading and the S&P 500 was on track for its sixth straight losing day. (Yahoo Finance markets, Nov. 19)",
+          "Why it reaches your wallet: the S&P 500 anchors most 401(k)s and target-date funds, so a six-session slide trims retirement balances — and Canadian funds hold these same US tech names."
+        ]
+      },
+      "scheduled_at": "2026-11-19T20:00:00.000Z"
+    }
   ]
 }
