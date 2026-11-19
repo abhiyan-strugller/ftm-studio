@@ -1,8 +1,27 @@
 {
   "date": "2026-11-18",
-  "start_number": 111811,
-  "posts": [],
+  "start_number": 111820,
+  "posts": [
+    {
+      "id": "2000",
+      "template": "plain",
+      "palette": "midnight",
+      "tag": "Your Money",
+      "headline": "Canada's TSX fell about 737 points Wednesday — roughly 2% — as gold and oil tumbled, and it landed straight in the country's RRSPs.",
+      "source": "Source: Canadian Press market report, Nov. 18, 2026",
+      "source_url": "https://www.bnnbloomberg.ca/markets/2026/11/18/sptsx-composite-down-more-than-650-points-oil-and-gold-also-tumble/",
+      "caption": "Canada's stock market just had one of its worst days of the year — and it landed right in RRSPs and TFSAs.\n\nThe S&P/TSX composite fell about 737 points Wednesday, roughly 2% — its third straight drop (Canadian Press, Nov. 18). Gold and oil both tumbled, and because the index is packed with miners, energy and banks, the dividend stocks most Canadians hold fell together.\n\nOne upside: January crude slid to about US$82 a barrel, pointing to cheaper gas ahead.\n\nMy take: a resource-heavy index cuts both ways — it sinks your RRSP on a day like this, but cheaper oil quietly helps at the pump.\n\nDoes a day like this change how you invest?\n\n#TSX #Investing #RRSP #Canada\n\nSource: Canadian Press market report, Nov. 18, 2026\nEducational only — not financial advice.",
+      "data": {
+        "paragraphs": [
+          "It was the index's third straight losing session and one of its worst days of the year. (Canadian Press, Nov. 18)",
+          "The index is packed with miners, energy and banks, so the dividend stocks most Canadian RRSPs and TFSAs hold fell together. December gold futures dropped over US$100 to around US$3,740 an ounce; January crude slid to about US$82 a barrel.",
+          "One upside: cheaper crude points to lower gas prices down the road. South of the border the day split — the Dow fell 561 points, but the Nasdaq edged up as Nvidia steadied."
+        ]
+      },
+      "scheduled_at": "2026-11-19T02:00:00.000Z"
+    }
+  ],
   "reels": [
-    { "slug": "2026-11-18-nvidia-beat-1100", "scheduled_at": "2026-11-18T17:00:00.000Z" }
+    { "slug": "2026-11-18-tsx-plunge-2000", "scheduled_at": "2026-11-19T02:00:00.000Z" }
   ]
 }
