@@ -1,27 +1,7 @@
 {
   "date": "2026-11-19",
-  "start_number": 111920,
-  "posts": [
-    {
-      "id": "0800",
-      "template": "plain",
-      "palette": "midnight",
-      "tag": "Your Money",
-      "headline": "The company behind the Claude AI just pulled off the biggest IPO ever — about $81.3 billion raised at a $1.5 trillion valuation.",
-      "source": "Source: Yahoo Finance & AP, Nov. 19, 2026",
-      "source_url": "https://finance.yahoo.com/technology/ai/articles/anthropic-raises-81-3-billion-110258748.html",
-      "caption": "The maker of the Claude AI just pulled off the biggest stock-market debut in history.\n\nAnthropic priced its IPO at $83 a share and raised about $81.3 billion — a record — valuing the company at $1.5 trillion (Yahoo Finance, AP, Nov. 19). It starts trading today on the Nasdaq under the ticker ANT.\n\nWhy it's your money: this puts a hard price tag on the AI boom that's been lifting index funds and 401(k)s all year. A $1.5 trillion debut is a bet on future profits, not a reward for past ones.\n\nMy take: a number this big measures expectations, not earnings — and it's a reminder of how much of the market now rides on a handful of AI names.\n\nWould you buy a slice of the AI boom at a $1.5 trillion price?\n\n#AI #IPO #Investing #Stocks\n\nSource: Yahoo Finance & AP, Nov. 19, 2026\nEducational only — not financial advice.",
-      "data": {
-        "paragraphs": [
-          "Anthropic priced its IPO at $83 a share and raised about $81.3 billion — the largest on record — valuing it at $1.5 trillion (Yahoo Finance, AP, Nov. 19). It begins trading today on the Nasdaq under the ticker ANT.",
-          "Why it's your money: the deal puts a hard price tag on the AI boom that's driven index funds and 401(k)s all year. At $1.5 trillion, Anthropic would rank among the most valuable public companies in the world on day one.",
-          "A valuation that size rests on expected future profits, not past ones — so it's as much a bet on AI's payoff as it is a milestone. It also means everyday investors can now own a piece directly, for the first time."
-        ]
-      },
-      "scheduled_at": "2026-11-19T14:00:00.000Z"
-    }
-  ],
+  "posts": [],
   "reels": [
-    { "slug": "2026-11-19-anthropic-ipo-0800", "scheduled_at": "2026-11-19T14:00:00.000Z" }
+    { "slug": "2026-11-19-fed-rate-hikes-1100", "scheduled_at": "2026-11-19T17:00:00.000Z" }
   ]
 }
