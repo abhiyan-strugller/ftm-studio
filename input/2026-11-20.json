@@ -1,8 +1,24 @@
 {
   "date": "2026-11-20",
-  "start_number": 112020,
-  "posts": [],
-  "reels": [
-    { "slug": "2026-11-20-wall-street-selloff-1100", "scheduled_at": "2026-11-20T17:00:00.000Z" }
+  "start_number": 1420,
+  "posts": [
+    {
+      "id": "1400",
+      "template": "plain",
+      "palette": "cream",
+      "tag": "Your Money",
+      "headline": "Thanksgiving dinner just got more expensive for the first time in four years.",
+      "source": "Source: American Farm Bureau Federation & Dalhousie University, Nov. 2026",
+      "source_url": "https://www.fb.org/intel/markets/thanksgiving-dinner-cost-ticks-upward-in-2026",
+      "caption": "Thanksgiving just got more expensive for the first time in four years.\n\nThe classic dinner for 10 now averages $58.63 — up 6% from last year, about $5.86 a plate (American Farm Bureau Federation, Nov. 2026). The 16-pound turkey does most of the damage: $23.68, up $2.38 — a 10% jump — on tight supply and strong demand.\n\nNorth of the border it's worse: a turkey dinner for four is projected to cost about 10% more this year (Dalhousie University).\n\nMy take: $5.86 a plate is still a cheap way to feed a room — but a 10% jump on the one item everyone buys is the kind of sticker shock people actually feel.\n\nWhat's your Thanksgiving table costing this year?\n\n#Thanksgiving #Groceries #Inflation #Canada\n\nSource: American Farm Bureau Federation & Dalhousie University, Nov. 2026",
+      "data": {
+        "paragraphs": [
+          "The classic spread for 10 now averages $58.63 — up 6% from last year, about $5.86 a plate. (American Farm Bureau Federation, Nov. 2026)",
+          "The 16-pound turkey does most of the damage: $23.68, up $2.38 — a 10% jump — on tight supply and strong demand.",
+          "North of the border it's worse: a turkey dinner for four is projected to cost about 10% more this year. (Dalhousie University)"
+        ]
+      },
+      "scheduled_at": "2026-11-20T20:00:00.000Z"
+    }
   ]
 }
