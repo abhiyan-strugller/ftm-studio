@@ -1,10 +1,27 @@
 {
   "date": "2026-11-19",
-  "posts": [],
-  "reels": [
+  "start_number": 111920,
+  "posts": [
     {
-      "slug": "2026-11-19-walmart-value-1700",
-      "scheduled_at": "2026-11-19T23:00:00.000Z"
+      "id": "2000",
+      "template": "plain",
+      "palette": "midnight",
+      "tag": "Your Money",
+      "headline": "The Dow fell about 1,100 points Thursday and the S&P 500 logged its sixth straight losing day — and that drop landed right in your 401(k).",
+      "source": "Source: Yahoo Finance market close, Nov. 19, 2026",
+      "source_url": "https://finance.yahoo.com/markets/stocks/articles/stock-market-today-nov-19-221002368.html",
+      "caption": "Wall Street just had one of its worst days in weeks — and if you own an index fund or a 401(k), you own this drop.\n\nThe Dow fell about 1,100 points Thursday, roughly 2.2%, to around 49,100. The S&P 500 slid about 2% — its sixth straight losing day — and the Nasdaq dropped about 2.2% (Yahoo Finance, Nov. 19). The market's 'fear gauge,' the VIX, jumped about 16% to near 28.\n\nWhy it's your money: the S&P 500 is the backbone of most retirement accounts, so a 2% down day trims the balance millions are saving on. Even Nvidia's blowout earnings this week couldn't turn the mood — the new worry is the Fed signalling rates may go up, not down.\n\nMy take: six red days in a row is unnerving, but a 401(k) is measured in decades, not days — the headline number matters far less than the one on the day you actually retire.\n\nHas this week's selloff changed anything about how you're investing?\n\n#StockMarket #401k #Investing #SP500\n\nSource: Yahoo Finance market close, Nov. 19, 2026\nEducational only — not financial advice.",
+      "data": {
+        "paragraphs": [
+          "The Dow fell about 1,100 points — roughly 2.2% — to around 49,100. The S&P 500 slid about 2% to near 7,180, its sixth straight losing day, and the Nasdaq dropped about 2.2%. (Yahoo Finance, Nov. 19)",
+          "Why it's your money: the S&P 500 is the backbone of most 401(k)s and index funds, so a 2% down day trims the balance millions are saving on — whether or not you ever watch the market.",
+          "The 'fear gauge' (VIX) jumped about 16% to near 28. Even Nvidia's blowout earnings this week couldn't turn sentiment; the new worry is the Fed signalling rates may go up, not down."
+        ]
+      },
+      "scheduled_at": "2026-11-20T02:00:00.000Z"
     }
+  ],
+  "reels": [
+    { "slug": "2026-11-19-markets-selloff-2000", "scheduled_at": "2026-11-20T02:00:00.000Z" }
   ]
 }
