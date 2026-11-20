@@ -1,0 +1,53 @@
+{
+  "slug": "2026-11-20-wall-street-selloff-1100",
+  "title": "Wall Street's 1,091-point drop",
+  "audio_seed": 1120,
+  "style": { "accent": "gold", "first": "dark" },
+  "slides": [
+    {
+      "kind": "hook",
+      "big": "1,091",
+      "countup": true,
+      "lines": [
+        "points came off the Dow in a single day — Wall Street's longest losing streak since 2024."
+      ]
+    },
+    {
+      "kind": "body",
+      "lines": [
+        "The Dow fell about 1,091 points Thursday, Nov. 19 — roughly 2% — closing below 50,000.",
+        "The S&P 500 dropped nearly 2% and the Nasdaq slid 2.2%. (AP, 24/7 Wall St.)"
+      ]
+    },
+    {
+      "kind": "body",
+      "lines": [
+        "The same AI trade that powered this year's gains is now driving the drop.",
+        "Fears the AI boom is overbuilt, plus talk the Fed holds rates higher for longer."
+      ]
+    },
+    {
+      "kind": "body",
+      "lines": [
+        "This isn't just traders. The S&P 500 sits inside most 401(k) target-date and index funds.",
+        "A down week trims retirement balances on both sides of the border — Canadian funds hold US tech too."
+      ]
+    },
+    {
+      "kind": "take",
+      "lines": [
+        "My take:",
+        "The AI rally made index investors look like geniuses on the way up. The same concentration is what stings on the way down."
+      ]
+    },
+    {
+      "kind": "end",
+      "lines": [
+        "Did this week's slide change how you check your 401(k)?",
+        "Follow for the money trail."
+      ]
+    }
+  ],
+  "source_line": "Sources: AP, 24/7 Wall St., CNN — Nov 19, 2026",
+  "caption": "About 1,091 points came off the Dow in a single day — and if you hold a 401(k), an RRSP or any index fund, that slide is partly yours.\n\nThe Dow fell roughly 2% Thursday, Nov. 19, closing below 50,000; the S&P 500 dropped nearly 2% and the Nasdaq slid 2.2% — Wall Street's longest losing streak since 2024 (AP, 24/7 Wall St.). The trigger: fears the AI boom is overbuilt, talk the Fed may hold rates higher for longer, and Anthropic's record first-day IPO value near $1.76 trillion stoking valuation jitters (CNN).\n\nThe S&P 500 is the benchmark inside most target-date and index funds, so this lands on retirement balances in the US and Canada alike — Canadian funds hold plenty of US tech too.\n\nMy take: the AI rally made index investors look like geniuses on the way up; the same concentration is what stings on the way down.\n\nDid this week's slide change how you check your retirement account? 👇\n\n#StockMarket #Investing #401k #DowJones #SP500 #Nasdaq #AIbubble #PersonalFinance #WallStreet #Retirement #MoneyTok #FollowTheMoney"
+}

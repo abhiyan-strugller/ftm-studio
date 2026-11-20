@@ -1,27 +1,8 @@
 {
   "date": "2026-11-20",
   "start_number": 112020,
-  "posts": [
-    {
-      "id": "0800",
-      "template": "plain",
-      "palette": "night",
-      "tag": "Your Money",
-      "headline": "Bitcoin has slid to around $61,600 — roughly half its October 2025 peak — and if you own any, directly or through an ETF, that drop is yours.",
-      "source": "Source: The Motley Fool / Crypto Briefing, Nov. 19, 2026",
-      "source_url": "https://www.fool.com/coverage/stock-market-today/2026/11/19/crypto-market-today-nov-19-bitcoin-approaches-usd60-000-as-etf-outflows-surpass-usd2-5-billion-in-2026/",
-      "caption": "Bitcoin just slid to around $61,600 — and if you own any, or hold a Bitcoin ETF in your brokerage or retirement account, this drop is yours.\n\nIt traded near $61,635 on the evening of Nov. 19, down about 13% on the week and closing in on $60,000 (The Motley Fool). That's roughly half its October 2025 peak near $126,000, and a sixth straight losing week (Crypto Briefing).\n\nUS spot Bitcoin ETFs have seen more than $2.5 billion pulled out in 2026, per CoinDesk, as the Fed signals higher rates for longer.\n\nMy take: 'it's in my 401(k) now' cuts both ways — the same door that let the gains in lets a near-50% drop in too.\n\nOwn any Bitcoin, in the US or Canada — are you holding or trimming?\n\n#Bitcoin #Crypto #401k #Investing\n\nSource: The Motley Fool / Crypto Briefing, Nov. 19, 2026\nEducational only — not financial advice.",
-      "data": {
-        "paragraphs": [
-          "Bitcoin traded near $61,635 on the evening of Nov. 19, down about 2% on the day and roughly 13% over the week, closing in on the $60,000 line. (The Motley Fool / FMP, Nov. 19)",
-          "It peaked near $126,000 in October 2025, so the price is now close to half what it was — a month-to-date fall of roughly 16% to 23%, and a sixth straight losing week. (Crypto Briefing)",
-          "Why it's your money: Bitcoin now sits in brokerage accounts and some retirement plans via spot ETFs — which have shed over $2.5 billion in 2026, per CoinDesk. The new worry: a Fed signalling higher rates, not cuts."
-        ]
-      },
-      "scheduled_at": "2026-11-20T14:00:00.000Z"
-    }
-  ],
+  "posts": [],
   "reels": [
-    { "slug": "2026-11-20-bitcoin-crash-0800", "scheduled_at": "2026-11-20T14:00:00.000Z" }
+    { "slug": "2026-11-20-wall-street-selloff-1100", "scheduled_at": "2026-11-20T17:00:00.000Z" }
   ]
 }
