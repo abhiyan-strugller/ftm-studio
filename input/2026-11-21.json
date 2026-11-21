@@ -1,7 +1,23 @@
 {
   "date": "2026-11-21",
-  "posts": [],
-  "reels": [
-    { "slug": "2026-11-21-inflation-mood-1100", "scheduled_at": "2026-11-21T17:00:00.000Z" }
+  "posts": [
+    {
+      "id": "1400",
+      "template": "plain",
+      "palette": "night",
+      "tag": "Your Money",
+      "headline": "Bitcoin dropped near $55,000 this weekend — its lowest since September 2024 — dragging down the crypto ETFs now sitting in everyday brokerage and retirement accounts.",
+      "source": "Source: 24/7 Wall St. & CoinDesk, Nov. 21, 2026",
+      "source_url": "https://247wallst.com/investing/2026/11/21/bitcoin-crashes-below-56000-as-2-7-billion-crypto-liquidation-wipes-out-traders/",
+      "caption": "Bitcoin just slid to about $55,000 — its lowest since September 2024 — and anyone holding a crypto ETF inside a brokerage or retirement account felt it too.\n\nBTC fell as low as $55,106 early Saturday before clawing back near $60,000. It now trades roughly 52% below its $126,080 record set Oct. 6, 2025 (24/7 Wall St., Nov. 21).\n\nMore than $2.4 billion in leveraged crypto bets were wiped out in 24 hours (CoinGlass, via CoinDesk) — one of the biggest liquidation days on record, as forced selling fed on itself. US spot-bitcoin ETFs saw hundreds of millions in outflows this week, and those funds now sit in ordinary accounts on both sides of the border.\n\nMy take: leverage is what turns a dip into a cascade — the people hurt worst this weekend are the ones who borrowed to bet, not the ones who simply held.\n\nDo you hold any crypto, directly or through an ETF — and did this weekend change your plans?\n\n#Bitcoin #Crypto #Investing\n\nSource: 24/7 Wall St. & CoinDesk/CoinGlass, Nov. 21, 2026\nEducational only — not financial advice.",
+      "data": {
+        "paragraphs": [
+          "Bitcoin fell as low as $55,106 early Saturday before climbing back near $60,000 — its lowest level since September 2024. It now trades about 52% below its $126,080 record set Oct. 6, 2025. (24/7 Wall St., Nov. 21)",
+          "More than $2.4 billion in leveraged crypto positions were liquidated in 24 hours (CoinGlass, via CoinDesk) — one of the largest liquidation days on record, as forced selling fed on itself.",
+          "Why it's your money: US spot-bitcoin ETFs saw hundreds of millions in outflows this week, and those funds now sit in ordinary brokerage and some retirement accounts across the US and Canada."
+        ]
+      },
+      "scheduled_at": "2026-11-21T20:00:00.000Z"
+    }
   ]
 }
