@@ -1,26 +1,7 @@
 {
   "date": "2026-11-21",
-  "posts": [
-    {
-      "id": "0800",
-      "template": "plain",
-      "palette": "night",
-      "tag": "Your Money",
-      "headline": "Wall Street just had its worst week in more than a year — the Nasdaq wiped out its entire 2026 gain in the same week as the largest IPO in history.",
-      "source": "Source: CNBC & CNN market close, Nov. 20, 2026",
-      "source_url": "https://www.cnn.com/2026/11/20/investing/us-stocks-anthropic-ai",
-      "caption": "Wall Street just closed its worst week in more than a year — and if you own an index fund, a 401(k) or an RRSP, this one lands on you.\n\nThe Nasdaq fell about 5% Friday and is now negative for all of 2026, erasing a year of gains in a single week. The S&P 500 and Dow are both in a 'correction,' more than 10% below their records; the S&P finished at 6,910 (CNBC, CNN, Nov. 20).\n\nHere's the part that surprised me: this was the same week Anthropic, the maker of Claude, pulled off the biggest IPO in history — about $81.3 billion raised at a $1.5 trillion valuation (AP, Yahoo Finance). A record-shattering debut, and it still couldn't steady the AI trade. Nvidia, a top holding in most index funds, fell about 13% Friday.\n\nMy take: a week this ugly is unnerving, but a retirement account is scored on the day you retire — not the day the headlines are worst.\n\nDid this week push you to check your 401(k) or RRSP?\n\n#StockMarket #Nasdaq #401k #Investing\n\nSource: CNBC & CNN market close, Nov. 20, 2026\nEducational only — not financial advice.",
-      "data": {
-        "paragraphs": [
-          "The Nasdaq fell about 5% Friday (Nov. 20) and is now negative for 2026 — its worst week in more than a year. The S&P 500 and Dow are in a correction, over 10% below their records; the S&P closed at 6,910. (CNBC, Nov. 20)",
-          "The twist: this was the same week Anthropic, the maker of Claude, pulled off the largest IPO on record — about $81.3 billion raised at a $1.5 trillion value — and even that couldn't steady the AI trade. (AP, Yahoo Finance)",
-          "Why it's your money: the Nasdaq and S&P sit inside most 401(k)s and RRSPs on both sides of the border, so a week like this trims the balance millions are quietly saving. Nvidia, a top holding, fell about 13% Friday. (CNN)"
-        ]
-      },
-      "scheduled_at": "2026-11-21T14:00:00.000Z"
-    }
-  ],
+  "posts": [],
   "reels": [
-    { "slug": "2026-11-21-ai-week-wrap-0800", "scheduled_at": "2026-11-21T14:00:00.000Z" }
+    { "slug": "2026-11-21-inflation-mood-1100", "scheduled_at": "2026-11-21T17:00:00.000Z" }
   ]
 }
