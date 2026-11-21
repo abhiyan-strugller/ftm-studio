@@ -1,7 +1,26 @@
 {
   "date": "2026-11-20",
-  "posts": [],
+  "posts": [
+    {
+      "id": "2000",
+      "template": "plain",
+      "palette": "midnight",
+      "tag": "Your Money",
+      "headline": "The S&P 500 just fell into a correction and the Nasdaq went negative for 2026 — and that's the index sitting inside most 401(k)s.",
+      "source": "Source: Associated Press market close, Nov. 20, 2026",
+      "source_url": "https://spectrumlocalnews.com/nc/coastal/business/2026/11/20/wall-street-nov-20-2026",
+      "caption": "Wall Street just closed its worst week in more than a year — and if you own an index fund, a 401(k) or an RRSP, this one lands on you.\n\nThe S&P 500 fell 3.7% Friday (down 265 points to 6,910) and is now in a 'correction' — more than 10% below its Oct. 6 record. The Nasdaq slid 5.3%, erasing its entire 2026 gain and turning negative for the year. The Dow dropped 1.9%, about 950 points, to 48,147 (Associated Press, Nov. 20).\n\nWhy it matters even if you never watch the market: the S&P 500 is the backbone of most target-date funds and 401(k)s on both sides of the border, so a 3.7% day trims the balance millions are saving on. Nvidia — a top holding in many of those funds — fell another 13.8%.\n\nMy take: a seven-day losing streak, the longest since 2020, is unnerving — but a retirement account is scored on the day you retire, not the day the headlines are worst.\n\nHas this week pushed you to check your 401(k) or RRSP?\n\n#StockMarket #401k #Investing #SP500\n\nSource: Associated Press market close, Nov. 20, 2026\nEducational only — not financial advice.",
+      "data": {
+        "paragraphs": [
+          "The S&P 500 fell 3.7% Friday to 6,910 — now in a 'correction,' down more than 10% from its Oct. 6 record. The Nasdaq slid 5.3% to 22,618, negative for the year; the Dow lost 1.9% (about 950 pts) to 48,147. (AP, Nov. 20)",
+          "Why it's your money: the S&P 500 is the backbone of most target-date funds and 401(k)s on both sides of the border, so a 3.7% day trims the balance millions are saving on — whether or not you ever watch the market.",
+          "It was Wall Street's worst week in more than a year and a seventh straight down day — the longest losing streak since 2020. Nvidia, a top holding in many index funds, fell another 13.8%."
+        ]
+      },
+      "scheduled_at": "2026-11-21T02:00:00.000Z"
+    }
+  ],
   "reels": [
-    { "slug": "2026-11-20-loonie-19-month-low-1700", "scheduled_at": "2026-11-20T23:00:00.000Z" }
+    { "slug": "2026-11-20-sp500-correction-2000", "scheduled_at": "2026-11-21T02:00:00.000Z" }
   ]
 }
