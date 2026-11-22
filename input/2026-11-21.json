@@ -1,10 +1,26 @@
 {
   "date": "2026-11-21",
-  "posts": [],
-  "reels": [
+  "posts": [
     {
-      "slug": "2026-11-21-holiday-debt-1700",
-      "scheduled_at": "2026-11-21T23:00:00.000Z"
+      "id": "2000",
+      "template": "plain",
+      "palette": "midnight",
+      "tag": "Your Money",
+      "headline": "Bitcoin fell to a two-year low near $55,000 this weekend — more than 50% below the record it set a year ago.",
+      "source": "Source: Crypto Briefing, Nov. 20-21, 2026",
+      "source_url": "https://cryptobriefing.com/bitcoin-falls-20-percent-november/",
+      "caption": "Bitcoin just had its worst stretch in years — and it's no longer only a crypto story.\n\nIt fell to about $55,000 on Saturday, its lowest in two years, before rebounding toward $60,000. That's down more than 20% this month and over 50% below the $126,000 record it hit on Oct. 6, 2025 (Crypto Briefing, Nov. 20-21).\n\nWhy it matters even if you never bought any: spot bitcoin now sits in brokerage accounts, some 401(k)s and Canadian crypto ETFs. The same AI-valuation fear that pulled the Nasdaq negative for 2026 is now spilling into crypto. The Fear & Greed Index reads 11 — 'extreme fear.'\n\nMy take: weekends like this run on leverage and forced selling, not on people changing their minds about bitcoin.\n\nDoes a 50% drop make bitcoin look risky to you, or cheap?\n\n#Bitcoin #Crypto #Investing #401k\n\nSource: Crypto Briefing, Nov. 20-21, 2026\nEducational only — not financial advice.",
+      "data": {
+        "paragraphs": [
+          "Bitcoin sank to about $55,000 on Saturday — its lowest in two years — before rebounding toward $60,000. It's down more than 20% in November and over 50% below the $126,000 record it set on Oct. 6, 2025. (Crypto Briefing, Nov. 20-21)",
+          "Why it's your money: spot bitcoin now sits in brokerage accounts, some U.S. 401(k)s and Canadian crypto ETFs. The same AI-valuation fear that pulled the Nasdaq negative for 2026 is now spilling out of tech stocks and into crypto.",
+          "The slide is being driven by mounting fund outflows and jittery rate expectations. The Crypto Fear & Greed Index sits at 11 — 'extreme fear.'"
+        ]
+      },
+      "scheduled_at": "2026-11-22T02:00:00.000Z"
     }
+  ],
+  "reels": [
+    { "slug": "2026-11-21-bitcoin-two-year-low-2000", "scheduled_at": "2026-11-22T02:00:00.000Z" }
   ]
 }
