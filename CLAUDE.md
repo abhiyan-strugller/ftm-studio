@@ -221,7 +221,11 @@ only thing that settles it.
   and takes ~3 min on 2 cores. The old slide renderer is still there as
   `npm run render-reel-slides`, and the painted renderer falls back to it
   automatically if Chrome or playwright is missing — a cycle never ships
-  without a reel. Run with `--stills` first to eyeball each scene.
+  without a reel. Run with `--stills` first to eyeball each scene. Slides can carry a `chart`
+  block (`bars` or `rank`) which it paints with real axes, hatched highlight
+  bars and a trend stroke, and it picks a painted illustration (turkey, car,
+  house, chip, cart...) by matching words in the reel's own text. A reel with
+  charts takes ~4.5 min rather than ~3.
 - **Reel audio is numpy-free** — `scripts/gen-reel-bed.py` is pure Python
   standard library, so a render can never fail on a missing dependency. (It
   needed numpy until 2026-11-16, when a scheduled run only survived by

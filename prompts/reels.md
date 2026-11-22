@@ -24,6 +24,30 @@ painted one falls back to it automatically if Chrome/playwright is missing.
 
 - 4–9 slides, source line pinned at the bottom, FOLLOW THE MONEY wordmark and
   an accent progress bar on top of every scene.
+
+CHARTS — put the numbers on screen. Any slide may carry an optional `chart`
+block and the renderer paints it (bars grow one after another, the key bar in
+red and hatched, labels as crisp DOM text, an ink axis, and a trend stroke
+across the tops on a `bars` chart):
+
+```json
+{"kind":"body","lines":["Up 6% — the first rise since 2022."],
+ "chart":{"type":"bars","unit":"$","highlight":"2026",
+          "data":[["2022",64.05],["2025",55.18],["2026",58.63]]}}
+{"kind":"body","lines":["The bird set the tone."],
+ "chart":{"type":"rank","unit":"%","highlight":"16-lb turkey",
+          "data":[["16-lb turkey",10],["Cranberries",9],["Dinner rolls",7]]}}
+```
+
+`type` is `bars` (a series over time) or `rank` (biggest movers). `unit` is
+`$`, `%` or omitted. `highlight` names the row to put in red. ONLY ever chart
+figures that are literally in the post — never fill in a missing year to make
+a series look neater. 2–5 rows reads best; keep labels short.
+
+ILLUSTRATION — the renderer picks a painted motif by matching words in the
+reel's title and lines: turkey, cart, bag, car, house, fuel, coin, candles,
+bank, paycheck, chip, plane, cash (the fallback). It draws on the hook scene.
+Nothing to configure — write the story and the right drawing turns up.
 - Slide beats mirror the caption DNA: HOOK (one huge number) → 3–4 body beats
   (what happened → the hidden part → who wins, who pays → "this is your
   money") → "My take:" (green, opinionated) → end card (question + "Follow

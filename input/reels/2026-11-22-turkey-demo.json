@@ -1,0 +1,19 @@
+{
+  "slug": "2026-11-22-turkey-demo",
+  "title": "Thanksgiving dinner costs $58.63 for 10",
+  "slides": [
+    { "kind": "hook", "big": "$58.63", "lines": ["feeds 10 this Thursday — about $5.86 a plate."], "countup": true },
+    { "kind": "body", "lines": ["Up 6% from last year — the first rise since 2022."],
+      "chart": { "type": "bars", "unit": "$", "highlight": "2026",
+                 "data": [["2022", 64.05], ["2025", 55.18], ["2026", 58.63]] } },
+    { "kind": "body", "lines": ["The bird set the tone."],
+      "chart": { "type": "rank", "unit": "%", "highlight": "16-lb turkey",
+                 "data": [["16-lb turkey", 10], ["Cranberries", 9], ["Dinner rolls", 7], ["Sweet potatoes", 5]] } },
+    { "kind": "body", "lines": ["Still about 8% below the 2022 record of $64.05.", "Some shoppers found turkey at 69 cents a pound."] },
+    { "kind": "take", "lines": ["My take:", "A shop-the-deals year, not a skip-the-bird year."] },
+    { "kind": "end", "lines": ["What's your table costing this year?"] }
+  ],
+  "source_line": "Source: American Farm Bureau Federation, 41st annual survey, Nov. 2026",
+  "caption": "Thanksgiving dinner for 10 runs $58.63 this year — about $5.86 a plate.\n\nThat's up 6% from $55.18 last year and the first rise since 2022, after three straight years of falling prices (American Farm Bureau Federation, 41st annual survey, prices checked early November). The 16-lb frozen turkey leads it at $23.68, up 10%. Cranberries are up about 9%, dinner rolls 7%, sweet potatoes 5%.\n\nIt's still roughly 8% below the 2022 record of $64.05, and stores are discounting hard — some shoppers found turkey as low as 69 cents a pound.\n\nMy take: this is a shop-the-deals year, not a skip-the-bird year — the loss-leader turkey is the one thing worth chasing a sale on.\n\nWhat's your Thanksgiving table costing this year — more or less than last?\n\n#Thanksgiving #Groceries #Inflation #YourMoney #FoodPrices #CostOfLiving #Budgeting #PersonalFinance #MoneyTok #Holidays #FollowTheMoney",
+  "style": { "accent": "gold", "first": "dark" }
+}
