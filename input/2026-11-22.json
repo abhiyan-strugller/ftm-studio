@@ -1,28 +1,7 @@
 {
   "date": "2026-11-22",
-  "posts": [
-    {
-      "id": "0800",
-      "template": "plain",
-      "palette": "night",
-      "tag": "Your Money",
-      "headline": "Americans are on track to borrow a record $21.3 billion just to get through the holidays.",
-      "source": "Source: Adobe Analytics; Retail Council of Canada x Leger, 2026",
-      "source_url": "https://news.adobe.com/news/2026/09/adobe-us-holiday-shopping-season-to-hit-record",
-      "caption": "Americans are on track to borrow a record $21.3 billion just to get through the holidays.\n\nAdobe projects a record $275.1 billion in U.S. online holiday spending this year, up 6.7% — and $21.3 billion of it on 'buy now, pay later.' Miss a payment and the fees start, turning December gifts into January debt.\n\nIn Canada it's the reverse: 56% say inflation is reshaping their plans, and average spending is down $64 to $911 (Retail Council of Canada x Leger).\n\nMy take: a record sales number isn't a record good year — it can just mean more of it was borrowed.\n\nBuy now, pay later this year, or cash?\n\nSource: Adobe Analytics; Retail Council of Canada x Leger, 2026\n\n#BlackFriday #HolidayShopping #BNPL #PersonalFinance",
-      "data": {
-        "paragraphs": [
-          "Adobe projects U.S. shoppers will put a record $21.3 billion on 'buy now, pay later' this season — inside a record $275.1 billion in online spending, up 6.7% from last year. (Adobe Analytics, Sept. 2026)",
-          "Buy now, pay later splits a purchase into four payments. Miss one and the fees and interest begin — which is how holiday gifts quietly become January debt.",
-          "In Canada it's the reverse: 56% of shoppers say inflation is reshaping their holiday plans, and average planned spending fell $64 to $911. (Retail Council of Canada x Leger, 2026)",
-          "My take: a record sales number isn't the same as a record good year — it can just mean more of it was borrowed.",
-          "Are you using buy now, pay later this holiday, or paying cash?"
-        ]
-      },
-      "scheduled_at": "2026-11-22T14:00:00.000Z"
-    }
-  ],
+  "posts": [],
   "reels": [
-    { "slug": "2026-11-22-holiday-borrowing-0800", "scheduled_at": "2026-11-22T14:00:00.000Z" }
+    { "slug": "2026-11-22-bitcoin-weekend-crash-1100", "scheduled_at": "2026-11-22T17:00:00.000Z" }
   ]
 }
