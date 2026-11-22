@@ -83,11 +83,11 @@ in America/Edmonton; the upload cycle runs at :55 and puts it in Post Planner:
 
 | Build fires (A) | Upload fires (B) | Posts at (Edmonton) | = New York | Builds |
 | --- | --- | --- | --- | --- |
-| 7:40 | 7:55 | 8:00 | 9:00 AM | card + reel |
-| 10:40 | 10:55 | 11:00 | 12:00 PM | reel only |
-| 13:40 | 13:55 | 14:00 | 3:00 PM | card only |
-| 16:40 | 16:55 | 17:00 | 6:00 PM | reel only |
-| 19:40 | 19:55 | 20:00 | 9:00 PM | card + reel |
+| 7:25 | 7:55 | 8:00 | 9:00 AM | card + reel |
+| 10:25 | 10:55 | 11:00 | 12:00 PM | reel only |
+| 13:25 | 13:55 | 14:00 | 3:00 PM | card only |
+| 16:25 | 16:55 | 17:00 | 6:00 PM | reel only |
+| 19:25 | 19:55 | 20:00 | 9:00 PM | card + reel |
 
 Five cycles → 3 cards + 4 reels a day (7 total), covering the US/Canada East-coast
 morning through evening (the grid was shifted 3h earlier on Abhiyan's call:

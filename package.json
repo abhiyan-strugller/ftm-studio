@@ -17,11 +17,13 @@
     "build-day": "tsx --tsconfig scripts/tsconfig.json scripts/build-day.ts",
     "publish-media": "tsx --tsconfig scripts/tsconfig.json scripts/publish-media.ts",
     "publish-sheet": "tsx --tsconfig scripts/tsconfig.json scripts/publish-sheet.ts",
-    "render-reel": "tsx --tsconfig scripts/tsconfig.json scripts/render-reel.tsx",
-    "setup:py": "python3 -m pip install -r requirements.txt --break-system-packages || python3 -m pip install -r requirements.txt"
+    "render-reel": "python3 scripts/render-reel-paint.py",
+    "setup:py": "python3 -m pip install -r requirements.txt --break-system-packages || python3 -m pip install -r requirements.txt",
+    "render-reel-slides": "tsx --tsconfig scripts/tsconfig.json scripts/render-reel.tsx"
   },
   "dependencies": {
     "next": "^15.5.0",
+    "p5.brush": "^3.0.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "zod": "^3.24.3"

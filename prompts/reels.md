@@ -9,14 +9,27 @@ yet, which is exactly our situation.
 The moving version of the plain card. 1080x1920 MP4, 20–40 seconds, built by
 `npm run render-reel -- --input input/reels/<slug>.json`:
 
-- 4–9 slides, big Inter text on near-black / white, page header on top,
-  source line pinned at the bottom. Slides alternate dark → light → dark —
-  the cut itself is the pattern interrupt that keeps thumbs still.
+THE LOOK — HAND-PAINTED (since 2026-11-22). `render-reel` is
+`scripts/render-reel-paint.py`. Each slide becomes a scene of p5.brush
+watercolour and ink over big Inter type on warm paper (#f3ecdc): a wash behind
+the hook number, a red marker underline, an accent bar beside body copy, a
+painted speech bubble around the closing question. The template is
+`reel-template/index.html` and is DATA-DRIVEN — it reads the same reel doc, so
+no per-story code is ever written. Text is laid out in a centred flex column
+and the paint is positioned from the MEASURED text boxes, so it can never
+overlap however long the lines run. Paint strokes are seeded from the slug, so
+no two reels look alike. Render it with `--stills` first to eyeball each scene.
+The old slide renderer survives as `npm run render-reel-slides`, and the
+painted one falls back to it automatically if Chrome/playwright is missing.
+
+- 4–9 slides, source line pinned at the bottom, FOLLOW THE MONEY wordmark and
+  an accent progress bar on top of every scene.
 - Slide beats mirror the caption DNA: HOOK (one huge number) → 3–4 body beats
   (what happened → the hidden part → who wins, who pays → "this is your
   money") → "My take:" (green, opinionated) → end card (question + "Follow
   for the money trail.").
-- Slow push-in zoom per slide; thin brand-green progress bar along the top.
+- Scenes fade to blank paper at their edges, so the cuts between separately
+  rendered scene files are invisible. Budget ~3 min to render on 2 cores.
 - Safe areas are built in: nothing in the top 170px or bottom 260px, so the
   Reels UI never covers the text.
 - Audio: an ORIGINAL procedural bed (`scripts/gen-reel-bed.py`, seeded per

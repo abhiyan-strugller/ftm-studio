@@ -38,12 +38,14 @@ reason as always (push needs the cloud, browser needs the laptop):
 
 | | Task | Fires (Edmonton) | Can it push? | Has a browser? |
 | --- | --- | --- | --- | --- |
-| **A** | `FTM Build Cycle (Task A)` — the BUILD cycle | **:40 at 7, 10, 13, 16, 19** | **Yes** | No |
+| **A** | `FTM Build Cycle (Task A)` — the BUILD cycle | **:25 at 7, 10, 13, 16, 19** | **Yes** | No |
 | **B** | `FTM Daily Post Build` — the UPLOAD cycle | **:55 at 7, 10, 13, 16, 19** | No | **Yes** |
 
 Slots are 8:00 / 11:00 / 14:00 / 17:00 / 20:00 Edmonton — 9 AM to 9 PM New
-York, so the East-coast morning is covered. Build fires at :40 and
+York, so the East-coast morning is covered. Build fires at :25 and
 schedules the top of the next hour; upload fires at :55, 5 min before the slot.
+The build moved from :40 to :25 on 2026-11-22 to make room for the painted reel
+render (~3 min), which left too little headroom in a :40 -> :55 window.
 The slot must be FUTURE when the uploader runs — the past-row guard aborts a
 passed row (see the 2026-11-10 incident). That is why the build always targets
 the top of the hour after it fires (:40 → next :00), never a time in the past.
@@ -211,6 +213,15 @@ only thing that settles it.
   morning-only model a single 5:42 AM absence (2026-11-12, `device_absent`)
   cost the whole day; the intraday spread makes a miss cost one post, not the
   day. Keep Chrome + the Claude desktop app open through the posting window.
+- **Reels are hand-painted (since 2026-11-22)** — `npm run render-reel` is
+  `scripts/render-reel-paint.py`: it reads the SAME `input/reels/<slug>.json`
+  and writes the SAME `output/reels/<slug>/<slug>.mp4`, so build-day and the
+  sheet are unchanged. It renders p5.brush watercolour/ink over Inter type in
+  headless Chrome (`reel-template/index.html`), muxes the procedural audio bed,
+  and takes ~3 min on 2 cores. The old slide renderer is still there as
+  `npm run render-reel-slides`, and the painted renderer falls back to it
+  automatically if Chrome or playwright is missing — a cycle never ships
+  without a reel. Run with `--stills` first to eyeball each scene.
 - **Reel audio is numpy-free** — `scripts/gen-reel-bed.py` is pure Python
   standard library, so a render can never fail on a missing dependency. (It
   needed numpy until 2026-11-16, when a scheduled run only survived by
