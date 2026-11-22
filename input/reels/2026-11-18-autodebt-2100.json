@@ -1,0 +1,47 @@
+{
+  "slug": "2026-11-18-autodebt-2100",
+  "title": "Americans owe a record $1.73T on their cars",
+  "slides": [
+    {
+      "kind": "hook",
+      "big": "$1.73 trillion",
+      "lines": ["is what Americans now owe on their cars."],
+      "countup": true
+    },
+    {
+      "kind": "body",
+      "lines": [
+        "New York Fed report, Q3 2026 (out Nov. 10).",
+        "Auto debt hit a record — part of $19.1 trillion owed overall."
+      ]
+    },
+    {
+      "kind": "body",
+      "lines": [
+        "And more drivers are slipping behind.",
+        "Early 30-day-late delinquencies rose on car loans AND mortgages."
+      ]
+    },
+    {
+      "kind": "body",
+      "lines": [
+        "A car payment is now one of the biggest bills a household carries.",
+        "When people fall behind, lenders tighten for the next buyer."
+      ]
+    },
+    {
+      "kind": "take",
+      "lines": [
+        "My take:",
+        "Record debt while people fall behind means the squeeze is hitting paychecks, not just spreadsheets."
+      ]
+    },
+    {
+      "kind": "end",
+      "lines": ["Is your car payment eating too much of your budget?"]
+    }
+  ],
+  "source_line": "Source: New York Fed Household Debt & Credit Report, Q3 2026 (Nov. 10)",
+  "caption": "Americans now owe a record $1.73 trillion on their cars — and more are falling behind.\n\nThe New York Fed's latest Household Debt report (Q3 2026, released Nov. 10) shows auto-loan balances hit $1.73 trillion, part of a record $19.1 trillion in total household debt. More borrowers slipped into early 30-day-late delinquency on both car loans and mortgages.\n\nWhy it's your money: a car payment is now one of the biggest fixed bills a household carries. When more people fall behind, lenders tighten — higher rates and bigger down payments for the next buyer, even one with good credit.\n\nMy take: debt at a record while people fall behind is the worrying part — the strain is landing on paychecks.\n\nIs your car payment eating too much of your budget?\n\n#AutoLoans #CarPayment #HouseholdDebt #Inflation #PersonalFinance #Debt #MoneyTok #Budgeting #FederalReserve #CostOfLiving #FollowTheMoney",
+  "style": { "accent": "gold", "first": "dark" }
+}
