@@ -54,7 +54,7 @@ const MOTIF_WORDS=[
  ['bag',['retail','shopping','black friday','store','shopper','holiday spend']],
  ['car',['car ','cars','auto loan','auto debt','vehicle','truck','drivers']],
  ['house',['house','housing','mortgage','rent','home price','real estate']],
- ['fuel',['gas ','gasoline','oil','fuel','pump','barrel','crude']],
+ ['fuel',['gas ','gasoline','a gallon','gallon','oil','fuel','pump','barrel','crude','diesel']],
  ['coin',['bitcoin','crypto','btc','ether','token']],
  ['candles',['stock','s&p','nasdaq','index','shares','market','wall street']],
  ['bank',['bank','fed','interest rate','rate cut','rate hike','central bank','loan','credit','debt']],
@@ -64,11 +64,20 @@ const MOTIF_WORDS=[
  ['cash',['inflation','cost of living','prices','savings','cash','dollar','budget']]
 ];
 function pickMotif(){
-  const hay=((R.title||'')+' '+R.slides.map(s=>(s.big||'')+' '+(s.lines||[]).join(' ')).join(' ')).toLowerCase();
-  for(const [name,keys] of MOTIF_WORDS) for(const k of keys) if(hay.indexOf(k)>=0) return name;
-  return 'cash';
+  if(R.motif&&MOTIFS_READY.indexOf(R.motif)>=0)return R.motif;   // explicit wins
+  const title=(R.title||'').toLowerCase();
+  const body=R.slides.map(s=>(s.big||'')+' '+(s.lines||[]).join(' ')).join(' ').toLowerCase();
+  let best=null,bestScore=0;
+  for(const pair of MOTIF_WORDS){
+    const name=pair[0],keys=pair[1]; let sc=0;
+    for(const k of keys){ sc+=(title.split(k).length-1)*3; sc+=(body.split(k).length-1); }
+    if(sc>bestScore){bestScore=sc;best=name;}
+  }
+  return best||'cash';
 }
+const MOTIFS_READY=['turkey','cart','bag','car','house','fuel','coin','candles','bank','paycheck','chip','plane','cash'];
 const MOTIF=pickMotif();
+window.MOTIF=MOTIF;
 
 // ---------- durations ----------
 const DEF={hook:4.6,body:5.0,take:5.2,end:5.0};

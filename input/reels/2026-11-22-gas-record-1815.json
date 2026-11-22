@@ -1,0 +1,17 @@
+{
+  "slug": "2026-11-22-gas-record-1815",
+  "title": "Gas is headed for a record Thanksgiving at $3.82",
+  "slides": [
+    { "kind": "hook", "big": "$3.82", "lines": ["a gallon — and Thanksgiving gas is headed for a record."], "countup": true },
+    { "kind": "body", "lines": ["A year earlier it was $3.08. The 2022 holiday peak was $3.58."],
+      "chart": { "type": "bars", "unit": "$", "highlight": "Nov '26",
+                 "data": [["2022 peak", 3.58], ["Nov '25", 3.08], ["Nov '26", 3.82]] } },
+    { "kind": "body", "lines": ["AAA expects 81.5 million people to travel 50+ miles.", "Last year it was 81.6 million — the first dip in three years."] },
+    { "kind": "body", "lines": ["72.9 million of them are driving, down from 73.1 million.", "The pump is doing the deciding."] },
+    { "kind": "take", "lines": ["My take:", "The table got cheaper. The drive didn't."] },
+    { "kind": "end", "lines": ["Are you driving less this Thanksgiving?"] }
+  ],
+  "source_line": "Source: AAA Thanksgiving forecast, Nov. 2026 (pump average Nov. 15)",
+  "caption": "Gas is on track for the most expensive Thanksgiving ever recorded.\n\nRegular averaged $3.82 a gallon on Nov. 15, against $3.08 a year earlier — and AAA's previous Thanksgiving Day record was $3.58, set in 2022. The national average has never been above $4 on Thanksgiving Day.\n\nAAA expects 81.5 million Americans to travel at least 50 miles between Nov. 24 and Nov. 30, just under last year's 81.6 million and the first dip after three straight record years. Of those, 72.9 million are driving, down from 73.1 million.\n\nMy take: the table got cheaper this year and the drive didn't. For a lot of families the trip is now the expensive part of the holiday, not the meal.\n\nAre you driving less this Thanksgiving — or just budgeting more for it?\n\n#GasPrices #Thanksgiving #Travel #Inflation #CostOfLiving #YourMoney #RoadTrip #Budgeting #PersonalFinance #MoneyTok #FollowTheMoney",
+  "style": { "accent": "green", "first": "light" }
+}

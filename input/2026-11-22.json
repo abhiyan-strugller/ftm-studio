@@ -1,23 +1,5 @@
 {
   "date": "2026-11-22",
-  "posts": [
-    {
-      "id": "1400",
-      "template": "plain",
-      "palette": "sand",
-      "tag": "Your Money",
-      "headline": "Thanksgiving dinner for 10 now costs $58.63 — up 6% and the first increase in four years, with the turkey alone up 10%.",
-      "source": "Source: American Farm Bureau Federation 41st annual survey, Nov. 2026",
-      "source_url": "https://www.fb.org/intel/markets/thanksgiving-dinner-cost-ticks-upward-in-2026",
-      "caption": "The turkey is the line item that jumped this year.\n\nFeeding 10 on Thursday runs $58.63 — about $5.86 a plate — up 6% from $55.18 last year and the first rise since 2022, after three straight years of falling prices (American Farm Bureau Federation, 41st annual survey, prices checked early November).\n\nThe 16-lb frozen turkey leads it: $23.68, up $2.38 or 10%. Cranberries are up about 9%, dinner rolls 7%, sweet potatoes 5%. A few things fell — the veggie tray and pie ingredients — but the bird set the tone.\n\nIt's still roughly 8% below the 2022 record of $64.05, and stores are discounting hard: some shoppers found turkey as low as 69 cents a pound.\n\nMy take: this is a shop-the-deals year, not a skip-the-bird year — the loss-leader turkey is the one thing worth chasing a sale on.\n\nWhat's your Thanksgiving table costing this year — more or less than last?\n\n#Thanksgiving #Groceries #Inflation #YourMoney\n\nSource: American Farm Bureau Federation, 41st annual survey, Nov. 2026",
-      "data": {
-        "paragraphs": [
-          "Feeding 10 this Thursday averages $58.63 — about $5.86 a plate — up 6% from $55.18 a year ago. It's the first increase since 2022, ending three straight years of declines. (Farm Bureau 41st annual survey, Nov. 2026)",
-          "The 16-pound frozen turkey drives it: $23.68, up $2.38 or 10% from last year. Cranberries rose about 9%, dinner rolls 7%, sweet potatoes 5%; a vegetable tray and pie ingredients came down.",
-          "Even so, the meal sits roughly 8% below its 2022 record of $64.05, and retailers are discounting turkeys hard — some as low as 69 cents a pound — to pull shoppers in the door."
-        ]
-      },
-      "scheduled_at": "2026-11-22T20:00:00.000Z"
-    }
-  ]
+  "posts": [],
+  "reels": [{ "slug": "2026-11-22-gas-record-1815", "scheduled_at": "2026-11-23T00:15:00Z" }]
 }
