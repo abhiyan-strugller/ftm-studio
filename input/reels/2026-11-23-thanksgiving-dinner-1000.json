@@ -1,0 +1,64 @@
+{
+  "slug": "2026-11-23-thanksgiving-dinner-1000",
+  "title": "The $58.63 Thanksgiving turkey dinner",
+  "audio_seed": 1123,
+  "style": { "accent": "gold", "first": "light" },
+  "slides": [
+    {
+      "kind": "hook",
+      "big": "$58.63",
+      "countup": true,
+      "lines": [
+        "This year's Thanksgiving dinner for 10 — up 6%, the first rise since 2022."
+      ]
+    },
+    {
+      "kind": "body",
+      "lines": [
+        "A classic turkey dinner for 10 now costs $58.63 — about $5.86 a person.",
+        "After three years of falling, the meal's price turned back up. (Farm Bureau)"
+      ]
+    },
+    {
+      "kind": "body",
+      "lines": [
+        "The 16-lb turkey did most of the damage: $23.68, up 10% — about $2.38 more.",
+        "Cranberries, milk and rolls all climbed too."
+      ],
+      "chart": {
+        "type": "rank",
+        "unit": "%",
+        "highlight": "16-lb turkey",
+        "data": [
+          ["16-lb turkey", 10],
+          ["Cranberries", 8.8],
+          ["Whole milk", 8.6],
+          ["Dinner rolls", 7]
+        ]
+      }
+    },
+    {
+      "kind": "body",
+      "lines": [
+        "The small comfort: it's still about 8% below the 2022 record of $64.05.",
+        "And less than 6 cents of every food dollar makes it back to the farmer."
+      ]
+    },
+    {
+      "kind": "take",
+      "lines": [
+        "My take:",
+        "6% stings at the till, but turkey is the one item you can really shop around — stores dangle birds as low as 69 cents a pound to get you in the door."
+      ]
+    },
+    {
+      "kind": "end",
+      "lines": [
+        "What's your Thanksgiving dinner actually costing you this year?",
+        "Follow for the money trail."
+      ]
+    }
+  ],
+  "source_line": "Source: American Farm Bureau Federation 41st annual survey - Nov 2026",
+  "caption": "Your Thanksgiving dinner costs more this year for the first time since 2022 - and it's the turkey leading the way.\n\nA classic dinner for 10 now runs $58.63, up 6% from last year (about $5.86 a person), per the American Farm Bureau's 41st annual survey, with prices checked the first week of November. The 16-lb frozen turkey jumped 10% to $23.68 - roughly $2.38 more than last year. Cranberries (+8.8%), whole milk (+8.6%) and dinner rolls (+7%) all climbed too, while a veggie tray, pie crusts and frozen peas slipped a little.\n\nThe small comfort: even after the increase, the meal is still about 8% below the 2022 record of $64.05 - and less than 6 cents of every food dollar makes it back to the farmer.\n\nMy take: 6% stings at the till, but turkey is the one item you can really shop around - some stores are dangling birds as low as 69 cents a pound just to get you through the door.\n\nWhat's your Thanksgiving dinner actually costing you this year? 👇\n\n#Thanksgiving #Groceries #FoodPrices #Inflation #CostOfLiving #PersonalFinance #Turkey #BudgetTips #Family #MoneyTok #Economy #FollowTheMoney"
+}
