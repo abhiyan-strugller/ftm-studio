@@ -1,0 +1,29 @@
+{
+  "date": "2026-11-23",
+  "posts": [
+    {
+      "id": "0800",
+      "template": "plain",
+      "palette": "midnight",
+      "accent": "gold",
+      "tag": "Your Money",
+      "headline": "Bitcoin just had its worst month since the 2022 crypto crash — down about 21% in November — as a record $3.79 billion fled U.S. Bitcoin ETFs.",
+      "big": "21%",
+      "big_note": "Bitcoin's drop in November — its steepest monthly fall since June 2022.",
+      "source": "Source: Seeking Alpha; Moneycontrol; Bloomberg, Nov. 2026",
+      "source_url": "https://seekingalpha.com/news/4524798-bitcoin-etfs-see-record-379b-outflows-in-november-btc-nears-worst-month-since-2022---report",
+      "caption": "Bitcoin just had its worst month since the 2022 crypto crash — and if you hold it in an app, an ETF or your brokerage, that's your money too.\n\nBitcoin is down about 21% in November, its steepest monthly drop since June 2022 (Moneycontrol; Bloomberg). It slipped below $60,000 for the first time since July before clawing back above $61,000. Investors pulled a record $3.79 billion out of U.S. Bitcoin ETFs this month — BlackRock's fund alone shed about $2.47 billion (Seeking Alpha; Cointelegraph).\n\nMy take: a 21% month is gut-wrenching, but the people who get hurt most are usually the ones who bought the top on hype and sell the bottom in fear.\n\nDid this month's drop change how much crypto you're comfortable holding?\n\n#Bitcoin #Crypto #Investing #PersonalFinance\n\nSource: Seeking Alpha; Moneycontrol; Bloomberg, Nov. 2026\nEducational only — not financial advice.",
+      "data": {
+        "paragraphs": [
+          "Bitcoin is down about 21% in November — its steepest monthly drop since June 2022. It fell below $60,000 for the first time since July, then clawed back above $61,000. (Moneycontrol; Bloomberg)",
+          "Investors pulled a record $3.79 billion out of U.S. Bitcoin ETFs this month — BlackRock's fund alone shed about $2.47 billion. (Seeking Alpha; Cointelegraph)",
+          "Why it's your money: crypto now sits in ETFs, apps and some brokerage accounts. One analyst says the average ETF buyer is now underwater."
+        ]
+      },
+      "scheduled_at": "2026-11-23T14:00:00.000Z"
+    }
+  ],
+  "reels": [
+    { "slug": "2026-11-23-bitcoin-worst-month-0800", "scheduled_at": "2026-11-23T14:00:00.000Z" }
+  ]
+}
