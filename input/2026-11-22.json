@@ -1,5 +1,26 @@
 {
   "date": "2026-11-22",
-  "posts": [],
-  "reels": [{ "slug": "2026-11-22-gas-record-1815", "scheduled_at": "2026-11-23T00:15:00Z" }]
+  "posts": [
+    {
+      "id": "2000",
+      "template": "plain",
+      "palette": "midnight",
+      "tag": "Your Money",
+      "headline": "The Nasdaq just erased its entire 2026 gain in one brutal week — and the S&P 500 and Dow have fallen into a correction.",
+      "source": "Source: CNBC; CBC, Nov. 19-20, 2026",
+      "source_url": "https://www.cnbc.com/2026/11/20/sp-500-correction-market-sell-off.html",
+      "caption": "Wall Street just gave back a year of gains in days — and if you have a 401(k), an RRSP or an index fund, it's your money too.\n\nThe Nasdaq fell 5.3% on Thursday and is now negative for 2026 — its entire gain for the year, gone. The S&P 500 and the Dow have both dropped into a correction, down at least 10% from their highs (CNBC, Nov. 19-20). The trigger: fears the AI boom is overbuilt, with an SEC accounting probe into Nvidia piling on. Canada didn't dodge it either — the TSX fell into a correction too (CBC).\n\nMy take: a correction isn't a crash, and selling into one is how a paper dip becomes a real loss — the hardest move is usually to do nothing.\n\nDoes a drop like this change what you do with your next paycheck's savings?\n\n#StockMarket #Investing #401k #AI\n\nSource: CNBC; CBC, Nov. 19-20, 2026\nEducational only — not financial advice.",
+      "data": {
+        "paragraphs": [
+          "The Nasdaq dropped 5.3% on Thursday and is now negative for 2026 — the whole year's gain, erased. The S&P 500 and the Dow have both fallen into a correction, down at least 10% from their highs. (CNBC, Nov. 19-20)",
+          "What lit it: fears the AI buildout is a bubble, with an SEC accounting probe into Nvidia adding to the slide. Canada didn't escape — the TSX fell into a correction too. (CBC)",
+          "Why it's your money: this is what sits in 401(k)s, RRSPs and index funds. A correction isn't a crash, but your balance is smaller heading into the holidays."
+        ]
+      },
+      "scheduled_at": "2026-11-23T02:00:00.000Z"
+    }
+  ],
+  "reels": [
+    { "slug": "2026-11-22-ai-correction-2000", "scheduled_at": "2026-11-23T02:00:00.000Z" }
+  ]
 }
