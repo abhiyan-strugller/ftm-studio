@@ -1,0 +1,80 @@
+{
+  "slug": "2026-11-23-ai-selloff-retirement-1200",
+  "title": "The AI selloff hit your 401(k)",
+  "style": {
+    "accent": "green",
+    "first": "light"
+  },
+  "slides": [
+    {
+      "kind": "hook",
+      "big": "10.4%",
+      "countup": true,
+      "lines": [
+        "how far the S&P 500 fell in a month — a 7-month low."
+      ],
+      "seconds": 3.3
+    },
+    {
+      "kind": "body",
+      "lines": [
+        "Friday was the worst of it.",
+        "The S&P fell 3.7% and the Nasdaq 5.3% — in one day."
+      ],
+      "chart": {
+        "type": "rank",
+        "unit": "%",
+        "highlight": "Nvidia",
+        "data": [
+          ["Nvidia", -12.4],
+          ["Nasdaq", -5.3],
+          ["S&P 500", -3.7],
+          ["Dow", -2.0]
+        ]
+      },
+      "seconds": 4.2
+    },
+    {
+      "kind": "body",
+      "lines": [
+        "AI chipmaker Nvidia alone lost 12.4% that day.",
+        "The Nasdaq erased its entire 2026 gain."
+      ],
+      "seconds": 3.8
+    },
+    {
+      "kind": "body",
+      "lines": [
+        "This isn't just a trader's problem.",
+        "Your 401(k) and index funds hold these same stocks."
+      ],
+      "seconds": 3.8
+    },
+    {
+      "kind": "body",
+      "lines": [
+        "Canada felt it too.",
+        "The TSX fell Friday, dragged by the same AI names."
+      ],
+      "seconds": 3.6
+    },
+    {
+      "kind": "take",
+      "lines": [
+        "My take:",
+        "When a handful of AI stocks move the market,",
+        "everyone's retirement rides along."
+      ],
+      "seconds": 4.6
+    },
+    {
+      "kind": "end",
+      "lines": [
+        "Have you checked your 401(k) or TFSA this month?"
+      ],
+      "seconds": 3.8
+    }
+  ],
+  "source_line": "Sources: Forbes, NBC News, advisor.ca — Nov 20, 2026",
+  "caption": "The S&P 500 just fell 10.4% in a month. Friday alone it dropped 3.7% to a 7-month low, the Nasdaq fell 5.3%, and AI chipmaker Nvidia lost 12.4% in a single day. The Nasdaq erased its entire 2026 gain, and Canada's TSX fell too, dragged by the same AI names.\n\nHere's why it's your money, not just Wall Street's: 401(k)s, RRSPs and index funds are packed with these exact stocks. When a handful of AI names drop, so does your retirement balance.\n\nMy take: a market this concentrated means everyone's nest egg rides on a few chipmakers — for better or worse.\n\nHave you checked your 401(k) or TFSA this month?\n\nSource: Forbes, NBC News, advisor.ca (Nov 20, 2026)\nEducational only — not financial advice.\n\n#StockMarket #Investing #401k #Nasdaq #Nvidia #AIStocks #WallStreet #Retirement #PersonalFinance #TSX #MoneyTok #FollowTheMoney"
+}
