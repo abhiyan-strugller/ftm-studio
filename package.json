@@ -18,6 +18,7 @@
     "publish-media": "tsx --tsconfig scripts/tsconfig.json scripts/publish-media.ts",
     "publish-sheet": "tsx --tsconfig scripts/tsconfig.json scripts/publish-sheet.ts",
     "render-reel": "python3 scripts/render-reel-paint.py",
+    "render-card": "python3 scripts/render-card-paint.py",
     "setup:py": "python3 -m pip install -r requirements.txt --break-system-packages || python3 -m pip install -r requirements.txt",
     "render-reel-slides": "tsx --tsconfig scripts/tsconfig.json scripts/render-reel.tsx"
   },
