@@ -1,0 +1,65 @@
+{
+  "slug": "2026-11-23-holiday-debt-1700",
+  "title": "The holiday spend — and last year's bill",
+  "accent": "gold",
+  "first": "dark",
+  "audio_seed": 1700,
+  "slides": [
+    {
+      "kind": "hook",
+      "big": "$1,654",
+      "countup": true,
+      "lines": [
+        "What the average U.S. household plans to spend this holiday season."
+      ]
+    },
+    {
+      "kind": "body",
+      "lines": [
+        "That's up 4% from last year's $1,595."
+      ],
+      "chart": {
+        "type": "bars",
+        "unit": "$",
+        "highlight": "2026",
+        "data": [["2025", 1595], ["2026", 1654]]
+      }
+    },
+    {
+      "kind": "body",
+      "lines": [
+        "But a lot of people are still paying",
+        "for LAST Christmas."
+      ]
+    },
+    {
+      "kind": "body",
+      "lines": [
+        "Of those who took on holiday debt last season,",
+        "41% are still carrying it — and it averaged $1,223."
+      ]
+    },
+    {
+      "kind": "body",
+      "lines": [
+        "40% of them pay 20% interest or more.",
+        "That's your paycheck, long after the gift is opened."
+      ]
+    },
+    {
+      "kind": "take",
+      "lines": [
+        "My take:",
+        "A gift financed at 20% isn't a $50 gift. Set your number before Black Friday, not in the checkout line."
+      ]
+    },
+    {
+      "kind": "end",
+      "lines": [
+        "What's your real holiday budget this year?"
+      ]
+    }
+  ],
+  "source_line": "Source: Deloitte 2026 Holiday Retail Survey (Oct 15, 2026); LendingTree (Dec 2025)",
+  "caption": "The average U.S. household plans to spend $1,654 this holiday season — but plenty of people are still paying for last Christmas.\n\nDeloitte's 2026 Holiday Retail Survey puts planned spending at $1,654, up 4% from $1,595 last year. Meanwhile, of the Americans who took on holiday debt last season, 41% are STILL paying it off, that debt averaged $1,223, and 40% of them carry an interest rate of 20% or more (LendingTree, Dec. 2025).\n\nIt's your paycheck: a gift financed at 20% APR costs far more than its price tag by the time it's paid off.\n\nMy take: the plan matters more than the deal. Decide your number before Black Friday, not in the checkout line.\n\nWhat's your real holiday budget this year? 👇\n\n#HolidayShopping #BlackFriday #CreditCardDebt #PersonalFinance #Budgeting #MoneyTok #Debt #CostOfLiving #Christmas #Savings #FollowTheMoney"
+}

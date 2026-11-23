@@ -1,32 +1,7 @@
 {
   "date": "2026-11-23",
-  "posts": [
-    {
-      "id": "1400",
-      "template": "plain",
-      "palette": "midnight",
-      "accent": "green",
-      "tag": "Your Money",
-      "headline": "U.S. layoff announcements just hit their lowest month in nearly three years — and employers planned the most October hires since 2009.",
-      "source": "Source: Challenger, Gray & Christmas, October report (released Nov. 5, 2026)",
-      "source_url": "https://www.challengergray.com/blog/october-challenger-report-153074-job-cuts-on-cost-cutting-ai/",
-      "chart": {
-        "type": "bars",
-        "highlight": "Oct 2025",
-        "data": [["Oct 2025", 153074], ["Oct 2026", 43994]]
-      },
-      "caption": "If you've been bracing for a layoff wave, the latest data points the other way.\n\nU.S. employers announced 43,994 job cuts in October — the fewest for any month since 2023. A year ago, October 2025 set a 22-year high at 153,074 cuts, so this October is down about 71%. At the same time, employers announced plans to hire 444,692 workers in October, the most for the month since 2009 (Challenger, Gray & Christmas, Nov. 5).\n\nIt's your paycheck: fewer cuts and more hiring plans is a steadier job market than the AI-layoff headlines suggest — though economists still call it a low-fire, low-hire market.\n\nMy take: read the data, not the fear. The scary headline isn't always the real one.\n\nIs your workplace cutting or hiring right now?\n\n#Jobs #Layoffs #Economy #PersonalFinance",
-      "data": {
-        "paragraphs": [
-          "U.S. employers announced 43,994 job cuts in October — the fewest for any month since 2023. A year ago, October 2025 hit a 22-year high of 153,074 cuts, so this October is down about 71%. (Challenger, Gray & Christmas, Nov. 5)",
-          "At the same time, employers announced plans to hire 444,692 workers in October — the most for the month since 2009.",
-          "Why it's your money: fewer cuts and more hiring plans is a steadier job market than the AI-layoff headlines suggest, even as economists call it a low-fire, low-hire market."
-        ]
-      },
-      "scheduled_at": "2026-11-23T20:00:00.000Z"
-    }
-  ],
+  "posts": [],
   "reels": [
-    { "slug": "2026-11-23-layoffs-fall-1400", "scheduled_at": "2026-11-23T20:00:00.000Z" }
+    { "slug": "2026-11-23-holiday-debt-1700", "scheduled_at": "2026-11-23T23:00:00.000Z" }
   ]
 }
