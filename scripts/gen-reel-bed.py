@@ -1,25 +1,86 @@
 #!/usr/bin/env python3
-"""Generate an ORIGINAL minimal music bed for Reels — procedural, so there is
-never a copyright claim on the audio. Dark newsroom pulse: sub root, soft tick,
-slow pad swell, and a bass hit + noise riser synced to every slide cut.
+"""Generate an ORIGINAL, catchy music bed for Reels — procedural, so there is
+never a copyright claim on the audio. Each reel gets a melodic hook (a looping
+riff in a pentatonic scale, so it is always consonant and easy to listen to), a
+bassline, groove (kick / hats / clap) and a chord pad, plus a bass hit synced to
+every slide cut. One of several STYLES is chosen from the seed, so reels rotate
+between distinct feels and no two sound alike.
 
-Pure Python standard library — NO numpy, NO third-party deps. This matters
-because the bed is rendered on every reel (several times a day on the intraday
-schedule); a run must never depend on a pip install succeeding. Deterministic
-per seed/params so a reel's audio is reproducible, varied per reel so no two
-reels sound the same.
+Pure Python standard library — NO numpy, NO third-party deps. The bed renders on
+every reel, several times a day, so a run must never depend on a pip install.
+Deterministic per seed/params; reproducible and varied.
 
-  python3 scripts/gen-reel-bed.py --seconds 32 --out /tmp/bed.wav \
-      [--seed 7] [--bpm 92] [--root 55] [--cuts 2.7,6.2,9.8]
+  python3 scripts/gen-reel-bed.py --seconds 30 --out /tmp/bed.wav \
+      [--seed 7] [--bpm 96] [--root 55] [--cuts 2.7,6.2,9.8] [--style bounce]
 """
-import argparse
-import array
-import math
-import random
-import struct
-import wave
+import argparse, array, math, random, wave
 
 SR = 44100
+TWO_PI = 2.0 * math.pi
+
+# Minor and major pentatonic (semitone intervals) — both stay consonant.
+PENT_MIN = [0, 3, 5, 7, 10]
+PENT_MAJ = [0, 2, 4, 7, 9]
+
+# Catchy 16-step riffs as (scale-degree, octave) or None for a rest. Degree
+# indexes the pentatonic scale and can exceed its length (wraps up an octave).
+RIFFS = [
+    [0, None, 2, 3, None, 2, 4, None, 3, None, 2, 0, None, 2, None, None],
+    [4, 4, None, 3, 2, None, 0, None, 2, None, 3, None, 4, None, 2, None],
+    [0, None, None, 2, None, 3, None, 4, 3, None, 2, None, 0, None, 3, 2],
+    [2, None, 3, None, 4, 3, 2, None, 0, None, 0, 2, 3, None, None, None],
+    [0, 2, 3, 4, None, 4, 3, 2, 0, None, 2, None, 3, None, 4, None],
+]
+
+# Styles. Each sets feel, which elements play, and the drum patterns over 16
+# sixteenth-steps (1 bar = 4 beats). '1' = hit.
+STYLES = {
+    "pulse":  dict(scale=PENT_MIN, lead=0.16, bassg=0.5, padg=0.09, swing=0.0,
+                   kick="1000001000100000", hat="0010001000100010", clap="0000000000000000",
+                   hatg=0.05, leadoct=2, timbre="soft"),
+    "bounce": dict(scale=PENT_MIN, lead=0.22, bassg=0.55, padg=0.07, swing=0.12,
+                   kick="1000000010010000", hat="1010101010101011", clap="0000100000001000",
+                   hatg=0.08, leadoct=2, timbre="pluck"),
+    "lofi":   dict(scale=PENT_MAJ, lead=0.18, bassg=0.5, padg=0.11, swing=0.16,
+                   kick="1000000000100000", hat="0010001000100010", clap="0000100000000000",
+                   hatg=0.05, leadoct=2, timbre="soft"),
+    "drive":  dict(scale=PENT_MIN, lead=0.2, bassg=0.6, padg=0.06, swing=0.0,
+                   kick="1001001000100100", hat="1111111111111111", clap="0000100000001000",
+                   hatg=0.045, leadoct=3, timbre="pluck"),
+    "anthem": dict(scale=PENT_MAJ, lead=0.24, bassg=0.5, padg=0.1, swing=0.0,
+                   kick="1000001000100000", hat="0010101000101010", clap="0000100000001000",
+                   hatg=0.06, leadoct=3, timbre="bright"),
+}
+STYLE_NAMES = list(STYLES.keys())
+
+
+def semitone(root, n):
+    return root * (2.0 ** (n / 12.0))
+
+
+def scale_freq(root, scale, degree, octave):
+    o, d = divmod(degree, len(scale))
+    return semitone(root, scale[d] + 12 * (o + octave))
+
+
+def add_note(mix, n, start, freq, dur, gain, timbre, rng):
+    s = int(start * SR)
+    ln = int(dur * SR)
+    if s >= n:
+        return
+    phase = 0.0
+    # pluck/bright add harmonics; soft is near-sine
+    h2 = {"soft": 0.12, "pluck": 0.5, "bright": 0.7}.get(timbre, 0.3)
+    h3 = {"soft": 0.03, "pluck": 0.22, "bright": 0.4}.get(timbre, 0.12)
+    dec = {"soft": 4.5, "pluck": 7.5, "bright": 5.5}.get(timbre, 6.0)
+    vib = 0.004 if timbre == "bright" else 0.0
+    for j in range(min(ln, n - s)):
+        tt = j / SR
+        f = freq * (1 + vib * math.sin(TWO_PI * 5.5 * tt))
+        phase += TWO_PI * f / SR
+        env = math.exp(-tt * dec) * (1 - math.exp(-tt * 120))  # tiny attack
+        v = math.sin(phase) + h2 * math.sin(2 * phase) + h3 * math.sin(3 * phase)
+        mix[s + j] += gain * v * env
 
 
 def main():
@@ -27,104 +88,134 @@ def main():
     ap.add_argument("--seconds", type=float, required=True)
     ap.add_argument("--out", required=True)
     ap.add_argument("--seed", type=int, default=7)
-    ap.add_argument("--bpm", type=float, default=92.0)
+    ap.add_argument("--bpm", type=float, default=96.0)
     ap.add_argument("--root", type=float, default=55.0)
-    ap.add_argument("--cuts", type=str, default="",
-                    help="comma-separated slide-cut times in seconds")
+    ap.add_argument("--cuts", type=str, default="")
+    ap.add_argument("--style", type=str, default="")
     args = ap.parse_args()
 
     rng = random.Random(args.seed)
+    style_name = args.style if args.style in STYLES else STYLE_NAMES[args.seed % len(STYLE_NAMES)]
+    st = STYLES[style_name]
+    riff = RIFFS[(args.seed // 7) % len(RIFFS)]
+    scale = st["scale"]
+
     n = int(SR * args.seconds)
     mix = [0.0] * n
     beat = 60.0 / args.bpm
-    root_hz = args.root
-    two_pi = 2.0 * math.pi
+    step = beat / 4.0                       # sixteenth note
+    root = args.root
+    # bass walks a short loop among scale tones; melody sits 2-3 octaves up
+    bass_loop = [0, 0, len(scale), len(scale) - 2]  # root, root, octave, 5th-ish
+    lead_base_oct = st["leadoct"]
 
-    # Sub pulse on every beat: short decaying sine with a slight pitch drop.
-    k = 0
-    while k * beat * SR < n:
-        s = int(k * beat * SR)
-        dur = int(0.42 * SR)
-        phase = 0.0
-        for j in range(min(dur, n - s)):
-            tt = j / SR
-            f = root_hz * (1 + 0.04 * math.exp(-tt * 18))
-            phase += two_pi * f / SR
-            mix[s + j] += 0.46 * math.sin(phase) * math.exp(-tt * 6.5)
-        k += 1
+    total_steps = int(args.seconds / step)
+    for i in range(total_steps):
+        t = i * step
+        t += (st["swing"] * step) if (i % 2 == 1) else 0.0  # swing offbeats
+        bar_step = i % 16
+        bar = i // 16
 
-    # Soft tick on offbeats: a short filtered noise click.
-    k = 0
-    while (k + 0.5) * beat * SR < n:
-        s = int((k + 0.5) * beat * SR)
-        dur = int(0.05 * SR)
-        for j in range(min(dur, n - s)):
-            mix[s + j] += 0.06 * (rng.uniform(-1, 1) * math.exp(-j / (0.006 * SR)))
-        k += 1
+        # --- kick / hat / clap
+        if st["kick"][bar_step] == "1":
+            add_kick(mix, n, t, 0.9)
+        if st["hat"][bar_step] == "1":
+            add_hat(mix, n, t, st["hatg"], rng)
+        if st["clap"][bar_step] == "1":
+            add_clap(mix, n, t, 0.16, rng)
 
-    # Pad: two slow detuned sines a fifth up, swelling, with a breathing tremolo.
-    trem_hz = 1.0 / (2 * beat)
+        # --- bass on quarter notes
+        if bar_step % 4 == 0:
+            bdeg = bass_loop[(bar * 4 + bar_step // 4) % len(bass_loop)]
+            add_note(mix, n, t, scale_freq(root, scale, bdeg, 1), beat * 0.9,
+                     st["bassg"], "soft", rng)
+
+        # --- melody riff
+        deg = riff[bar_step]
+        if deg is not None:
+            freq = scale_freq(root, scale, deg, lead_base_oct)
+            add_note(mix, n, t, freq, step * 1.8, st["lead"], st["timbre"], rng)
+
+    # --- chord pad: slow fifth drone that swells
     for i in range(n):
-        t = i / SR
-        swell = 0.25 + 0.75 * (i / n)
-        pad = 0.5 * math.sin(two_pi * root_hz * 3 * t) + 0.5 * math.sin(two_pi * root_hz * 3.005 * t)
-        pad *= 0.08 * swell
-        pad *= 0.8 + 0.2 * math.sin(two_pi * trem_hz * t)
+        tt = i / SR
+        swell = 0.3 + 0.7 * (i / n)
+        pad = 0.5 * math.sin(TWO_PI * semitone(root, 12) * tt) \
+            + 0.5 * math.sin(TWO_PI * semitone(root, 19) * tt + 0.3)
+        pad *= st["padg"] * swell * (0.85 + 0.15 * math.sin(TWO_PI * (1.0 / (3 * beat)) * tt))
         mix[i] += pad
 
-    # Slide-cut hits: a deep thump ON the cut and a soft noise riser sweeping
-    # INTO it. This glues the edit to the sound.
+    # --- slide-cut hits (keep the edit glued to the sound)
     cuts = [float(c) for c in args.cuts.split(",") if c.strip()]
     for c in cuts:
+        add_kick(mix, n, c, 1.0)
+        rdur = int(0.5 * SR)
         s = int(c * SR)
-        # riser: 0.55s of noise swelling into the cut (smoothed for a whoosh)
-        rdur = int(0.55 * SR)
         rs = max(0, s - rdur)
         if s > rs:
             raw = [rng.uniform(-1, 1) for _ in range(s - rs)]
-            win = 48
-            acc = 0.0
-            smooth = [0.0] * len(raw)
+            win, acc = 48, 0.0
+            sm = [0.0] * len(raw)
             for j in range(len(raw)):
                 acc += raw[j]
                 if j >= win:
                     acc -= raw[j - win]
-                smooth[j] = acc / win
+                sm[j] = acc / win
             for j in range(len(raw)):
-                ramp = (j / len(raw)) ** 2
-                mix[rs + j] += 0.11 * smooth[j] * ramp
-        # thump: 80 -> 38 Hz over 0.28s
-        tdur = int(0.28 * SR)
-        phase = 0.0
-        for j in range(min(tdur, n - s)):
-            tt = j / SR
-            f = 80 * math.exp(-tt * 9) + 38
-            phase += two_pi * f / SR
-            mix[s + j] += 0.42 * math.sin(phase) * math.exp(-tt * 11)
+                mix[rs + j] += 0.1 * sm[j] * (j / len(raw)) ** 2
 
-    # Global fade in/out, soft clip, normalize with headroom under the voice.
-    fade_in = int(0.35 * SR)
-    fade_out = int(1.2 * SR)
+    # --- fade, soft-clip, normalise under the voice
+    fi, fo = int(0.3 * SR), int(1.1 * SR)
     for i in range(n):
         e = 1.0
-        if i < fade_in:
-            e = i / fade_in
-        elif i > n - fade_out:
-            e = max(0.0, (n - i) / fade_out)
-        mix[i] = math.tanh(mix[i] * e * 1.1)
+        if i < fi:
+            e = i / fi
+        elif i > n - fo:
+            e = max(0.0, (n - i) / fo)
+        mix[i] = math.tanh(mix[i] * e * 1.05)
     peak = max((abs(v) for v in mix), default=1.0) or 1.0
-    scale = 0.72 / peak
-
-    pcm = array.array("h", (int(max(-1.0, min(1.0, v * scale)) * 32767) for v in mix))
+    scale_out = 0.74 / peak
+    pcm = array.array("h", (int(max(-1.0, min(1.0, v * scale_out)) * 32767) for v in mix))
     with wave.open(args.out, "wb") as w:
         w.setnchannels(1)
         w.setsampwidth(2)
         w.setframerate(SR)
         w.writeframes(pcm.tobytes())
-    print(
-        f"bed: {args.out} ({args.seconds:.1f}s, seed {args.seed}, "
-        f"bpm {args.bpm:.0f}, root {args.root:.1f}Hz, {len(cuts)} cut hits, numpy-free)"
-    )
+    print(f"bed: {args.out} ({args.seconds:.1f}s, seed {args.seed}, style {style_name}, "
+          f"bpm {args.bpm:.0f}, root {args.root:.1f}Hz, riff {(args.seed//7)%len(RIFFS)}, "
+          f"{len(cuts)} cuts, numpy-free)")
+
+
+def add_kick(mix, n, t, g):
+    s = int(t * SR)
+    dur = int(0.3 * SR)
+    phase = 0.0
+    for j in range(min(dur, n - s)):
+        if s + j < 0:
+            continue
+        tt = j / SR
+        f = 120 * math.exp(-tt * 22) + 44
+        phase += TWO_PI * f / SR
+        mix[s + j] += g * 0.5 * math.sin(phase) * math.exp(-tt * 9)
+
+
+def add_hat(mix, n, t, g, rng):
+    s = int(t * SR)
+    dur = int(0.04 * SR)
+    for j in range(min(dur, n - s)):
+        if s + j < 0:
+            continue
+        mix[s + j] += g * rng.uniform(-1, 1) * math.exp(-j / (0.004 * SR))
+
+
+def add_clap(mix, n, t, g, rng):
+    s = int(t * SR)
+    dur = int(0.12 * SR)
+    for j in range(min(dur, n - s)):
+        if s + j < 0:
+            continue
+        env = math.exp(-j / (0.03 * SR)) * (1 - math.exp(-j / (0.001 * SR)))
+        mix[s + j] += g * rng.uniform(-1, 1) * env
 
 
 if __name__ == "__main__":

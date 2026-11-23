@@ -86,9 +86,9 @@ villain/victim pair.
 
 ## Cadence and shipping
 
-- **4 reels a day on 4 days a week — 16 a week** (Abhiyan's spec, Nov 14).
-  Default reel days: Mon, Wed, Fri, Sat; he can change them.
-- On a reel day, the 4 reels come from the day's 4 strongest sweep stories
+- **6 reels a day** (raised from 4 on 2026-11-22; cards at 08/14/20, a reel on every one of the six slots — 9 posts/day total, under the 12-post cap).
+  Under the intraday model reels run every day, one per slot (see prompts/intraday.md).
+- The day's 6 reels each come from that cycle's freshest, most-viewed sweep story
   (they can share a story with a card — different format, different slot) and
   spread across the day between card slots: roughly 9:30 AM, 1:30 PM,
   6:00 PM, 8:30 PM ET.
@@ -129,3 +129,14 @@ shippable reel without it.
 Until Abhiyan says otherwise, each reel's MP4 goes to him with the day's
 report before its sheet row ships. When he's comfortable, the render + row
 moves fully into Task A and his role is the morning report only.
+
+
+MUSIC (since 2026-11-22): every reel gets its own catchy bed — a melodic
+pentatonic hook, bassline and groove (kick/hats/clap), in one of several styles
+(pulse, bounce, lofi, drive, anthem) chosen from the slug's seed, so no two
+reels sound alike. It is still fully procedural and numpy-free. Nothing to set
+in the doc.
+
+CARDS are painted too now (see CLAUDE.md): a card doc may carry `accent`
+(gold/green), an optional `chart` (same schema as below) and an optional `big`
+stat, and render-card-paint.py draws it in the same watercolour style.

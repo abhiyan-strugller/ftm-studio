@@ -195,8 +195,8 @@ def main():
 
     # ---- audio bed (procedural, seeded per slug so each reel sounds different)
     seed = seed_of(doc)
-    bpm = 84 + (seed % 6) * 3
-    root = 48 + (seed % 7) * 2.5
+    bpm = 88 + (seed % 9) * 3          # 88-112, varied per reel
+    root = 46 + (seed % 6) * 2.5         # 46-58.5 Hz
     cuts, acc = [], 0.0
     for d in durs[:-1]:
         acc += d

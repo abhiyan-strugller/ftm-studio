@@ -53,18 +53,20 @@ monetizable and strike-free while chasing breaking news.
 To stay under Post Planner's **12-posts-per-24-hours PER-PROFILE cap** (hit on
 2026-11-17, when 5 cards + 5 reels overlapped the old model's posts in the
 rolling window and the day's later posts failed), Follow the Money posts
-**7 items a day: 3 cards + 4 reels**, split across the 5 slots by this FIXED
+**9 items a day: 3 cards + 6 reels**, split across the 6 slots by this FIXED
 map. Build exactly what your slot calls for — never more, never less:
 
 | Slot (Edmonton) | Builds |
 | --- | --- |
 | 08:00 | card + reel |
-| 11:00 | reel only |
-| 14:00 | card only |
+| 10:00 | reel only |
+| 12:00 | reel only |
+| 14:00 | card + reel |
 | 17:00 | reel only |
 | 20:00 | card + reel |
 
-Cards at 08:00, 14:00, 20:00 (3) + reels at 08:00, 11:00, 17:00, 20:00 (4) = 7.
+Cards at 08:00, 14:00, 20:00 (3) + reels at all six slots (6) = 9. (Was 7 — raised
+to 9 on 2026-11-22, still under the 12-posts/24h per-profile cap.)
 
 - Card: the `plain` template, caption in the house shape (fact → number →
   "My take:" → question), per `caption.md`.
@@ -84,12 +86,13 @@ in America/Edmonton; the upload cycle runs at :55 and puts it in Post Planner:
 | Build fires (A) | Upload fires (B) | Posts at (Edmonton) | = New York | Builds |
 | --- | --- | --- | --- | --- |
 | 7:25 | 7:55 | 8:00 | 9:00 AM | card + reel |
-| 10:25 | 10:55 | 11:00 | 12:00 PM | reel only |
-| 13:25 | 13:55 | 14:00 | 3:00 PM | card only |
+| 9:25 | 9:55 | 10:00 | 11:00 AM | reel only |
+| 11:25 | 11:55 | 12:00 | 1:00 PM | reel only |
+| 13:25 | 13:55 | 14:00 | 3:00 PM | card + reel |
 | 16:25 | 16:55 | 17:00 | 6:00 PM | reel only |
 | 19:25 | 19:55 | 20:00 | 9:00 PM | card + reel |
 
-Five cycles → 3 cards + 4 reels a day (7 total), covering the US/Canada East-coast
+Six cycles → 3 cards + 6 reels a day (9 total), covering the US/Canada East-coast
 morning through evening (the grid was shifted 3h earlier on Abhiyan's call:
 starting at 11:00 Edmonton would have meant noon in New York, losing the
 whole morning). The

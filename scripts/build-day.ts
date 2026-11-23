@@ -16,6 +16,7 @@
  * three-row sheet can be produced for a trial upload before committing a day.
  */
 import { copyFile, mkdir, readFile, writeFile } from "node:fs/promises";
+import { existsSync, statSync } from "node:fs";
 import path from "node:path";
 import { parseDayFile, toPostDoc, issueNumberFor, DayFileError } from "../src/lib/day";
 import { findOverflow } from "../src/lib/design/overflow";
@@ -147,8 +148,17 @@ async function main(): Promise<void> {
   for (const { index, doc } of docs) {
     const post = day.posts[index];
     const file = `${post.id}-${post.template}.png`;
-    const png = await renderPostBytes(doc);
-    await writeFile(path.join(outDir, file), png);
+    const outPath = path.join(outDir, file);
+    // A painted card may have been pre-rendered here by render-card-paint.py.
+    // If so, use it; otherwise render the plain Satori card (automatic fallback).
+    let painted = false;
+    if (existsSync(outPath)) {
+      painted = true; // a painted card was pre-rendered by render-card-paint.py
+    } else {
+      const png = await renderPostBytes(doc);
+      await writeFile(outPath, png);
+    }
+    const kb = (statSync(outPath).size / 1024).toFixed(0);
 
     const at = new Date(post.scheduled_at);
     const placeholders = findPlaceholders(post);
@@ -175,7 +185,7 @@ async function main(): Promise<void> {
 
     const flag = placeholders.length > 0 ? `  [placeholders: ${placeholders.join(", ")}]` : "";
     console.log(
-      `  ${post.id}  ${post.template.padEnd(12)} ${(png.length / 1024).toFixed(0).padStart(4)} KB${flag}`,
+      `  ${post.id}  ${post.template.padEnd(12)} ${kb.padStart(4)} KB${painted ? " painted" : ""}${flag}`,
     );
   }
 

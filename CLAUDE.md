@@ -19,13 +19,14 @@ the whole next day the evening before). Abhiyan wanted the page to carry
 build, a fresh post is researched and published roughly every 3 hours, minutes
 before it goes out. `prompts/intraday.md` is the full spec; read it first.
 
-**Per day:** 3 cards + 4 reels (7 total), by a FIXED per-slot map — *not* one of
+**Per day:** 3 cards + 6 reels (9 total), by a FIXED per-slot map — *not* one of
 each per cycle. This keeps the page under Post Planner's **12-posts-per-24-hours
 PER-PROFILE cap** (hit on 2026-11-17, when 5 cards + 5 reels overlapped the old
 model's posts in the rolling window and the day's later posts failed; changed to
 7/day the same evening, and today's remaining posts paused to let the cap reset).
-The map: **08:00 card+reel, 11:00 reel-only, 14:00 card-only, 17:00 reel-only,
-20:00 card+reel** (cards at 08/14/20, reels at 08/11/17/20).
+The map (raised to 9/day on 2026-11-22, still under the 12 cap): **08:00
+card+reel, 10:00 reel, 12:00 reel, 14:00 card+reel, 17:00 reel, 20:00 card+reel**
+(cards at 08/14/20, a reel on every one of the six slots).
 **Each cycle** researches the freshest, most-viewed money story RIGHT NOW
 (US + Canada — markets falling/spiking, a cyberattack or outage with a dollar
 cost, a rate/inflation/jobs print, a CEO money story, anything viral touching a
@@ -38,10 +39,10 @@ reason as always (push needs the cloud, browser needs the laptop):
 
 | | Task | Fires (Edmonton) | Can it push? | Has a browser? |
 | --- | --- | --- | --- | --- |
-| **A** | `FTM Build Cycle (Task A)` — the BUILD cycle | **:25 at 7, 10, 13, 16, 19** | **Yes** | No |
-| **B** | `FTM Daily Post Build` — the UPLOAD cycle | **:55 at 7, 10, 13, 16, 19** | No | **Yes** |
+| **A** | `FTM Build Cycle (Task A)` — the BUILD cycle | **:25 at 7, 9, 11, 13, 16, 19** | **Yes** | No |
+| **B** | `FTM Daily Post Build` — the UPLOAD cycle | **:55 at 7, 9, 11, 13, 16, 19** | No | **Yes** |
 
-Slots are 8:00 / 11:00 / 14:00 / 17:00 / 20:00 Edmonton — 9 AM to 9 PM New
+Slots are 8:00 / 10:00 / 12:00 / 14:00 / 17:00 / 20:00 Edmonton — 9 AM to 9 PM New
 York, so the East-coast morning is covered. Build fires at :25 and
 schedules the top of the next hour; upload fires at :55, 5 min before the slot.
 The build moved from :40 to :25 on 2026-11-22 to make room for the painted reel
@@ -221,7 +222,15 @@ only thing that settles it.
   and takes ~3 min on 2 cores. The old slide renderer is still there as
   `npm run render-reel-slides`, and the painted renderer falls back to it
   automatically if Chrome or playwright is missing — a cycle never ships
-  without a reel. Run with `--stills` first to eyeball each scene. Slides can carry a `chart`
+  without a reel. Run with `--stills` first to eyeball each scene. **Cards are painted too
+  (since 2026-11-22):** `scripts/render-card-paint.py` pre-renders a card as a
+  single 1080x1350 painted PNG (same motifs + charts as reels, from
+  `reel-template/card.html`) to `output/<date>/<id>-<template>.png`. build-day
+  uses that PNG if it is there and otherwise renders the plain Satori card, so a
+  failed paint silently falls back to the old clean card. A card doc can carry
+  `accent`, an optional `chart` (same schema as a reel's), and an optional `big`
+  stat; everything else (headline, tag, source, caption, data) is unchanged.
+  Slides can carry a `chart`
   block (`bars` or `rank`) which it paints with real axes, hatched highlight
   bars and a trend stroke, and it picks a painted illustration (turkey, car,
   house, chip, cart...) by matching words in the reel's own text. A reel with
@@ -342,8 +351,7 @@ Parked, in order:
    Taking the *format* is free; taking the *sourcing method* is not.
 2. **Reels — IN PROGRESS (started 2026-11-14).** `prompts/reels.md` is the
    spec; `npm run render-reel` builds one from `input/reels/<slug>.json`.
-   No faces at all: not his, not AI-generated. 4 reels/day on 4 days/week
-   (16/week). Audio is procedurally generated in-repo — never licensed music.
+   No faces at all: not his, not AI-generated. 6 reels/day (since 2026-11-22). Audio is procedurally generated in-repo — never licensed music.
    Ships through the normal sheet with REEL OR STORY = `reel`. First demo:
    the Nvidia money trail. Remaining: Abhiyan's sign-off on the look, then
    fold the 4-reel render + sheet rows into Task A; optional CapCut Voice
