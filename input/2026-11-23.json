@@ -1,7 +1,29 @@
 {
   "date": "2026-11-23",
-  "posts": [],
+  "posts": [
+    {
+      "id": "2000",
+      "template": "plain",
+      "palette": "ice",
+      "accent": "green",
+      "tag": "Your Money",
+      "big": "$2,723",
+      "big_note": "Typical monthly payment on a new home — the lowest in nearly 2 months",
+      "headline": "The typical payment on a new home just fell to $2,723 — and with over half a million more sellers than buyers, it's the strongest buyer's market since 2013.",
+      "source": "Source: Redfin weekly housing-market update, 4 weeks ending Nov. 15, 2026",
+      "source_url": "https://www.redfin.com/news/housing-market-update-mortgage-payments-prices-dip/",
+      "caption": "The typical monthly payment on a new U.S. home just fell to $2,723 — its lowest in nearly two months — and buyers suddenly hold the cards.\n\nRedfin's latest weekly update (four weeks ending Nov. 15) puts the median U.S. home-sale price at $388,516, down 0.4% from a year ago — the fourth straight week of declines after three years of nonstop increases. The $2,723 payment, at a 7.11% average rate, is down from $2,760 a week earlier, though still 8.2% higher than last year.\n\nThe real shift: there are now over half a million more sellers than buyers nationwide — what Redfin calls the strongest buyer's market in its records back to 2013. One in five listings (20.7%) has already cut its price.\n\nMy take: when sellers outnumber buyers by half a million, the list price is a starting line, not the finish. If you're shopping, ask for the discount — this market is built to give it.\n\nWould a lower monthly payment get you off the sidelines? 👇\n\n#HousingMarket #RealEstate #Mortgage #HomeBuying\n\nSource: Redfin weekly housing-market update, four weeks ending Nov. 15, 2026 (published Nov. 19)\nEducational only — not financial advice.",
+      "data": {
+        "paragraphs": [
+          "Redfin's latest weekly update (four weeks ending Nov. 15) puts the median U.S. home-sale price at $388,516, down 0.4% from a year ago — the fourth straight week of declines after three years of increases.",
+          "The typical monthly payment fell to $2,723 at a 7.11% average rate, down from $2,760 a week earlier and the lowest in nearly two months — though still 8.2% above last year. One in five listings (20.7%) has already cut its price.",
+          "Why it's your money: Redfin counts over half a million more sellers than buyers — the strongest buyer's market in its records back to 2013. If you're shopping, the asking price is a starting point, not the price."
+        ]
+      },
+      "scheduled_at": "2026-11-24T02:00:00.000Z"
+    }
+  ],
   "reels": [
-    { "slug": "2026-11-23-holiday-debt-1700", "scheduled_at": "2026-11-23T23:00:00.000Z" }
+    { "slug": "2026-11-23-buyers-market-2000", "scheduled_at": "2026-11-24T02:00:00.000Z" }
   ]
 }

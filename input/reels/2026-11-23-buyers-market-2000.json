@@ -1,0 +1,60 @@
+{
+  "slug": "2026-11-23-buyers-market-2000",
+  "title": "The home-buying math just flipped",
+  "accent": "green",
+  "first": "light",
+  "audio_seed": 2000,
+  "slides": [
+    {
+      "kind": "hook",
+      "big": "$2,723",
+      "countup": true,
+      "lines": [
+        "The typical monthly payment on a new U.S. home —",
+        "the lowest in nearly two months."
+      ]
+    },
+    {
+      "kind": "body",
+      "lines": [
+        "Home prices have now fallen four weeks in a row,",
+        "after three years of only going up."
+      ]
+    },
+    {
+      "kind": "body",
+      "lines": [
+        "The hidden part: there are now over HALF A MILLION",
+        "more sellers than buyers across the country."
+      ]
+    },
+    {
+      "kind": "body",
+      "lines": [
+        "Redfin calls it the strongest buyer's market since 2013.",
+        "One in five listings has already cut its price."
+      ],
+      "chart": {
+        "type": "bars",
+        "unit": "%",
+        "highlight": "This week",
+        "data": [["Last week", 19.6], ["This week", 20.7]]
+      }
+    },
+    {
+      "kind": "take",
+      "lines": [
+        "My take:",
+        "When sellers outnumber buyers by half a million, the list price is a starting line, not the finish. Negotiate."
+      ]
+    },
+    {
+      "kind": "end",
+      "lines": [
+        "Would a lower payment get you off the sidelines?"
+      ]
+    }
+  ],
+  "source_line": "Source: Redfin weekly housing-market update, 4 weeks ending Nov. 15, 2026 (published Nov. 19)",
+  "caption": "The typical monthly payment on a new U.S. home just fell to $2,723 — its lowest in nearly two months — and buyers suddenly hold the cards.\n\nRedfin's latest weekly update (four weeks ending Nov. 15) shows the median U.S. home-sale price at $388,516, down 0.4% from a year ago — the fourth straight week of declines after three years of nonstop increases. The $2,723 payment, at a 7.11% average rate, is down from $2,760 a week earlier, though still 8.2% higher than last year.\n\nThe real shift: there are now over half a million more sellers than buyers nationwide — what Redfin calls the strongest buyer's market in its records going back to 2013. One in five listings (20.7%) has already cut its price.\n\nMy take: when sellers outnumber buyers by half a million, the list price is a starting line, not the finish. If you're shopping, ask for the discount — this market is built to give it.\n\nWould a lower monthly payment get you off the sidelines? 👇\n\n#HousingMarket #RealEstate #Mortgage #HomeBuying #Redfin #PersonalFinance #RealEstateTips #Homeowners #CostOfLiving #MoneyTok #FollowTheMoney"
+}
