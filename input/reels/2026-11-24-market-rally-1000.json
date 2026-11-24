@@ -1,0 +1,65 @@
+{
+  "slug": "2026-11-24-market-rally-1000",
+  "title": "Wall Street's record point day lands in your 401(k)",
+  "audio_seed": 112410,
+  "style": { "accent": "gold", "first": "dark" },
+  "slides": [
+    {
+      "kind": "hook",
+      "big": "+326.78",
+      "countup": true,
+      "lines": [
+        "points — how far the S&P 500 leapt Monday.",
+        "Its 2nd-biggest one-day point gain ever."
+      ]
+    },
+    {
+      "kind": "body",
+      "lines": [
+        "The whole market ripped higher.",
+        "The Nasdaq led, up 6.5%."
+      ],
+      "chart": {
+        "type": "rank",
+        "unit": "%",
+        "highlight": "S&P 500",
+        "data": [
+          ["Nasdaq", 6.5],
+          ["S&P 500", 4.7],
+          ["Russell 2000", 3.4],
+          ["Dow", 3.0]
+        ]
+      }
+    },
+    {
+      "kind": "body",
+      "lines": [
+        "The spark: Nvidia jumped about 31% —",
+        "roughly $950B in value — after its board brought back Jensen Huang as CEO."
+      ]
+    },
+    {
+      "kind": "body",
+      "lines": [
+        "Why it's your money:",
+        "The S&P 500 is the core of most 401(k)s, and Monday clawed back over half of last week's brutal slide."
+      ]
+    },
+    {
+      "kind": "take",
+      "lines": [
+        "My take:",
+        "One huge day isn't the all-clear. The 'fear gauge' still sits near 27 — a record in points, not in calm."
+      ]
+    },
+    {
+      "kind": "end",
+      "lines": [
+        "Did Monday's bounce change how you feel about your savings?",
+        "Follow for the money trail."
+      ]
+    }
+  ],
+  "source_line": "Source: Associated Press market close, Nov. 23, 2026",
+  "caption": "Wall Street just had one of its biggest days ever — and if you own a 401(k), you own this bounce.\n\nOn Monday the S&P 500 jumped 326.78 points (about 4.7%) to 7,237.17 — its second-biggest one-day POINT gain on record, behind only April 9, 2025 (Associated Press, Nov. 23). The Nasdaq soared 6.5% and the Dow rose 3%. It snapped a seven-day losing streak that had pulled the S&P more than 10% below its record.\n\nThe spark: Nvidia surged about 31% — roughly $950 billion in market value — after its board reinstated Jensen Huang as CEO.\n\nWhy it matters even if you never watch the market: the S&P 500 is the backbone of most retirement accounts, so a 4.7% up day lifted the balance millions are saving. Monday clawed back over half of last week's drop.\n\nMy take: one monster day is a relief, not an all-clear — the 'fear gauge' (the VIX) still sits near 27, and it was a record in points, not in percent. A 401(k) is measured in decades, not Mondays.\n\nDid this week's bounce change how you feel about your savings? 👇\n\nEducational only — not financial advice.\n\n#StockMarket #Investing #401k #SP500 #Nasdaq #Nvidia #PersonalFinance #WallStreet #Retirement #MoneyTok #FollowTheMoney"
+}
