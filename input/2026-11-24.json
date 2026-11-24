@@ -1,0 +1,29 @@
+{
+  "date": "2026-11-24",
+  "posts": [
+    {
+      "id": "0800",
+      "template": "plain",
+      "palette": "cream",
+      "accent": "gold",
+      "tag": "Holiday Shopping",
+      "big": "$275.1B",
+      "big_note": "Record U.S. online holiday spending, forecast Nov.–Dec. 2026 (up 6.7%)",
+      "headline": "Black Friday is this Friday — and online holiday spending is set for a record $275.1 billion, with $21.3 billion of it going on buy-now-pay-later.",
+      "source": "Source: Adobe Digital Insights 2026 Holiday Shopping Forecast (Sept. 28, 2026)",
+      "source_url": "https://www.businesswire.com/news/home/20260928285775/en/Adobe-U.S.-Holiday-Shopping-Season-to-Hit-Record-$275.1-Billion-Online-Rising-6.7-YoY",
+      "caption": "Black Friday is this Friday — and Americans are set to spend a record $275.1 billion online this holiday season.\n\nThat is Adobe's forecast for Nov. 1 to Dec. 31, up 6.7% from last year. Cyber Monday (Nov. 30) is still the single biggest online day at $15.1 billion; Black Friday itself is $12.9 billion and growing faster (+9.2%).\n\nThe part that follows you home: a forecast $21.3 billion of that spending goes on buy-now-pay-later, up 6.6%. That is a gift now and a bill in January.\n\nMy take: the discounts are real, but \"pay later\" is still pay. Splitting a $200 gift into four payments still costs $200 — plus whatever you miss if one is late.\n\nAre you using buy-now-pay-later this holiday season? 👇\n\n#BlackFriday #HolidayShopping #BuyNowPayLater #PersonalFinance\n\nSource: Adobe Digital Insights 2026 Holiday Shopping Forecast (Sept. 28, 2026)\nEducational only — not financial advice.",
+      "data": {
+        "paragraphs": [
+          "Adobe forecasts a record $275.1 billion in U.S. online holiday sales from Nov. 1 to Dec. 31 — up 6.7% from last year. Black Friday is this Friday, Nov. 27.",
+          "Cyber Monday (Nov. 30) stays the biggest online day at $15.1 billion; Black Friday itself is $12.9 billion and growing faster (+9.2%).",
+          "Why it's your money: a forecast $21.3 billion of that spending is going on buy-now-pay-later, up 6.6%. That's a gift now and a bill in January."
+        ]
+      },
+      "scheduled_at": "2026-11-24T14:00:00.000Z"
+    }
+  ],
+  "reels": [
+    { "slug": "2026-11-24-black-friday-bnpl-0800", "scheduled_at": "2026-11-24T14:00:00.000Z" }
+  ]
+}

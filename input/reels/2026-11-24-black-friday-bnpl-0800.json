@@ -1,0 +1,49 @@
+{
+  "slug": "2026-11-24-black-friday-bnpl-0800",
+  "title": "Black Friday is coming — and so is the bill",
+  "slides": [
+    {
+      "kind": "hook",
+      "big": "$275.1B",
+      "countup": true,
+      "lines": ["Americans will spend a record amount online this holiday season."]
+    },
+    {
+      "kind": "body",
+      "lines": [
+        "Black Friday is this Friday.",
+        "Adobe's forecast runs Nov. 1 to Dec. 31 — up 6.7% from last year."
+      ]
+    },
+    {
+      "kind": "body",
+      "lines": ["The biggest online days, in $ billions:"],
+      "chart": {
+        "type": "rank",
+        "highlight": "Black Friday",
+        "data": [["Cyber Monday", 15.1], ["Black Friday", 12.9], ["Thanksgiving", 6.9]]
+      }
+    },
+    {
+      "kind": "body",
+      "lines": [
+        "The catch: a forecast $21.3 billion of it goes on buy-now-pay-later.",
+        "That's a gift now, and a bill in January."
+      ]
+    },
+    {
+      "kind": "take",
+      "lines": [
+        "My take:",
+        "The discounts are real. So is the debt. \"Pay later\" is still pay."
+      ]
+    },
+    {
+      "kind": "end",
+      "lines": ["Are you using buy-now-pay-later this year?"]
+    }
+  ],
+  "source_line": "Source: Adobe Digital Insights 2026 Holiday Forecast (Sept. 28, 2026)",
+  "caption": "Black Friday is this Friday — and Americans are set to spend a record $275.1 billion online this holiday season.\n\nThat's Adobe's forecast for Nov. 1 to Dec. 31, up 6.7% year over year. Cyber Monday (Nov. 30) is still the biggest online day at $15.1 billion; Black Friday itself is $12.9 billion and growing faster (+9.2%). Thanksgiving Day alone is a forecast $6.9 billion.\n\nThe part that follows you home: a forecast $21.3 billion of that spending goes on buy-now-pay-later, up 6.6% from last year. A gift now is a bill in January.\n\nMy take: the discounts are real, but \"pay later\" is still pay. Splitting a $200 gift into four still costs $200 — plus whatever you lose if one payment is late.\n\nAre you planning to use buy-now-pay-later this holiday season? 👇\n\n#BlackFriday #CyberMonday #HolidayShopping #BuyNowPayLater #PersonalFinance #MoneyTok #Budgeting #Debt #CostOfLiving #Shopping #FollowTheMoney",
+  "style": { "accent": "gold", "first": "light" }
+}
