@@ -1,0 +1,35 @@
+{
+  "date": "2026-11-25",
+  "posts": [
+    {
+      "id": "2000",
+      "template": "plain",
+      "palette": "night",
+      "accent": "gold",
+      "tag": "Inflation",
+      "big": "3.8%",
+      "big_note": "The Fed's preferred inflation gauge in October — the hottest in 3 years",
+      "headline": "Inflation just hit a 3-year high — and now Wall Street expects the Fed to RAISE rates on Dec. 9, not cut them.",
+      "source": "Source: U.S. Bureau of Economic Analysis, October 2026 PCE report (Nov. 25, 2026)",
+      "source_url": "https://www.bea.gov/news/2026/personal-income-and-outlays-october-2026",
+      "chart": {
+        "type": "bars",
+        "unit": "%",
+        "highlight": "Oct",
+        "data": [["Aug", 3.4], ["Sep", 3.6], ["Oct", 3.8]]
+      },
+      "caption": "The relief everyone was waiting for just got put on hold.\n\nThe Fed's favorite inflation gauge — the PCE price index — rose 3.8% over the past year in October, its hottest reading in three years, up from 3.6% in September. Core PCE, which strips out food and energy, climbed to 3.3%. Prices rose 0.3% in just that one month.\n\nWith inflation that far above the Fed's 2% goal, markets have flipped: instead of a rate cut, Wall Street now prices in a rate INCREASE at the Dec. 9 meeting. The Fed's benchmark already sits at 3.75%–4.00%.\n\nWhy it's your money: card APRs, car loans and mortgage rates move with the Fed, so the cheaper-borrowing everyone hoped for in 2026 isn't coming — and could reverse. The one upside: high-yield savings keeps paying well.\n\nMy take: higher-for-longer stopped being a warning and became the bill. If you're carrying a balance, that's the line to attack first — a rate that isn't dropping costs you every single month.\n\nIs a stubborn card or loan rate changing how you're spending this holiday season? 👇\n\nSource: U.S. Bureau of Economic Analysis, October 2026 PCE report (released Nov. 25, 2026)\nEducational only — not financial advice.\n\n#Inflation #FederalReserve #InterestRates #CreditCards",
+      "data": {
+        "paragraphs": [
+          "The PCE price index — the Fed's preferred inflation gauge — rose 3.8% over the year in October, a 3-year high, up from 3.6% in September. Core PCE rose to 3.3%, and prices gained 0.3% in the month alone.",
+          "With inflation well above the Fed's 2% target, markets have swung from expecting a cut to pricing in a rate increase at the Dec. 9 meeting. The benchmark rate already sits at 3.75%–4.00%.",
+          "Why it's your money: credit-card APRs, car loans and mortgages track the Fed, so the cheaper borrowing many hoped for this year isn't arriving — the lone bright spot is that high-yield savings keeps paying."
+        ]
+      },
+      "scheduled_at": "2026-11-26T02:00:00.000Z"
+    }
+  ],
+  "reels": [
+    { "slug": "2026-11-25-inflation-3yr-high-2000", "scheduled_at": "2026-11-26T02:00:00.000Z" }
+  ]
+}

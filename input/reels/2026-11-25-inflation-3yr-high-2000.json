@@ -1,0 +1,60 @@
+{
+  "slug": "2026-11-25-inflation-3yr-high-2000",
+  "title": "Inflation just hit a 3-year high",
+  "slides": [
+    {
+      "kind": "hook",
+      "big": "3.8%",
+      "countup": true,
+      "lines": ["Inflation just hit its highest level in three years."]
+    },
+    {
+      "kind": "body",
+      "lines": [
+        "The Fed's favorite gauge, the PCE index,",
+        "rose 3.8% over the past year in October."
+      ]
+    },
+    {
+      "kind": "body",
+      "lines": ["And it keeps climbing, month after month:"],
+      "chart": {
+        "type": "bars",
+        "unit": "%",
+        "highlight": "Oct",
+        "data": [["Aug", 3.4], ["Sep", 3.6], ["Oct", 3.8]]
+      }
+    },
+    {
+      "kind": "body",
+      "lines": [
+        "That flips the script.",
+        "Wall Street now expects the Fed to RAISE rates",
+        "on Dec. 9 — not cut them."
+      ]
+    },
+    {
+      "kind": "body",
+      "lines": [
+        "The relief is on hold.",
+        "Card, car-loan and mortgage rates stay high.",
+        "Upside: high-yield savings keeps paying."
+      ]
+    },
+    {
+      "kind": "take",
+      "lines": [
+        "My take:",
+        "Higher-for-longer became the bill.",
+        "A balance that isn't getting cheaper costs you every month."
+      ]
+    },
+    {
+      "kind": "end",
+      "lines": ["Is a stubborn rate changing how you spend this holiday?"]
+    }
+  ],
+  "source_line": "Source: U.S. Bureau of Economic Analysis, October 2026 PCE report (Nov. 25, 2026)",
+  "caption": "Inflation just hit a 3-year high — and the rate relief everyone was counting on is on hold.\n\nThe Fed's preferred gauge, the PCE price index, rose 3.8% over the past year in October, up from 3.6% in September and the hottest reading in three years. Core PCE climbed to 3.3%; prices rose 0.3% in the month alone.\n\nWith inflation that far above the Fed's 2% goal, markets have flipped from expecting a cut to pricing in a rate INCREASE at the Dec. 9 meeting. The benchmark already sits at 3.75%–4.00%.\n\nWhy it's your money: credit-card APRs, car loans and mortgage rates all move with the Fed, so cheaper borrowing isn't coming — and could reverse. The one bright spot: high-yield savings keeps paying well.\n\nMy take: higher-for-longer stopped being a warning and became the bill. A balance that isn't getting cheaper costs you every month.\n\nIs a stubborn card or loan rate changing how you spend this holiday season? 👇\n\nSource: U.S. Bureau of Economic Analysis, October 2026 PCE report (released Nov. 25, 2026)\nEducational only — not financial advice.\n\n#Inflation #FederalReserve #InterestRates #CreditCards #Mortgage #PersonalFinance #CostOfLiving #Savings #Economy #MoneyTok #FollowTheMoney",
+  "style": { "accent": "gold", "first": "dark" }
+}
