@@ -1,0 +1,65 @@
+{
+  "slug": "2026-11-26-trillion-dollar-holiday-0800",
+  "title": "America's trillion-dollar holiday and Canada's pullback",
+  "slides": [
+    {
+      "kind": "hook",
+      "big": "$1.013T",
+      "countup": true,
+      "lines": ["America's first back-to-back", "trillion-dollar holiday season."]
+    },
+    {
+      "kind": "body",
+      "lines": [
+        "The National Retail Federation forecasts",
+        "$1.013 trillion for Nov–Dec —",
+        "up 4.2% from $972 billion last year."
+      ],
+      "chart": {
+        "type": "bars",
+        "unit": "$",
+        "highlight": "2026",
+        "data": [["2025", 972], ["2026", 1013]]
+      }
+    },
+    {
+      "kind": "body",
+      "lines": [
+        "But a record total isn't more gifts.",
+        "Prices are up about 3% —",
+        "much of it is just paying more",
+        "for the same cart."
+      ]
+    },
+    {
+      "kind": "body",
+      "lines": [
+        "56% of shoppers say the economy",
+        "will shape what they buy."
+      ]
+    },
+    {
+      "kind": "body",
+      "lines": [
+        "In Canada, it's the opposite.",
+        "Shoppers plan to spend about $64 less —",
+        "roughly $911 each this year."
+      ]
+    },
+    {
+      "kind": "take",
+      "lines": [
+        "My take:",
+        "A record built on higher prices",
+        "isn't a boom. It's a bigger bill."
+      ]
+    },
+    {
+      "kind": "end",
+      "lines": ["Spending more this year — or just", "paying more for the same cart?"]
+    }
+  ],
+  "source_line": "Source: National Retail Federation 2026 holiday forecast; Retail Council of Canada × Leger survey",
+  "caption": "Black Friday is here — and America is headed for its first back-to-back trillion-dollar holiday season.\n\nThe National Retail Federation forecasts $1.013 trillion in November–December spending, up 4.2% from last year's $972 billion. But a record total isn't a shopping boom — prices are up about 3%, so much of it is just paying more for the same cart. 56% of shoppers say the economy will shape what they buy.\n\nNorth of the border it's the opposite: Canadians plan to spend about $64 less this year, around $911 each, as inflation and trade tensions weigh on budgets.\n\nMy take: a record built on higher prices isn't a boom — it's a bigger bill. Watch what you actually bring home, not the receipt total.\n\nAre you spending more this year, or just paying more for the same? 👇\n\nSource: National Retail Federation 2026 holiday forecast; Retail Council of Canada × Leger survey\nEducational only — not financial advice.\n\n#BlackFriday #HolidayShopping #Inflation #CostOfLiving #PersonalFinance #Canada #Retail #MoneyTok #Economy #Budgeting #FollowTheMoney",
+  "style": { "accent": "gold", "first": "dark" }
+}
