@@ -1,34 +1,7 @@
 {
   "date": "2026-11-26",
-  "posts": [
-    {
-      "id": "1400",
-      "template": "plain",
-      "palette": "night",
-      "accent": "gold",
-      "tag": "Travel",
-      "big": "$800",
-      "big_note": "the average round-trip Thanksgiving airfare — up 17% from a year ago",
-      "headline": "For the first time in 3 years, fewer Americans are traveling for Thanksgiving — airfares jumped 17% to $800 and gas is near record highs.",
-      "source": "Source: AAA 2026 Thanksgiving Travel Forecast (Nov. 16, 2026)",
-      "source_url": "https://newsroom.aaa.com/2026/11/aaa-thanksgiving-holiday-travel-forecast/",
-      "chart": {
-        "type": "rank",
-        "highlight": "By car",
-        "data": [["By car", 72.9], ["By air", 5.96], ["Bus / rail", 2.6]]
-      },
-      "caption": "Getting to the table costs more this year — and for the first time in three years, slightly fewer people are making the trip.\n\nAAA projects 81.5 million Americans will travel at least 50 miles this Thanksgiving, just under last year's 81.6 million — ending a three-year streak of record holiday travel. The reason is cost: round-trip domestic airfare now averages about $800, up 17% from a year ago, and gas prices set new monthly records in August, September and October.\n\nNearly 9 in 10 travelers are driving — 72.9 million of them — into some of the highest Thanksgiving-season gas prices ever. Another 5.96 million are flying and 2.6 million are taking a bus, train or cruise.\n\nMy take: when even the cheap option — driving — keeps getting pricier, 'staying home' quietly becomes the smart-money move. The trip is still worth it; it just costs more to show up.\n\nIs the cost of getting there changing your holiday plans this year? 👇\n\nSource: AAA 2026 Thanksgiving Travel Forecast (released Nov. 16, 2026)\n\n#Thanksgiving #Travel #GasPrices #Airfare",
-      "data": {
-        "paragraphs": [
-          "AAA projects 81.5 million Americans will travel at least 50 miles for Thanksgiving, just under last year's 81.6 million — ending a three-year streak of record holiday travel. The cause is cost.",
-          "Round-trip domestic airfare averages about $800, up 17% from a year ago, and gas prices set new monthly records in August, September and October — the first time rising costs have trimmed the travel count in years.",
-          "Nearly 9 in 10 travelers are driving — 72.9 million of them — into near-record pump prices, while 5.96 million fly and 2.6 million take a bus, train or cruise."
-        ]
-      },
-      "scheduled_at": "2026-11-26T20:00:00.000Z"
-    }
-  ],
+  "posts": [],
   "reels": [
-    { "slug": "2026-11-26-thanksgiving-travel-1400", "scheduled_at": "2026-11-26T20:00:00.000Z" }
+    { "slug": "2026-11-26-holiday-scam-loss-1700", "scheduled_at": "2026-11-26T23:00:00.000Z" }
   ]
 }

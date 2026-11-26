@@ -87,8 +87,8 @@ class Reel(Scene):
             return VGroup(g, *[m for tpl in bars for m in tpl])
         rows = []; top = 0.6
         for i, (lab, v) in enumerate(data):
-            col = ACC if lab == hl else "#4f6ea8"; wv = max(.1, 5.0 * v / mx)
-            r = Rectangle(width=wv, height=.7, fill_color=col, fill_opacity=1, stroke_width=0).move_to(LEFT * 1.0 + DOWN * (i * 1.15) + UP * top, aligned_edge=LEFT)
+            col = ACC if lab == hl else "#4f6ea8"; wv = max(.1, 4.4 * v / mx)
+            r = Rectangle(width=wv, height=.7, fill_color=col, fill_opacity=1, stroke_width=0).move_to(LEFT * 3.4 + DOWN * (i * 1.15) + UP * top, aligned_edge=LEFT)
             ll = T(str(lab), 28, CRM, maxw=3.0).next_to(r, UP, buff=.12, aligned_edge=LEFT); vl = T(fmt(v), 32, col).next_to(r, RIGHT, buff=.2)
             rows += [r, ll, vl]
         self.play(*[GrowFromEdge(m, LEFT) if isinstance(m, Rectangle) else FadeIn(m) for m in rows], run_time=1.0)

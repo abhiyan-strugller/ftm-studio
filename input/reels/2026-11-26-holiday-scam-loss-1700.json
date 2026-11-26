@@ -1,0 +1,84 @@
+{
+  "slug": "2026-11-26-holiday-scam-loss-1700",
+  "title": "The Black Friday deal that costs you $394",
+  "slides": [
+    {
+      "kind": "hook",
+      "big": "$394",
+      "countup": true,
+      "lines": [
+        "the average amount a US holiday",
+        "shopping scam victim loses."
+      ]
+    },
+    {
+      "kind": "body",
+      "lines": [
+        "Holiday deal-hunting,",
+        "step by step:"
+      ],
+      "chart": {
+        "type": "rank",
+        "unit": "%",
+        "highlight": "Scammed online",
+        "data": [
+          [
+            "Swayed by deals",
+            72
+          ],
+          [
+            "Buy from unknown site",
+            65
+          ],
+          [
+            "Targeted by a scam",
+            30
+          ],
+          [
+            "Scammed online",
+            16
+          ]
+        ]
+      },
+      "say": "Here is how holiday deal hunting goes. 72 percent say deals sway them. 65 percent would buy from a website they have never heard of if the price is right. 30 percent have been targeted by a scam. And 16 percent were scammed."
+    },
+    {
+      "kind": "body",
+      "lines": [
+        "Nearly 1 in 6 US adults — 16% —",
+        "have been scammed shopping online.",
+        "88% of them lost money."
+      ]
+    },
+    {
+      "kind": "body",
+      "lines": [
+        "Why? 35% bought from a seller",
+        "they suspected was a scam —",
+        "the deal was too good to pass up."
+      ]
+    },
+    {
+      "kind": "take",
+      "lines": [
+        "My take:",
+        "'Too good to pass up' is the bait.",
+        "A price that makes no sense is",
+        "the warning, not the reason to click."
+      ]
+    },
+    {
+      "kind": "end",
+      "lines": [
+        "Spotted a holiday deal that looked",
+        "too good to be true?"
+      ]
+    }
+  ],
+  "source_line": "Source: 2026 Norton Insights Report: Holiday Scams (released Nov. 5, 2026)",
+  "caption": "Chasing a Black Friday deal could cost you about $394.\n\nA new Norton survey of 1,000 US adults, fielded Sept. 10–21, 2026, finds nearly 1 in 6 US adults (16%) have been scammed while holiday shopping online — and 88% of those victims lost money, an average of $394 each. It's not just the careless: 35% say they bought from a seller they suspected might be a scam because the deal was too good to pass up, and 72% admit holiday deals sway them.\n\nMy take: \"too good to pass up\" is exactly how the trap is baited. A price that makes no sense is the warning, not the reason to click. Slow down before you type a card number into a site you've never heard of.\n\nHave you spotted a holiday deal that looked too good to be true? 👇\n\nSource: 2026 Norton Insights Report: Holiday Scams (released Nov. 5, 2026)\n\n#BlackFriday #CyberMonday #OnlineShopping #Scams #FraudAlert #HolidayShopping #PersonalFinance #MoneyTok #ConsumerProtection #CyberSecurity #FollowTheMoney",
+  "style": {
+    "accent": "red",
+    "first": "dark"
+  }
+}
