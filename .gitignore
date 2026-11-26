@@ -1,32 +1,30 @@
-node_modules/
-.next/
-out/
-build/
-dist/
 
-# Secrets — never commit
-.env
-.env.local
-.env.*.local
 !.env.example
-
-# OS / editor
-.DS_Store
-Thumbs.db
-*.swp
-.idea/
-.vscode/
-
-# Test & tooling output
-coverage/
-.vitest/
-*.tsbuildinfo
-next-env.d.ts
-
 # Generated upload folders. Rebuilt any time from input/<date>.json, and the
-# PNGs are large, so they are not worth versioning.
-output/
-
 # Local working clone of the public ftm-media repo. A cache, not a workspace:
+# OS / editor
+# PNGs are large, so they are not worth versioning.
+# Secrets — never commit
+# Test & tooling output
 # publish-media resets it to origin on every run, so it is safe to delete.
+*.swp
+*.tsbuildinfo
+.DS_Store
+.env
+.env.*.local
+.env.local
+.idea/
 .media-repo/
+.next/
+.vitest/
+.vscode/
+Thumbs.db
+build/
+coverage/
+dist/
+engines/.cache/
+engines/.venv/
+next-env.d.ts
+node_modules/
+out/
+output/
