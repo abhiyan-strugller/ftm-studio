@@ -1,0 +1,70 @@
+{
+  "slug": "2026-11-26-thanksgiving-dinner-1200",
+  "title": "The Thanksgiving dinner bill",
+  "style": {
+    "accent": "gold",
+    "first": "light"
+  },
+  "slides": [
+    {
+      "kind": "hook",
+      "big": "$58.63",
+      "countup": true,
+      "lines": [
+        "what a Thanksgiving dinner for 10 costs this year."
+      ],
+      "seconds": 3.3
+    },
+    {
+      "kind": "body",
+      "lines": [
+        "Up 6% from last year — the first rise since 2022.",
+        "That works out to $5.86 a plate."
+      ],
+      "seconds": 3.6
+    },
+    {
+      "kind": "body",
+      "lines": [
+        "The turkey did it.",
+        "A 16-lb frozen bird jumped $2.38 to $23.68 — up 10%."
+      ],
+      "seconds": 3.8
+    },
+    {
+      "kind": "body",
+      "lines": [
+        "And where you sit changes the bill."
+      ],
+      "chart": {
+        "type": "rank",
+        "unit": "$",
+        "highlight": "Northeast",
+        "data": [
+          ["Northeast", 61.57],
+          ["West", 58.74],
+          ["Midwest", 56.89],
+          ["South", 54.33]
+        ]
+      },
+      "seconds": 4.2
+    },
+    {
+      "kind": "take",
+      "lines": [
+        "My take:",
+        "When the centerpiece is the thing getting pricier, there's no easy swap."
+      ],
+      "seconds": 4.6
+    },
+    {
+      "kind": "end",
+      "lines": [
+        "What did your Thanksgiving plate cost this year?"
+      ],
+      "seconds": 3.8
+    }
+  ],
+  "source_line": "Source: American Farm Bureau Federation, 2026 survey (Nov 18)",
+  "caption": "A classic Thanksgiving dinner for 10 costs $58.63 this year — about $5.86 a plate.\n\nThat's up 6% from last year, the first increase since 2022, per the American Farm Bureau Federation's 41st annual survey. The driver: a 16-pound frozen turkey now averages $23.68, up $2.38 (10%).\n\nThe upside — it's still more than 8% below the 2022 record. And where you live matters: the Northeast averages $61.57 a dinner while the South comes in at $54.33.\n\nMy take: when the centerpiece is the thing getting pricier, there's no easy swap. The turkey is the bill.\n\nWhat did your Thanksgiving plate cost this year? 👇\n\nSource: American Farm Bureau Federation 2026 Thanksgiving survey (released Nov. 18, 2026)\n\n#Thanksgiving #Groceries #Inflation #CostOfLiving #FoodPrices #PersonalFinance #Turkey #Budgeting #MoneyTok #Economy #Holidays #FollowTheMoney"
+}
