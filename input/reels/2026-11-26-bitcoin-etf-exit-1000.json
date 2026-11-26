@@ -1,0 +1,57 @@
+{
+  "slug": "2026-11-26-bitcoin-etf-exit-1000",
+  "title": "The Bitcoin ETF exit",
+  "slides": [
+    {
+      "kind": "hook",
+      "big": "$3.5B",
+      "countup": true,
+      "lines": ["Investors pulled $3.5 billion", "out of Bitcoin ETFs this month."]
+    },
+    {
+      "kind": "body",
+      "lines": [
+        "The biggest monthly exit",
+        "from U.S. spot Bitcoin funds",
+        "since February."
+      ]
+    },
+    {
+      "kind": "body",
+      "lines": [
+        "Bitcoin fell to about $91,000 —",
+        "its worst month since 2022,",
+        "down from a record near $126,000."
+      ],
+      "chart": {
+        "type": "bars",
+        "unit": "$",
+        "highlight": "Nov 26",
+        "data": [["Record", 126000], ["Nov 26", 91000]]
+      }
+    },
+    {
+      "kind": "body",
+      "lines": [
+        "One analyst says the average",
+        "Bitcoin ETF buyer is now underwater —",
+        "many bought near the top."
+      ]
+    },
+    {
+      "kind": "take",
+      "lines": [
+        "My take:",
+        "An ETF made crypto easy to buy —",
+        "and just as easy to stampede out of."
+      ]
+    },
+    {
+      "kind": "end",
+      "lines": ["Did you buy this dip,", "or step back this month?"]
+    }
+  ],
+  "source_line": "Source: The Block & CoinMarketCap — spot Bitcoin ETF flows, Nov 2026",
+  "caption": "Investors pulled about $3.5 billion out of U.S. spot Bitcoin ETFs this month — the biggest monthly exit since February.\n\nBitcoin slid to around $91,000 on Thanksgiving Day with U.S. markets closed, heading for its worst month since 2022 and sitting well below its record near $126,000. One analyst says the average Bitcoin ETF buyer is now underwater.\n\nA fund made crypto easy to buy inside a retirement or brokerage account — and November showed it's just as easy for that money to rush back out.\n\nMy take: the ETF didn't make Bitcoin less volatile. It just gave more ordinary savers a front-row seat to the swings.\n\nDid you buy this dip, or step back this month? 👇\n\nSource: The Block & CoinMarketCap — spot Bitcoin ETF flows, Nov 2026\nEducational only — not financial advice.\n\n#Bitcoin #Crypto #BitcoinETF #Investing #PersonalFinance #StockMarket #Cryptocurrency #MoneyTok #BTC #WallStreet #FollowTheMoney",
+  "style": { "accent": "green", "first": "light" }
+}
