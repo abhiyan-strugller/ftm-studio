@@ -1,0 +1,68 @@
+{
+  "slug": "2026-11-26-thanksgiving-travel-1400",
+  "title": "The Thanksgiving travel bill",
+  "style": {
+    "accent": "gold",
+    "first": "dark"
+  },
+  "slides": [
+    {
+      "kind": "hook",
+      "big": "$800",
+      "countup": true,
+      "lines": [
+        "the average round-trip airfare for Thanksgiving this year."
+      ],
+      "seconds": 3.3
+    },
+    {
+      "kind": "body",
+      "lines": [
+        "That's up 17% from a year ago.",
+        "And gas set new monthly records three months running."
+      ],
+      "seconds": 3.9
+    },
+    {
+      "kind": "body",
+      "lines": [
+        "So the record travel streak just broke.",
+        "81.5 million are going — the first dip in 3 years."
+      ],
+      "seconds": 4.0
+    },
+    {
+      "kind": "body",
+      "lines": [
+        "And nearly 9 in 10 are driving — into near-record gas."
+      ],
+      "chart": {
+        "type": "rank",
+        "highlight": "By car",
+        "data": [
+          ["By car", 72.9],
+          ["By air", 5.96],
+          ["Bus / rail", 2.6]
+        ]
+      },
+      "seconds": 4.4
+    },
+    {
+      "kind": "take",
+      "lines": [
+        "My take:",
+        "When even the cheap option — driving — keeps getting pricier, staying home starts to win."
+      ],
+      "seconds": 4.7
+    },
+    {
+      "kind": "end",
+      "lines": [
+        "Are higher costs changing your holiday travel plans?"
+      ],
+      "seconds": 3.8
+    }
+  ],
+  "source_line": "Source: AAA 2026 Thanksgiving Travel Forecast (Nov. 16)",
+  "caption": "Getting to the Thanksgiving table costs more this year — and for the first time in three years, slightly fewer people are making the trip.\n\nAAA projects 81.5 million Americans will travel at least 50 miles this holiday, just under last year's 81.6 million — ending a three-year streak of record Thanksgiving travel. The reason is cost: round-trip domestic airfare averages about $800, up 17% from a year ago, and gas prices set new monthly records in August, September and October.\n\nNearly 9 in 10 travelers are driving — 72.9 million of them — straight into some of the highest Thanksgiving-season gas prices on record. Another 5.96 million are flying and 2.6 million are taking a bus, train or cruise.\n\nMy take: when even the cheap option — driving — keeps getting pricier, 'staying home' quietly becomes the smart-money move. The trip didn't get less worth it; it just got more expensive to show up.\n\nAre higher costs changing how far you'll go this holiday? 👇\n\nSource: AAA 2026 Thanksgiving Travel Forecast (released Nov. 16, 2026)\n\n#Thanksgiving #Travel #GasPrices #Airfare #CostOfLiving #Inflation #PersonalFinance #Holidays #Budgeting #MoneyTok #Economy #FollowTheMoney"
+}
