@@ -1,7 +1,39 @@
 {
   "date": "2026-11-26",
-  "posts": [],
+  "posts": [
+    {
+      "id": "2000",
+      "template": "plain",
+      "palette": "night",
+      "accent": "gold",
+      "tag": "Markets",
+      "big": "1,105",
+      "big_note": "points the Dow fell Wednesday before erasing the entire drop by the close",
+      "headline": "The Dow fell more than 1,100 points on AI fears Wednesday — then clawed every one back by the close.",
+      "source": "Source: U.S. market close, Nov. 25, 2026 (CNBC, Motley Fool)",
+      "source_url": "https://www.cnbc.com/2026/11/25/nvidia-ai-stock-tech-selloff.html",
+      "chart": {
+        "type": "rank",
+        "unit": "%",
+        "highlight": "Chip stocks",
+        "data": [
+          ["Chip stocks", -7.9],
+          ["Nasdaq", -4.6],
+          ["S&P 500", -2.7]
+        ]
+      },
+      "caption": "The market gave everyone whiplash the day before Thanksgiving.\n\nAI-bubble fears hammered Wall Street Wednesday. Chip stocks led the plunge, the Nasdaq sank as much as 4.6%, and Nvidia finished down 3.9%. At its worst the Dow was off more than 1,100 points.\n\nThen a late-day wave of buying flipped the whole day: the Dow closed HIGHER, and the Nasdaq pared its loss to just 0.6%.\n\nWhy it's your money: that stomach-churning swing is exactly what your 401(k) and index funds did too. The handful of AI names that powered this year's gains are now the ones shaking the hardest.\n\nMy take: a day that ends nearly flat but swings 1,100 points in between isn't a calm market — it's a nervous one looking for a reason to move. Don't let one wild session rewrite a long-term plan.\n\nDid Wednesday's swing make you check your account? 👇\n\nSource: U.S. market close, Nov. 25, 2026 (CNBC, Motley Fool)\nEducational only — not financial advice.\n\n#StockMarket #Nvidia #AIStocks #401k",
+      "data": {
+        "paragraphs": [
+          "AI-bubble fears hammered Wall Street the day before Thanksgiving. Chip stocks led the plunge, the Nasdaq sank as much as 4.6%, and Nvidia finished down 3.9%. At its low the Dow was off more than 1,100 points.",
+          "Then a late-day wave of buying flipped the day: the Dow closed higher and the Nasdaq pared its loss to just 0.6%.",
+          "Why it's your money: that swing is what your 401(k) and index funds did too. The AI names that drove this year's gains are now the ones shaking the hardest."
+        ]
+      },
+      "scheduled_at": "2026-11-27T02:00:00.000Z"
+    }
+  ],
   "reels": [
-    { "slug": "2026-11-26-holiday-scam-loss-1700", "scheduled_at": "2026-11-26T23:00:00.000Z" }
+    { "slug": "2026-11-26-ai-selloff-reversal-2000", "scheduled_at": "2026-11-27T02:00:00.000Z" }
   ]
 }

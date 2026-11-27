@@ -1,0 +1,78 @@
+{
+  "slug": "2026-11-26-ai-selloff-reversal-2000",
+  "title": "The 1,105-point rollercoaster",
+  "style": {
+    "accent": "gold",
+    "first": "dark"
+  },
+  "slides": [
+    {
+      "kind": "hook",
+      "big": "1,105",
+      "countup": true,
+      "lines": [
+        "points the Dow fell Wednesday — then clawed every one back."
+      ],
+      "seconds": 3.6
+    },
+    {
+      "kind": "body",
+      "lines": [
+        "AI-bubble fears gripped Wall Street into Thanksgiving.",
+        "Chips led the plunge."
+      ],
+      "chart": {
+        "type": "rank",
+        "unit": "%",
+        "highlight": "Chip stocks",
+        "data": [
+          ["Chip stocks", -7.9],
+          ["Nasdaq", -4.6],
+          ["S&P 500", -2.7]
+        ]
+      },
+      "seconds": 4.4
+    },
+    {
+      "kind": "body",
+      "lines": [
+        "Nvidia closed down 3.9%.",
+        "Then buyers stepped in late and flipped the day."
+      ],
+      "seconds": 3.8
+    },
+    {
+      "kind": "body",
+      "lines": [
+        "The Dow closed HIGHER.",
+        "The Nasdaq ended down just 0.6% — after being down 4.6%."
+      ],
+      "seconds": 4.0
+    },
+    {
+      "kind": "body",
+      "lines": [
+        "That whole rollercoaster was your 401(k).",
+        "The AI stocks that drove the gains are the ones wobbling."
+      ],
+      "seconds": 4.0
+    },
+    {
+      "kind": "take",
+      "lines": [
+        "My take:",
+        "A day that ends flat but swings 1,100 points isn't calm — it's nervous."
+      ],
+      "seconds": 4.4
+    },
+    {
+      "kind": "end",
+      "lines": [
+        "Did Wednesday's swing make you check your account?"
+      ],
+      "seconds": 3.8
+    }
+  ],
+  "source_line": "Source: U.S. market close, Nov. 25, 2026 (CNBC, Motley Fool)",
+  "caption": "The Dow fell more than 1,100 points Wednesday — and erased every one of them by the close.\n\nAI-bubble fears hammered Wall Street the day before Thanksgiving. Chip stocks led the drop, the Nasdaq sank as much as 4.6%, and Nvidia finished down 3.9%. Then a late-day wave of buying flipped it: the Dow closed higher, and the Nasdaq pared its loss to just 0.6%.\n\nWhy it's your money: that stomach-churning swing is what your 401(k) and index funds did too. The handful of AI names that powered this year's gains are now the ones shaking the most.\n\nMy take: a day that ends nearly flat but swings 1,100 points in between isn't a calm market — it's a nervous one looking for a reason to move.\n\nDid Wednesday's swing make you check your account? 👇\n\nSource: U.S. market close, Nov. 25, 2026 (CNBC, Motley Fool)\nEducational only — not financial advice.\n\n#StockMarket #Nvidia #AIStocks #401k #Investing #WallStreet #Nasdaq #DowJones #PersonalFinance #Retirement #MoneyTok #FollowTheMoney"
+}
