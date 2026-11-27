@@ -1,0 +1,88 @@
+{
+  "slug": "2026-11-27-best-week-markets-1700",
+  "title": "Wall Street's best week in over a year",
+  "style": {
+    "accent": "green",
+    "first": "dark"
+  },
+  "slides": [
+    {
+      "kind": "hook",
+      "big": "+2.3%",
+      "countup": true,
+      "lines": [
+        "The Nasdaq's Black Friday jump —",
+        "capping Wall Street's best week in a year."
+      ],
+      "say": "The Nasdaq jumped 2.3 percent on Black Friday, capping Wall Street's best week in over a year.",
+      "seconds": 4.2
+    },
+    {
+      "kind": "body",
+      "lines": [
+        "Early November, AI fears wiped",
+        "trillions off stocks. Friday they bounced back."
+      ],
+      "chart": {
+        "type": "rank",
+        "unit": "%",
+        "highlight": "Nasdaq",
+        "data": [
+          ["Dow", 1.18],
+          ["S&P 500", 1.60],
+          ["Nasdaq", 2.31]
+        ]
+      },
+      "say": "In early November, A.I. fears wiped trillions off stocks. On Friday, they bounced back. The Dow rose 1.2 percent, the S&P 500 1.6 percent, and the Nasdaq 2.3 percent.",
+      "seconds": 4.6
+    },
+    {
+      "kind": "body",
+      "lines": [
+        "AI and chip stocks led the charge,",
+        "and the Dow logged its best week since 2022."
+      ],
+      "say": "A.I. and chip stocks led the charge, and the Dow logged its best week since 2022.",
+      "seconds": 4.2
+    },
+    {
+      "kind": "body",
+      "lines": [
+        "Own an index fund or a 401(k)?",
+        "This is your money — most savings ride these indexes."
+      ],
+      "say": "Own an index fund or a 401-k? This is your money. Most retirement savings ride these same indexes.",
+      "seconds": 4.4
+    },
+    {
+      "kind": "body",
+      "lines": [
+        "The catch: even after the big week,",
+        "the S&P 500 is still down for November."
+      ],
+      "say": "But here's the catch. Even after the big week, the S&P 500 is still down for the month of November.",
+      "seconds": 4.4
+    },
+    {
+      "kind": "take",
+      "lines": [
+        "My take:",
+        "A great week doesn't erase a rough month.",
+        "This was a round trip, not a new high."
+      ],
+      "say": "My take: a great week doesn't erase a rough month. This was a round trip, not a new high.",
+      "seconds": 4.6
+    },
+    {
+      "kind": "end",
+      "lines": [
+        "Did you check your 401(k) this week —",
+        "or avoid looking?"
+      ],
+      "say": "Did you check your 401-k this week, or avoid looking?",
+      "seconds": 3.8
+    }
+  ],
+  "source_line": "Source: AP via Pittsburgh Post-Gazette & Qz market reports, Nov. 27, 2026",
+  "caption": "Wall Street just closed its best week in over a year — and if you own an index fund, some of it is yours.\n\nAfter an early-November selloff driven by AI-bubble fears wiped trillions off stocks, the market roared back. On Black Friday's half-day session, the Dow rose 1.18%, the S&P 500 1.60% and the Nasdaq 2.31%, led by AI and chip stocks. It capped the Dow's best week since 2022.\n\nHere's the catch: even after that rally, the S&P 500 is still down for the month of November. The week was a sharp rebound, but the month was closer to a round trip.\n\nThis matters because most 401(k)s and retirement accounts — in the US and Canada — ride these same indexes. A violent week like this is exactly the kind that makes people check their balance too often.\n\nMy take: a great week doesn't erase a rough month. This was a recovery, not a new high — and the swings aren't over.\n\nDid you check your 401(k) this week, or avoid looking? 👇\n\nSource: AP via Pittsburgh Post-Gazette and Qz market reports (Nov. 27, 2026)\nEducational only — not financial advice.\n\n#StockMarket #Investing #WallStreet #Nasdaq #DowJones #SP500 #401k #PersonalFinance #AIStocks #Markets #StockMarketNews #FollowTheMoney"
+}

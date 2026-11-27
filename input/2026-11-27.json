@@ -1,39 +1,7 @@
 {
   "date": "2026-11-27",
-  "posts": [
-    {
-      "id": "1400",
-      "template": "plain",
-      "palette": "night",
-      "accent": "gold",
-      "tag": "Your Money",
-      "big": "$12.9B",
-      "big_note": "Americans are expected to spend online this Black Friday — a record, per Adobe",
-      "headline": "Americans are on track to spend a record $12.9 billion online this Black Friday — up 9% from last year, per Adobe.",
-      "source": "Source: Adobe Analytics holiday forecast, Nov. 2026",
-      "source_url": "https://news.adobe.com/news/2026/09/adobe-us-holiday-shopping-season-to-hit-record",
-      "chart": {
-        "type": "rank",
-        "unit": "$",
-        "highlight": "Black Friday",
-        "data": [
-          ["Thanksgiving", 6.9],
-          ["Black Friday", 12.9],
-          ["Cyber Monday", 15.1]
-        ]
-      },
-      "caption": "Black Friday is on pace for a record — online.\n\nAdobe expects U.S. shoppers to spend about $12.9 billion on retail websites today, up 9.2% from last year's $11.8 billion. The whole season (Nov. 1–Dec. 31) is projected at a record $275.1 billion.\n\nHere's the catch: prices are still higher than a year ago, so part of every 'record' is just inflation — not more stuff in the cart. And the biggest day isn't even today: Adobe projects Cyber Monday at $15.1 billion.\n\nMy take: a spending record during a squeeze isn't proof people feel rich. It's proof the deals finally felt worth it — often on credit.\n\nWhat's the one thing you actually bought this Black Friday? 👇\n\nSource: Adobe Analytics holiday forecast, Nov. 2026\n\n#BlackFriday #Shopping #Inflation #PersonalFinance",
-      "data": {
-        "paragraphs": [
-          "Adobe expects U.S. shoppers to spend about $12.9 billion online today — a record, up 9.2% from last year's $11.8 billion.",
-          "The catch: prices are still higher than a year ago, so part of every 'record' is inflation, not more goods in the cart.",
-          "And today isn't even the biggest day: Adobe projects Cyber Monday at $15.1 billion, and the full season at a record $275.1 billion."
-        ]
-      },
-      "scheduled_at": "2026-11-27T20:00:00.000Z"
-    }
-  ],
+  "posts": [],
   "reels": [
-    { "slug": "2026-11-27-black-friday-record-1400", "scheduled_at": "2026-11-27T20:00:00.000Z" }
+    { "slug": "2026-11-27-best-week-markets-1700", "scheduled_at": "2026-11-27T23:00:00.000Z" }
   ]
 }
