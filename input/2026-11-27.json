@@ -1,37 +1,7 @@
 {
   "date": "2026-11-27",
-  "posts": [
-    {
-      "id": "0800",
-      "template": "plain",
-      "palette": "night",
-      "accent": "gold",
-      "tag": "Your Money",
-      "big": "$21.3B",
-      "big_note": "the record amount U.S. shoppers are set to put on Buy Now, Pay Later this holiday season",
-      "headline": "Black Friday is on track for a record $12.9 billion online — but a record $21.3 billion of holiday shopping is going on Buy Now, Pay Later.",
-      "source": "Source: Adobe Analytics holiday forecast (2026); Deloitte Canada 2026 holiday outlook",
-      "source_url": "https://news.adobe.com/news/2026/09/adobe-us-holiday-shopping-season-to-hit-record",
-      "chart": {
-        "type": "bars",
-        "highlight": "2026",
-        "data": [
-          ["2025", 257.8],
-          ["2026", 275.1]
-        ]
-      },
-      "caption": "Black Friday is breaking records — and so is the borrowing behind it.\n\nAdobe expects a record $12.9 billion in U.S. online sales today, part of a record $275.1 billion online holiday season (up 6.7% from last year's $257.8 billion).\n\nHere's the part that follows you into January: a record $21.3 billion of that is going on Buy Now, Pay Later — the 'pay in 4' plans that split a purchase into four installments it's easy to lose track of.\n\nNorth of the border it's the opposite mood: Canadians plan to spend about 5% less on gifts this year, Deloitte says.\n\nMy take: a deal you have to finance isn't really on sale. If a 'pay in 4' plan is the only way the cart fits, the cart is too full.\n\nWould you put a Black Friday purchase on Buy Now, Pay Later? 👇\n\nSource: Adobe Analytics holiday forecast (2026); Deloitte Canada 2026 holiday outlook\n\n#BlackFriday #BuyNowPayLater #HolidayShopping #PersonalFinance",
-      "data": {
-        "paragraphs": [
-          "Adobe expects a record $12.9 billion in U.S. online sales on Black Friday, part of a record $275.1 billion online holiday season — up 6.7% from last year's $257.8 billion.",
-          "The catch follows shoppers into January: a record $21.3 billion of holiday spending is going on Buy Now, Pay Later, the 'pay in 4' plans at checkout.",
-          "In Canada it's the reverse mood — Deloitte says shoppers plan to spend about 5% less on gifts this year."
-        ]
-      },
-      "scheduled_at": "2026-11-27T14:00:00.000Z"
-    }
-  ],
+  "posts": [],
   "reels": [
-    { "slug": "2026-11-27-black-friday-bnpl-0800", "scheduled_at": "2026-11-27T14:00:00.000Z" }
+    { "slug": "2026-11-27-mortgage-rates-1000", "scheduled_at": "2026-11-27T16:00:00.000Z" }
   ]
 }
