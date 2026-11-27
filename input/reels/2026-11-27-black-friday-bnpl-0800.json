@@ -1,0 +1,69 @@
+{
+  "slug": "2026-11-27-black-friday-bnpl-0800",
+  "title": "A record Black Friday cart — on Buy Now, Pay Later",
+  "slides": [
+    {
+      "kind": "hook",
+      "big": "$21.3B",
+      "lines": [
+        "is going on Buy Now, Pay Later this holiday season."
+      ],
+      "countup": true
+    },
+    {
+      "kind": "body",
+      "lines": [
+        "Black Friday is on track for a record $12.9 billion",
+        "in U.S. online sales today, Adobe says."
+      ]
+    },
+    {
+      "kind": "body",
+      "lines": [
+        "The whole online season is set for a record $275.1 billion,",
+        "up 6.7% from last year."
+      ],
+      "chart": {
+        "type": "bars",
+        "highlight": "2026",
+        "data": [
+          ["2025", 257.8],
+          ["2026", 275.1]
+        ]
+      }
+    },
+    {
+      "kind": "body",
+      "lines": [
+        "The hidden part: a record $21.3 billion of it",
+        "is on 'pay in 4' plans you finish paying in January."
+      ]
+    },
+    {
+      "kind": "body",
+      "lines": [
+        "North of the border, the opposite:",
+        "Canadians plan to spend about 5% less on gifts, Deloitte says."
+      ]
+    },
+    {
+      "kind": "take",
+      "lines": [
+        "My take:",
+        "A deal you have to finance isn't really on sale."
+      ]
+    },
+    {
+      "kind": "end",
+      "lines": [
+        "Would you put a Black Friday buy on Buy Now, Pay Later?"
+      ]
+    }
+  ],
+  "source_line": "Source: Adobe Analytics holiday forecast (2026); Deloitte Canada",
+  "caption": "Black Friday is breaking records — and so is the borrowing behind it.\n\nAdobe expects a record $12.9 billion in U.S. online sales today, inside a record $275.1 billion online holiday season. The catch: a record $21.3 billion of that is going on Buy Now, Pay Later — the 'pay in 4' plans that split a purchase into four installments and follow you into January.\n\nIn Canada, the opposite mood: shoppers plan to spend about 5% less on gifts this year, per Deloitte.\n\nMy take: a deal you have to finance isn't really on sale. If 'pay in 4' is the only way the cart fits, the cart's too full.\n\nWould you put a Black Friday buy on Buy Now, Pay Later?\n\n#BlackFriday #BuyNowPayLater #BNPL #HolidayShopping #PersonalFinance #MoneyTok #Debt #CyberWeek #Canada #Shopping #FollowTheMoney",
+  "style": {
+    "accent": "gold",
+    "first": "dark"
+  }
+}
