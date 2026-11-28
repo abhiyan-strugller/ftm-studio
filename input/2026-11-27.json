@@ -1,7 +1,29 @@
 {
   "date": "2026-11-27",
-  "posts": [],
+  "posts": [
+    {
+      "id": "2000",
+      "template": "plain",
+      "palette": "night",
+      "accent": "gold",
+      "tag": "Scams",
+      "big": "$503M",
+      "big_note": "lost to online shopping scams, per the FBI's Internet Crime Complaint Center",
+      "headline": "A fake $20 “delivery fee” text cost one shopper $5,000 in gift cards — part of the $503 million Americans lost to online shopping scams.",
+      "source": "Source: FBI Internet Crime Complaint Center (IC3) & Canadian Anti-Fraud Centre, Nov. 2026",
+      "source_url": "https://www.fbi.gov/contact-us/field-offices/boston/news/fbi-boston-urges-consumers-to-beware-of-holiday-shopping-and-charity-scams",
+      "caption": "Black Friday and Cyber Monday are the Super Bowl for scammers — and the losses are ugly on both sides of the border.\n\nThe FBI's Internet Crime Complaint Center (IC3) reports Americans lost about $503 million to online shopping scams — mostly non-delivery and non-payment fraud, where you pay and the package never ships. In Canada, the Canadian Anti-Fraud Centre says people reported roughly $351 million in fraud losses in just the first half of 2026.\n\nThe trick of the season: a text claiming a “delivery fee” is owed on a package. One shopper who tapped it lost $5,000 in gift cards. The tell is almost always the same — a real retailer or courier never demands payment in gift cards.\n\nMy take: if a deal can only be paid with a gift card, it isn't a deal — it's a trap. Slow down, go to the retailer's real site directly, and never pay a “fee” from a text.\n\nGotten a sketchy “delivery fee” text this week? 👇\n\nSource: FBI Internet Crime Complaint Center (IC3) and Canadian Anti-Fraud Centre (Nov. 2026)\nEducational only — not financial advice.\n\n#Scams #FraudAlert #BlackFriday #CyberMonday #FollowTheMoney",
+      "data": {
+        "paragraphs": [
+          "The FBI's Internet Crime Complaint Center (IC3) reports Americans lost about $503 million to online shopping scams — mostly non-delivery and non-payment fraud, where the shopper pays and the package never ships.",
+          "In Canada, the Canadian Anti-Fraud Centre says people reported roughly $351 million in fraud losses in just the first half of 2026.",
+          "The season's trap is a text claiming a “delivery fee” is owed on a package. One shopper who tapped it lost $5,000 in gift cards. The tell: a real retailer or courier never demands payment in gift cards."
+        ]
+      },
+      "scheduled_at": "2026-11-28T02:00:00.000Z"
+    }
+  ],
   "reels": [
-    { "slug": "2026-11-27-best-week-markets-1700", "scheduled_at": "2026-11-27T23:00:00.000Z" }
+    { "slug": "2026-11-27-holiday-scam-fraud-2000", "scheduled_at": "2026-11-28T02:00:00.000Z" }
   ]
 }
