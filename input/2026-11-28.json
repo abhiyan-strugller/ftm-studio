@@ -1,0 +1,35 @@
+{
+  "date": "2026-11-28",
+  "posts": [
+    {
+      "id": "0800",
+      "template": "plain",
+      "palette": "night",
+      "accent": "gold",
+      "tag": "Black Friday",
+      "big": "$12.9B",
+      "big_note": "Americans' projected online Black Friday spending — a record, up 9.2% — while Canadians rein it in",
+      "headline": "Americans just set a Black Friday record online — a projected $12.9 billion, up 9.2% — while Canadians put 62 cents of every dollar toward essentials.",
+      "source": "Source: Adobe Analytics (U.S.) & BCG 2026 study (Canada), Nov. 2026",
+      "source_url": "https://news.adobe.com/news/2026/09/adobe-us-holiday-shopping-season-to-hit-record",
+      "caption": "Same weekend, two different economies.\n\nIn the U.S., Adobe Analytics projects a record $12.9 billion spent online on Black Friday — up about 9.2% from last year's $11.8 billion. That's the sixth straight record, after $10.8 billion in 2024.\n\nAcross the border, the mood is colder. In BCG's 2026 year-end study, Canadians say 62 cents of every Black Friday dollar is going to essentials, not gifts — and nearly nine in ten say they're worried about food and energy costs.\n\nMy take: a \"record\" headline hides who's actually spending. More dollars can just mean steeper prices and more borrowing, not more under the tree. The Canadian number is the honest one — people buying what they need, skipping what they don't.\n\nWhich camp are you in this year — splurging, or sticking to essentials? 👇\n\nSource: Adobe Analytics and BCG 2026 Year-End Sales Events Consumer Study (Nov. 2026)\n\n#BlackFriday #Holiday #PersonalFinance #FollowTheMoney",
+      "chart": {
+        "type": "bars",
+        "unit": "$",
+        "highlight": "2026",
+        "data": [["2024", 10.8], ["2025", 11.8], ["2026", 12.9]]
+      },
+      "data": {
+        "paragraphs": [
+          "In the U.S., Adobe Analytics projects a record $12.9 billion spent online on Black Friday 2026 — up about 9.2% from last year's $11.8 billion record, and the sixth straight record after $10.8 billion in 2024.",
+          "In Canada, BCG's 2026 year-end consumer study found shoppers putting 62 cents of every Black Friday dollar toward essentials rather than gifts, with nearly nine in ten worried about food and energy costs.",
+          "The headline is a record. The quieter story is who is actually spending — and how much of it is need, not want, on both sides of the border."
+        ]
+      },
+      "scheduled_at": "2026-11-28T14:00:00.000Z"
+    }
+  ],
+  "reels": [
+    { "slug": "2026-11-28-black-friday-record-0800", "scheduled_at": "2026-11-28T14:00:00.000Z" }
+  ]
+}
